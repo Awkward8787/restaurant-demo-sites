@@ -1,5 +1,5 @@
 import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, sanitizeCart } from "../lib/cart.mjs";
-import { isOpen, statusPhrase } from "../lib/hours.mjs";
+import { formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 
 const root = document.querySelector("[data-restaurant]");
@@ -279,9 +279,17 @@ if (!root) {
       return;
     }
     if (state.when) {
-      const chosen = new Date(state.when);
-      if (Number.isNaN(chosen.getTime()) || chosen.getTime() < Date.now() - 60_000) {
+      const issue = pickupIssue(state.when, Date.now(), hours?.weekly);
+      if (issue === "past" || issue === "invalid") {
         showError(t(lang, "errorTime"));
+        return;
+      }
+      if (issue === "gap") {
+        showError(t(lang, "errorTimeGap"));
+        return;
+      }
+      if (issue === "closed") {
+        showError(t(lang, "errorClosed"));
         return;
       }
     }
@@ -339,7 +347,7 @@ if (!root) {
     return [
       name,
       state.fulfillment === "delivery" ? t(lang, "delivery") : t(lang, "pickup"),
-      state.when ? state.when : "",
+      state.when ? formatPickup(state.when, lang) : "",
       ...lines,
       `${t(lang, "total")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,

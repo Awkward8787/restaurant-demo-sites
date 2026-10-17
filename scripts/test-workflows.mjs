@@ -4,6 +4,8 @@ import { readFileSync } from "node:fs";
 const pages = readFileSync(new URL("../.github/workflows/pages.yml", import.meta.url), "utf8");
 const [header, jobs] = pages.split(/\njobs:\n/);
 assert.match(header, /contents: read/);
+assert.match(header, /cancel-in-progress:\s*false/);
+assert.doesNotMatch(pages, /cancel-in-progress:\s*true/);
 assert.doesNotMatch(header, /pages: write/);
 assert.doesNotMatch(header, /id-token: write/);
 const [build, deploy] = jobs.split(/\n  deploy:\n/);

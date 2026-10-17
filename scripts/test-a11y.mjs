@@ -12,6 +12,8 @@ assert.match(page, /aria-describedby=\{`dish-\$\{item\.id\}`\}/);
 assert.match(page, /id="order-total"[^>]*role="status"/);
 const cartScript = readFileSync(new URL("../src/scripts/page.mjs", import.meta.url), "utf8");
 assert.match(cartScript, /demo-lang/);
+assert.match(cartScript, /t\(lang, "demoFoot"\)/);
+assert.doesNotMatch(cartScript, /Demo site: no order was placed\./);
 assert.match(cartScript, /cleanLang/);
 assert.doesNotMatch(cartScript, /visibilityState: \(\) => document\.visibilityState,\n\s*\}\);\n\s*render\(\);/);
 
@@ -32,5 +34,12 @@ assert.equal(cleanLang("pt"), "pt");
 assert.equal(cleanLang("fr"), null);
 assert.equal(cleanLang("en-US"), null);
 assert.equal(cleanLang(""), null);
+assert.equal(t("en", "demoFoot"), "Demo site: no order was placed.");
+assert.notEqual(t("es", "demoTitle"), t("en", "demoTitle"));
+assert.notEqual(t("pt", "demoTitle"), t("en", "demoTitle"));
+assert.notEqual(t("es", "demoFoot"), t("en", "demoFoot"));
+assert.notEqual(t("pt", "demoFoot"), t("en", "demoFoot"));
+assert.doesNotMatch(t("es", "demoFoot"), /demoFoot/);
+assert.doesNotMatch(t("pt", "demoFoot"), /demoFoot/);
 
 console.log("a11y ok");

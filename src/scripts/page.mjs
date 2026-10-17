@@ -367,7 +367,7 @@ if (!root) {
       `${t(lang, "total")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,
       state.notes ? state.notes : "",
-      "Demo site: no order was placed.",
+      t(lang, "demoFoot"),
     ]
       .filter(Boolean)
       .join("\n");

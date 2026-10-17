@@ -69,7 +69,9 @@ const nav = [
     <meta property="og:description" content={r.seo.description} />
     <meta property="og:type" content="restaurant" />
     <meta property="og:url" content={pageUrl} />
-    <meta property="og:image" content={new URL(`${base}og/${r.slug}.svg`, Astro.site).toString()} />
+    <meta property="og:image" content={new URL(`${base}og/${r.slug}.png`, Astro.site).toString()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="theme-color" content={r.theme.band} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

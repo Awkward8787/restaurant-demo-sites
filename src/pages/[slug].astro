@@ -152,7 +152,7 @@ const nav = [
                       {category.items.map((item) => (
                         <article class="dish">
                           <div class="dish-copy">
-                            <div class="dish-name" lang={item.lang}>
+                            <div class="dish-name" id={`dish-${item.id}`} lang={item.lang}>
                               {item.name}
                             </div>
                             {item.gloss && (
@@ -175,6 +175,7 @@ const nav = [
                             type="button"
                             data-add
                             data-i18n="add"
+                            aria-describedby={`dish-${item.id}`}
                             data-id={item.id}
                             data-name={item.name}
                             data-item-lang={item.lang}

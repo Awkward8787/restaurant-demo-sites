@@ -7,6 +7,8 @@ assert.match(page, /<legend[^>]*data-i18n="fulfillment"/);
 assert.match(page, /<legend[^>]*data-i18n="tip"/);
 assert.match(page, /<label[^>]*for="tip-custom"/);
 assert.match(page, /id="tip-custom"[^>]*type="number"/);
+assert.match(page, /id=\{`dish-\$\{item\.id\}`\}/);
+assert.match(page, /aria-describedby=\{`dish-\$\{item\.id\}`\}/);
 
 for (const lang of ["en", "es", "pt"]) {
   for (const key of ["fulfillment", "tipPercent"]) {

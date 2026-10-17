@@ -1,7 +1,7 @@
 ---
 import { jsonForScript } from "../lib/json-script.mjs";
 import { loadRestaurants, telHref, money } from "../lib/restaurants.mjs";
-import { restaurantJsonLd } from "../lib/schema.mjs";
+import { isProspect, restaurantJsonLd } from "../lib/schema.mjs";
 import { weekLines } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 import Lang from "../components/Lang.astro";
@@ -63,6 +63,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{r.seo.title}</title>
     <meta name="description" content={r.seo.description} />
+    {isProspect(r) && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={pageUrl} />
     <meta property="og:title" content={r.seo.title} />
     <meta property="og:description" content={r.seo.description} />

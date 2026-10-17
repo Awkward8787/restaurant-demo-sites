@@ -1,5 +1,10 @@
 import { DAY_ORDER } from "./hours.mjs";
 
+/** Prospect pages stay out of search until a restaurant sets demo to false. */
+export function isProspect(restaurant) {
+  return restaurant?.demo !== false;
+}
+
 const SCHEMA_DAY = {
   mon: "Monday",
   tue: "Tuesday",
@@ -53,16 +58,6 @@ export function restaurantJsonLd(restaurant, pageUrl) {
   if (restaurant.menu.status !== "sample") {
     node.hasMenu = pageUrl + "#menu";
     node.menu = pageUrl + "#menu";
-  }
-
-  if (restaurant.rating?.value != null && Number.isFinite(restaurant.rating.count)) {
-    node.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: restaurant.rating.value,
-      reviewCount: restaurant.rating.count,
-      bestRating: 5,
-      worstRating: 1,
-    };
   }
 
   const hours = openingSpec(restaurant.hours?.weekly);

@@ -19,9 +19,12 @@ assert.equal(isProspect({ demo: false }), false);
 
 const slug = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
 const index = readFileSync(new URL("../src/pages/index.astro", import.meta.url), "utf8");
-const robots = readFileSync(new URL("../public/robots.txt", import.meta.url), "utf8");
+const robots = readFileSync(new URL("../src/pages/robots.txt.js", import.meta.url), "utf8");
 assert.match(slug, /isProspect\(r\) && <meta name="robots" content="noindex" \/>/);
 assert.match(index, /<meta name="robots" content="noindex" \/>/);
+assert.match(robots, /BASE_URL/);
+assert.doesNotMatch(robots, /restaurant-demo-sites/);
 assert.doesNotMatch(robots, /sitemap/i);
+assert.throws(() => readFileSync(new URL("../public/robots.txt", import.meta.url), "utf8"));
 
 console.log("schema ok");

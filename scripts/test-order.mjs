@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { applyAddressError, clearAddressError, totalLabelKey } from "../src/lib/order-a11y.mjs";
+import { applyAddressError, clearAddressError, deliveryFeeLabel, totalLabelKey } from "../src/lib/order-a11y.mjs";
 import { t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
@@ -44,5 +44,16 @@ assert.notEqual(t("pt", "pricedBeforeTax"), t("en", "pricedBeforeTax"));
 assert.match(script, /totalLabelKey\(hasUnpriced\)/);
 const orderText = script.slice(script.indexOf("function orderText"), script.indexOf('document.getElementById("copy-list")'));
 assert.match(orderText, /t\(lang, "unpriced"\)/);
+
+assert.equal(deliveryFeeLabel("en", 2018), "Delivery (2018 menu)");
+assert.equal(deliveryFeeLabel("es", 2018), "A domicilio (menú de 2018)");
+assert.equal(deliveryFeeLabel("pt", 2018), "Entrega (cardápio de 2018)");
+assert.equal(deliveryFeeLabel("en", ""), t("en", "delivery"));
+assert.equal(deliveryFeeLabel("en", null), t("en", "delivery"));
+assert.match(script, /deliveryFeeLabel\(lang, deliveryFeeYear\)/);
+assert.doesNotMatch(script, /2018 menu/);
+const andros = JSON.parse(readFileSync(new URL("../data/restaurants/andros-diner.json", import.meta.url), "utf8"));
+assert.equal(andros.deliveryFeeYear, 2018);
+assert.equal(andros.deliveryFee, 2);
 
 console.log("order ok");

@@ -92,6 +92,7 @@ const offersDelivery = r.delivery === true;
     data-email={r.email || ""}
     data-delivery={offersDelivery ? "true" : "false"}
     data-delivery-fee={offersDelivery && r.deliveryFee != null ? String(r.deliveryFee) : ""}
+    data-delivery-fee-year={r.deliveryFeeYear != null ? String(r.deliveryFeeYear) : ""}
   >
     <a class="skip" href="#content" data-i18n="skip">{t(lang, "skip")}</a>
     <div class="demo-banner">

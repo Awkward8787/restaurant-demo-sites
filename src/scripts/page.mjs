@@ -2,7 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
-import { applyAddressError, clearAddressError, totalLabelKey } from "../lib/order-a11y.mjs";
+import { applyAddressError, clearAddressError, deliveryFeeLabel, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -13,6 +13,7 @@ if (!root) {
   const offersDelivery = root.dataset.delivery === "true";
   const deliveryFee = Number(root.dataset.deliveryFee);
   const deliveryFeeCents = offersDelivery && Number.isFinite(deliveryFee) && deliveryFee > 0 ? Math.round(deliveryFee * 100) : 0;
+  const deliveryFeeYear = root.dataset.deliveryFeeYear || "";
   const storageKey = `demo-order:${slug}`;
   const hours = JSON.parse(document.getElementById("hours-data")?.textContent || "null");
   let lang = storedLang() || cleanLang(document.documentElement.lang) || "en";
@@ -152,7 +153,7 @@ if (!root) {
     const beforeTax = sub + tipCents + fee;
     const hasUnpriced = state.lines.some((line) => line.price == null);
     const parts = [`${t(lang, "subtotal")}: ${money(sub)}`, `${t(lang, "tip")}: ${money(tipCents)}`];
-    if (fee) parts.push(`${t(lang, "delivery")}: ${money(fee)}`);
+    if (fee) parts.push(`${deliveryFeeLabel(lang, deliveryFeeYear)}: ${money(fee)}`);
     parts.push(`${t(lang, totalLabelKey(hasUnpriced))}: ${money(beforeTax)}`);
     totalEl.textContent = parts.join(" · ");
     unpricedEl.hidden = !hasUnpriced;
@@ -394,7 +395,7 @@ if (!root) {
       ...lines,
       `${t(lang, "subtotal")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,
-      fee ? `${t(lang, "delivery")}: ${money(fee)}` : "",
+      fee ? `${deliveryFeeLabel(lang, deliveryFeeYear)}: ${money(fee)}` : "",
       `${t(lang, totalLabelKey(hasUnpriced))}: ${money(sub + tipCents + fee)}`,
       hasUnpriced ? t(lang, "unpriced") : "",
       state.notes ? state.notes : "",

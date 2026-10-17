@@ -996,6 +996,7 @@
   },
   "delivery": true,
   "deliveryFee": 2,
+  "deliveryFeeYear": 2018,
   "deliveryNote": {
     "en": "The 2018 menu prints a $2 delivery charge. This demo adds that charge. It does not send the order.",
     "es": "El menú de 2018 imprime $2 de delivery. Esta demo suma ese cargo. No envía el pedido.",

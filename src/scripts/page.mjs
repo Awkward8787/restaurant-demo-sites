@@ -1,5 +1,5 @@
 import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, sanitizeCart } from "../lib/cart.mjs";
-import { formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
+import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 
 const root = document.querySelector("[data-restaurant]");
@@ -447,6 +447,11 @@ if (!root) {
   if (notes) notes.value = state.notes || "";
 
   applyLang(lang);
+  bindHoursRefresh(paintHours, {
+    setInterval: (fn, ms) => window.setInterval(fn, ms),
+    addEventListener: (type, fn) => document.addEventListener(type, fn),
+    visibilityState: () => document.visibilityState,
+  });
   render();
 }
 

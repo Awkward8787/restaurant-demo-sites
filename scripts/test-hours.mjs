@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { formatClock, isOpen, weekLines } from "../src/lib/hours.mjs";
+import { bindHoursRefresh, formatClock, isOpen, weekLines } from "../src/lib/hours.mjs";
 
 const boi = JSON.parse(readFileSync(new URL("../data/restaurants/boi-na-brasa.json", import.meta.url), "utf8"));
 const andros = JSON.parse(readFileSync(new URL("../data/restaurants/andros-diner.json", import.meta.url), "utf8"));
@@ -57,5 +57,28 @@ const carry = {
 const carryLines = Object.fromEntries(weekLines(carry, "en").map((line) => [line.day, line.text]));
 assert.equal(carryLines.sun, "11:30 AM to 2:00 AM");
 assert.equal(carryLines.mon, "Closed");
+
+let timer;
+let onVisible;
+let shown = "hidden";
+const paints = [];
+bindHoursRefresh(() => paints.push("paint"), {
+  setInterval: (fn, ms) => {
+    timer = { fn, ms };
+  },
+  addEventListener: (type, fn) => {
+    assert.equal(type, "visibilitychange");
+    onVisible = fn;
+  },
+  visibilityState: () => shown,
+});
+assert.equal(timer.ms, 60_000);
+timer.fn();
+assert.deepEqual(paints, ["paint"]);
+onVisible();
+assert.deepEqual(paints, ["paint"]);
+shown = "visible";
+onVisible();
+assert.deepEqual(paints, ["paint", "paint"]);
 
 console.log("hours ok");

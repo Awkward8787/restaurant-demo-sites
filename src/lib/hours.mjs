@@ -198,6 +198,14 @@ export function weekLines(weekly, lang = "en") {
   }));
 }
 
+/** Repaint open/closed text on a timer and when the guest comes back to the tab. */
+export function bindHoursRefresh(paint, { setInterval, addEventListener, visibilityState }) {
+  setInterval(paint, 60_000);
+  addEventListener("visibilitychange", () => {
+    if (visibilityState() === "visible") paint();
+  });
+}
+
 export function statusPhrase(open, lang = "en") {
   if (open === null) {
     if (lang === "es") return "Horario no publicado";

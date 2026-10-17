@@ -9,6 +9,7 @@ assert.match(page, /<label[^>]*for="tip-custom"/);
 assert.match(page, /id="tip-custom"[^>]*type="number"/);
 assert.match(page, /id=\{`dish-\$\{item\.id\}`\}/);
 assert.match(page, /aria-describedby=\{`dish-\$\{item\.id\}`\}/);
+assert.match(page, /id="order-total"[^>]*role="status"/);
 
 for (const lang of ["en", "es", "pt"]) {
   for (const key of ["fulfillment", "tipPercent"]) {

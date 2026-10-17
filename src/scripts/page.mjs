@@ -2,7 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
-import { applyAddressError, clearAddressError } from "../lib/order-a11y.mjs";
+import { applyAddressError, clearAddressError, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -153,7 +153,7 @@ if (!root) {
     const hasUnpriced = state.lines.some((line) => line.price == null);
     const parts = [`${t(lang, "subtotal")}: ${money(sub)}`, `${t(lang, "tip")}: ${money(tipCents)}`];
     if (fee) parts.push(`${t(lang, "delivery")}: ${money(fee)}`);
-    parts.push(`${t(lang, "beforeTax")}: ${money(beforeTax)}`);
+    parts.push(`${t(lang, totalLabelKey(hasUnpriced))}: ${money(beforeTax)}`);
     totalEl.textContent = parts.join(" · ");
     unpricedEl.hidden = !hasUnpriced;
     deliveryNote.hidden = state.fulfillment !== "delivery";
@@ -385,6 +385,7 @@ if (!root) {
       const price = line.price == null ? t(lang, "askPrice") : money(Math.round(line.price * 100) * line.qty);
       return `${line.qty} x ${line.name} (${price})`;
     });
+    const hasUnpriced = state.lines.some((line) => line.price == null);
     return [
       name,
       state.fulfillment === "delivery" ? t(lang, "delivery") : t(lang, "pickup"),
@@ -394,7 +395,8 @@ if (!root) {
       `${t(lang, "subtotal")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,
       fee ? `${t(lang, "delivery")}: ${money(fee)}` : "",
-      `${t(lang, "beforeTax")}: ${money(sub + tipCents + fee)}`,
+      `${t(lang, totalLabelKey(hasUnpriced))}: ${money(sub + tipCents + fee)}`,
+      hasUnpriced ? t(lang, "unpriced") : "",
       state.notes ? state.notes : "",
       t(lang, "demoFoot"),
     ]

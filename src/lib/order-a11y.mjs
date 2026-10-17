@@ -9,3 +9,8 @@ export function clearAddressError(field) {
   field.removeAttribute("aria-invalid");
   field.removeAttribute("aria-describedby");
 }
+
+/** A full "total" overstates the bill when some dishes have no price. */
+export function totalLabelKey(hasUnpriced) {
+  return hasUnpriced ? "pricedBeforeTax" : "beforeTax";
+}

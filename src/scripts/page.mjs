@@ -2,7 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
-import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, closedMessageKey, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -344,7 +344,7 @@ if (!root) {
         return;
       }
       if (issue === "closed") {
-        showError(t(lang, "errorClosed"));
+        showError(t(lang, closedMessageKey(state.fulfillment)));
         return;
       }
     }

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../src/lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, closedMessageKey, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../src/lib/order-a11y.mjs";
 import { ratingSentence, t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
@@ -107,5 +107,14 @@ applyAriaLabels({ querySelectorAll: () => [ariaNode] }, "es");
 assert.equal(ariaNode.label, t("es", "langLabel"));
 assert.notEqual(ariaNode.label, t("en", "langLabel"));
 assert.match(script, /applyAriaLabels/);
+
+assert.equal(closedMessageKey("pickup"), "errorClosed");
+assert.equal(closedMessageKey("delivery"), "errorDeliveryClosed");
+assert.notEqual(t("en", "errorDeliveryClosed"), t("en", "errorClosed"));
+assert.notEqual(t("es", "errorDeliveryClosed"), t("en", "errorDeliveryClosed"));
+assert.notEqual(t("pt", "errorDeliveryClosed"), t("en", "errorDeliveryClosed"));
+assert.match(t("en", "errorDeliveryClosed"), /[Dd]elivery/);
+assert.doesNotMatch(t("en", "errorDeliveryClosed"), /restaurant is closed/);
+assert.match(script, /closedMessageKey\(state\.fulfillment\)/);
 
 console.log("order ok");

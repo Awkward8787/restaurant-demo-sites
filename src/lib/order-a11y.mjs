@@ -51,3 +51,7 @@ export function applyAriaLabels(root, lang) {
     if (key) node.setAttribute("aria-label", t(lang, key));
   });
 }
+
+export function closedMessageKey(fulfillment) {
+  return fulfillment === "delivery" ? "errorDeliveryClosed" : "errorClosed";
+}

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { applyAddressError, clearAddressError, deliveryFeeLabel, totalLabelKey } from "../src/lib/order-a11y.mjs";
+import { applyAddressError, addLiveText, clearAddressError, deliveryFeeLabel, queueLiveText, totalLabelKey } from "../src/lib/order-a11y.mjs";
 import { t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
@@ -55,5 +55,22 @@ assert.doesNotMatch(script, /2018 menu/);
 const andros = JSON.parse(readFileSync(new URL("../data/restaurants/andros-diner.json", import.meta.url), "utf8"));
 assert.equal(andros.deliveryFeeYear, 2018);
 assert.equal(andros.deliveryFee, 2);
+
+assert.equal(addLiveText("en", "Picanha", 2), "Picanha, 2 in the order");
+assert.equal(addLiveText("es", "Picanha", 2), "Picanha, 2 en el pedido");
+assert.equal(addLiveText("pt", "Picanha", 2), "Picanha, 2 no pedido");
+assert.match(addLiveText("en", "Picanha", 99), /most you can add/);
+assert.match(addLiveText("es", "Picanha", 99), /99/);
+assert.match(addLiveText("pt", "Picanha", 99), /99/);
+assert.notEqual(addLiveText("es", "Picanha", 99), addLiveText("en", "Picanha", 99));
+const live = { textContent: "old" };
+let queued = null;
+queueLiveText(live, "Picanha, 2 in the order", (fn) => {
+  queued = fn;
+});
+assert.equal(live.textContent, "");
+queued();
+assert.equal(live.textContent, "Picanha, 2 in the order");
+assert.match(script, /queueLiveText/);
 
 console.log("order ok");

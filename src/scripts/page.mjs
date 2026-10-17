@@ -2,7 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
-import { applyAddressError, clearAddressError, deliveryFeeLabel, totalLabelKey } from "../lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -237,8 +237,11 @@ if (!root) {
       const item = menuFromPage()[id];
       if (!item) return;
       const existing = state.lines.find((line) => line.id === id);
-      if (existing) existing.qty = clampQty(existing.qty + 1);
-      else {
+      let count = 1;
+      if (existing) {
+        existing.qty = clampQty(existing.qty + 1);
+        count = existing.qty;
+      } else {
         state.lines.push({
           id,
           name: item.name,
@@ -252,7 +255,7 @@ if (!root) {
         if (button.dataset.i18n === "add") button.textContent = t(lang, "add");
       }, 700);
       const live = document.getElementById("add-live");
-      if (live) live.textContent = `${item.name}. ${t(lang, "added")}`;
+      if (live) queueLiveText(live, addLiveText(lang, item.name, count), window.requestAnimationFrame);
       render();
     });
   });

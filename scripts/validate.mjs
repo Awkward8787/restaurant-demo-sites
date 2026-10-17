@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { contrastRatio, passesNormal } from "./contrast.mjs";
+import { contrastRatio, parseHex, passesNormal } from "./contrast.mjs";
 import { DAY_ORDER, toMinutes } from "../src/lib/hours.mjs";
 
 assert.ok(contrastRatio("#000000", "#ffffff") > 20);
@@ -56,6 +56,34 @@ export function assertPrice(price, label) {
   assert.ok(Number.isFinite(price) && price > 0, `${label} price must be a positive number`);
 }
 
+function hsl(hex) {
+  const [red, green, blue] = parseHex(hex).map((channel) => channel / 255);
+  const max = Math.max(red, green, blue);
+  const min = Math.min(red, green, blue);
+  const delta = max - min;
+  let hue = 0;
+  if (delta !== 0) {
+    if (max === red) hue = ((green - blue) / delta) % 6;
+    else if (max === green) hue = (blue - red) / delta + 2;
+    else hue = (red - green) / delta + 4;
+    hue *= 60;
+    if (hue < 0) hue += 360;
+  }
+  const light = (max + min) / 2;
+  const sat = delta === 0 ? 0 : delta / (1 - Math.abs(2 * light - 1));
+  return { hue, sat, light };
+}
+
+/** True when two accent colors would read as the same hue. Hero variant is not part of this. */
+export function huesCollide(a, b) {
+  const left = hsl(a);
+  const right = hsl(b);
+  let distance = Math.abs(left.hue - right.hue);
+  distance = Math.min(distance, 360 - distance);
+  if (left.sat >= 0.25 && right.sat >= 0.25) return distance < 14;
+  return distance < 14 && Math.abs(left.light - right.light) < 0.2;
+}
+
 export function assertWeekly(weekly, label) {
   if (weekly == null) return;
   assert.equal(typeof weekly, "object", `${label} hours`);
@@ -78,7 +106,7 @@ export function assertWeekly(weekly, label) {
 
 export function validateRestaurants(restaurants) {
   const slugs = new Set();
-  const themes = [];
+  const accents = [];
   for (const restaurant of restaurants) {
     const label = restaurant.slug || restaurant.name || "restaurant";
     assert.ok(!slugs.has(restaurant.slug), `duplicate ${restaurant.slug}`);
@@ -107,7 +135,15 @@ export function validateRestaurants(restaurants) {
       const ratio = contrastRatio(fg, bg);
       assert.ok(passesNormal(ratio), `${label} ${name} ${ratio.toFixed(2)} < 4.5 (${fg} on ${bg})`);
     }
-    themes.push(theme.paper + theme.ink + theme.accent + restaurant.hero.variant);
+    assert.ok(
+      restaurant.delivery === true || restaurant.delivery === false || restaurant.delivery === "unknown",
+      `${label} delivery must be true, false, or unknown`,
+    );
+    if (restaurant.deliveryFee != null) {
+      assert.equal(restaurant.delivery, true, `${label} delivery fee without delivery`);
+      assertPrice(restaurant.deliveryFee, `${label} delivery fee`);
+    }
+    accents.push({ slug: restaurant.slug, accent: theme.accent });
     const dashes = [];
     walkStrings(restaurant, label, dashes);
     assert.deepEqual(dashes, [], `dash characters in ${dashes.join(", ")}`);
@@ -115,6 +151,7 @@ export function validateRestaurants(restaurants) {
     collectUrlFields(restaurant, label, urls);
     for (const [path, url] of urls) assertHttpsUrl(url, path);
     assertWeekly(restaurant.hours?.weekly, label);
+    assertWeekly(restaurant.hours?.deliveryWeekly, `${label} delivery`);
     const ids = new Set();
     for (const category of restaurant.menu.categories) {
       for (const item of category.items) {
@@ -135,7 +172,15 @@ export function validateRestaurants(restaurants) {
       assert.ok(quote.text && quote.name && quote.source && quote.url, `${label} quote needs name, source, url`);
     }
   }
-  assert.equal(new Set(themes).size, restaurants.length, "themes collapsed to the same skin");
+  for (let i = 0; i < accents.length; i += 1) {
+    for (let j = i + 1; j < accents.length; j += 1) {
+      assert.equal(
+        huesCollide(accents[i].accent, accents[j].accent),
+        false,
+        `${accents[i].slug} and ${accents[j].slug} accents are too close (${accents[i].accent} / ${accents[j].accent})`,
+      );
+    }
+  }
 }
 
 function loadFromDisk() {

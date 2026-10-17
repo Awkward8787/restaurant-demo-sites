@@ -4,7 +4,7 @@ The demo sites do not take payment and do not dispatch a driver. Checkout always
 
 > Demo site: no order was placed. Call to order.
 
-The guest can copy the list, or open a text, email, or WhatsApp draft. They still have to send it. Nothing is posted to the restaurant.
+The guest can copy the list and call the restaurant. Nothing is posted to the restaurant, and the page does not open a text, email, or WhatsApp draft.
 
 Real payment and white-label delivery are stubs in `src/ordering/`. They are not wired into the page. GitHub Pages is a static host: it cannot keep API secrets, and it cannot call DoorDash or Uber on the guest's behalf.
 
@@ -34,7 +34,7 @@ Drive is white-label dispatch. A Dasher picks up an order the restaurant already
 2. Set `DOORDASH_DRIVE_DEVELOPER_ID`, `DOORDASH_DRIVE_KEY_ID`, and `DOORDASH_DRIVE_SIGNING_SECRET` in the server environment. Never commit them.
 3. Replace `doorDashDriveQuote()` in `src/ordering/doordash-drive.mjs`. The stub returns `ok: false` even when the three values are present, until a server requests a quote and then accepts the delivery.
 
-The restaurant file does not yet include a delivery zone, fee, or minimum, because none of the nine published one. Do not invent a fee in the JSON. Add it when the owner states it, and show that number in the cart before you dispatch.
+Andros is the one room with a published delivery charge: the 2018 menu prints $2, and the cart adds that number. The other rooms either do not deliver, say they deliver without printing a fee, or do not publish a delivery offer. Do not invent a fee. Add one only when the owner states it, and show that number in the cart before you dispatch.
 
 ## Uber Direct
 

@@ -3,10 +3,18 @@
   "slug": "brisas-del-mar",
   "name": "Brisas del Mar Cevicheria",
   "shortName": "Brisas del Mar",
-  "cuisineLabel": { "en": "Cevicheria", "es": "Cevichería", "pt": "Cevicheria" },
+  "cuisineLabel": {
+    "en": "Cevicheria",
+    "es": "Cevichería",
+    "pt": "Cevicheria"
+  },
   "servesCuisine": "Seafood",
   "defaultLang": "es",
-  "languages": ["es", "en", "pt"],
+  "languages": [
+    "es",
+    "en",
+    "pt"
+  ],
   "phone": "+19734815836",
   "phoneDisplay": "(973) 481-5836",
   "address": {
@@ -16,38 +24,77 @@
     "postalCode": "07107",
     "country": "US"
   },
-  "geo": { "lat": 40.7670624, "lon": -74.1811648 },
+  "geo": {
+    "lat": 40.7670624,
+    "lon": -74.1811648
+  },
   "osmUrl": "https://www.openstreetmap.org/node/14187900196",
   "rating": {
-    "value": 4.0,
-    "count": 505,
+    "value": 4,
+    "count": 485,
+    "platform": "Google",
     "source": "Restaurant Guru",
-    "url": "https://restaurantguru.com/Brisas-Del-Mar-Newark-2"
+    "url": "https://restaurantguru.com/Brisas-Del-Mar-Newark-2",
+    "checked": "2026-10-17"
   },
   "hours": {
-    "source": "Brisas del Mar ordering pages",
-    "sourceUrl": "https://brisasdelmarcevicherianj.com/brisas-del-mar-cevicheria/",
+    "source": "Brisas del Mar ordering page, earlier reading",
     "note": {
-      "en": "Hours are printed on the restaurant's own ordering pages. The homepage failed to open in an earlier check. The location page still listed this clock.",
-      "es": "El horario está en las páginas de pedido del restaurante. La portada no abrió en una revisión anterior. La página del local seguía con este reloj.",
-      "pt": "O horário está nas páginas de pedido do restaurante. A capa não abriu numa checagem anterior. A página do endereço ainda mostrava este relógio."
+      "en": "These hours were printed on the restaurant's ordering page. On 17 October 2026 that page returned 404, and https failed. Restaurant Guru now prints 5 a.m. to 9 p.m. every day. That clock is not used here, because the restaurant's own page could not be reopened.",
+      "es": "Este horario estaba en la página de pedidos del restaurante. El 17 de octubre de 2026 esa página devolvió 404, y https falló. Restaurant Guru ahora imprime de 5 a.m. a 9 p.m. todos los días. Ese reloj no se usa aquí, porque la página del restaurante no volvió a abrir.",
+      "pt": "Este horário estava na página de pedidos do restaurante. Em 17 de outubro de 2026 essa página devolveu 404, e o https falhou. O Restaurant Guru agora imprime 5h às 21h todos os dias. Esse relógio não é usado aqui, porque a página do restaurante não voltou a abrir."
     },
     "weekly": {
-      "mon": [["06:00", "21:00"]],
-      "tue": [["06:00", "21:00"]],
-      "wed": [["06:00", "21:00"]],
-      "thu": [["06:00", "21:00"]],
-      "fri": [["06:00", "21:00"]],
-      "sat": [["07:30", "21:00"]],
-      "sun": [["07:30", "21:00"]]
+      "mon": [
+        [
+          "06:00",
+          "21:00"
+        ]
+      ],
+      "tue": [
+        [
+          "06:00",
+          "21:00"
+        ]
+      ],
+      "wed": [
+        [
+          "06:00",
+          "21:00"
+        ]
+      ],
+      "thu": [
+        [
+          "06:00",
+          "21:00"
+        ]
+      ],
+      "fri": [
+        [
+          "06:00",
+          "21:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:30",
+          "21:00"
+        ]
+      ],
+      "sun": [
+        [
+          "07:30",
+          "21:00"
+        ]
+      ]
     }
   },
   "hero": {
     "variant": "tide",
     "dek": {
-      "en": "Ceviche at 350 Bloomfield Avenue. Four priced dishes from their ordering page.",
-      "es": "Ceviche en 350 Bloomfield Avenue. Cuatro platos con precio, de su página de pedidos.",
-      "pt": "Ceviche na 350 Bloomfield Avenue. Quatro pratos com preço, da página de pedidos deles."
+      "en": "Ceviche and seafood at 350 Bloomfield Avenue.",
+      "es": "Ceviche y mariscos en 350 Bloomfield Avenue.",
+      "pt": "Ceviche e frutos do mar na 350 Bloomfield Avenue."
     }
   },
   "theme": {
@@ -66,45 +113,60 @@
   "menu": {
     "status": "partial",
     "note": {
-      "en": "Partial menu. These four prices are printed on the restaurant's ordering pages for 350 Bloomfield Avenue. The page said the ceviche list has six items. The other two names did not come through, so they are not invented here.",
-      "es": "Menú parcial. Estos cuatro precios están en las páginas de pedido del restaurante para 350 Bloomfield Avenue. La página decía que hay seis ceviches. Los otros dos nombres no salieron, así que no se inventan aquí.",
-      "pt": "Cardápio parcial. Estes quatro preços estão nas páginas de pedido do restaurante para 350 Bloomfield Avenue. A página dizia que há seis ceviches. Os outros dois nomes não vieram, então não foram inventados."
-    },
-    "source": {
-      "label": "Brisas del Mar ordering page",
-      "url": "https://brisasdelmarcevicherianj.com/brisas-del-mar-cevicheria/",
-      "checked": "2026-10-17"
+      "en": "Partial menu. These four prices were printed on the restaurant's ordering page for 350 Bloomfield Avenue. On 17 October 2026 that page returned 404. The page said the ceviche list has six items. The other two names did not come through, so they are not invented here.",
+      "es": "Menú parcial. Estos cuatro precios estaban en la página de pedidos del restaurante para 350 Bloomfield Avenue. El 17 de octubre de 2026 esa página devolvió 404. La página decía que hay seis ceviches. Los otros dos nombres no salieron, así que no se inventan aquí.",
+      "pt": "Cardápio parcial. Estes quatro preços estavam na página de pedidos do restaurante para 350 Bloomfield Avenue. Em 17 de outubro de 2026 essa página devolveu 404. A página dizia que há seis ceviches. Os outros dois nomes não vieram, então não foram inventados."
     },
     "categories": [
       {
-        "name": { "en": "From the counter", "es": "Del mostrador", "pt": "Do balcão" },
+        "name": {
+          "en": "From the counter",
+          "es": "Del mostrador",
+          "pt": "Do balcão"
+        },
         "items": [
           {
             "id": "bolones",
             "name": "Bolones (queso y chicharrón)",
             "lang": "es",
-            "gloss": { "en": "Green plantain dumplings with cheese and pork", "es": "Bolones de verde con queso y chicharrón", "pt": "Bolinhos de banana verde com queijo e torresmo" },
+            "gloss": {
+              "en": "Green plantain dumplings with cheese and pork",
+              "es": "Bolones de verde con queso y chicharrón",
+              "pt": "Bolinhos de banana verde com queijo e torresmo"
+            },
             "price": 3
           },
           {
             "id": "ceviche-mixto",
             "name": "Ceviche mixto de pescado y camarones",
             "lang": "es",
-            "gloss": { "en": "Fish and shrimp cocktail", "es": "Cóctel de pescado y camarón", "pt": "Coquetel de peixe e camarão" },
+            "gloss": {
+              "en": "Fish and shrimp cocktail",
+              "es": "Cóctel de pescado y camarón",
+              "pt": "Coquetel de peixe e camarão"
+            },
             "price": 16
           },
           {
             "id": "sopa-gallina",
             "name": "Sopa de gallina",
             "lang": "es",
-            "gloss": { "en": "Chicken soup", "es": "Sopa de gallina", "pt": "Canja de galinha" },
+            "gloss": {
+              "en": "Chicken soup",
+              "es": "Sopa de gallina",
+              "pt": "Canja de galinha"
+            },
             "price": 13
           },
           {
             "id": "camarones-ajillo",
             "name": "Camarones al ajillo",
             "lang": "es",
-            "gloss": { "en": "Shrimp in garlic sauce", "es": "Camarones al ajillo", "pt": "Camarão ao alho" },
+            "gloss": {
+              "en": "Shrimp in garlic sauce",
+              "es": "Camarones al ajillo",
+              "pt": "Camarão ao alho"
+            },
             "price": 16
           }
         ]
@@ -118,13 +180,13 @@
   },
   "reviews": {
     "summary": {
-      "en": "Restaurant Guru lists 4.0 out of 5 from 505 reviews.",
-      "es": "Restaurant Guru publica 4.0 de 5, a partir de 505 reseñas.",
-      "pt": "O Restaurant Guru lista 4,0 de 5, em 505 avaliações."
+      "en": "The Google score is the one printed on Restaurant Guru.",
+      "es": "La nota de Google es la que imprime Restaurant Guru.",
+      "pt": "A nota do Google é a que o Restaurant Guru imprime."
     },
     "links": [
       {
-        "label": "Restaurant Guru, 4.0 from 505 reviews",
+        "label": "Restaurant Guru",
         "url": "https://restaurantguru.com/Brisas-Del-Mar-Newark-2"
       }
     ]
@@ -136,9 +198,22 @@
       "pt": "A Brisas del Mar Cevicheria fica na 350 Bloomfield Avenue, Newark. O telefone da página de pedidos é (973) 481-5836. O OpenStreetMap marca a cozinha como frutos do mar."
     }
   ],
-  "sections": ["menu", "order", "visit", "about", "reviews", "catering"],
+  "sections": [
+    "menu",
+    "order",
+    "visit",
+    "about",
+    "reviews",
+    "catering"
+  ],
   "seo": {
     "title": "Brisas del Mar Cevicheria, Bloomfield Avenue",
     "description": "Cevicheria at 350 Bloomfield Avenue, Newark. Demo preview. Four prices from the restaurant's ordering page."
+  },
+  "delivery": "unknown",
+  "sourcesNote": {
+    "en": "The four prices and the weekly clock are from an earlier reading of the restaurant's ordering page. That page returned 404 on 17 October 2026. The Google score is from Restaurant Guru.",
+    "es": "Los cuatro precios y el horario semanal salen de una lectura anterior de la página de pedidos del restaurante. Esa página devolvió 404 el 17 de octubre de 2026. La nota de Google sale de Restaurant Guru.",
+    "pt": "Os quatro preços e o horário semanal saem de uma leitura anterior da página de pedidos do restaurante. Essa página devolveu 404 em 17 de outubro de 2026. A nota do Google sai do Restaurant Guru."
   }
 }

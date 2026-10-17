@@ -63,6 +63,7 @@ export function sanitizeCart(saved, menu) {
     tip: cleanTip(saved?.tip),
     when: typeof saved?.when === "string" && WHEN.test(saved.when) ? saved.when : "",
     notes: typeof saved?.notes === "string" ? saved.notes : "",
+    address: typeof saved?.address === "string" ? saved.address.slice(0, 240) : "",
   };
 }
 

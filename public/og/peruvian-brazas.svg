@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#F7F0E4"/>
-  <rect width="28" height="630" fill="#8A2E1C"/>
-  <text x="72" y="210" fill="#3B2416" font-size="84" font-family="DejaVu Serif">Peruvian Brazas</text>
-  <text x="72" y="560" fill="#3B2416" font-size="32" font-family="DejaVu Serif">267 Orange Street, Newark</text>
+  <rect width="1200" height="630" fill="#FFF8EE"/>
+  <rect width="28" height="630" fill="#B42318"/>
+  <text x="72" y="210" fill="#1A120E" font-size="84" font-family="DejaVu Serif">Peruvian Brazas</text>
+  <text x="72" y="560" fill="#1A120E" font-size="32" font-family="DejaVu Serif">267 Orange Street, Newark</text>
 </svg>

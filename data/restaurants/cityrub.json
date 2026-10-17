@@ -3,10 +3,18 @@
   "slug": "cityrub",
   "name": "Cityrub Steak & Smokehouse",
   "shortName": "Cityrub",
-  "cuisineLabel": { "en": "Smokehouse", "es": "Ahumados", "pt": "Defumados" },
+  "cuisineLabel": {
+    "en": "Smokehouse",
+    "es": "Ahumados",
+    "pt": "Defumados"
+  },
   "servesCuisine": "Barbecue",
   "defaultLang": "en",
-  "languages": ["en", "es", "pt"],
+  "languages": [
+    "en",
+    "es",
+    "pt"
+  ],
   "phone": "+18622377528",
   "phoneDisplay": "(862) 237-7528",
   "email": "info@cityrub.com",
@@ -17,13 +25,18 @@
     "postalCode": "07105",
     "country": "US"
   },
-  "geo": { "lat": 40.7173054, "lon": -74.1519262 },
+  "geo": {
+    "lat": 40.7173054,
+    "lon": -74.1519262
+  },
   "osmUrl": "https://www.openstreetmap.org/node/12195195765",
   "rating": {
-    "value": 3.7,
-    "count": 2361,
+    "value": 4.1,
+    "count": 1225,
+    "platform": "Google",
     "source": "Restaurant Guru",
-    "url": "https://restaurantguru.com/CityRub-Smokehouse-Newark"
+    "url": "https://restaurantguru.com/CityRub-Smokehouse-Newark",
+    "checked": "2026-10-17"
   },
   "hours": {
     "source": "OpenStreetMap",
@@ -34,13 +47,48 @@
       "pt": "O OpenStreetMap diz 11h às 23h todos os dias. O site do restaurante não imprime um horário semanal. Confirme antes de ir."
     },
     "weekly": {
-      "mon": [["11:00", "23:00"]],
-      "tue": [["11:00", "23:00"]],
-      "wed": [["11:00", "23:00"]],
-      "thu": [["11:00", "23:00"]],
-      "fri": [["11:00", "23:00"]],
-      "sat": [["11:00", "23:00"]],
-      "sun": [["11:00", "23:00"]]
+      "mon": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "tue": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "wed": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "thu": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "fri": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "sat": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ]
     }
   },
   "hero": {
@@ -52,12 +100,12 @@
     }
   },
   "theme": {
-    "paper": "#F3E6D2",
-    "ink": "#1C1612",
-    "band": "#1C1612",
-    "onBand": "#F3E6D2",
-    "accent": "#8F3010",
-    "onAccent": "#F3E6D2",
+    "paper": "#F6EFE6",
+    "ink": "#16110E",
+    "band": "#16110E",
+    "onBand": "#F6EFE6",
+    "accent": "#8C3C0C",
+    "onAccent": "#F6EFE6",
     "displayStack": "'Oswald', 'Arial Narrow', sans-serif",
     "bodyStack": "'Source Serif 4', Georgia, serif",
     "radius": "0px",
@@ -78,91 +126,563 @@
     },
     "categories": [
       {
-        "name": { "en": "To start", "es": "Para empezar", "pt": "Para começar" },
+        "name": {
+          "en": "To start",
+          "es": "Para empezar",
+          "pt": "Para começar"
+        },
         "items": [
-          { "id": "oysters", "name": "Grilled oysters", "lang": "en", "description": { "en": "Micro arugula, smoked chipotle vinaigrette, lemon. Ostras grelhadas.", "es": "Rúcula, vinagreta de chipotle ahumado, limón.", "pt": "Rúcula, vinagrete de chipotle defumado, limão." }, "price": 12 },
-          { "id": "rockefeller", "name": "Oysters Rockefeller", "lang": "en", "description": { "en": "Spinach cream and parmesan.", "es": "Crema de espinaca y parmesano.", "pt": "Creme de espinafre e parmesão." }, "price": 14 },
-          { "id": "spring-rolls", "name": "Pulled pork spring rolls", "lang": "en", "description": { "en": "Red cabbage slaw and smoked tomato.", "es": "Repollo morado y tomate ahumado.", "pt": "Repolho roxo e tomate defumado." }, "price": 8 },
-          { "id": "wings", "name": "Smoked wings", "lang": "en", "description": { "en": "Spicy or barbecue, with blue cheese.", "es": "Picante o barbecue, con queso azul.", "pt": "Picante ou barbecue, com gorgonzola." }, "price": 10 },
-          { "id": "quesadillas", "name": "Duo of quesadillas", "lang": "en", "description": { "en": "Brisket and smoked chicken, scallions, mushrooms, citrus crema.", "es": "Brisket y pollo ahumado, cebollín, champiñones, crema cítrica.", "pt": "Brisket e frango defumado, cebolinha, cogumelos, creme cítrico." }, "price": 9 },
-          { "id": "tuna", "name": "Tuna tartare", "lang": "en", "description": { "en": "Chips, wasabi, tomato, greens, sesame, balsamic.", "es": "Chips, wasabi, tomate, hojas, sésamo, balsámico.", "pt": "Chips, wasabi, tomate, folhas, gergelim, balsâmico." }, "price": 14 },
-          { "id": "sliders", "name": "Slider trio", "lang": "en", "description": { "en": "Brisket, pulled pork, smoked turkey.", "es": "Brisket, cerdo desmenuzado, pavo ahumado.", "pt": "Brisket, porco desfiado, peru defumado." }, "price": 11 },
-          { "id": "sausage-board", "name": "Sausage sampler", "lang": "en", "description": { "en": "Three house sausages, mustard, pickled cabbage.", "es": "Tres embutidos de la casa, mostaza, repollo encurtido.", "pt": "Três linguiças da casa, mostarda, repolho em conserva." }, "price": 13 },
-          { "id": "eggs", "name": "Deviled eggs", "lang": "en", "description": { "en": "Trio. Paprika, bacon, and herbs.", "es": "Trío. Pimentón, tocineta y hierbas.", "pt": "Trio. Páprica, bacon e ervas." }, "price": 6 },
-          { "id": "tacos", "name": "3 tacos", "lang": "en", "description": { "en": "Lettuce, tomato, Jack cheese. Chicken, brisket, pulled pork, fish, or top sirloin is listed at an extra $2.", "es": "Lechuga, tomate, queso Jack. Pollo, brisket, cerdo, pescado o picanha figuran a $2 más.", "pt": "Alface, tomate, queijo Jack. Frango, brisket, porco, peixe ou picanha saem a mais $2." }, "price": 9 },
-          { "id": "nachos", "name": "Nachos", "lang": "en", "description": { "en": "Chili, melted cheese, lettuce, tomato, olives. Guacamole is listed at an extra $3.", "es": "Chili, queso, lechuga, tomate, aceitunas. El guacamole figura a $3 más.", "pt": "Chili, queijo, alface, tomate, azeitona. Guacamole sai a mais $3." }, "price": 9 },
-          { "id": "picanha", "name": "Picanha acebolada", "lang": "pt", "gloss": { "en": "Top sirloin scallopini with onions and yuca flour", "es": "Picanha con cebolla y harina de yuca", "pt": "Picanha acebolada com farofa" }, "price": 18 },
-          { "id": "pastries", "name": "3 pastries", "lang": "en", "description": { "en": "Yuca filled with dried beef, and pumpkin filled with dried beef.", "es": "Yuca con carne seca, y auyama con carne seca.", "pt": "Mandioca com carne seca, e abóbora com carne seca." }, "price": 9 },
-          { "id": "coconut-shrimp", "name": "Coconut shrimp", "lang": "en", "description": { "en": "With orange marmalade.", "es": "Con mermelada de naranja.", "pt": "Com geleia de laranja." }, "price": 12 }
+          {
+            "id": "oysters",
+            "name": "Grilled oysters",
+            "lang": "en",
+            "description": {
+              "en": "Micro arugula, smoked chipotle vinaigrette, lemon. Ostras grelhadas.",
+              "es": "Rúcula, vinagreta de chipotle ahumado, limón.",
+              "pt": "Rúcula, vinagrete de chipotle defumado, limão."
+            },
+            "price": 12
+          },
+          {
+            "id": "rockefeller",
+            "name": "Oysters Rockefeller",
+            "lang": "en",
+            "description": {
+              "en": "Spinach cream and parmesan.",
+              "es": "Crema de espinaca y parmesano.",
+              "pt": "Creme de espinafre e parmesão."
+            },
+            "price": 14
+          },
+          {
+            "id": "spring-rolls",
+            "name": "Pulled pork spring rolls",
+            "lang": "en",
+            "description": {
+              "en": "Red cabbage slaw and smoked tomato.",
+              "es": "Repollo morado y tomate ahumado.",
+              "pt": "Repolho roxo e tomate defumado."
+            },
+            "price": 8
+          },
+          {
+            "id": "wings",
+            "name": "Smoked wings",
+            "lang": "en",
+            "description": {
+              "en": "Spicy or barbecue, with blue cheese.",
+              "es": "Picante o barbecue, con queso azul.",
+              "pt": "Picante ou barbecue, com gorgonzola."
+            },
+            "price": 10
+          },
+          {
+            "id": "quesadillas",
+            "name": "Duo of quesadillas",
+            "lang": "en",
+            "description": {
+              "en": "Brisket and smoked chicken, scallions, mushrooms, citrus crema.",
+              "es": "Brisket y pollo ahumado, cebollín, champiñones, crema cítrica.",
+              "pt": "Brisket e frango defumado, cebolinha, cogumelos, creme cítrico."
+            },
+            "price": 9
+          },
+          {
+            "id": "tuna",
+            "name": "Tuna tartare",
+            "lang": "en",
+            "description": {
+              "en": "Chips, wasabi, tomato, greens, sesame, balsamic.",
+              "es": "Chips, wasabi, tomate, hojas, sésamo, balsámico.",
+              "pt": "Chips, wasabi, tomate, folhas, gergelim, balsâmico."
+            },
+            "price": 14
+          },
+          {
+            "id": "sliders",
+            "name": "Slider trio",
+            "lang": "en",
+            "description": {
+              "en": "Brisket, pulled pork, smoked turkey.",
+              "es": "Brisket, cerdo desmenuzado, pavo ahumado.",
+              "pt": "Brisket, porco desfiado, peru defumado."
+            },
+            "price": 11
+          },
+          {
+            "id": "sausage-board",
+            "name": "Sausage sampler",
+            "lang": "en",
+            "description": {
+              "en": "Three house sausages, mustard, pickled cabbage.",
+              "es": "Tres embutidos de la casa, mostaza, repollo encurtido.",
+              "pt": "Três linguiças da casa, mostarda, repolho em conserva."
+            },
+            "price": 13
+          },
+          {
+            "id": "eggs",
+            "name": "Deviled eggs",
+            "lang": "en",
+            "description": {
+              "en": "Trio. Paprika, bacon, and herbs.",
+              "es": "Trío. Pimentón, tocineta y hierbas.",
+              "pt": "Trio. Páprica, bacon e ervas."
+            },
+            "price": 6
+          },
+          {
+            "id": "tacos",
+            "name": "3 tacos",
+            "lang": "en",
+            "description": {
+              "en": "Lettuce, tomato, Jack cheese. Chicken, brisket, pulled pork, fish, or top sirloin is listed at an extra $2.",
+              "es": "Lechuga, tomate, queso Jack. Pollo, brisket, cerdo, pescado o picanha figuran a $2 más.",
+              "pt": "Alface, tomate, queijo Jack. Frango, brisket, porco, peixe ou picanha saem a mais $2."
+            },
+            "price": 9
+          },
+          {
+            "id": "nachos",
+            "name": "Nachos",
+            "lang": "en",
+            "description": {
+              "en": "Chili, melted cheese, lettuce, tomato, olives. Guacamole is listed at an extra $3.",
+              "es": "Chili, queso, lechuga, tomate, aceitunas. El guacamole figura a $3 más.",
+              "pt": "Chili, queijo, alface, tomate, azeitona. Guacamole sai a mais $3."
+            },
+            "price": 9
+          },
+          {
+            "id": "picanha",
+            "name": "Picanha acebolada",
+            "lang": "pt",
+            "gloss": {
+              "en": "Top sirloin scallopini with onions and yuca flour",
+              "es": "Picanha con cebolla y harina de yuca",
+              "pt": "Picanha acebolada com farofa"
+            },
+            "price": 18
+          },
+          {
+            "id": "pastries",
+            "name": "3 pastries",
+            "lang": "en",
+            "description": {
+              "en": "Yuca filled with dried beef, and pumpkin filled with dried beef.",
+              "es": "Yuca con carne seca, y auyama con carne seca.",
+              "pt": "Mandioca com carne seca, e abóbora com carne seca."
+            },
+            "price": 9
+          },
+          {
+            "id": "coconut-shrimp",
+            "name": "Coconut shrimp",
+            "lang": "en",
+            "description": {
+              "en": "With orange marmalade.",
+              "es": "Con mermelada de naranja.",
+              "pt": "Com geleia de laranja."
+            },
+            "price": 12
+          }
         ]
       },
       {
-        "name": { "en": "From the smoker", "es": "Del ahumador", "pt": "Do defumador" },
+        "name": {
+          "en": "From the smoker",
+          "es": "Del ahumador",
+          "pt": "Do defumador"
+        },
         "items": [
-          { "id": "brisket", "name": "Brisket", "lang": "en", "description": { "en": "Salt and black pepper rub. Includes one side.", "es": "Sal y pimienta. Incluye un acompañamiento.", "pt": "Sal e pimenta. Inclui um acompanhamento." }, "price": 15 },
-          { "id": "ribs-half", "name": "Memphis pork ribs, half", "lang": "en", "description": { "en": "Dry rub, apple cider basted. Includes one side.", "es": "Rub seco, sidra de manzana. Incluye un acompañamiento.", "pt": "Rub seco, sidra de maçã. Inclui um acompanhamento." }, "price": 15 },
-          { "id": "ribs-whole", "name": "Memphis pork ribs, whole", "lang": "en", "description": { "en": "Dry rub, apple cider basted. Includes one side.", "es": "Rub seco, sidra de manzana. Incluye un acompañamiento.", "pt": "Rub seco, sidra de maçã. Inclui um acompanhamento." }, "price": 30 },
-          { "id": "chicken-half", "name": "Smoked chicken, half", "lang": "en", "description": { "en": "Dry rub with orange bourbon sauce. Includes one side.", "es": "Rub seco con salsa de naranja y bourbon. Incluye un acompañamiento.", "pt": "Rub seco com molho de laranja e bourbon. Inclui um acompanhamento." }, "price": 12 },
-          { "id": "chicken-whole", "name": "Smoked chicken, whole", "lang": "en", "description": { "en": "Dry rub with orange bourbon sauce. Includes one side.", "es": "Rub seco con salsa de naranja y bourbon. Incluye un acompañamiento.", "pt": "Rub seco com molho de laranja e bourbon. Inclui um acompanhamento." }, "price": 24 },
-          { "id": "pulled-pork", "name": "Pulled pork", "lang": "en", "description": { "en": "Pork rub, mustard mop. Includes one side.", "es": "Rub de cerdo, mostaza. Incluye un acompañamiento.", "pt": "Rub de porco, mostarda. Inclui um acompanhamento." }, "price": 12 },
-          { "id": "turkey", "name": "Smoked turkey breast", "lang": "en", "description": { "en": "Includes one side.", "es": "Incluye un acompañamiento.", "pt": "Inclui um acompanhamento." }, "price": 13 },
-          { "id": "beef-rib", "name": "Smoked beef rib", "lang": "en", "description": { "en": "Barbecue glaze, salt and black pepper. Includes one side. Costela.", "es": "Glaseado barbecue, sal y pimienta. Incluye un acompañamiento.", "pt": "Glace de barbecue, sal e pimenta. Inclui um acompanhamento. Costela." }, "price": 34 }
+          {
+            "id": "brisket",
+            "name": "Brisket",
+            "lang": "en",
+            "description": {
+              "en": "Salt and black pepper rub. Includes one side.",
+              "es": "Sal y pimienta. Incluye un acompañamiento.",
+              "pt": "Sal e pimenta. Inclui um acompanhamento."
+            },
+            "price": 15
+          },
+          {
+            "id": "ribs-half",
+            "name": "Memphis pork ribs, half",
+            "lang": "en",
+            "description": {
+              "en": "Dry rub, apple cider basted. Includes one side.",
+              "es": "Rub seco, sidra de manzana. Incluye un acompañamiento.",
+              "pt": "Rub seco, sidra de maçã. Inclui um acompanhamento."
+            },
+            "price": 15
+          },
+          {
+            "id": "ribs-whole",
+            "name": "Memphis pork ribs, whole",
+            "lang": "en",
+            "description": {
+              "en": "Dry rub, apple cider basted. Includes one side.",
+              "es": "Rub seco, sidra de manzana. Incluye un acompañamiento.",
+              "pt": "Rub seco, sidra de maçã. Inclui um acompanhamento."
+            },
+            "price": 30
+          },
+          {
+            "id": "chicken-half",
+            "name": "Smoked chicken, half",
+            "lang": "en",
+            "description": {
+              "en": "Dry rub with orange bourbon sauce. Includes one side.",
+              "es": "Rub seco con salsa de naranja y bourbon. Incluye un acompañamiento.",
+              "pt": "Rub seco com molho de laranja e bourbon. Inclui um acompanhamento."
+            },
+            "price": 12
+          },
+          {
+            "id": "chicken-whole",
+            "name": "Smoked chicken, whole",
+            "lang": "en",
+            "description": {
+              "en": "Dry rub with orange bourbon sauce. Includes one side.",
+              "es": "Rub seco con salsa de naranja y bourbon. Incluye un acompañamiento.",
+              "pt": "Rub seco com molho de laranja e bourbon. Inclui um acompanhamento."
+            },
+            "price": 24
+          },
+          {
+            "id": "pulled-pork",
+            "name": "Pulled pork",
+            "lang": "en",
+            "description": {
+              "en": "Pork rub, mustard mop. Includes one side.",
+              "es": "Rub de cerdo, mostaza. Incluye un acompañamiento.",
+              "pt": "Rub de porco, mostarda. Inclui um acompanhamento."
+            },
+            "price": 12
+          },
+          {
+            "id": "turkey",
+            "name": "Smoked turkey breast",
+            "lang": "en",
+            "description": {
+              "en": "Includes one side.",
+              "es": "Incluye un acompañamiento.",
+              "pt": "Inclui um acompanhamento."
+            },
+            "price": 13
+          },
+          {
+            "id": "beef-rib",
+            "name": "Smoked beef rib",
+            "lang": "en",
+            "description": {
+              "en": "Barbecue glaze, salt and black pepper. Includes one side. Costela.",
+              "es": "Glaseado barbecue, sal y pimienta. Incluye un acompañamiento.",
+              "pt": "Glace de barbecue, sal e pimenta. Inclui um acompanhamento. Costela."
+            },
+            "price": 34
+          }
         ]
       },
       {
-        "name": { "en": "Sausage", "es": "Embutidos", "pt": "Linguiça" },
+        "name": {
+          "en": "Sausage",
+          "es": "Embutidos",
+          "pt": "Linguiça"
+        },
         "items": [
-          { "id": "andouille", "name": "Andouille", "lang": "en", "description": { "en": "Beef and pork with herbs, spices, and jalapeño.", "es": "Res y cerdo con hierbas y jalapeño.", "pt": "Carne e porco com ervas e jalapeño." }, "price": 10 },
-          { "id": "pork-sausage", "name": "Traditional pork sausage", "lang": "en", "gloss": { "en": "Linguiça", "es": "Linguiça", "pt": "Linguiça" }, "price": 10 }
+          {
+            "id": "andouille",
+            "name": "Andouille",
+            "lang": "en",
+            "description": {
+              "en": "Beef and pork with herbs, spices, and jalapeño.",
+              "es": "Res y cerdo con hierbas y jalapeño.",
+              "pt": "Carne e porco com ervas e jalapeño."
+            },
+            "price": 10
+          },
+          {
+            "id": "pork-sausage",
+            "name": "Traditional pork sausage",
+            "lang": "en",
+            "gloss": {
+              "en": "Linguiça",
+              "es": "Linguiça",
+              "pt": "Linguiça"
+            },
+            "price": 10
+          }
         ]
       },
       {
-        "name": { "en": "For two", "es": "Para dos", "pt": "Para dois" },
+        "name": {
+          "en": "For two",
+          "es": "Para dos",
+          "pt": "Para dois"
+        },
         "items": [
-          { "id": "city-combo", "name": "City combo", "lang": "en", "description": { "en": "Brisket, pork ribs, and pulled pork. Choice of 3 sides.", "es": "Brisket, costillas y cerdo desmenuzado. 3 acompañamientos.", "pt": "Brisket, costelinha e porco desfiado. 3 acompanhamentos." }, "price": 30 },
-          { "id": "rub-combo", "name": "Rub combo", "lang": "en", "description": { "en": "Chicken, turkey, and pork sausage. Choice of 3 sides.", "es": "Pollo, pavo y salchicha. 3 acompañamientos.", "pt": "Frango, peru e linguiça. 3 acompanhamentos." }, "price": 30 },
-          { "id": "smokey-combo", "name": "Smokey combo", "lang": "en", "description": { "en": "Chicken, turkey, and brisket. Choice of 3 sides.", "es": "Pollo, pavo y brisket. 3 acompañamientos.", "pt": "Frango, peru e brisket. 3 acompanhamentos." }, "price": 30 }
+          {
+            "id": "city-combo",
+            "name": "City combo",
+            "lang": "en",
+            "description": {
+              "en": "Brisket, pork ribs, and pulled pork. Choice of 3 sides.",
+              "es": "Brisket, costillas y cerdo desmenuzado. 3 acompañamientos.",
+              "pt": "Brisket, costelinha e porco desfiado. 3 acompanhamentos."
+            },
+            "price": 30
+          },
+          {
+            "id": "rub-combo",
+            "name": "Rub combo",
+            "lang": "en",
+            "description": {
+              "en": "Chicken, turkey, and pork sausage. Choice of 3 sides.",
+              "es": "Pollo, pavo y salchicha. 3 acompañamientos.",
+              "pt": "Frango, peru e linguiça. 3 acompanhamentos."
+            },
+            "price": 30
+          },
+          {
+            "id": "smokey-combo",
+            "name": "Smokey combo",
+            "lang": "en",
+            "description": {
+              "en": "Chicken, turkey, and brisket. Choice of 3 sides.",
+              "es": "Pollo, pavo y brisket. 3 acompañamientos.",
+              "pt": "Frango, peru e brisket. 3 acompanhamentos."
+            },
+            "price": 30
+          }
         ]
       },
       {
-        "name": { "en": "Sides", "es": "Acompañamientos", "pt": "Acompanhamentos" },
+        "name": {
+          "en": "Sides",
+          "es": "Acompañamientos",
+          "pt": "Acompanhamentos"
+        },
         "items": [
-          { "id": "beans", "name": "Barbecue beans with brisket burnt ends", "lang": "en", "gloss": { "en": "Feijão com pontas de carne", "es": "Frijoles con puntas de carne", "pt": "Feijão com pontas de carne" }, "price": 3.5 },
-          { "id": "slaw", "name": "Coleslaw", "lang": "en", "price": 3.5 },
-          { "id": "wedges", "name": "Potato wedges", "lang": "en", "description": { "en": "With fresh herbs.", "es": "Con hierbas.", "pt": "Com ervas." }, "price": 3.5 },
-          { "id": "rice", "name": "Rice", "lang": "en", "gloss": { "en": "Arroz", "es": "Arroz", "pt": "Arroz" }, "price": 3.5 },
-          { "id": "potato-salad", "name": "Smoked potato salad", "lang": "en", "price": 3.5 },
-          { "id": "tropeiro", "name": "Feijão tropeiro", "lang": "pt", "gloss": { "en": "Beans with greens, cassava, and sausage", "es": "Frijoles con hojas, yuca y salchicha", "pt": "Feijão tropeiro com couve, mandioca e linguiça" }, "price": 3.5 },
-          { "id": "cornbread", "name": "Corn bread", "lang": "en", "price": 3.5 },
-          { "id": "corn", "name": "Corn cob", "lang": "en", "price": 3.5 },
-          { "id": "city-salad", "name": "City salad", "lang": "en", "price": 3.5 },
-          { "id": "vegetables", "name": "Mixed vegetables", "lang": "en", "price": 3.5 },
-          { "id": "mac", "name": "Mac and cheese", "lang": "en", "description": { "en": "SinglePlatform lists sides at $3.50 and mac and cheese as add $2.", "es": "SinglePlatform pone los acompañamientos a $3.50 y el mac and cheese a $2 más.", "pt": "A SinglePlatform põe os acompanhamentos a $3,50 e o mac and cheese a mais $2." }, "price": 5.5 }
+          {
+            "id": "beans",
+            "name": "Barbecue beans with brisket burnt ends",
+            "lang": "en",
+            "gloss": {
+              "en": "Feijão com pontas de carne",
+              "es": "Frijoles con puntas de carne",
+              "pt": "Feijão com pontas de carne"
+            },
+            "price": 3.5
+          },
+          {
+            "id": "slaw",
+            "name": "Coleslaw",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "wedges",
+            "name": "Potato wedges",
+            "lang": "en",
+            "description": {
+              "en": "With fresh herbs.",
+              "es": "Con hierbas.",
+              "pt": "Com ervas."
+            },
+            "price": 3.5
+          },
+          {
+            "id": "rice",
+            "name": "Rice",
+            "lang": "en",
+            "gloss": {
+              "en": "Arroz",
+              "es": "Arroz",
+              "pt": "Arroz"
+            },
+            "price": 3.5
+          },
+          {
+            "id": "potato-salad",
+            "name": "Smoked potato salad",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "tropeiro",
+            "name": "Feijão tropeiro",
+            "lang": "pt",
+            "gloss": {
+              "en": "Beans with greens, cassava, and sausage",
+              "es": "Frijoles con hojas, yuca y salchicha",
+              "pt": "Feijão tropeiro com couve, mandioca e linguiça"
+            },
+            "price": 3.5
+          },
+          {
+            "id": "cornbread",
+            "name": "Corn bread",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "corn",
+            "name": "Corn cob",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "city-salad",
+            "name": "City salad",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "vegetables",
+            "name": "Mixed vegetables",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "mac",
+            "name": "Mac and cheese",
+            "lang": "en",
+            "description": {
+              "en": "SinglePlatform lists sides at $3.50 and mac and cheese as add $2.",
+              "es": "SinglePlatform pone los acompañamientos a $3.50 y el mac and cheese a $2 más.",
+              "pt": "A SinglePlatform põe os acompanhamentos a $3,50 e o mac and cheese a mais $2."
+            },
+            "price": 5.5
+          }
         ]
       },
       {
-        "name": { "en": "Plates", "es": "Platos", "pt": "Pratos" },
+        "name": {
+          "en": "Plates",
+          "es": "Platos",
+          "pt": "Pratos"
+        },
         "items": [
-          { "id": "rib-risotto", "name": "Smoked beef rib risotto", "lang": "en", "price": 25 },
-          { "id": "veg-risotto", "name": "Vegetable risotto", "lang": "en", "description": { "en": "Succotash and Parmigiano-Reggiano.", "es": "Succotash y Parmigiano-Reggiano.", "pt": "Succotash e Parmigiano-Reggiano." }, "price": 14 },
-          { "id": "grits", "name": "Shrimp, sausage, and creamy grits", "lang": "en", "price": 16 },
-          { "id": "moranga", "name": "Camarão na moranga", "lang": "pt", "gloss": { "en": "Shrimp, roasted acorn squash, butternut jus, saffron", "es": "Camarones, calabaza asada, jugo de butternut, azafrán", "pt": "Camarão, abóbora assada, jus de butternut, açafrão" }, "price": 21 }
+          {
+            "id": "rib-risotto",
+            "name": "Smoked beef rib risotto",
+            "lang": "en",
+            "price": 25
+          },
+          {
+            "id": "veg-risotto",
+            "name": "Vegetable risotto",
+            "lang": "en",
+            "description": {
+              "en": "Succotash and Parmigiano-Reggiano.",
+              "es": "Succotash y Parmigiano-Reggiano.",
+              "pt": "Succotash e Parmigiano-Reggiano."
+            },
+            "price": 14
+          },
+          {
+            "id": "grits",
+            "name": "Shrimp, sausage, and creamy grits",
+            "lang": "en",
+            "price": 16
+          },
+          {
+            "id": "moranga",
+            "name": "Camarão na moranga",
+            "lang": "pt",
+            "gloss": {
+              "en": "Shrimp, roasted acorn squash, butternut jus, saffron",
+              "es": "Camarones, calabaza asada, jugo de butternut, azafrán",
+              "pt": "Camarão, abóbora assada, jus de butternut, açafrão"
+            },
+            "price": 21
+          }
         ]
       },
       {
-        "name": { "en": "Salads", "es": "Ensaladas", "pt": "Saladas" },
+        "name": {
+          "en": "Salads",
+          "es": "Ensaladas",
+          "pt": "Saladas"
+        },
         "items": [
-          { "id": "add-meat", "name": "Add smoked meat", "lang": "en", "description": { "en": "Brisket, turkey breast, chicken, or pulled pork.", "es": "Brisket, pechuga de pavo, pollo o cerdo desmenuzado.", "pt": "Brisket, peito de peru, frango ou porco desfiado." }, "price": 3 },
-          { "id": "beet", "name": "Beet and arugula", "lang": "en", "description": { "en": "Goat cheese, pistachio, red onion, orange vinaigrette.", "es": "Queso de cabra, pistacho, cebolla morada, vinagreta de naranja.", "pt": "Queijo de cabra, pistache, cebola roxa, vinagrete de laranja." }, "price": 10 },
-          { "id": "texmex", "name": "Tex-Mex salad", "lang": "en", "description": { "en": "Greens, tortilla, smoked chicken, avocado, corn, black beans, pepper Jack, balsamic.", "es": "Hojas, tortilla, pollo ahumado, aguacate, maíz, frijol negro, pepper Jack, balsámico.", "pt": "Folhas, tortilha, frango defumado, abacate, milho, feijão preto, pepper Jack, balsâmico." }, "price": 13 },
-          { "id": "bblt", "name": "BBlt", "lang": "en", "description": { "en": "Bacon, brisket, red onion, chives, tomato, lettuce, blue cheese.", "es": "Tocineta, brisket, cebolla morada, cebollín, tomate, lechuga, queso azul.", "pt": "Bacon, brisket, cebola roxa, cebolinha, tomate, alface, gorgonzola." }, "price": 12 },
-          { "id": "quinoa", "name": "Quinoa and smoked shrimp", "lang": "en", "description": { "en": "Winter greens and lemon dill vinaigrette.", "es": "Hojas de invierno y vinagreta de limón y eneldo.", "pt": "Folhas de inverno e vinagrete de limão e endro." }, "price": 13 }
+          {
+            "id": "add-meat",
+            "name": "Add smoked meat",
+            "lang": "en",
+            "description": {
+              "en": "Brisket, turkey breast, chicken, or pulled pork.",
+              "es": "Brisket, pechuga de pavo, pollo o cerdo desmenuzado.",
+              "pt": "Brisket, peito de peru, frango ou porco desfiado."
+            },
+            "price": 3
+          },
+          {
+            "id": "beet",
+            "name": "Beet and arugula",
+            "lang": "en",
+            "description": {
+              "en": "Goat cheese, pistachio, red onion, orange vinaigrette.",
+              "es": "Queso de cabra, pistacho, cebolla morada, vinagreta de naranja.",
+              "pt": "Queijo de cabra, pistache, cebola roxa, vinagrete de laranja."
+            },
+            "price": 10
+          },
+          {
+            "id": "texmex",
+            "name": "Tex-Mex salad",
+            "lang": "en",
+            "description": {
+              "en": "Greens, tortilla, smoked chicken, avocado, corn, black beans, pepper Jack, balsamic.",
+              "es": "Hojas, tortilla, pollo ahumado, aguacate, maíz, frijol negro, pepper Jack, balsámico.",
+              "pt": "Folhas, tortilha, frango defumado, abacate, milho, feijão preto, pepper Jack, balsâmico."
+            },
+            "price": 13
+          },
+          {
+            "id": "bblt",
+            "name": "BBlt",
+            "lang": "en",
+            "description": {
+              "en": "Bacon, brisket, red onion, chives, tomato, lettuce, blue cheese.",
+              "es": "Tocineta, brisket, cebolla morada, cebollín, tomate, lechuga, queso azul.",
+              "pt": "Bacon, brisket, cebola roxa, cebolinha, tomate, alface, gorgonzola."
+            },
+            "price": 12
+          },
+          {
+            "id": "quinoa",
+            "name": "Quinoa and smoked shrimp",
+            "lang": "en",
+            "description": {
+              "en": "Winter greens and lemon dill vinaigrette.",
+              "es": "Hojas de invierno y vinagreta de limón y eneldo.",
+              "pt": "Folhas de inverno e vinagrete de limão e endro."
+            },
+            "price": 13
+          }
         ]
       },
       {
-        "name": { "en": "A pour", "es": "Un trago", "pt": "Um gole" },
+        "name": {
+          "en": "A pour",
+          "es": "Un trago",
+          "pt": "Um gole"
+        },
         "items": [
-          { "id": "moonshine", "name": "Shot of moonshine", "lang": "en", "description": { "en": "Cherry, peach, or apple pie.", "es": "Cereza, durazno o pie de manzana.", "pt": "Cereja, pêssego ou torta de maçã." }, "price": 4 }
+          {
+            "id": "moonshine",
+            "name": "Shot of moonshine",
+            "lang": "en",
+            "description": {
+              "en": "Cherry, peach, or apple pie.",
+              "es": "Cereza, durazno o pie de manzana.",
+              "pt": "Cereja, pêssego ou torta de maçã."
+            },
+            "price": 4
+          }
         ]
       }
     ]
@@ -174,7 +694,11 @@
   },
   "questions": [
     {
-      "q": { "en": "Is there parking?", "es": "¿Hay estacionamiento?", "pt": "Tem estacionamento?" },
+      "q": {
+        "en": "Is there parking?",
+        "es": "¿Hay estacionamiento?",
+        "pt": "Tem estacionamento?"
+      },
       "a": {
         "en": "The restaurant's site says City Rub has a large parking lot.",
         "es": "El sitio del restaurante dice que City Rub tiene un estacionamiento grande.",
@@ -186,17 +710,17 @@
   ],
   "reviews": {
     "summary": {
-      "en": "Restaurant Guru lists 3.7 out of 5 from 2,361 reviews. The Facebook page shows 5,663 likes and 8,439 check-ins.",
-      "es": "Restaurant Guru publica 3.7 de 5, a partir de 2,361 reseñas. Facebook muestra 5,663 me gusta y 8,439 check-ins.",
-      "pt": "O Restaurant Guru lista 3,7 de 5, em 2.361 avaliações. O Facebook mostra 5.663 curtidas e 8.439 check-ins."
+      "en": "The Google score is the one printed on Restaurant Guru.",
+      "es": "La nota de Google es la que imprime Restaurant Guru.",
+      "pt": "A nota do Google é a que o Restaurant Guru imprime."
     },
     "links": [
       {
-        "label": "Restaurant Guru, 3.7 from 2,361 reviews",
+        "label": "Restaurant Guru",
         "url": "https://restaurantguru.com/CityRub-Smokehouse-Newark"
       },
       {
-        "label": "Facebook page",
+        "label": "Facebook",
         "url": "https://www.facebook.com/cityrub/"
       }
     ]
@@ -218,11 +742,32 @@
     ]
   },
   "social": [
-    { "label": "Facebook", "url": "https://www.facebook.com/cityrub/" }
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/cityrub/"
+    }
   ],
-  "sections": ["menu", "catering", "order", "visit", "about", "reviews"],
+  "sections": [
+    "menu",
+    "catering",
+    "order",
+    "visit",
+    "about",
+    "reviews"
+  ],
   "seo": {
     "title": "Cityrub Steak & Smokehouse, Stockton Street",
     "description": "Smokehouse at 118 Stockton Street in Newark's Ironbound. Demo preview. Menu prices from SinglePlatform."
+  },
+  "delivery": true,
+  "deliveryNote": {
+    "en": "The restaurant's site says they can deliver, with restrictions. No zone or fee is printed, and this demo does not invent one.",
+    "es": "El sitio dice que pueden entregar, con restricciones. No imprimen zona ni tarifa, y esta demo no inventa una.",
+    "pt": "O site diz que podem entregar, com restrições. Não imprimem zona nem taxa, e esta demo não inventa uma."
+  },
+  "sourcesNote": {
+    "en": "Menu prices are from SinglePlatform. Hours are from OpenStreetMap, and Restaurant Guru prints the same 11 a.m. to 11 p.m. clock. The Google score is from Restaurant Guru.",
+    "es": "Los precios salen de SinglePlatform. El horario sale de OpenStreetMap, y Restaurant Guru imprime el mismo reloj de 11 a.m. a 11 p.m. La nota de Google sale de Restaurant Guru.",
+    "pt": "Os preços saem da SinglePlatform. O horário sai do OpenStreetMap, e o Restaurant Guru imprime o mesmo relógio das 11h às 23h. A nota do Google sai do Restaurant Guru."
   }
 }

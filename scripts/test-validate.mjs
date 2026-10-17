@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { loadRestaurants } from "../src/lib/restaurants.mjs";
-import { assertHttpsUrl, assertPrice, assertWeekly, validateRestaurants } from "./validate.mjs";
+import { assertHttpsUrl, assertPrice, assertWeekly, huesCollide, validateRestaurants } from "./validate.mjs";
 
 assert.throws(() => assertHttpsUrl("javascript:alert(1)", "script"));
 assert.throws(() => assertHttpsUrl("http://example.com/menu", "http"));
@@ -20,9 +20,18 @@ assert.throws(() => assertWeekly({ mon: [["11:00", "11:00"]] }, "equal"));
 assert.doesNotThrow(() => assertWeekly({ mon: [["00:00", "24:00"]] }, "all"));
 assert.doesNotThrow(() => assertWeekly({ mon: [["11:30", "24:00"], ["00:00", "02:00"]] }, "overnight"));
 
+assert.equal(huesCollide("#B42318", "#B42318"), true);
+assert.equal(huesCollide("#1B4D32", "#152E40"), false);
+
 const all = loadRestaurants();
 validateRestaurants(all);
 validateRestaurants(all.slice(0, 1));
 validateRestaurants(all.slice(0, 2));
+
+const clone = structuredClone(all[0]);
+clone.slug = "clone-room";
+clone.name = "Clone Room";
+clone.hero.variant = clone.hero.variant === "cafeteria" ? "poster" : "cafeteria";
+assert.throws(() => validateRestaurants([all[0], clone]), /too close/);
 
 console.log("validate cases ok");

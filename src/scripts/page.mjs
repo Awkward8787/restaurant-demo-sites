@@ -8,10 +8,10 @@ if (!root) {
   // Index page has no cart.
 } else {
   const slug = root.dataset.restaurant;
-  const phone = root.dataset.phone;
-  const phoneDisplay = root.dataset.phoneDisplay;
   const name = root.dataset.name;
-  const email = root.dataset.email || "";
+  const offersDelivery = root.dataset.delivery === "true";
+  const deliveryFee = Number(root.dataset.deliveryFee);
+  const deliveryFeeCents = offersDelivery && Number.isFinite(deliveryFee) && deliveryFee > 0 ? Math.round(deliveryFee * 100) : 0;
   const storageKey = `demo-order:${slug}`;
   const hours = JSON.parse(document.getElementById("hours-data")?.textContent || "null");
   let lang = storedLang() || cleanLang(document.documentElement.lang) || "en";
@@ -47,10 +47,20 @@ if (!root) {
   function load() {
     try {
       const saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
-      return sanitizeCart(saved, menuFromPage());
+      return normalizeCart(sanitizeCart(saved, menuFromPage()));
     } catch {
-      return sanitizeCart(null, menuFromPage());
+      return normalizeCart(sanitizeCart(null, menuFromPage()));
     }
+  }
+
+  function normalizeCart(cart) {
+    if (!offersDelivery) cart.fulfillment = "pickup";
+    return cart;
+  }
+
+  function activeWeekly() {
+    if (state.fulfillment === "delivery" && hours?.deliveryWeekly) return hours.deliveryWeekly;
+    return hours?.weekly;
   }
 
   function save() {
@@ -137,10 +147,17 @@ if (!root) {
 
     const sub = pricedSubtotal();
     const tipCents = Math.round(sub * cleanTip(state.tip) / 100);
+    const fee = state.fulfillment === "delivery" ? deliveryFeeCents : 0;
+    const beforeTax = sub + tipCents + fee;
     const hasUnpriced = state.lines.some((line) => line.price == null);
-    totalEl.textContent = `${t(lang, "total")}: ${money(sub)} · ${t(lang, "tip")}: ${money(tipCents)}`;
+    const parts = [`${t(lang, "subtotal")}: ${money(sub)}`, `${t(lang, "tip")}: ${money(tipCents)}`];
+    if (fee) parts.push(`${t(lang, "delivery")}: ${money(fee)}`);
+    parts.push(`${t(lang, "beforeTax")}: ${money(beforeTax)}`);
+    totalEl.textContent = parts.join(" · ");
     unpricedEl.hidden = !hasUnpriced;
     deliveryNote.hidden = state.fulfillment !== "delivery";
+    const addressLabel = document.getElementById("delivery-address-label");
+    if (addressLabel) addressLabel.hidden = state.fulfillment !== "delivery";
     const count = itemCount(state.lines);
     if (barLabel) {
       barLabel.textContent =
@@ -230,10 +247,11 @@ if (!root) {
       }
       button.textContent = t(lang, "added");
       window.setTimeout(() => {
-        button.textContent = t(lang, "add");
+        if (button.dataset.i18n === "add") button.textContent = t(lang, "add");
       }, 700);
+      const live = document.getElementById("add-live");
+      if (live) live.textContent = `${item.name}. ${t(lang, "added")}`;
       render();
-      openOrder();
     });
   });
 
@@ -288,14 +306,23 @@ if (!root) {
     save();
   });
 
+  document.getElementById("delivery-address")?.addEventListener("input", (event) => {
+    state.address = event.target.value;
+    save();
+  });
+
   document.getElementById("order-submit")?.addEventListener("click", async () => {
     errorEl.hidden = true;
     if (state.lines.length === 0) {
       showError(t(lang, "errorEmpty"));
       return;
     }
+    if (state.fulfillment === "delivery" && !String(state.address || "").trim()) {
+      showError(t(lang, "deliveryNeedAddress"));
+      return;
+    }
     if (state.when) {
-      const issue = pickupIssue(state.when, Date.now(), hours?.weekly);
+      const issue = pickupIssue(state.when, Date.now(), activeWeekly());
       if (issue === "past" || issue === "invalid") {
         showError(t(lang, "errorTime"));
         return;
@@ -316,13 +343,6 @@ if (!root) {
     try {
       const text = orderText();
       document.getElementById("order-list-text").textContent = text;
-      const encoded = encodeURIComponent(text);
-      document.getElementById("sms-link").href = `sms:${phone}?&body=${encoded}`;
-      const mailTo = email ? email : "";
-      document.getElementById("mail-link").href =
-        `mailto:${mailTo}?subject=${encodeURIComponent("Order list for " + name)}&body=${encoded}`;
-      const wa = phone.replace(/[^\d]/g, "");
-      document.getElementById("wa-link").href = `https://wa.me/${wa}?text=${encoded}`;
       formEl.hidden = true;
       resultEl.hidden = false;
       resultEl.focus();
@@ -356,6 +376,7 @@ if (!root) {
   function orderText() {
     const sub = pricedSubtotal();
     const tipCents = Math.round(sub * cleanTip(state.tip) / 100);
+    const fee = state.fulfillment === "delivery" ? deliveryFeeCents : 0;
     const lines = state.lines.map((line) => {
       const price = line.price == null ? t(lang, "askPrice") : money(Math.round(line.price * 100) * line.qty);
       return `${line.qty} x ${line.name} (${price})`;
@@ -363,10 +384,13 @@ if (!root) {
     return [
       name,
       state.fulfillment === "delivery" ? t(lang, "delivery") : t(lang, "pickup"),
+      state.fulfillment === "delivery" ? state.address : "",
       state.when ? formatPickup(state.when, lang) : "",
       ...lines,
-      `${t(lang, "total")}: ${money(sub)}`,
+      `${t(lang, "subtotal")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,
+      fee ? `${t(lang, "delivery")}: ${money(fee)}` : "",
+      `${t(lang, "beforeTax")}: ${money(sub + tipCents + fee)}`,
       state.notes ? state.notes : "",
       t(lang, "demoFoot"),
     ]
@@ -463,6 +487,8 @@ if (!root) {
   if (when && state.when) when.value = state.when;
   const notes = document.getElementById("order-notes");
   if (notes) notes.value = state.notes || "";
+  const address = document.getElementById("delivery-address");
+  if (address) address.value = state.address || "";
 
   applyLang(lang);
   bindHoursRefresh(paintHours, {

@@ -3,7 +3,9 @@ import { jsonForScript } from "../lib/json-script.mjs";
 import { loadRestaurants, telHref, money } from "../lib/restaurants.mjs";
 import { isProspect, restaurantJsonLd } from "../lib/schema.mjs";
 import { weekLines } from "../lib/hours.mjs";
-import { t } from "../i18n.mjs";
+import { dinerDate } from "../lib/dates.mjs";
+import { glossView } from "../lib/gloss.mjs";
+import { ratingSentence, t } from "../i18n.mjs";
 import Lang from "../components/Lang.astro";
 import Hero from "../components/Hero.astro";
 import "../styles/global.css";
@@ -47,14 +49,16 @@ const style = [
   `--font-body:${r.theme.bodyStack}`,
   `--radius:${r.theme.radius}`,
 ].join(";");
-const nav = [
-  ["menu", "navMenu"],
-  ["order", "navOrder"],
-  ["hours", "navHours"],
-  ["reviews", "navReviews"],
-  ["about", "navAbout"],
-  ["catering", "navCatering"],
-];
+const sectionNav = {
+  menu: ["menu", "navMenu"],
+  order: ["order", "navOrder"],
+  visit: ["hours", "navHours"],
+  reviews: ["reviews", "navReviews"],
+  about: ["about", "navAbout"],
+  catering: ["catering", "navCatering"],
+};
+const nav = r.sections.map((section) => sectionNav[section]).filter(Boolean);
+const offersDelivery = r.delivery === true;
 ---
 
 <html lang={lang}>
@@ -86,6 +90,8 @@ const nav = [
     data-phone={r.phone}
     data-phone-display={r.phoneDisplay}
     data-email={r.email || ""}
+    data-delivery={offersDelivery ? "true" : "false"}
+    data-delivery-fee={offersDelivery && r.deliveryFee != null ? String(r.deliveryFee) : ""}
   >
     <a class="skip" href="#content" data-i18n="skip">{t(lang, "skip")}</a>
     <div class="demo-banner">
@@ -104,7 +110,7 @@ const nav = [
       >
         {t(lang, "menuBtn")}
       </button>
-      <nav id="nav-panel" class="nav-panel" aria-label="Sections">
+      <nav id="nav-panel" class="nav-panel" aria-label={t(lang, "sectionsLabel")}>
         {
           nav.map(([id, key]) => (
             <a href={`#${id}`} data-i18n={key}>
@@ -142,8 +148,11 @@ const nav = [
                 </div>
                 {r.menu.source && (
                   <p class="menu-note">
-                    <a href={r.menu.source.url}>{r.menu.source.label}</a>
-                    {r.menu.source.checked ? `. Checked ${r.menu.source.checked}.` : "."}
+                    <a href={r.menu.source.url}>{r.menu.source.label}</a>{r.menu.source.checked ? (
+                      ["en", "es", "pt"].map((code) => (
+                        <span class="l" data-lang={code} lang={code}>{`. ${t(code, "checked")} ${dinerDate(r.menu.source.checked, code)}.`}</span>
+                      ))
+                    ) : "."}
                   </p>
                 )}
                 <div class="menu-board">
@@ -158,11 +167,13 @@ const nav = [
                             <div class="dish-name" id={`dish-${item.id}`} lang={item.lang}>
                               {item.name}
                             </div>
-                            {item.gloss && (
-                              <p class="gloss">
-                                <Lang text={item.gloss} />
-                              </p>
-                            )}
+                            {item.gloss &&
+                              (["en", "es", "pt"] as const).map((code) => {
+                                const shown = glossView(item, code);
+                                return shown ? (
+                                  <p class="gloss l" data-lang={code} lang={shown.lang}>{shown.line}</p>
+                                ) : null;
+                              })}
                             {item.description && (
                               <p class="dish-desc">
                                 <Lang text={item.description} />
@@ -293,6 +304,13 @@ const nav = [
                 <p class="measure">
                   <Lang text={r.reviews.summary} block />
                 </p>
+                {r.rating?.value != null && r.rating?.count != null && (
+                  <p class="measure">
+                    {(["en", "es", "pt"] as const).map((code) => (
+                      <span class="l" data-lang={code} lang={code}>{`${ratingSentence(code, r.rating)} ${t(code, "checked")} ${dinerDate(r.rating.checked, code)}.`}</span>
+                    ))}
+                  </p>
+                )}
                 {r.reviews.links?.map((link) => (
                   <p>
                     <a href={link.url}>{link.label}</a>
@@ -389,6 +407,12 @@ const nav = [
       }
     </main>
 
+    {r.sourcesNote && (
+      <p class="fine sources-note">
+        <Lang text={r.sourcesNote} />
+      </p>
+    )}
+
     <footer class="site-footer">
       <p>
         {r.address.street}
@@ -419,6 +443,8 @@ const nav = [
       </p>
     </footer>
 
+    <p id="add-live" class="visually-hidden" aria-live="polite"></p>
+
     <div class="order-bar">
       <button type="button" data-open-order>
         <span id="order-bar-label" data-i18n="orderBarEmpty">{t(lang, "orderBarEmpty")}</span>
@@ -443,14 +469,26 @@ const nav = [
                 <input type="radio" name="fulfillment" value="pickup" checked />
                 <span data-i18n="pickup">{t(lang, "pickup")}</span>
               </label>
-              <label>
-                <input type="radio" name="fulfillment" value="delivery" />
-                <span data-i18n="delivery">{t(lang, "delivery")}</span>
-              </label>
+              {offersDelivery && (
+                <label>
+                  <input type="radio" name="fulfillment" value="delivery" />
+                  <span data-i18n="delivery">{t(lang, "delivery")}</span>
+                </label>
+              )}
             </div>
           </fieldset>
-          <p id="delivery-note" class="fine" hidden data-i18n="deliveryNote">
-            {t(lang, "deliveryNote")}
+          {offersDelivery && (
+            <label id="delivery-address-label" hidden>
+              <span data-i18n="deliveryAddress">{t(lang, "deliveryAddress")}</span>
+              <input id="delivery-address" name="delivery-address" autocomplete="street-address" />
+            </label>
+          )}
+          <p id="delivery-note" class="fine" hidden>
+            {r.deliveryNote ? (
+              <Lang text={r.deliveryNote} />
+            ) : (
+              <span data-i18n="deliveryNote">{t(lang, "deliveryNote")}</span>
+            )}
           </p>
           <fieldset class="choice-set">
             <legend data-i18n="tip">{t(lang, "tip")}</legend>
@@ -498,15 +536,6 @@ const nav = [
               <button class="button secondary" id="copy-list" type="button" data-i18n="copyList">
                 {t(lang, "copyList")}
               </button>
-              <a class="button secondary" id="sms-link" href={tel} data-i18n="textList">
-                {t(lang, "textList")}
-              </a>
-              <a class="button secondary" id="mail-link" href={r.email ? `mailto:${r.email}` : "mailto:"} data-i18n="emailList">
-                {t(lang, "emailList")}
-              </a>
-              <a class="button secondary" id="wa-link" href={`https://wa.me/${r.phone.replace(/[^\d]/g, "")}`} data-i18n="whatsApp">
-                {t(lang, "whatsApp")}
-              </a>
             </div>
             <p id="copy-status" class="fine" role="status"></p>
           </div>

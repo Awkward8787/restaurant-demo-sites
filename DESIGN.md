@@ -4,7 +4,7 @@ Each restaurant page takes its palette, display face, and hero from its own JSON
 
 No rights-cleared dish photos were available, so every hero is type. A real plate photo can replace a hero later. Until then the page does not use stock rooms, generated food, or illustration.
 
-The paper grain is a faint fractal noise tiled in CSS so the background is not flat white. It is not a dot grid. Menu leaders (Andros, Brisas) are a one-pixel rule between a dish and its price, covered by the name and the price, the way a diner ticket lines up a column.
+The paper grain is a faint fractal noise tiled in CSS so the background is not flat white. It is not a dot grid. Menu leaders (Andros, Brisas) are a dotted flex filler on the dish name, so the price stays in its own column.
 
 Motion is a 1px lift on button hover, removed when the visitor asks for reduced motion. Focus is a 3px ink ring plus a paper halo so it shows on both the cream page and a dark band.
 
@@ -14,16 +14,16 @@ Open and closed use `America/New_York`. Unknown hours stay unknown.
 
 | Restaurant | Paper / ink / accent | Display | Hero | Menu |
 | --- | --- | --- | --- | --- |
-| J&V Grill | Cream, forest, clay | Fraunces | Cafeteria ticket | Rows, names only |
-| Andros Diner | Ivory, maroon band, mustard | Bowlby One | Marquee | Leaders, 2018 breakfast |
-| Boi Na Brasa | Cream, charcoal band, oxblood | Bodoni Moda | Poster | Rows. Named dishes, then a labeled sample |
-| Brisas del Mar | Foam, sea ink, lime | Young Serif | Tide | Leaders, four published prices |
-| Cityrub | Butcher paper, soot, ember | Oswald | Butcher slab | Rows, SinglePlatform prices |
-| Peruvian Brazas | Warm paper, roast brown | Bricolage Grotesque | Counter window | Rows, one published plate |
-| Cantinho Mineiro | Paper, dark wood | Libre Baskerville | Letterpress | Hanging names |
-| Sabor Unido | Paper, iron blue, brick | Petrona | Two columns, Saturday feijoada | Rows |
-| Virgen de la Nube | Paper, green, brass | Cormorant Garamond | Chapel | Hanging names, labeled sample |
+| J&V Grill | Beige #F4E6D2, forest #1B4D32 | Fraunces | Cafeteria ticket | Rows, names only |
+| Andros Diner | Ivory #F4EFE4, maroon #7C1E28, mustard #6E5010 | Bowlby One | Marquee | Leaders, 2018 menu |
+| Boi Na Brasa | Cream #F7F0E4, wood band #4A2A16, crimson #7C1E3A | Anton | Poster, street rail | Rows. Named dishes, then a labeled sample |
+| Brisas del Mar | Foam #F2F5F1, sea #0E3E4A, lime #4E6B0E | Young Serif | Tide, kicker chip | Leaders, four published prices |
+| Cityrub | Butcher paper #F6EFE6, soot #16110E, ember #8C3C0C | Oswald | Butcher slab | Rows, SinglePlatform prices |
+| Peruvian Brazas | Warm paper #FFF8EE, ink #1A120E, red #B42318 | Bricolage Grotesque | Counter window | Rows, names only |
+| Cantinho Mineiro | Paper #F7F3E8, ink #1C2410, leaf #3E6B1A | Libre Baskerville | Letterpress card | Hanging names |
+| Sabor Unido | Paper #F3EEE6, navy #152E40 | Petrona | Two columns, Saturday feijoada | Rows, published menu |
+| Virgen de la Nube | Paper #F7F4EE, ink #14233F, blue #1A3278 | Cormorant Garamond | Chapel stack | Hanging names, labeled sample |
 
-Palette cues: Brazilian rooms use charcoal, oxblood, and warm paper (Boi) or iron blue and brick (Sabor on Jefferson Street). Brisas uses sea blue and lime from a ceviche counter, not a flag. Andros uses diner maroon and mustard. Cityrub uses soot and ember on butcher paper. J&V uses the green of a cafeteria awning and a clay accent. These are not national-flag palettes.
+Palette cues that come from a real surface: J&V beige is sampled from a photo of the room and the forest green is the cafeteria awning. Andros keeps diner maroon and mustard. Brisas keeps sea blue and lime. Cityrub's soot and ember follow the dark wood of the room and the black site. Boi's wood band is sampled from a photo of the room. Sabor's navy matches the restaurant site. Boi's crimson, Brazas red, Cantinho leaf green, and Virgen blue are separation choices where no awning color was available. These are not national-flag palettes. Accent hues are checked in pairs, and the hero variant is not part of that check.
 
 Checkout on every page ends on the sentence "Demo site: no order was placed. Call to order."

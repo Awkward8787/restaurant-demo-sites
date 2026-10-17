@@ -160,6 +160,7 @@ const JOIN = { en: "to", es: "a", pt: "às" };
 const OPEN_ALL = { en: "Open 24 hours", es: "Abierto 24 horas", pt: "Aberto 24 horas" };
 const CLOSED = { en: "Closed", es: "Cerrado", pt: "Fechado" };
 const NEXT_DAY = { sun: "mon", mon: "tue", tue: "wed", wed: "thu", thu: "fri", fri: "sat", sat: "sun" };
+const PREV_DAY = { mon: "sun", tue: "mon", wed: "tue", thu: "wed", fri: "thu", sat: "fri", sun: "sat" };
 
 export function formatClock(hhmm, lang = "en") {
   const stamp = hhmm === "24:00" ? "00:00" : hhmm;
@@ -174,8 +175,11 @@ export function formatClock(hhmm, lang = "en") {
 
 function rangesForDisplay(weekly, day) {
   const ranges = weekly[day] ?? [];
-  const own = ranges.filter(([start, end]) => !(start === "00:00" && end !== "24:00"));
-  const carry = (weekly[NEXT_DAY[day]] ?? []).find(([start, end]) => start === "00:00" && end !== "24:00");
+  const prevEndsAtMidnight = (weekly[PREV_DAY[day]] ?? []).some(([, end]) => end === "24:00");
+  const own = ranges.filter(([start, end]) => !(prevEndsAtMidnight && start === "00:00" && end !== "24:00"));
+  const carry = own.some(([, end]) => end === "24:00")
+    ? (weekly[NEXT_DAY[day]] ?? []).find(([start, end]) => start === "00:00" && end !== "24:00")
+    : null;
   return own.map(([start, end]) => (end === "24:00" && carry ? [start, carry[1]] : [start, end]));
 }
 

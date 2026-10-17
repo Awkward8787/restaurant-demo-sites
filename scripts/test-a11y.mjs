@@ -15,6 +15,15 @@ const cartScript = readFileSync(new URL("../src/scripts/page.mjs", import.meta.u
 assert.match(cartScript, /demo-lang/);
 assert.match(cartScript, /t\(lang, "demoFoot"\)/);
 assert.doesNotMatch(cartScript, /Demo site: no order was placed\./);
+assert.doesNotMatch(cartScript, /sms:/);
+assert.doesNotMatch(cartScript, /wa\.me/);
+assert.doesNotMatch(cartScript, /mailto:/);
+assert.doesNotMatch(page, /sms:/);
+assert.doesNotMatch(page, /wa\.me/);
+assert.doesNotMatch(page, /mailto:/);
+const addBlock = cartScript.slice(cartScript.indexOf('querySelectorAll("[data-add]")'), cartScript.indexOf("function openOrder"));
+assert.doesNotMatch(addBlock, /openOrder/);
+assert.match(addBlock, /add-live/);
 assert.match(cartScript, /cleanLang/);
 assert.match(cartScript, /wantsFieldScroll/);
 assert.doesNotMatch(cartScript, /visibilityState: \(\) => document\.visibilityState,\n\s*\}\);\n\s*render\(\);/);

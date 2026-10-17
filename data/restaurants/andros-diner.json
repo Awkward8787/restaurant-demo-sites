@@ -3,10 +3,18 @@
   "slug": "andros-diner",
   "name": "Andros Diner",
   "shortName": "Andros",
-  "cuisineLabel": { "en": "Diner", "es": "Diner", "pt": "Diner" },
+  "cuisineLabel": {
+    "en": "Diner",
+    "es": "Diner",
+    "pt": "Diner"
+  },
   "servesCuisine": "Diner",
   "defaultLang": "en",
-  "languages": ["en", "es", "pt"],
+  "languages": [
+    "en",
+    "es",
+    "pt"
+  ],
   "phone": "+19733442626",
   "phoneDisplay": "(973) 344-2626",
   "email": "",
@@ -17,38 +25,115 @@
     "postalCode": "07105",
     "country": "US"
   },
-  "geo": { "lat": 40.7277986, "lon": -74.1558371 },
-  "osmUrl": "https://www.openstreetmap.org/way/437077891",
-  "rating": {
-    "value": 4.5,
-    "count": 23,
-    "source": "Tripadvisor",
-    "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d4621137-Reviews-Andros_Diner-Newark_New_Jersey.html"
+  "geo": {
+    "lat": 40.7277986,
+    "lon": -74.1558371
   },
+  "osmUrl": "https://www.openstreetmap.org/way/437077891",
+  "rating": null,
   "hours": {
     "source": "OpenStreetMap",
     "sourceUrl": "https://www.openstreetmap.org/way/437077891",
     "note": {
-      "en": "OpenStreetMap tags Andros as 24 hours, and a MenuPix listing also says 24 hours. An older SinglePlatform page listed shorter hours and a different phone. This page uses (973) 344-2626 from the prospect file. Confirm both before you rely on them.",
-      "es": "OpenStreetMap marca Andros como 24 horas, y MenuPix también dice 24 horas. Una página vieja de SinglePlatform mostraba otro horario y otro teléfono. Esta página usa (973) 344-2626 del archivo. Confirme los dos.",
-      "pt": "O OpenStreetMap marca o Andros como 24 horas, e o MenuPix também diz 24 horas. Uma página antiga do SinglePlatform mostrava outro horário e outro telefone. Esta página usa (973) 344-2626 do arquivo. Confirme os dois."
+      "en": "Open 24 hours, from OpenStreetMap and the 2018 menu, which also says open 7 days. That menu prints delivery from 11 a.m. to 11 p.m. Monday to Friday, 10 a.m. to 10 p.m. Saturday, and 10 a.m. to 2 p.m. Sunday, plus a $2 delivery charge.",
+      "es": "Abierto 24 horas, según OpenStreetMap y el menú de 2018, que también dice abierto los 7 días. Ese menú imprime delivery de 11 a.m. a 11 p.m. de lunes a viernes, de 10 a.m. a 10 p.m. el sábado y de 10 a.m. a 2 p.m. el domingo, más $2 de delivery.",
+      "pt": "Aberto 24 horas, segundo o OpenStreetMap e o cardápio de 2018, que também diz aberto os 7 dias. Esse cardápio imprime entrega das 11h às 23h de segunda a sexta, das 10h às 22h no sábado e das 10h às 14h no domingo, mais $2 de entrega."
     },
     "weekly": {
-      "mon": [["00:00", "24:00"]],
-      "tue": [["00:00", "24:00"]],
-      "wed": [["00:00", "24:00"]],
-      "thu": [["00:00", "24:00"]],
-      "fri": [["00:00", "24:00"]],
-      "sat": [["00:00", "24:00"]],
-      "sun": [["00:00", "24:00"]]
+      "mon": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "24:00"
+        ]
+      ]
+    },
+    "deliveryWeekly": {
+      "mon": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "tue": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "wed": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "thu": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "fri": [
+        [
+          "11:00",
+          "23:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "14:00"
+        ]
+      ]
     }
   },
   "hero": {
     "variant": "marquee",
     "dek": {
-      "en": "Wilson Avenue diner. A 2018 printed menu is the only priced list we could read.",
-      "es": "Diner en Wilson Avenue. El único menú con precios que pudimos leer es uno impreso de 2018.",
-      "pt": "Diner na Wilson Avenue. O único cardápio com preços que lemos é um impresso de 2018."
+      "en": "Wilson Avenue diner, open 24 hours. Breakfast, lunch, and pizza.",
+      "es": "Diner en Wilson Avenue, abierto 24 horas. Desayuno, almuerzo y pizza.",
+      "pt": "Diner na Wilson Avenue, aberto 24 horas. Café da manhã, almoço e pizza."
     }
   },
   "theme": {
@@ -67,9 +152,9 @@
   "menu": {
     "status": "partial",
     "note": {
-      "en": "Breakfast prices are from a 2018 menu PDF posted at atandros.com for 6 Wilson Avenue. They may be out of date. Lunch and pizza on that PDF were not copied in full, so they are not shown. This is not the current full menu.",
-      "es": "Los precios del desayuno salen de un PDF de 2018 en atandros.com para 6 Wilson Avenue. Pueden haber cambiado. El almuerzo y la pizza de ese PDF no se copiaron completos, así que no aparecen. No es el menú actual.",
-      "pt": "Os preços do café da manhã vêm de um PDF de 2018 em atandros.com para 6 Wilson Avenue. Podem ter mudado. O almoço e a pizza desse PDF não foram copiados por inteiro, então não aparecem. Não é o cardápio atual."
+      "en": "Prices are from the 2018 menu PDF on atandros.com for 6 Wilson Avenue. Breakfast, lunch, and pizza from that PDF are below. They may be out of date.",
+      "es": "Los precios salen del PDF de 2018 en atandros.com para 6 Wilson Avenue. Abajo están el desayuno, el almuerzo y la pizza de ese PDF. Pueden haber cambiado.",
+      "pt": "Os preços saem do PDF de 2018 em atandros.com para 6 Wilson Avenue. Abaixo estão o café da manhã, o almoço e a pizza desse PDF. Podem ter mudado."
     },
     "source": {
       "label": "2018 Andros menu PDF",
@@ -78,88 +163,847 @@
     },
     "categories": [
       {
-        "name": { "en": "Eggs", "es": "Huevos", "pt": "Ovos" },
+        "name": {
+          "en": "Eggs",
+          "es": "Huevos",
+          "pt": "Ovos"
+        },
         "items": [
-          { "id": "two-eggs", "name": "Two eggs, any style", "lang": "en", "description": { "en": "With home fries and toast.", "es": "Con papas y tostada.", "pt": "Com batata e torrada." }, "price": 6.95 },
-          { "id": "two-eggs-meat", "name": "Two eggs with ham, bacon, or sausage", "lang": "en", "description": { "en": "With home fries and toast.", "es": "Con papas y tostada.", "pt": "Com batata e torrada." }, "price": 8.95 },
-          { "id": "two-eggs-hash", "name": "Two eggs with corned beef hash, Taylor ham, or Canadian bacon", "lang": "en", "description": { "en": "With home fries and toast.", "es": "Con papas y tostada.", "pt": "Com batata e torrada." }, "price": 9.95 },
-          { "id": "steak-eggs", "name": "Steak and eggs", "lang": "en", "description": { "en": "10 oz New York sirloin, home fries, and toast.", "es": "Sirloin de Nueva York de 10 oz, papas y tostada.", "pt": "Sirloin de Nova York de 10 oz, batata e torrada." }, "price": 17.95 },
-          { "id": "buffet-platter", "name": "Buffet platter", "lang": "en", "description": { "en": "Two eggs with ham, bacon, and sausage, home fries, and toast.", "es": "Dos huevos con jamón, tocineta y salchicha, papas y tostada.", "pt": "Dois ovos com presunto, bacon e linguiça, batata e torrada." }, "price": 10.25 },
-          { "id": "breakfast-burrito", "name": "Breakfast burrito", "lang": "en", "description": { "en": "Scrambled eggs, cheese, onions, peppers, and chopped sausage in a tortilla, with sour cream, salsa, and home fries.", "es": "Huevos, queso, cebolla, pimientos y salchicha en tortilla, con crema, salsa y papas.", "pt": "Ovos, queijo, cebola, pimentão e linguiça na tortilla, com creme, salsa e batata." }, "price": 8.95 },
-          { "id": "taylor", "name": "Taylor ham, egg, and cheese", "lang": "en", "description": { "en": "Taylor ham, bacon, or sausage, fried egg, and American cheese on a roll, with fries or home fries.", "es": "Taylor ham, tocineta o salchicha, huevo y queso en pan, con papas.", "pt": "Taylor ham, bacon ou linguiça, ovo e queijo no pão, com batata." }, "price": 8.95 }
+          {
+            "id": "two-eggs",
+            "name": "Two eggs, any style",
+            "lang": "en",
+            "description": {
+              "en": "With home fries and toast.",
+              "es": "Con papas y tostada.",
+              "pt": "Com batata e torrada."
+            },
+            "price": 6.95
+          },
+          {
+            "id": "two-eggs-meat",
+            "name": "Two eggs with ham, bacon, or sausage",
+            "lang": "en",
+            "description": {
+              "en": "With home fries and toast.",
+              "es": "Con papas y tostada.",
+              "pt": "Com batata e torrada."
+            },
+            "price": 8.95
+          },
+          {
+            "id": "two-eggs-hash",
+            "name": "Two eggs with corned beef hash, Taylor ham, or Canadian bacon",
+            "lang": "en",
+            "description": {
+              "en": "With home fries and toast.",
+              "es": "Con papas y tostada.",
+              "pt": "Com batata e torrada."
+            },
+            "price": 9.95
+          },
+          {
+            "id": "steak-eggs",
+            "name": "Steak and eggs",
+            "lang": "en",
+            "description": {
+              "en": "10 oz New York sirloin, home fries, and toast.",
+              "es": "Sirloin de Nueva York de 10 oz, papas y tostada.",
+              "pt": "Sirloin de Nova York de 10 oz, batata e torrada."
+            },
+            "price": 17.95
+          },
+          {
+            "id": "buffet-platter",
+            "name": "Buffet platter",
+            "lang": "en",
+            "description": {
+              "en": "Two eggs with ham, bacon, and sausage, home fries, and toast.",
+              "es": "Dos huevos con jamón, tocineta y salchicha, papas y tostada.",
+              "pt": "Dois ovos com presunto, bacon e linguiça, batata e torrada."
+            },
+            "price": 10.25
+          },
+          {
+            "id": "breakfast-burrito",
+            "name": "Breakfast burrito",
+            "lang": "en",
+            "description": {
+              "en": "Scrambled eggs, cheese, onions, peppers, and chopped sausage in a tortilla, with sour cream, salsa, and home fries.",
+              "es": "Huevos, queso, cebolla, pimientos y salchicha en tortilla, con crema, salsa y papas.",
+              "pt": "Ovos, queijo, cebola, pimentão e linguiça na tortilla, com creme, salsa e batata."
+            },
+            "price": 8.95
+          },
+          {
+            "id": "taylor",
+            "name": "Taylor ham, egg, and cheese",
+            "lang": "en",
+            "description": {
+              "en": "Taylor ham, bacon, or sausage, fried egg, and American cheese on a roll, with fries or home fries.",
+              "es": "Taylor ham, tocineta o salchicha, huevo y queso en pan, con papas.",
+              "pt": "Taylor ham, bacon ou linguiça, ovo e queijo no pão, com batata."
+            },
+            "price": 8.95
+          }
         ]
       },
       {
-        "name": { "en": "Omelettes", "es": "Omelettes", "pt": "Omeletes" },
+        "name": {
+          "en": "Omelettes",
+          "es": "Omelettes",
+          "pt": "Omeletes"
+        },
         "items": [
-          { "id": "ham-cheese-om", "name": "Ham and cheese omelette", "lang": "en", "price": 8.95 },
-          { "id": "western", "name": "Western omelette", "lang": "en", "price": 9.25 },
-          { "id": "spanish", "name": "Spanish omelette", "lang": "en", "price": 8.95 },
-          { "id": "steak-cheese-om", "name": "Steak and cheese omelette", "lang": "en", "price": 8.5 },
-          { "id": "tomato-feta", "name": "Tomato and feta omelette", "lang": "en", "price": 9.25 },
-          { "id": "protein", "name": "Protein omelette", "lang": "en", "description": { "en": "Egg whites with grilled chicken and a choice of cheese.", "es": "Claras con pollo a la plancha y queso a elegir.", "pt": "Claras com frango grelhado e queijo à escolha." }, "price": 10.95 },
-          { "id": "skillet", "name": "Skillet omelette", "lang": "en", "description": { "en": "Onions, peppers, potatoes, and sausage.", "es": "Cebolla, pimientos, papas y salchicha.", "pt": "Cebola, pimentão, batata e linguiça." }, "price": 10.95 },
-          { "id": "three-way", "name": "Three way omelette", "lang": "en", "description": { "en": "Any vegetable, any cheese, and any breakfast meat.", "es": "Cualquier vegetal, cualquier queso y cualquier carne de desayuno.", "pt": "Qualquer vegetal, qualquer queijo e qualquer carne de café." }, "price": 9.95 }
+          {
+            "id": "ham-cheese-om",
+            "name": "Ham and cheese omelette",
+            "lang": "en",
+            "price": 8.95
+          },
+          {
+            "id": "western",
+            "name": "Western omelette",
+            "lang": "en",
+            "price": 9.25
+          },
+          {
+            "id": "spanish",
+            "name": "Spanish omelette",
+            "lang": "en",
+            "price": 8.95
+          },
+          {
+            "id": "steak-cheese-om",
+            "name": "Steak and cheese omelette",
+            "lang": "en",
+            "price": 8.5
+          },
+          {
+            "id": "tomato-feta",
+            "name": "Tomato and feta omelette",
+            "lang": "en",
+            "price": 9.25
+          },
+          {
+            "id": "protein",
+            "name": "Protein omelette",
+            "lang": "en",
+            "description": {
+              "en": "Egg whites with grilled chicken and a choice of cheese.",
+              "es": "Claras con pollo a la plancha y queso a elegir.",
+              "pt": "Claras com frango grelhado e queijo à escolha."
+            },
+            "price": 10.95
+          },
+          {
+            "id": "skillet",
+            "name": "Skillet omelette",
+            "lang": "en",
+            "description": {
+              "en": "Onions, peppers, potatoes, and sausage.",
+              "es": "Cebolla, pimientos, papas y salchicha.",
+              "pt": "Cebola, pimentão, batata e linguiça."
+            },
+            "price": 10.95
+          },
+          {
+            "id": "three-way",
+            "name": "Three way omelette",
+            "lang": "en",
+            "description": {
+              "en": "Any vegetable, any cheese, and any breakfast meat.",
+              "es": "Cualquier vegetal, cualquier queso y cualquier carne de desayuno.",
+              "pt": "Qualquer vegetal, qualquer queijo e qualquer carne de café."
+            },
+            "price": 9.95
+          }
         ]
       },
       {
-        "name": { "en": "Griddle", "es": "Plancha", "pt": "Chapa" },
+        "name": {
+          "en": "Griddle",
+          "es": "Plancha",
+          "pt": "Chapa"
+        },
         "items": [
-          { "id": "pancakes", "name": "Pancakes", "lang": "en", "price": 7 },
-          { "id": "pancakes-meat", "name": "Pancakes with ham, bacon, or sausage", "lang": "en", "price": 8.95 },
-          { "id": "pancakes-combo", "name": "Pancakes with meat and eggs", "lang": "en", "price": 10.95 },
-          { "id": "french", "name": "French toast", "lang": "en", "price": 7 },
-          { "id": "french-meat", "name": "French toast with ham, bacon, or sausage", "lang": "en", "price": 8.95 },
-          { "id": "french-combo", "name": "French toast with meat and eggs", "lang": "en", "price": 10.95 },
-          { "id": "waffle", "name": "Waffle", "lang": "en", "price": 8 },
-          { "id": "waffle-meat", "name": "Waffle with ham, bacon, or sausage", "lang": "en", "price": 9.95 },
-          { "id": "waffle-combo", "name": "Waffle with meat and eggs", "lang": "en", "price": 11.95 }
+          {
+            "id": "pancakes",
+            "name": "Pancakes",
+            "lang": "en",
+            "price": 7
+          },
+          {
+            "id": "pancakes-meat",
+            "name": "Pancakes with ham, bacon, or sausage",
+            "lang": "en",
+            "price": 8.95
+          },
+          {
+            "id": "pancakes-combo",
+            "name": "Pancakes with meat and eggs",
+            "lang": "en",
+            "price": 10.95
+          },
+          {
+            "id": "french",
+            "name": "French toast",
+            "lang": "en",
+            "price": 7
+          },
+          {
+            "id": "french-meat",
+            "name": "French toast with ham, bacon, or sausage",
+            "lang": "en",
+            "price": 8.95
+          },
+          {
+            "id": "french-combo",
+            "name": "French toast with meat and eggs",
+            "lang": "en",
+            "price": 10.95
+          },
+          {
+            "id": "waffle",
+            "name": "Waffle",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "waffle-meat",
+            "name": "Waffle with ham, bacon, or sausage",
+            "lang": "en",
+            "price": 9.95
+          },
+          {
+            "id": "waffle-combo",
+            "name": "Waffle with meat and eggs",
+            "lang": "en",
+            "price": 11.95
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Pizza",
+          "es": "Pizza",
+          "pt": "Pizza"
+        },
+        "items": [
+          {
+            "id": "original-small",
+            "name": "The Original, small",
+            "lang": "en",
+            "price": 9.95
+          },
+          {
+            "id": "original-large",
+            "name": "The Original, large",
+            "lang": "en",
+            "price": 11.95
+          },
+          {
+            "id": "tomato-sausage-small",
+            "name": "Fresh tomato and sausage, small",
+            "lang": "en",
+            "price": 10.95
+          },
+          {
+            "id": "tomato-sausage-large",
+            "name": "Fresh tomato and sausage, large",
+            "lang": "en",
+            "price": 14.95
+          },
+          {
+            "id": "spinach-ricotta-small",
+            "name": "Spinach ricotta, white pizza, small",
+            "lang": "en",
+            "price": 10.95
+          },
+          {
+            "id": "spinach-ricotta-large",
+            "name": "Spinach ricotta, white pizza, large",
+            "lang": "en",
+            "price": 14.95
+          },
+          {
+            "id": "tex-mex-small",
+            "name": "Tex-Mex, small",
+            "lang": "en",
+            "price": 10.95,
+            "description": {
+              "en": "Monterey Jack and cheddar, tomatoes, green peppers, and hot peppers.",
+              "es": "Monterey Jack and cheddar, tomatoes, green peppers, and hot peppers.",
+              "pt": "Monterey Jack and cheddar, tomatoes, green peppers, and hot peppers."
+            }
+          },
+          {
+            "id": "tex-mex-large",
+            "name": "Tex-Mex, large",
+            "lang": "en",
+            "price": 14.95,
+            "description": {
+              "en": "Monterey Jack and cheddar, tomatoes, green peppers, and hot peppers.",
+              "es": "Monterey Jack and cheddar, tomatoes, green peppers, and hot peppers.",
+              "pt": "Monterey Jack and cheddar, tomatoes, green peppers, and hot peppers."
+            }
+          },
+          {
+            "id": "buffalo-chicken-small",
+            "name": "Buffalo chicken, small",
+            "lang": "en",
+            "price": 11.95
+          },
+          {
+            "id": "buffalo-chicken-large",
+            "name": "Buffalo chicken, large",
+            "lang": "en",
+            "price": 15.95
+          },
+          {
+            "id": "kitchen-sink-small",
+            "name": "Kitchen sink, small",
+            "lang": "en",
+            "price": 11.95,
+            "description": {
+              "en": "Pepperoni, sausage, peppers, onions, mushrooms, and mozzarella.",
+              "es": "Pepperoni, sausage, peppers, onions, mushrooms, and mozzarella.",
+              "pt": "Pepperoni, sausage, peppers, onions, mushrooms, and mozzarella."
+            }
+          },
+          {
+            "id": "kitchen-sink-large",
+            "name": "Kitchen sink, large",
+            "lang": "en",
+            "price": 15.95,
+            "description": {
+              "en": "Pepperoni, sausage, peppers, onions, mushrooms, and mozzarella.",
+              "es": "Pepperoni, sausage, peppers, onions, mushrooms, and mozzarella.",
+              "pt": "Pepperoni, sausage, peppers, onions, mushrooms, and mozzarella."
+            }
+          },
+          {
+            "id": "five-cheese-small",
+            "name": "Five cheese, small",
+            "lang": "en",
+            "price": 10.95,
+            "description": {
+              "en": "Monterey Jack, cheddar, ricotta, provolone, and mozzarella.",
+              "es": "Monterey Jack, cheddar, ricotta, provolone, and mozzarella.",
+              "pt": "Monterey Jack, cheddar, ricotta, provolone, and mozzarella."
+            }
+          },
+          {
+            "id": "five-cheese-large",
+            "name": "Five cheese, large",
+            "lang": "en",
+            "price": 15.95,
+            "description": {
+              "en": "Monterey Jack, cheddar, ricotta, provolone, and mozzarella.",
+              "es": "Monterey Jack, cheddar, ricotta, provolone, and mozzarella.",
+              "pt": "Monterey Jack, cheddar, ricotta, provolone, and mozzarella."
+            }
+          },
+          {
+            "id": "tomato-basil-small",
+            "name": "Fresh tomato and basil, small",
+            "lang": "en",
+            "price": 10.95
+          },
+          {
+            "id": "tomato-basil-large",
+            "name": "Fresh tomato and basil, large",
+            "lang": "en",
+            "price": 14.95
+          },
+          {
+            "id": "steak-small",
+            "name": "Steak, small",
+            "lang": "en",
+            "price": 11.95,
+            "description": {
+              "en": "Peppers, onions, American cheese, and mozzarella.",
+              "es": "Peppers, onions, American cheese, and mozzarella.",
+              "pt": "Peppers, onions, American cheese, and mozzarella."
+            }
+          },
+          {
+            "id": "steak-large",
+            "name": "Steak, large",
+            "lang": "en",
+            "price": 15.95,
+            "description": {
+              "en": "Peppers, onions, American cheese, and mozzarella.",
+              "es": "Peppers, onions, American cheese, and mozzarella.",
+              "pt": "Peppers, onions, American cheese, and mozzarella."
+            }
+          },
+          {
+            "id": "meatlovers-small",
+            "name": "Meat lovers, small",
+            "lang": "en",
+            "price": 11.95,
+            "description": {
+              "en": "Bacon, sausage, meatball, and pepperoni.",
+              "es": "Bacon, sausage, meatball, and pepperoni.",
+              "pt": "Bacon, sausage, meatball, and pepperoni."
+            }
+          },
+          {
+            "id": "meatlovers-large",
+            "name": "Meat lovers, large",
+            "lang": "en",
+            "price": 15.95,
+            "description": {
+              "en": "Bacon, sausage, meatball, and pepperoni.",
+              "es": "Bacon, sausage, meatball, and pepperoni.",
+              "pt": "Bacon, sausage, meatball, and pepperoni."
+            }
+          },
+          {
+            "id": "primavera-small",
+            "name": "Primavera, small",
+            "lang": "en",
+            "price": 10.95,
+            "description": {
+              "en": "Broccoli, cauliflower, and fresh tomato with garlic.",
+              "es": "Broccoli, cauliflower, and fresh tomato with garlic.",
+              "pt": "Broccoli, cauliflower, and fresh tomato with garlic."
+            }
+          },
+          {
+            "id": "primavera-large",
+            "name": "Primavera, large",
+            "lang": "en",
+            "price": 14.95,
+            "description": {
+              "en": "Broccoli, cauliflower, and fresh tomato with garlic.",
+              "es": "Broccoli, cauliflower, and fresh tomato with garlic.",
+              "pt": "Broccoli, cauliflower, and fresh tomato with garlic."
+            }
+          },
+          {
+            "id": "eggplant-small",
+            "name": "Fresh tomato, basil, and eggplant, small",
+            "lang": "en",
+            "price": 10.95
+          },
+          {
+            "id": "eggplant-large",
+            "name": "Fresh tomato, basil, and eggplant, large",
+            "lang": "en",
+            "price": 14.95
+          },
+          {
+            "id": "chicken-parm-small",
+            "name": "Chicken parmigiana, small",
+            "lang": "en",
+            "price": 11.95
+          },
+          {
+            "id": "chicken-parm-large",
+            "name": "Chicken parmigiana, large",
+            "lang": "en",
+            "price": 15.95
+          },
+          {
+            "id": "baked-ziti-small",
+            "name": "Baked ziti, small",
+            "lang": "en",
+            "price": 11.95
+          },
+          {
+            "id": "baked-ziti-large",
+            "name": "Baked ziti, large",
+            "lang": "en",
+            "price": 15.95
+          },
+          {
+            "id": "farmers-small",
+            "name": "Farmer's, small",
+            "lang": "en",
+            "price": 11.95,
+            "description": {
+              "en": "Chicken, mushrooms, roasted peppers, and honey mustard.",
+              "es": "Chicken, mushrooms, roasted peppers, and honey mustard.",
+              "pt": "Chicken, mushrooms, roasted peppers, and honey mustard."
+            }
+          },
+          {
+            "id": "farmers-large",
+            "name": "Farmer's, large",
+            "lang": "en",
+            "price": 15.95,
+            "description": {
+              "en": "Chicken, mushrooms, roasted peppers, and honey mustard.",
+              "es": "Chicken, mushrooms, roasted peppers, and honey mustard.",
+              "pt": "Chicken, mushrooms, roasted peppers, and honey mustard."
+            }
+          },
+          {
+            "id": "hawaiian-small",
+            "name": "Hawaiian, small",
+            "lang": "en",
+            "price": 11.95
+          },
+          {
+            "id": "hawaiian-large",
+            "name": "Hawaiian, large",
+            "lang": "en",
+            "price": 15.95
+          },
+          {
+            "id": "sicilian",
+            "name": "Sicilian, one size",
+            "lang": "en",
+            "price": 14.95
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Panini",
+          "es": "Panini",
+          "pt": "Panini"
+        },
+        "items": [
+          {
+            "id": "cubano",
+            "name": "El Cubano",
+            "lang": "en",
+            "price": 7.5,
+            "description": {
+              "en": "Fresh pork, ham, Swiss, pickles, and Cuban sauce.",
+              "es": "Fresh pork, ham, Swiss, pickles, and Cuban sauce.",
+              "pt": "Fresh pork, ham, Swiss, pickles, and Cuban sauce."
+            }
+          },
+          {
+            "id": "grilled-chicken-panini",
+            "name": "Grilled chicken panini",
+            "lang": "en",
+            "price": 7.5,
+            "description": {
+              "en": "Fresh mozzarella and roasted peppers.",
+              "es": "Fresh mozzarella and roasted peppers.",
+              "pt": "Fresh mozzarella and roasted peppers."
+            }
+          },
+          {
+            "id": "turkey-panini",
+            "name": "Turkey panini",
+            "lang": "en",
+            "price": 7.5,
+            "description": {
+              "en": "Provolone, honey mustard, lettuce, tomato, and onions.",
+              "es": "Provolone, honey mustard, lettuce, tomato, and onions.",
+              "pt": "Provolone, honey mustard, lettuce, tomato, and onions."
+            }
+          },
+          {
+            "id": "ham-panini",
+            "name": "Ham panini",
+            "lang": "en",
+            "price": 7.5,
+            "description": {
+              "en": "Provolone, honey mustard, lettuce, tomato, and onions.",
+              "es": "Provolone, honey mustard, lettuce, tomato, and onions.",
+              "pt": "Provolone, honey mustard, lettuce, tomato, and onions."
+            }
+          },
+          {
+            "id": "philly",
+            "name": "Philly cheese steak panini",
+            "lang": "en",
+            "price": 7.5,
+            "description": {
+              "en": "Green peppers and onions.",
+              "es": "Green peppers and onions.",
+              "pt": "Green peppers and onions."
+            }
+          },
+          {
+            "id": "prosciutto",
+            "name": "Prosciutto panini",
+            "lang": "en",
+            "price": 8.5,
+            "description": {
+              "en": "Fresh basil, red peppers, fresh mozzarella, and tomato.",
+              "es": "Fresh basil, red peppers, fresh mozzarella, and tomato.",
+              "pt": "Fresh basil, red peppers, fresh mozzarella, and tomato."
+            }
+          },
+          {
+            "id": "cutlet-panini",
+            "name": "Chicken cutlet panini",
+            "lang": "en",
+            "price": 8.5,
+            "description": {
+              "en": "Fresh basil, red peppers, fresh mozzarella, and tomato.",
+              "es": "Fresh basil, red peppers, fresh mozzarella, and tomato.",
+              "pt": "Fresh basil, red peppers, fresh mozzarella, and tomato."
+            }
+          },
+          {
+            "id": "italian-panini",
+            "name": "Italian panini",
+            "lang": "en",
+            "price": 8.5,
+            "description": {
+              "en": "Sundried tomato paste, basil, and mozzarella.",
+              "es": "Sundried tomato paste, basil, and mozzarella.",
+              "pt": "Sundried tomato paste, basil, and mozzarella."
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Burgers",
+          "es": "Hamburguesas",
+          "pt": "Hambúrgueres"
+        },
+        "items": [
+          {
+            "id": "cheese-deluxe",
+            "name": "Cheese burger deluxe",
+            "lang": "en",
+            "price": 9.25
+          },
+          {
+            "id": "veggie-deluxe",
+            "name": "Veggie burger deluxe",
+            "lang": "en",
+            "price": 8.95
+          },
+          {
+            "id": "turkey-deluxe",
+            "name": "Turkey burger deluxe",
+            "lang": "en",
+            "price": 9.95
+          },
+          {
+            "id": "pizza-deluxe",
+            "name": "Pizza burger deluxe",
+            "lang": "en",
+            "price": 9.95
+          },
+          {
+            "id": "double-trouble",
+            "name": "Double trouble burger",
+            "lang": "en",
+            "price": 13.95,
+            "description": {
+              "en": "Two patties, extra bacon, and extra cheese.",
+              "es": "Two patties, extra bacon, and extra cheese.",
+              "pt": "Two patties, extra bacon, and extra cheese."
+            }
+          },
+          {
+            "id": "fat-burger",
+            "name": "Fat burger",
+            "lang": "en",
+            "price": 11.95,
+            "description": {
+              "en": "Ham, bacon, fried eggs, mayo, and ketchup.",
+              "es": "Ham, bacon, fried eggs, mayo, and ketchup.",
+              "pt": "Ham, bacon, fried eggs, mayo, and ketchup."
+            }
+          },
+          {
+            "id": "ironbound",
+            "name": "Ironbound burger",
+            "lang": "en",
+            "price": 11.95,
+            "description": {
+              "en": "The half pounder.",
+              "es": "The half pounder.",
+              "pt": "The half pounder."
+            }
+          },
+          {
+            "id": "patty-melt",
+            "name": "Patty melt",
+            "lang": "en",
+            "price": 10.25,
+            "description": {
+              "en": "Open faced Swiss cheeseburger with sauteed onions and mushrooms.",
+              "es": "Open faced Swiss cheeseburger with sauteed onions and mushrooms.",
+              "pt": "Open faced Swiss cheeseburger with sauteed onions and mushrooms."
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Hot sandwiches",
+          "es": "Sándwiches calientes",
+          "pt": "Sanduíches quentes"
+        },
+        "items": [
+          {
+            "id": "hot-chicken-rabe",
+            "name": "Grilled chicken, provolone, and broccoli rabe",
+            "lang": "en",
+            "price": 6.95
+          },
+          {
+            "id": "hot-chicken-peppers",
+            "name": "Grilled chicken, onions, peppers, mushrooms, and provolone",
+            "lang": "en",
+            "price": 6.95
+          },
+          {
+            "id": "hot-cutlet-rabe",
+            "name": "Chicken cutlet, fresh mozzarella, and broccoli rabe",
+            "lang": "en",
+            "price": 6.95
+          },
+          {
+            "id": "buffalo-chicken-sub",
+            "name": "Buffalo chicken",
+            "lang": "en",
+            "price": 6.75,
+            "description": {
+              "en": "Lettuce, tomatoes, onions, and blue cheese.",
+              "es": "Lettuce, tomatoes, onions, and blue cheese.",
+              "pt": "Lettuce, tomatoes, onions, and blue cheese."
+            }
+          },
+          {
+            "id": "buffalo-shrimp-sub",
+            "name": "Buffalo shrimp",
+            "lang": "en",
+            "price": 7.75,
+            "description": {
+              "en": "Lettuce, tomatoes, onions, and blue cheese.",
+              "es": "Lettuce, tomatoes, onions, and blue cheese.",
+              "pt": "Lettuce, tomatoes, onions, and blue cheese."
+            }
+          },
+          {
+            "id": "philly-sub",
+            "name": "Philly cheese steak",
+            "lang": "en",
+            "price": 5.95
+          },
+          {
+            "id": "philly-works",
+            "name": "Philly cheese steak with works",
+            "lang": "en",
+            "price": 6.95,
+            "description": {
+              "en": "Mayo, ketchup, onions, peppers, mushrooms, and potatoes.",
+              "es": "Mayo, ketchup, onions, peppers, mushrooms, and potatoes.",
+              "pt": "Mayo, ketchup, onions, peppers, mushrooms, and potatoes."
+            }
+          },
+          {
+            "id": "italian-steak",
+            "name": "Italian cheese steak",
+            "lang": "en",
+            "price": 6.95
+          },
+          {
+            "id": "italian-dog",
+            "name": "Italian hot dog",
+            "lang": "en",
+            "price": 6.95,
+            "description": {
+              "en": "Ketchup, mustard, onions, peppers, and potatoes.",
+              "es": "Ketchup, mustard, onions, peppers, and potatoes.",
+              "pt": "Ketchup, mustard, onions, peppers, and potatoes."
+            }
+          },
+          {
+            "id": "sausage-peppers",
+            "name": "Italian sausage and peppers",
+            "lang": "en",
+            "price": 6.95
+          }
         ]
       }
     ]
   },
   "orderNote": {
-    "en": "The breakfast list is from 2018. Call the diner and read it back before anyone cooks it. This preview does not place the order. DoorDash, Grubhub, Seamless, and Uber Eats also list Andros.",
-    "es": "El desayuno es de 2018. Llame al diner y léalo antes de que lo cocinen. Esta vista no hace el pedido. DoorDash, Grubhub, Seamless y Uber Eats también listan a Andros.",
-    "pt": "O café da manhã é de 2018. Ligue para o diner e leia a lista antes de cozinharem. Esta prévia não faz o pedido. DoorDash, Grubhub, Seamless e Uber Eats também listam o Andros."
+    "en": "Prices are from 2018. Call the diner and read the list before anyone cooks it. This preview does not place the order.",
+    "es": "Los precios son de 2018. Llame al diner y lea la lista antes de que la cocinen. Esta vista no hace el pedido.",
+    "pt": "Os preços são de 2018. Ligue para o diner e leia a lista antes de cozinharem. Esta prévia não faz o pedido."
   },
   "reviews": {
     "summary": {
-      "en": "Tripadvisor lists 4.5 out of 5 from 23 reviews. The Facebook page shows 1,037 likes and 5,944 check-ins.",
-      "es": "Tripadvisor publica 4.5 de 5, a partir de 23 reseñas. La página de Facebook muestra 1,037 me gusta y 5,944 check-ins.",
-      "pt": "O Tripadvisor lista 4,5 de 5, em 23 avaliações. A página do Facebook mostra 1.037 curtidas e 5.944 check-ins."
+      "en": "Tripadvisor has a page for the diner. A star count is not printed here.",
+      "es": "Tripadvisor tiene una página del diner. Aquí no se imprime un conteo de estrellas.",
+      "pt": "O Tripadvisor tem uma página do diner. Uma contagem de estrelas não é impressa aqui."
     },
     "links": [
       {
-        "label": "Tripadvisor, 4.5 from 23 reviews",
+        "label": "Tripadvisor",
         "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d4621137-Reviews-Andros_Diner-Newark_New_Jersey.html"
       },
       {
-        "label": "Facebook page",
+        "label": "Facebook",
         "url": "https://www.facebook.com/atandros/"
       }
     ]
   },
   "about": [
     {
-      "en": "Andros Diner is at 6 Wilson Avenue, Newark. OpenStreetMap lists the cuisine as diner and the hours as 24/7. A site at orderandrosrestaurant.com did not load when it was checked on 17 October 2026.",
-      "es": "Andros Diner está en 6 Wilson Avenue, Newark. OpenStreetMap lo marca como diner y 24 horas. El sitio orderandrosrestaurant.com no cargó el 17 de octubre de 2026.",
-      "pt": "O Andros Diner fica na 6 Wilson Avenue, Newark. O OpenStreetMap marca a cozinha como diner e o horário como 24 horas. O site orderandrosrestaurant.com não abriu em 17 de outubro de 2026."
+      "en": "Andros Diner is at 6 Wilson Avenue, Newark. The 2018 menu says open 7 days, 24 hours, and that they deliver.",
+      "es": "Andros Diner está en 6 Wilson Avenue, Newark. El menú de 2018 dice abierto los 7 días, 24 horas, y que hacen delivery.",
+      "pt": "O Andros Diner fica na 6 Wilson Avenue, Newark. O cardápio de 2018 diz aberto os 7 dias, 24 horas, e que fazem entrega."
     }
   ],
   "apps": [
-    { "name": "Grubhub", "url": "https://www.grubhub.com/restaurant/andros-restaurant-6-wilson-ave-newark/10744992" },
-    { "name": "Uber Eats", "url": "https://www.ubereats.com/store/andros-diners/LLFTmg1tUjeoEoMr3NF4EQ" },
-    { "name": "DoorDash", "url": "https://www.doordash.com/en-CA/en/store/andros-restaurant-28041537/" },
-    { "name": "Seamless", "url": "https://www.seamless.com/menu/andros-diner-6-wilson-ave-newark/260153" }
+    {
+      "name": "Grubhub",
+      "url": "https://www.grubhub.com/restaurant/andros-restaurant-6-wilson-ave-newark/10744992"
+    },
+    {
+      "name": "Uber Eats",
+      "url": "https://www.ubereats.com/store/andros-diners/LLFTmg1tUjeoEoMr3NF4EQ"
+    },
+    {
+      "name": "DoorDash",
+      "url": "https://www.doordash.com/store/andros-restaurant-28041537/"
+    },
+    {
+      "name": "Seamless",
+      "url": "https://www.seamless.com/menu/andros-diner-6-wilson-ave-newark/260153"
+    }
   ],
   "social": [
-    { "label": "Instagram", "url": "https://www.instagram.com/androsdiner/" },
-    { "label": "Facebook", "url": "https://www.facebook.com/atandros/" }
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/androsdiner/"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/atandros/"
+    }
   ],
-  "sections": ["menu", "order", "reviews", "visit", "about", "catering"],
+  "sections": [
+    "menu",
+    "order",
+    "reviews",
+    "visit",
+    "about",
+    "catering"
+  ],
   "seo": {
     "title": "Andros Diner, 6 Wilson Avenue",
     "description": "Andros Diner on Wilson Avenue in Newark. Demo preview. Breakfast prices from a 2018 menu PDF. Hours from OpenStreetMap."
+  },
+  "delivery": true,
+  "deliveryFee": 2,
+  "deliveryNote": {
+    "en": "The 2018 menu prints a $2 delivery charge. This demo adds that charge. It does not send the order.",
+    "es": "El menú de 2018 imprime $2 de delivery. Esta demo suma ese cargo. No envía el pedido.",
+    "pt": "O cardápio de 2018 imprime $2 de entrega. Esta demo soma essa taxa. Não envia o pedido."
+  },
+  "sourcesNote": {
+    "en": "Breakfast, lunch, pizza, the 24-hour line, and the $2 delivery charge are from the 2018 menu PDF. OpenStreetMap also tags the diner as 24 hours.",
+    "es": "El desayuno, el almuerzo, la pizza, la línea de 24 horas y los $2 de delivery salen del PDF de 2018. OpenStreetMap también marca el diner como 24 horas.",
+    "pt": "O café da manhã, o almoço, a pizza, a linha de 24 horas e os $2 de entrega saem do PDF de 2018. O OpenStreetMap também marca o diner como 24 horas."
   }
 }

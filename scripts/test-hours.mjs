@@ -58,6 +58,33 @@ const carryLines = Object.fromEntries(weekLines(carry, "en").map((line) => [line
 assert.equal(carryLines.sun, "11:30 AM to 2:00 AM");
 assert.equal(carryLines.mon, "Closed");
 
+const standalone = {
+  mon: [["00:00", "09:00"]],
+  tue: [],
+  wed: [],
+  thu: [],
+  fri: [],
+  sat: [],
+  sun: [["11:00", "21:00"]],
+};
+const standaloneLines = Object.fromEntries(weekLines(standalone, "en").map((line) => [line.day, line.text]));
+assert.equal(standaloneLines.mon, "12:00 AM to 9:00 AM");
+assert.equal(standaloneLines.sun, "11:00 AM to 9:00 PM");
+
+const jv = JSON.parse(readFileSync(new URL("../data/restaurants/jv-grill.json", import.meta.url), "utf8"));
+const virgen = JSON.parse(readFileSync(new URL("../data/restaurants/virgen-de-la-nube.json", import.meta.url), "utf8"));
+const jvLines = Object.fromEntries(weekLines(jv.hours.weekly, "en").map((line) => [line.day, line.text]));
+const virgenLines = Object.fromEntries(weekLines(virgen.hours.weekly, "en").map((line) => [line.day, line.text]));
+assert.equal(jvLines.mon, "5:30 AM to 9:00 PM");
+assert.equal(jvLines.sun, "5:30 AM to 9:00 PM");
+assert.equal(virgenLines.mon, "6:00 AM to 8:30 PM");
+assert.equal(virgenLines.sun, "8:30 AM to 4:30 PM");
+assert.equal(isOpen(jv.hours.weekly, new Date("2026-10-19T13:00:00Z")), true, "Monday 9:00 a.m. Newark, J&V open");
+assert.equal(isOpen(jv.hours.weekly, new Date("2026-10-20T02:00:00Z")), false, "Monday 10:00 p.m. Newark, J&V closed");
+assert.equal(isOpen(virgen.hours.weekly, new Date("2026-10-18T16:00:00Z")), true, "Sunday noon Newark, Virgen open");
+assert.equal(isOpen(virgen.hours.weekly, new Date("2026-10-18T21:00:00Z")), false, "Sunday 5:00 p.m. Newark, Virgen closed");
+assert.equal(isOpen(virgen.hours.weekly, new Date("2026-10-19T09:00:00Z")), false, "Monday 5:00 a.m. Newark, Virgen closed");
+
 let timer;
 let onVisible;
 let shown = "hidden";

@@ -257,6 +257,10 @@ export const chrome = {
   },
 };
 
+export function cleanLang(value) {
+  return LANGS.includes(value) ? value : null;
+}
+
 export function t(lang, key) {
   return chrome[lang]?.[key] ?? chrome.en[key] ?? key;
 }

@@ -1,6 +1,6 @@
 import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, sanitizeCart } from "../lib/cart.mjs";
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
-import { t } from "../i18n.mjs";
+import { cleanLang, t } from "../i18n.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -13,7 +13,7 @@ if (!root) {
   const email = root.dataset.email || "";
   const storageKey = `demo-order:${slug}`;
   const hours = JSON.parse(document.getElementById("hours-data")?.textContent || "null");
-  let lang = document.documentElement.lang || "en";
+  let lang = storedLang() || cleanLang(document.documentElement.lang) || "en";
 
   const dialog = document.getElementById("order-dialog");
   const linesEl = document.getElementById("order-lines");
@@ -56,15 +56,30 @@ if (!root) {
     sessionStorage.setItem(storageKey, JSON.stringify(state));
   }
 
+  function storedLang() {
+    try {
+      return cleanLang(localStorage.getItem("demo-lang"));
+    } catch {
+      return null;
+    }
+  }
+
   function applyLang(next) {
-    lang = next;
-    document.documentElement.lang = next;
+    const clean = cleanLang(next);
+    if (!clean) return;
+    lang = clean;
+    document.documentElement.lang = clean;
+    try {
+      localStorage.setItem("demo-lang", clean);
+    } catch {
+      /* Storage can be blocked. The choice still applies for this visit. */
+    }
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       const key = node.dataset.i18n;
-      node.textContent = t(next, key);
+      node.textContent = t(clean, key);
     });
     document.querySelectorAll(".lang-switch button").forEach((button) => {
-      button.setAttribute("aria-pressed", button.dataset.langSwitch === next ? "true" : "false");
+      button.setAttribute("aria-pressed", button.dataset.langSwitch === clean ? "true" : "false");
     });
     paintHours();
     render();

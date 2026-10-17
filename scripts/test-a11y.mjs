@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { t } from "../src/i18n.mjs";
+import { cleanLang, t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
 assert.match(page, /<legend[^>]*data-i18n="fulfillment"/);
@@ -11,6 +11,8 @@ assert.match(page, /id=\{`dish-\$\{item\.id\}`\}/);
 assert.match(page, /aria-describedby=\{`dish-\$\{item\.id\}`\}/);
 assert.match(page, /id="order-total"[^>]*role="status"/);
 const cartScript = readFileSync(new URL("../src/scripts/page.mjs", import.meta.url), "utf8");
+assert.match(cartScript, /demo-lang/);
+assert.match(cartScript, /cleanLang/);
 assert.doesNotMatch(cartScript, /visibilityState: \(\) => document\.visibilityState,\n\s*\}\);\n\s*render\(\);/);
 
 for (const lang of ["en", "es", "pt"]) {
@@ -24,5 +26,11 @@ assert.notEqual(t("es", "fulfillment"), t("en", "fulfillment"));
 assert.notEqual(t("pt", "fulfillment"), t("en", "fulfillment"));
 assert.notEqual(t("es", "tipPercent"), t("en", "tipPercent"));
 assert.notEqual(t("pt", "tipPercent"), t("en", "tipPercent"));
+assert.equal(cleanLang("en"), "en");
+assert.equal(cleanLang("es"), "es");
+assert.equal(cleanLang("pt"), "pt");
+assert.equal(cleanLang("fr"), null);
+assert.equal(cleanLang("en-US"), null);
+assert.equal(cleanLang(""), null);
 
 console.log("a11y ok");

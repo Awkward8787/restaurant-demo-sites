@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../src/lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../src/lib/order-a11y.mjs";
 import { ratingSentence, t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
@@ -91,5 +91,21 @@ assert.match(ratingSentence("es", sampleRating), /1\.225/);
 assert.match(ratingSentence("pt", sampleRating), /4,1/);
 assert.match(ratingSentence("pt", sampleRating), /1\.225/);
 assert.doesNotMatch(ratingSentence("es", sampleRating), /1225/);
+
+assert.match(page, /data-i18n-aria="sectionsLabel"/);
+assert.match(page, /data-i18n-aria="langLabel"/);
+const ariaNode = {
+  label: "",
+  getAttribute() {
+    return "langLabel";
+  },
+  setAttribute(name, value) {
+    if (name === "aria-label") this.label = value;
+  },
+};
+applyAriaLabels({ querySelectorAll: () => [ariaNode] }, "es");
+assert.equal(ariaNode.label, t("es", "langLabel"));
+assert.notEqual(ariaNode.label, t("en", "langLabel"));
+assert.match(script, /applyAriaLabels/);
 
 console.log("order ok");

@@ -44,3 +44,10 @@ export function setAddressRequired(field, shown) {
   if (shown) field.setAttribute("aria-required", "true");
   else field.removeAttribute("aria-required");
 }
+
+export function applyAriaLabels(root, lang) {
+  root.querySelectorAll("[data-i18n-aria]").forEach((node) => {
+    const key = node.getAttribute("data-i18n-aria");
+    if (key) node.setAttribute("aria-label", t(lang, key));
+  });
+}

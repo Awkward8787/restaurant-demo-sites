@@ -2,7 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
-import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -91,6 +91,7 @@ if (!root) {
       const key = node.dataset.i18n;
       node.textContent = t(clean, key);
     });
+    applyAriaLabels(document, clean);
     document.querySelectorAll(".lang-switch button").forEach((button) => {
       button.setAttribute("aria-pressed", button.dataset.langSwitch === clean ? "true" : "false");
     });

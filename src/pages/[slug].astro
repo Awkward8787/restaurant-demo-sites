@@ -111,7 +111,7 @@ const offersDelivery = r.delivery === true;
       >
         {t(lang, "menuBtn")}
       </button>
-      <nav id="nav-panel" class="nav-panel" aria-label={t(lang, "sectionsLabel")}>
+      <nav id="nav-panel" class="nav-panel" data-i18n-aria="sectionsLabel" aria-label={t(lang, "sectionsLabel")}>
         {
           nav.map(([id, key]) => (
             <a href={`#${id}`} data-i18n={key}>
@@ -120,7 +120,7 @@ const offersDelivery = r.delivery === true;
           ))
         }
       </nav>
-      <div class="lang-switch" role="group" aria-label={t(lang, "langLabel")}>
+      <div class="lang-switch" role="group" data-i18n-aria="langLabel" aria-label={t(lang, "langLabel")}>
         {
           r.languages.map((code) => (
             <button type="button" data-lang-switch={code} aria-pressed={code === lang ? "true" : "false"}>

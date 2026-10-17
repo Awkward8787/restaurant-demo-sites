@@ -287,11 +287,16 @@ export const chrome = {
   },
 };
 
+const RATING_LOCALE = { en: "en-US", es: "es", pt: "pt-BR" };
+
 export function ratingSentence(lang, rating) {
+  const locale = RATING_LOCALE[lang] ?? "en-US";
+  const value = new Intl.NumberFormat(locale, { maximumFractionDigits: 1, useGrouping: true }).format(rating.value);
+  const count = new Intl.NumberFormat(locale, { maximumFractionDigits: 0, useGrouping: true }).format(rating.count);
   return t(lang, "ratingLine")
     .replace("{platform}", rating.platform)
-    .replace("{value}", String(rating.value))
-    .replace("{count}", String(rating.count))
+    .replace("{value}", value)
+    .replace("{count}", count)
     .replace("{source}", rating.source);
 }
 

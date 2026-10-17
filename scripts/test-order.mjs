@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../src/lib/order-a11y.mjs";
-import { t } from "../src/i18n.mjs";
+import { ratingSentence, t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
 assert.match(page, /id="order-error"[^>]*role="alert"/);
@@ -82,5 +82,14 @@ assert.equal(shown.attrs.get("aria-required"), "true");
 setAddressRequired(shown, false);
 assert.equal(shown.attrs.has("aria-required"), false);
 assert.match(script, /setAddressRequired\(/);
+
+const sampleRating = { platform: "Google", value: 4.1, count: 1225, source: "Restaurant Guru" };
+assert.match(ratingSentence("en", sampleRating), /4\.1/);
+assert.match(ratingSentence("en", sampleRating), /1,225/);
+assert.match(ratingSentence("es", sampleRating), /4,1/);
+assert.match(ratingSentence("es", sampleRating), /1\.225/);
+assert.match(ratingSentence("pt", sampleRating), /4,1/);
+assert.match(ratingSentence("pt", sampleRating), /1\.225/);
+assert.doesNotMatch(ratingSentence("es", sampleRating), /1225/);
 
 console.log("order ok");

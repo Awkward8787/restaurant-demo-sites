@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { cleanLang, t } from "../src/i18n.mjs";
+import { wantsFieldScroll } from "../src/lib/ui.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
 assert.match(page, /<legend[^>]*data-i18n="fulfillment"/);
@@ -15,6 +16,7 @@ assert.match(cartScript, /demo-lang/);
 assert.match(cartScript, /t\(lang, "demoFoot"\)/);
 assert.doesNotMatch(cartScript, /Demo site: no order was placed\./);
 assert.match(cartScript, /cleanLang/);
+assert.match(cartScript, /wantsFieldScroll/);
 assert.doesNotMatch(cartScript, /visibilityState: \(\) => document\.visibilityState,\n\s*\}\);\n\s*render\(\);/);
 
 for (const lang of ["en", "es", "pt"]) {
@@ -34,6 +36,9 @@ assert.equal(cleanLang("pt"), "pt");
 assert.equal(cleanLang("fr"), null);
 assert.equal(cleanLang("en-US"), null);
 assert.equal(cleanLang(""), null);
+assert.equal(wantsFieldScroll(true), true);
+assert.equal(wantsFieldScroll(false), false);
+assert.equal(wantsFieldScroll(undefined), false);
 assert.equal(t("en", "demoFoot"), "Demo site: no order was placed.");
 assert.notEqual(t("es", "demoTitle"), t("en", "demoTitle"));
 assert.notEqual(t("pt", "demoTitle"), t("en", "demoTitle"));

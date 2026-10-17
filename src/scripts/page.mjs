@@ -1,6 +1,7 @@
 import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, sanitizeCart } from "../lib/cart.mjs";
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
+import { wantsFieldScroll } from "../lib/ui.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -442,6 +443,8 @@ if (!root) {
 
   document.querySelectorAll("input, textarea").forEach((field) => {
     field.addEventListener("focus", () => {
+      const coarse = window.matchMedia?.("(pointer: coarse)")?.matches;
+      if (!wantsFieldScroll(coarse)) return;
       window.setTimeout(() => field.scrollIntoView({ block: "center" }), 80);
     });
   });

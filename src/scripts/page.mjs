@@ -1,4 +1,4 @@
-import { cleanTip, focusAfterChange } from "../lib/cart.mjs";
+import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, sanitizeCart } from "../lib/cart.mjs";
 import { isOpen, statusPhrase } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 
@@ -29,14 +29,27 @@ if (!root) {
 
   let state = load();
 
+  function menuFromPage() {
+    const menu = {};
+    document.querySelectorAll("[data-add]").forEach((button) => {
+      const raw = button.dataset.price;
+      const price = raw === "" || raw == null ? null : Number(raw);
+      menu[button.dataset.id] = {
+        name: button.dataset.name,
+        itemLang: button.dataset.itemLang || "en",
+        price: Number.isFinite(price) ? price : null,
+      };
+    });
+    return menu;
+  }
+
   function load() {
     try {
       const saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
-      if (saved?.lines) return { ...saved, tip: cleanTip(saved.tip) };
+      return sanitizeCart(saved, menuFromPage());
     } catch {
-      /* ignore broken storage */
+      return sanitizeCart(null, menuFromPage());
     }
-    return { lines: [], fulfillment: "pickup", tip: 0, when: "", notes: "" };
   }
 
   function save() {
@@ -70,10 +83,7 @@ if (!root) {
   }
 
   function pricedSubtotal() {
-    return state.lines.reduce((sum, line) => {
-      if (line.price == null) return sum;
-      return sum + Math.round(line.price * 100) * line.qty;
-    }, 0);
+    return pricedSubtotalCents(state.lines);
   }
 
   function render(focus) {
@@ -115,7 +125,7 @@ if (!root) {
     totalEl.textContent = `${t(lang, "total")}: ${money(sub)} · ${t(lang, "tip")}: ${money(tipCents)}`;
     unpricedEl.hidden = !hasUnpriced;
     deliveryNote.hidden = state.fulfillment !== "delivery";
-    const count = state.lines.reduce((sum, line) => sum + line.qty, 0);
+    const count = itemCount(state.lines);
     if (barLabel) {
       barLabel.textContent =
         count === 0 ? t(lang, "orderBarEmpty") : `${t(lang, "orderBar")} · ${count} · ${money(sub)}`;
@@ -181,7 +191,7 @@ if (!root) {
       state.lines = state.lines.filter((line) => line.id !== id);
     } else {
       const line = state.lines.find((item) => item.id === id);
-      if (line) line.qty = qty;
+      if (line) line.qty = clampQty(qty) ?? line.qty;
     }
     render(focusAfterChange(before, state.lines, { id, action }));
   }
@@ -189,15 +199,16 @@ if (!root) {
   document.querySelectorAll("[data-add]").forEach((button) => {
     button.addEventListener("click", () => {
       const id = button.dataset.id;
-      const price = button.dataset.price === "" ? null : Number(button.dataset.price);
+      const item = menuFromPage()[id];
+      if (!item) return;
       const existing = state.lines.find((line) => line.id === id);
-      if (existing) existing.qty += 1;
+      if (existing) existing.qty = clampQty(existing.qty + 1);
       else {
         state.lines.push({
           id,
-          name: button.dataset.name,
-          itemLang: button.dataset.itemLang,
-          price,
+          name: item.name,
+          itemLang: item.itemLang,
+          price: item.price,
           qty: 1,
         });
       }
@@ -226,7 +237,7 @@ if (!root) {
   document.querySelectorAll("[name='fulfillment']").forEach((input) => {
     input.addEventListener("change", () => {
       if (input.checked) {
-        state.fulfillment = input.value;
+        state.fulfillment = input.value === "delivery" ? "delivery" : "pickup";
         render();
       }
     });
@@ -298,6 +309,10 @@ if (!root) {
       submit.textContent = t(lang, "checkout");
     }
   });
+
+  function inputByValue(name, value) {
+    return [...document.querySelectorAll(`input[name="${name}"]`)].find((input) => input.value === String(value)) ?? null;
+  }
 
   function readCustomTip() {
     const field = document.getElementById("tip-custom");
@@ -408,9 +423,9 @@ if (!root) {
     });
   });
 
-  const fulfillment = document.querySelector(`[name='fulfillment'][value='${state.fulfillment}']`);
+  const fulfillment = inputByValue("fulfillment", state.fulfillment);
   if (fulfillment) fulfillment.checked = true;
-  const tipRadio = document.querySelector(`[name='tip'][value='${state.tip}']`);
+  const tipRadio = inputByValue("tip", state.tip);
   if (tipRadio) tipRadio.checked = true;
   else if (state.tip) {
     const custom = document.querySelector("[name='tip'][value='custom']");

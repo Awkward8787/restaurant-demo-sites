@@ -84,6 +84,23 @@ export function huesCollide(a, b) {
   return distance < 14 && Math.abs(left.light - right.light) < 0.2;
 }
 
+export function assertRating(rating, label) {
+  if (rating == null) return;
+  assert.equal(typeof rating.platform, "string", `${label} platform`);
+  assert.ok(rating.platform.trim(), `${label} platform`);
+  assert.equal(typeof rating.source, "string", `${label} source`);
+  assert.ok(rating.source.trim(), `${label} source`);
+  assertHttpsUrl(rating.url, `${label} rating url`);
+  assert.equal(typeof rating.value, "number", `${label} rating value`);
+  assert.ok(Number.isFinite(rating.value) && rating.value >= 0 && rating.value <= 5, `${label} rating value`);
+  assert.equal(typeof rating.count, "number", `${label} rating count`);
+  assert.ok(Number.isInteger(rating.count) && rating.count >= 0, `${label} rating count`);
+  assert.match(String(rating.checked ?? ""), /^\d{4}-\d{2}-\d{2}$/, `${label} checked`);
+  const parsed = new Date(`${rating.checked}T00:00:00Z`);
+  assert.equal(Number.isNaN(parsed.getTime()), false, `${label} checked`);
+  assert.equal(parsed.toISOString().slice(0, 10), rating.checked, `${label} checked`);
+}
+
 export function assertWeekly(weekly, label) {
   if (weekly == null) return;
   assert.equal(typeof weekly, "object", `${label} hours`);
@@ -152,6 +169,7 @@ export function validateRestaurants(restaurants) {
     for (const [path, url] of urls) assertHttpsUrl(url, path);
     assertWeekly(restaurant.hours?.weekly, label);
     assertWeekly(restaurant.hours?.deliveryWeekly, `${label} delivery`);
+    assertRating(restaurant.rating, `${label} rating`);
     const ids = new Set();
     for (const category of restaurant.menu.categories) {
       for (const item of category.items) {

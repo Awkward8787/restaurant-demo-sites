@@ -8,6 +8,8 @@ export default defineConfig({
   site: process.env.SITE_URL ?? "https://awkward8787.github.io",
   base,
   trailingSlash: "always",
+  // Astro 7's default "jsx" drops spaces between inline elements ("StreetSkip").
+  compressHTML: true,
   build: {
     format: "directory",
   },

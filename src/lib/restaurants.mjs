@@ -1,8 +1,16 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const dataDir = join(dirname(fileURLToPath(import.meta.url)), "../../data/restaurants");
+// Astro 7's prerender bundle rewrites import.meta.url to the emitted chunk, so the
+// source-relative path only exists when Node loads this file directly.
+function restaurantDataDir() {
+  const nextToSource = join(dirname(fileURLToPath(import.meta.url)), "../../data/restaurants");
+  if (existsSync(nextToSource)) return nextToSource;
+  return join(process.cwd(), "data/restaurants");
+}
+
+const dataDir = restaurantDataDir();
 
 /** Files starting with _ are templates and are not built. */
 export function loadRestaurants() {

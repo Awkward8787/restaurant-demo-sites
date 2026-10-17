@@ -1,5 +1,7 @@
-import { isOpen, statusPhrase } from "../lib/hours.mjs";
-import { t } from "../i18n.mjs";
+import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, sanitizeCart } from "../lib/cart.mjs";
+import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
+import { cleanLang, t } from "../i18n.mjs";
+import { wantsFieldScroll } from "../lib/ui.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -12,7 +14,7 @@ if (!root) {
   const email = root.dataset.email || "";
   const storageKey = `demo-order:${slug}`;
   const hours = JSON.parse(document.getElementById("hours-data")?.textContent || "null");
-  let lang = document.documentElement.lang || "en";
+  let lang = storedLang() || cleanLang(document.documentElement.lang) || "en";
 
   const dialog = document.getElementById("order-dialog");
   const linesEl = document.getElementById("order-lines");
@@ -28,29 +30,57 @@ if (!root) {
 
   let state = load();
 
+  function menuFromPage() {
+    const menu = {};
+    document.querySelectorAll("[data-add]").forEach((button) => {
+      const raw = button.dataset.price;
+      const price = raw === "" || raw == null ? null : Number(raw);
+      menu[button.dataset.id] = {
+        name: button.dataset.name,
+        itemLang: button.dataset.itemLang || "en",
+        price: Number.isFinite(price) ? price : null,
+      };
+    });
+    return menu;
+  }
+
   function load() {
     try {
       const saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
-      if (saved?.lines) return saved;
+      return sanitizeCart(saved, menuFromPage());
     } catch {
-      /* ignore broken storage */
+      return sanitizeCart(null, menuFromPage());
     }
-    return { lines: [], fulfillment: "pickup", tip: 0, when: "", notes: "" };
   }
 
   function save() {
     sessionStorage.setItem(storageKey, JSON.stringify(state));
   }
 
+  function storedLang() {
+    try {
+      return cleanLang(localStorage.getItem("demo-lang"));
+    } catch {
+      return null;
+    }
+  }
+
   function applyLang(next) {
-    lang = next;
-    document.documentElement.lang = next;
+    const clean = cleanLang(next);
+    if (!clean) return;
+    lang = clean;
+    document.documentElement.lang = clean;
+    try {
+      localStorage.setItem("demo-lang", clean);
+    } catch {
+      /* Storage can be blocked. The choice still applies for this visit. */
+    }
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       const key = node.dataset.i18n;
-      node.textContent = t(next, key);
+      node.textContent = t(clean, key);
     });
     document.querySelectorAll(".lang-switch button").forEach((button) => {
-      button.setAttribute("aria-pressed", button.dataset.langSwitch === next ? "true" : "false");
+      button.setAttribute("aria-pressed", button.dataset.langSwitch === clean ? "true" : "false");
     });
     paintHours();
     render();
@@ -69,13 +99,10 @@ if (!root) {
   }
 
   function pricedSubtotal() {
-    return state.lines.reduce((sum, line) => {
-      if (line.price == null) return sum;
-      return sum + Math.round(line.price * 100) * line.qty;
-    }, 0);
+    return pricedSubtotalCents(state.lines);
   }
 
-  function render() {
+  function render(focus) {
     linesEl.replaceChildren();
     if (state.lines.length === 0) {
       emptyEl.hidden = false;
@@ -93,9 +120,9 @@ if (!root) {
         const qty = document.createElement("div");
         qty.className = "qty";
         qty.append(
-          stepButton("decrease", "−", () => setQty(line.id, line.qty - 1)),
+          stepButton(line.id, "decrease", "−", () => setQty(line.id, line.qty - 1, "decrease")),
           countSpan(line.qty),
-          stepButton("increase", "+", () => setQty(line.id, line.qty + 1)),
+          stepButton(line.id, "increase", "+", () => setQty(line.id, line.qty + 1, "increase")),
           removeButton(line.id),
         );
         copy.append(qty);
@@ -109,24 +136,44 @@ if (!root) {
     }
 
     const sub = pricedSubtotal();
-    const tipCents = Math.round(sub * (Number(state.tip) || 0) / 100);
+    const tipCents = Math.round(sub * cleanTip(state.tip) / 100);
     const hasUnpriced = state.lines.some((line) => line.price == null);
     totalEl.textContent = `${t(lang, "total")}: ${money(sub)} · ${t(lang, "tip")}: ${money(tipCents)}`;
     unpricedEl.hidden = !hasUnpriced;
     deliveryNote.hidden = state.fulfillment !== "delivery";
-    const count = state.lines.reduce((sum, line) => sum + line.qty, 0);
+    const count = itemCount(state.lines);
     if (barLabel) {
       barLabel.textContent =
         count === 0 ? t(lang, "orderBarEmpty") : `${t(lang, "orderBar")} · ${count} · ${money(sub)}`;
     }
     save();
+    if (focus) restoreFocus(focus);
   }
 
-  function stepButton(key, symbol, onClick) {
+  function restoreFocus(focus) {
+    if (focus.kind === "empty") {
+      emptyEl.tabIndex = -1;
+      emptyEl.focus();
+      return;
+    }
+    const button = linesEl.querySelector(
+      `[data-line-id="${cssEscape(focus.id)}"][data-action="${cssEscape(focus.action)}"]`,
+    );
+    button?.focus();
+  }
+
+  function cssEscape(value) {
+    if (typeof globalThis.CSS?.escape === "function") return globalThis.CSS.escape(String(value));
+    return String(value).replace(/["\\]/g, "\\$&");
+  }
+
+  function stepButton(lineId, action, symbol, onClick) {
     const button = document.createElement("button");
     button.type = "button";
-    button.dataset.i18n = key;
-    button.setAttribute("aria-label", t(lang, key));
+    button.dataset.i18n = action;
+    button.dataset.lineId = lineId;
+    button.dataset.action = action;
+    button.setAttribute("aria-label", t(lang, action));
     button.textContent = symbol;
     button.addEventListener("click", onClick);
     return button;
@@ -143,36 +190,41 @@ if (!root) {
     button.type = "button";
     button.className = "remove-line";
     button.dataset.i18n = "remove";
+    button.dataset.lineId = id;
+    button.dataset.action = "remove";
     button.textContent = t(lang, "remove");
     button.addEventListener("click", () => {
+      const before = state.lines;
       state.lines = state.lines.filter((line) => line.id !== id);
-      render();
+      render(focusAfterChange(before, state.lines, { id, action: "remove" }));
     });
     return button;
   }
 
-  function setQty(id, qty) {
+  function setQty(id, qty, action) {
+    const before = state.lines;
     if (qty <= 0) {
       state.lines = state.lines.filter((line) => line.id !== id);
     } else {
       const line = state.lines.find((item) => item.id === id);
-      if (line) line.qty = qty;
+      if (line) line.qty = clampQty(qty) ?? line.qty;
     }
-    render();
+    render(focusAfterChange(before, state.lines, { id, action }));
   }
 
   document.querySelectorAll("[data-add]").forEach((button) => {
     button.addEventListener("click", () => {
       const id = button.dataset.id;
-      const price = button.dataset.price === "" ? null : Number(button.dataset.price);
+      const item = menuFromPage()[id];
+      if (!item) return;
       const existing = state.lines.find((line) => line.id === id);
-      if (existing) existing.qty += 1;
+      if (existing) existing.qty = clampQty(existing.qty + 1);
       else {
         state.lines.push({
           id,
-          name: button.dataset.name,
-          itemLang: button.dataset.itemLang,
-          price,
+          name: item.name,
+          itemLang: item.itemLang,
+          price: item.price,
           qty: 1,
         });
       }
@@ -201,7 +253,7 @@ if (!root) {
   document.querySelectorAll("[name='fulfillment']").forEach((input) => {
     input.addEventListener("change", () => {
       if (input.checked) {
-        state.fulfillment = input.value;
+        state.fulfillment = input.value === "delivery" ? "delivery" : "pickup";
         render();
       }
     });
@@ -211,19 +263,18 @@ if (!root) {
     input.addEventListener("change", () => {
       if (!input.checked) return;
       if (input.value === "custom") {
-        const custom = document.getElementById("tip-custom");
-        state.tip = Number(custom.value) || 0;
+        state.tip = readCustomTip();
       } else {
-        state.tip = Number(input.value) || 0;
+        state.tip = cleanTip(input.value);
       }
       render();
     });
   });
 
-  document.getElementById("tip-custom")?.addEventListener("input", (event) => {
+  document.getElementById("tip-custom")?.addEventListener("input", () => {
     const customRadio = document.querySelector("[name='tip'][value='custom']");
     customRadio.checked = true;
-    state.tip = Number(event.target.value) || 0;
+    state.tip = readCustomTip();
     render();
   });
 
@@ -244,9 +295,17 @@ if (!root) {
       return;
     }
     if (state.when) {
-      const chosen = new Date(state.when);
-      if (Number.isNaN(chosen.getTime()) || chosen.getTime() < Date.now() - 60_000) {
+      const issue = pickupIssue(state.when, Date.now(), hours?.weekly);
+      if (issue === "past" || issue === "invalid") {
         showError(t(lang, "errorTime"));
+        return;
+      }
+      if (issue === "gap") {
+        showError(t(lang, "errorTimeGap"));
+        return;
+      }
+      if (issue === "closed") {
+        showError(t(lang, "errorClosed"));
         return;
       }
     }
@@ -275,6 +334,20 @@ if (!root) {
     }
   });
 
+  function inputByValue(name, value) {
+    return [...document.querySelectorAll(`input[name="${name}"]`)].find((input) => input.value === String(value)) ?? null;
+  }
+
+  function readCustomTip() {
+    const field = document.getElementById("tip-custom");
+    if (!field) return 0;
+    const raw = field.value;
+    if (raw.trim() === "") return 0;
+    const tip = cleanTip(raw);
+    if (String(tip) !== raw) field.value = String(tip);
+    return tip;
+  }
+
   function showError(message) {
     errorEl.hidden = false;
     errorEl.textContent = message;
@@ -282,7 +355,7 @@ if (!root) {
 
   function orderText() {
     const sub = pricedSubtotal();
-    const tipCents = Math.round(sub * (Number(state.tip) || 0) / 100);
+    const tipCents = Math.round(sub * cleanTip(state.tip) / 100);
     const lines = state.lines.map((line) => {
       const price = line.price == null ? t(lang, "askPrice") : money(Math.round(line.price * 100) * line.qty);
       return `${line.qty} x ${line.name} (${price})`;
@@ -290,12 +363,12 @@ if (!root) {
     return [
       name,
       state.fulfillment === "delivery" ? t(lang, "delivery") : t(lang, "pickup"),
-      state.when ? state.when : "",
+      state.when ? formatPickup(state.when, lang) : "",
       ...lines,
       `${t(lang, "total")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,
       state.notes ? state.notes : "",
-      "Demo site: no order was placed.",
+      t(lang, "demoFoot"),
     ]
       .filter(Boolean)
       .join("\n");
@@ -370,13 +443,15 @@ if (!root) {
 
   document.querySelectorAll("input, textarea").forEach((field) => {
     field.addEventListener("focus", () => {
+      const coarse = window.matchMedia?.("(pointer: coarse)")?.matches;
+      if (!wantsFieldScroll(coarse)) return;
       window.setTimeout(() => field.scrollIntoView({ block: "center" }), 80);
     });
   });
 
-  const fulfillment = document.querySelector(`[name='fulfillment'][value='${state.fulfillment}']`);
+  const fulfillment = inputByValue("fulfillment", state.fulfillment);
   if (fulfillment) fulfillment.checked = true;
-  const tipRadio = document.querySelector(`[name='tip'][value='${state.tip}']`);
+  const tipRadio = inputByValue("tip", state.tip);
   if (tipRadio) tipRadio.checked = true;
   else if (state.tip) {
     const custom = document.querySelector("[name='tip'][value='custom']");
@@ -390,7 +465,11 @@ if (!root) {
   if (notes) notes.value = state.notes || "";
 
   applyLang(lang);
-  render();
+  bindHoursRefresh(paintHours, {
+    setInterval: (fn, ms) => window.setInterval(fn, ms),
+    addEventListener: (type, fn) => document.addEventListener(type, fn),
+    visibilityState: () => document.visibilityState,
+  });
 }
 
 const indexNav = document.querySelector("[data-index]");

@@ -19,8 +19,19 @@ export function squareCheckout(order, config = {}) {
   } catch {
     return { ok: false, placed: false, reason: "Square payment link is not a valid URL." };
   }
-  if (!/^https:$/.test(url.protocol)) {
-    return { ok: false, placed: false, reason: "Square payment link must be https." };
+  const host = url.hostname;
+  const squareHost =
+    host === "square.link" ||
+    host === "squareup.com" ||
+    host.endsWith(".squareup.com") ||
+    host === "square.site" ||
+    host.endsWith(".square.site");
+  if (url.protocol !== "https:" || !squareHost) {
+    return {
+      ok: false,
+      placed: false,
+      reason: "Square payment link must be an https URL on square.link, square.site, or squareup.com.",
+    };
   }
   return {
     ok: true,

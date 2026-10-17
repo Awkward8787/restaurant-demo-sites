@@ -609,13 +609,25 @@ dialog::backdrop {
   border-radius: var(--radius);
 }
 
+.choice-set {
+  border: 0;
+  padding: 0;
+  margin: 1rem 0 0.5rem;
+}
+
+.choice-set legend {
+  font-weight: 650;
+  padding: 0;
+  margin: 0 0 0.35rem;
+}
+
 .fulfill {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   border: 0;
   padding: 0;
-  margin: 1rem 0 0.5rem;
+  margin: 0;
 }
 
 .fulfill label {
@@ -638,6 +650,10 @@ dialog::backdrop {
   align-items: center;
   gap: 0.3rem;
   font-weight: 600;
+}
+
+#tip-custom {
+  max-width: 5rem;
 }
 
 .totals {

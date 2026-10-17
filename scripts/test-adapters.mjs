@@ -12,10 +12,17 @@ assert.equal(demo.title, "Demo site: no order was placed. Call to order.");
 
 assert.equal(squareCheckout(order).ok, false);
 assert.equal(squareCheckout(order, { squarePaymentLink: "http://square.link/u/example" }).ok, false);
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://example.com/pay" }).ok, false);
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://notsquare.link/u/example" }).ok, false);
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://square.link.evil.com/pay" }).ok, false);
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://evil.squareup.com.evil.com/pay" }).ok, false);
 const square = squareCheckout(order, { squarePaymentLink: "https://square.link/u/example" });
 assert.equal(square.ok, true);
 assert.equal(square.placed, false);
 assert.equal(square.redirect, "https://square.link/u/example");
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://checkout.square.site/merchant/example" }).ok, true);
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://connect.squareup.com/pay" }).ok, true);
+assert.equal(squareCheckout(order, { squarePaymentLink: "https://book.square.site/example" }).ok, true);
 
 assert.equal(stripeCheckout(order).ok, false);
 assert.equal(stripeCheckout(order, { stripePaymentLink: "https://example.com/pay" }).ok, false);

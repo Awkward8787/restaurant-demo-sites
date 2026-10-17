@@ -1,6 +1,7 @@
 ---
+import { jsonForScript } from "../lib/json-script.mjs";
 import { loadRestaurants, telHref, money } from "../lib/restaurants.mjs";
-import { restaurantJsonLd } from "../lib/schema.mjs";
+import { isProspect, restaurantJsonLd } from "../lib/schema.mjs";
 import { weekLines } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 import Lang from "../components/Lang.astro";
@@ -62,17 +63,20 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{r.seo.title}</title>
     <meta name="description" content={r.seo.description} />
+    {isProspect(r) && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={pageUrl} />
     <meta property="og:title" content={r.seo.title} />
     <meta property="og:description" content={r.seo.description} />
     <meta property="og:type" content="restaurant" />
     <meta property="og:url" content={pageUrl} />
-    <meta property="og:image" content={new URL(`${base}og/${r.slug}.svg`, Astro.site).toString()} />
+    <meta property="og:image" content={new URL(`${base}og/${r.slug}.png`, Astro.site).toString()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="theme-color" content={r.theme.band} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={r.theme.fontHref} rel="stylesheet" />
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={jsonForScript(jsonLd)} />
   </head>
   <body
     class={`menu-${r.theme.menuStyle}`}
@@ -151,7 +155,7 @@ const nav = [
                       {category.items.map((item) => (
                         <article class="dish">
                           <div class="dish-copy">
-                            <div class="dish-name" lang={item.lang}>
+                            <div class="dish-name" id={`dish-${item.id}`} lang={item.lang}>
                               {item.name}
                             </div>
                             {item.gloss && (
@@ -174,6 +178,7 @@ const nav = [
                             type="button"
                             data-add
                             data-i18n="add"
+                            aria-describedby={`dish-${item.id}`}
                             data-id={item.id}
                             data-name={item.name}
                             data-item-lang={item.lang}
@@ -429,33 +434,41 @@ const nav = [
       </div>
       <div class="dialog-body">
         <div id="order-form">
-          <p id="order-empty" data-i18n="empty">{t(lang, "empty")}</p>
+          <p id="order-empty" tabindex="-1" data-i18n="empty">{t(lang, "empty")}</p>
           <ul class="lines" id="order-lines"></ul>
-          <fieldset class="fulfill">
-            <label>
-              <input type="radio" name="fulfillment" value="pickup" checked />
-              <span data-i18n="pickup">{t(lang, "pickup")}</span>
-            </label>
-            <label>
-              <input type="radio" name="fulfillment" value="delivery" />
-              <span data-i18n="delivery">{t(lang, "delivery")}</span>
-            </label>
+          <fieldset class="choice-set">
+            <legend data-i18n="fulfillment">{t(lang, "fulfillment")}</legend>
+            <div class="fulfill">
+              <label>
+                <input type="radio" name="fulfillment" value="pickup" checked />
+                <span data-i18n="pickup">{t(lang, "pickup")}</span>
+              </label>
+              <label>
+                <input type="radio" name="fulfillment" value="delivery" />
+                <span data-i18n="delivery">{t(lang, "delivery")}</span>
+              </label>
+            </div>
           </fieldset>
           <p id="delivery-note" class="fine" hidden data-i18n="deliveryNote">
             {t(lang, "deliveryNote")}
           </p>
-          <p data-i18n="tip">{t(lang, "tip")}</p>
-          <div class="tip-row">
-            <label><input type="radio" name="tip" value="0" checked /> <span data-i18n="tipNone">{t(lang, "tipNone")}</span></label>
-            <label><input type="radio" name="tip" value="10" /> 10%</label>
-            <label><input type="radio" name="tip" value="15" /> 15%</label>
-            <label><input type="radio" name="tip" value="20" /> 20%</label>
-            <label>
-              <input type="radio" name="tip" value="custom" />
-              <span data-i18n="customTip">{t(lang, "customTip")}</span>
-              <input id="tip-custom" inputmode="numeric" style="max-width:5rem" />
-            </label>
-          </div>
+          <fieldset class="choice-set">
+            <legend data-i18n="tip">{t(lang, "tip")}</legend>
+            <div class="tip-row">
+              <label><input type="radio" name="tip" value="0" checked /> <span data-i18n="tipNone">{t(lang, "tipNone")}</span></label>
+              <label><input type="radio" name="tip" value="10" /> 10%</label>
+              <label><input type="radio" name="tip" value="15" /> 15%</label>
+              <label><input type="radio" name="tip" value="20" /> 20%</label>
+              <label>
+                <input type="radio" name="tip" value="custom" />
+                <span data-i18n="customTip">{t(lang, "customTip")}</span>
+              </label>
+              <label for="tip-custom">
+                <span data-i18n="tipPercent">{t(lang, "tipPercent")}</span>
+                <input id="tip-custom" type="number" min="0" max="100" step="1" inputmode="numeric" />
+              </label>
+            </div>
+          </fieldset>
           <label>
             <span data-i18n="when">{t(lang, "when")}</span>
             <input id="order-when" type="datetime-local" />
@@ -464,7 +477,7 @@ const nav = [
             <span data-i18n="notes">{t(lang, "notes")}</span>
             <textarea id="order-notes"></textarea>
           </label>
-          <p class="totals" id="order-total"></p>
+          <p class="totals" id="order-total" role="status"></p>
           <p class="fine" id="order-unpriced" hidden data-i18n="unpriced">{t(lang, "unpriced")}</p>
           <p id="order-error" class="form-error" hidden></p>
           <button class="button" id="order-submit" type="button" data-i18n="checkout">
@@ -501,7 +514,7 @@ const nav = [
       </div>
     </dialog>
 
-    <script id="hours-data" type="application/json" set:html={JSON.stringify(r.hours)} />
+    <script id="hours-data" type="application/json" set:html={jsonForScript(r.hours)} />
     <script>
       import "../scripts/page.mjs";
     </script>

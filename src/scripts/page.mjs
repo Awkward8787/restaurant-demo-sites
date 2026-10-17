@@ -2,6 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
+import { applyAddressError, clearAddressError } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -308,6 +309,7 @@ if (!root) {
 
   document.getElementById("delivery-address")?.addEventListener("input", (event) => {
     state.address = event.target.value;
+    if (String(event.target.value).trim()) clearAddressError(event.target);
     save();
   });
 
@@ -319,6 +321,8 @@ if (!root) {
     }
     if (state.fulfillment === "delivery" && !String(state.address || "").trim()) {
       showError(t(lang, "deliveryNeedAddress"));
+      const addressField = document.getElementById("delivery-address");
+      if (addressField) applyAddressError(addressField);
       return;
     }
     if (state.when) {

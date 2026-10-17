@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { formatClock, isOpen } from "../src/lib/hours.mjs";
+import { formatClock, isOpen, weekLines } from "../src/lib/hours.mjs";
 
 const boi = JSON.parse(readFileSync(new URL("../data/restaurants/boi-na-brasa.json", import.meta.url), "utf8"));
 const andros = JSON.parse(readFileSync(new URL("../data/restaurants/andros-diner.json", import.meta.url), "utf8"));
@@ -18,9 +18,44 @@ assert.equal(isOpen(andros.hours.weekly, new Date("2026-10-17T08:00:00Z")), true
 assert.equal(isOpen(andros.hours.weekly, new Date("2026-01-15T05:00:00Z")), true);
 assert.equal(isOpen(null), null);
 
-assert.equal(formatClock("24:00"), "midnight");
-assert.equal(formatClock("11:30"), "11:30 a.m.");
-assert.equal(formatClock("00:00"), "12 a.m.");
-assert.equal(formatClock("15:00"), "3 p.m.");
+assert.equal(formatClock("11:30", "en"), "11:30 AM");
+assert.equal(formatClock("00:00", "en"), "12:00 AM");
+assert.equal(formatClock("15:00", "en"), "3:00 PM");
+assert.equal(formatClock("02:00", "es"), "2:00");
+assert.equal(formatClock("15:00", "pt"), "15:00");
+
+const boiLines = (lang) => Object.fromEntries(weekLines(weekly, lang).map((line) => [line.day, line.text]));
+const boiEn = boiLines("en");
+assert.equal(boiEn.mon, "11:30 AM to 2:00 AM");
+assert.equal(boiEn.fri, "11:30 AM to 3:00 AM");
+assert.equal(boiEn.sun, "11:30 AM to 2:00 AM");
+assert.doesNotMatch(boiEn.mon, /12:00 AM to 2:00 AM/);
+const boiEs = boiLines("es");
+assert.equal(boiEs.mon, "11:30 a 2:00");
+assert.equal(boiEs.fri, "11:30 a 3:00");
+assert.doesNotMatch(boiEs.mon, /a\.m\.|\bto\b/);
+const boiPt = boiLines("pt");
+assert.equal(boiPt.mon, "11:30 às 2:00");
+assert.equal(boiPt.sat, "11:30 às 3:00");
+
+assert.deepEqual(
+  weekLines(andros.hours.weekly, "en").map((line) => line.text),
+  Array(7).fill("Open 24 hours"),
+);
+assert.equal(weekLines(andros.hours.weekly, "es")[0].text, "Abierto 24 horas");
+assert.equal(weekLines(andros.hours.weekly, "pt")[0].text, "Aberto 24 horas");
+
+const carry = {
+  mon: [["00:00", "02:00"]],
+  tue: [],
+  wed: [],
+  thu: [],
+  fri: [],
+  sat: [],
+  sun: [["11:30", "24:00"]],
+};
+const carryLines = Object.fromEntries(weekLines(carry, "en").map((line) => [line.day, line.text]));
+assert.equal(carryLines.sun, "11:30 AM to 2:00 AM");
+assert.equal(carryLines.mon, "Closed");
 
 console.log("hours ok");

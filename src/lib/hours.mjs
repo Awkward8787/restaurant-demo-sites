@@ -155,22 +155,37 @@ export function formatPickup(value, lang = "en") {
   }).format(instants[0]);
 }
 
-export function formatClock(hhmm) {
-  if (hhmm === "24:00") return "midnight";
-  const [hourRaw, minute] = hhmm.split(":").map(Number);
-  const suffix = hourRaw >= 12 ? "p.m." : "a.m.";
-  const hour = hourRaw % 12 === 0 ? 12 : hourRaw % 12;
-  const mins = minute === 0 ? "" : `:${String(minute).padStart(2, "0")}`;
-  return `${hour}${mins} ${suffix}`;
+const CLOCK_LANG = { en: "en-US", es: "es", pt: "pt-BR" };
+const JOIN = { en: "to", es: "a", pt: "às" };
+const OPEN_ALL = { en: "Open 24 hours", es: "Abierto 24 horas", pt: "Aberto 24 horas" };
+const CLOSED = { en: "Closed", es: "Cerrado", pt: "Fechado" };
+const NEXT_DAY = { sun: "mon", mon: "tue", tue: "wed", wed: "thu", thu: "fri", fri: "sat", sat: "sun" };
+
+export function formatClock(hhmm, lang = "en") {
+  const stamp = hhmm === "24:00" ? "00:00" : hhmm;
+  const [hour, minute] = stamp.split(":").map(Number);
+  const date = new Date(Date.UTC(2026, 0, 1, hour, minute));
+  return new Intl.DateTimeFormat(CLOCK_LANG[lang] ?? "en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+function rangesForDisplay(weekly, day) {
+  const ranges = weekly[day] ?? [];
+  const own = ranges.filter(([start, end]) => !(start === "00:00" && end !== "24:00"));
+  const carry = (weekly[NEXT_DAY[day]] ?? []).find(([start, end]) => start === "00:00" && end !== "24:00");
+  return own.map(([start, end]) => (end === "24:00" && carry ? [start, carry[1]] : [start, end]));
 }
 
 export function formatDay(ranges, lang = "en") {
-  if (!ranges || ranges.length === 0) {
-    if (lang === "es") return "Cerrado";
-    if (lang === "pt") return "Fechado";
-    return "Closed";
+  if (!ranges || ranges.length === 0) return CLOSED[lang] ?? CLOSED.en;
+  if (ranges.length === 1 && ranges[0][0] === "00:00" && ranges[0][1] === "24:00") {
+    return OPEN_ALL[lang] ?? OPEN_ALL.en;
   }
-  return ranges.map(([start, end]) => `${formatClock(start)} to ${formatClock(end)}`).join(", ");
+  const joiner = JOIN[lang] ?? JOIN.en;
+  return ranges.map(([start, end]) => `${formatClock(start, lang)} ${joiner} ${formatClock(end, lang)}`).join(", ");
 }
 
 export function weekLines(weekly, lang = "en") {
@@ -179,7 +194,7 @@ export function weekLines(weekly, lang = "en") {
   return DAY_ORDER.map((day) => ({
     day,
     label: labels[day],
-    text: formatDay(weekly[day], lang),
+    text: formatDay(rangesForDisplay(weekly, day), lang),
   }));
 }
 

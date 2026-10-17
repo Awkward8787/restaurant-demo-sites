@@ -452,7 +452,6 @@ if (!root) {
     addEventListener: (type, fn) => document.addEventListener(type, fn),
     visibilityState: () => document.visibilityState,
   });
-  render();
 }
 
 const indexNav = document.querySelector("[data-index]");

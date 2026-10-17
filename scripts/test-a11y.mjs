@@ -10,6 +10,8 @@ assert.match(page, /id="tip-custom"[^>]*type="number"/);
 assert.match(page, /id=\{`dish-\$\{item\.id\}`\}/);
 assert.match(page, /aria-describedby=\{`dish-\$\{item\.id\}`\}/);
 assert.match(page, /id="order-total"[^>]*role="status"/);
+const cartScript = readFileSync(new URL("../src/scripts/page.mjs", import.meta.url), "utf8");
+assert.doesNotMatch(cartScript, /visibilityState: \(\) => document\.visibilityState,\n\s*\}\);\n\s*render\(\);/);
 
 for (const lang of ["en", "es", "pt"]) {
   for (const key of ["fulfillment", "tipPercent"]) {

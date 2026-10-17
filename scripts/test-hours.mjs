@@ -58,6 +58,19 @@ const carryLines = Object.fromEntries(weekLines(carry, "en").map((line) => [line
 assert.equal(carryLines.sun, "11:30 AM to 2:00 AM");
 assert.equal(carryLines.mon, "Closed");
 
+const fullThenMorning = {
+  mon: [["00:00", "02:00"]],
+  tue: [],
+  wed: [],
+  thu: [],
+  fri: [],
+  sat: [],
+  sun: [["00:00", "24:00"]],
+};
+const fullLines = Object.fromEntries(weekLines(fullThenMorning, "en").map((line) => [line.day, line.text]));
+assert.equal(fullLines.sun, "Open 24 hours");
+assert.equal(fullLines.mon, "12:00 AM to 2:00 AM");
+
 const standalone = {
   mon: [["00:00", "09:00"]],
   tue: [],

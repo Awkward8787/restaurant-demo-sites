@@ -1,4 +1,4 @@
-import { cleanTip } from "../lib/cart.mjs";
+import { cleanTip, focusAfterChange } from "../lib/cart.mjs";
 import { isOpen, statusPhrase } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 
@@ -76,7 +76,7 @@ if (!root) {
     }, 0);
   }
 
-  function render() {
+  function render(focus) {
     linesEl.replaceChildren();
     if (state.lines.length === 0) {
       emptyEl.hidden = false;
@@ -94,9 +94,9 @@ if (!root) {
         const qty = document.createElement("div");
         qty.className = "qty";
         qty.append(
-          stepButton("decrease", "−", () => setQty(line.id, line.qty - 1)),
+          stepButton(line.id, "decrease", "−", () => setQty(line.id, line.qty - 1, "decrease")),
           countSpan(line.qty),
-          stepButton("increase", "+", () => setQty(line.id, line.qty + 1)),
+          stepButton(line.id, "increase", "+", () => setQty(line.id, line.qty + 1, "increase")),
           removeButton(line.id),
         );
         copy.append(qty);
@@ -121,13 +121,33 @@ if (!root) {
         count === 0 ? t(lang, "orderBarEmpty") : `${t(lang, "orderBar")} · ${count} · ${money(sub)}`;
     }
     save();
+    if (focus) restoreFocus(focus);
   }
 
-  function stepButton(key, symbol, onClick) {
+  function restoreFocus(focus) {
+    if (focus.kind === "empty") {
+      emptyEl.tabIndex = -1;
+      emptyEl.focus();
+      return;
+    }
+    const button = linesEl.querySelector(
+      `[data-line-id="${cssEscape(focus.id)}"][data-action="${cssEscape(focus.action)}"]`,
+    );
+    button?.focus();
+  }
+
+  function cssEscape(value) {
+    if (typeof globalThis.CSS?.escape === "function") return globalThis.CSS.escape(String(value));
+    return String(value).replace(/["\\]/g, "\\$&");
+  }
+
+  function stepButton(lineId, action, symbol, onClick) {
     const button = document.createElement("button");
     button.type = "button";
-    button.dataset.i18n = key;
-    button.setAttribute("aria-label", t(lang, key));
+    button.dataset.i18n = action;
+    button.dataset.lineId = lineId;
+    button.dataset.action = action;
+    button.setAttribute("aria-label", t(lang, action));
     button.textContent = symbol;
     button.addEventListener("click", onClick);
     return button;
@@ -144,22 +164,26 @@ if (!root) {
     button.type = "button";
     button.className = "remove-line";
     button.dataset.i18n = "remove";
+    button.dataset.lineId = id;
+    button.dataset.action = "remove";
     button.textContent = t(lang, "remove");
     button.addEventListener("click", () => {
+      const before = state.lines;
       state.lines = state.lines.filter((line) => line.id !== id);
-      render();
+      render(focusAfterChange(before, state.lines, { id, action: "remove" }));
     });
     return button;
   }
 
-  function setQty(id, qty) {
+  function setQty(id, qty, action) {
+    const before = state.lines;
     if (qty <= 0) {
       state.lines = state.lines.filter((line) => line.id !== id);
     } else {
       const line = state.lines.find((item) => item.id === id);
       if (line) line.qty = qty;
     }
-    render();
+    render(focusAfterChange(before, state.lines, { id, action }));
   }
 
   document.querySelectorAll("[data-add]").forEach((button) => {

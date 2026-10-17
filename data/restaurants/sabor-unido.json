@@ -1,0 +1,221 @@
+{
+  "order": 8,
+  "slug": "sabor-unido",
+  "name": "Sabor Unido",
+  "shortName": "Sabor Unido",
+  "cuisineLabel": { "en": "Brazilian and Portuguese", "es": "Brasileño y portugués", "pt": "Brasileiro e português" },
+  "servesCuisine": "Brazilian",
+  "defaultLang": "pt",
+  "languages": ["pt", "en", "es"],
+  "phone": "+19733688553",
+  "phoneDisplay": "(973) 368-8553",
+  "email": "osccampos@hotmail.com",
+  "address": {
+    "street": "77 Jefferson Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07105",
+    "country": "US"
+  },
+  "geo": { "lat": 40.730463, "lon": -74.1612456 },
+  "osmUrl": "https://www.openstreetmap.org/node/3743804456",
+  "rating": {
+    "value": 4.5,
+    "count": 49,
+    "source": "Tripadvisor",
+    "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d5077187-Reviews-Sabor_Unido-Newark_New_Jersey.html"
+  },
+  "hours": {
+    "source": "saborunido.com",
+    "sourceUrl": "https://saborunido.com/",
+    "note": {
+      "en": "Hours are from the restaurant's own site, and they match the OpenStreetMap tag.",
+      "es": "El horario sale del sitio del restaurante, y coincide con OpenStreetMap.",
+      "pt": "O horário sai do site do restaurante, e bate com o OpenStreetMap."
+    },
+    "weekly": {
+      "mon": [["12:00", "21:00"]],
+      "tue": [["12:00", "21:00"]],
+      "wed": [["12:00", "21:00"]],
+      "thu": [["12:00", "21:00"]],
+      "fri": [["12:00", "21:00"]],
+      "sat": [["12:00", "21:00"]],
+      "sun": [["12:00", "18:00"]]
+    }
+  },
+  "hero": {
+    "variant": "column",
+    "dek": {
+      "en": "Brazilian and Portuguese cooking on Jefferson Street, in the Ironbound.",
+      "es": "Cocina brasileña y portuguesa en Jefferson Street, en el Ironbound.",
+      "pt": "Cozinha brasileira e portuguesa na Jefferson Street, no Ironbound."
+    },
+    "aside": {
+      "title": { "en": "Saturday feijoada", "es": "Feijoada del sábado", "pt": "Feijoada de sábado" },
+      "body": {
+        "en": "Their site describes it as pork stew in black beans, with white rice, collard greens, vinagrete, and farofa. Served Saturday, 12 p.m. to 9 p.m. No price on that page.",
+        "es": "Su sitio la describe como guiso de cerdo en frijol negro, con arroz blanco, couve, vinagrete y farofa. Sábados, de 12 p.m. a 9 p.m. Esa página no pone precio.",
+        "pt": "O site descreve como feijoada de porco, com arroz branco, couve, vinagrete e farofa. Sábado, das 12h às 21h. Essa página não põe preço."
+      }
+    }
+  },
+  "theme": {
+    "paper": "#F3EEE6",
+    "ink": "#152E40",
+    "band": "#152E40",
+    "onBand": "#F3EEE6",
+    "accent": "#9A3428",
+    "onAccent": "#F3EEE6",
+    "displayStack": "'Petrona', Georgia, serif",
+    "bodyStack": "'Libre Franklin', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "rows",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;650&family=Petrona:wght@500;650&display=swap"
+  },
+  "menu": {
+    "status": "partial",
+    "note": {
+      "en": "Partial menu. The priced plates are from saborunidonewark.com. Saturday feijoada is described on saborunido.com with no price. Confirm before you charge any of this.",
+      "es": "Menú parcial. Los platos con precio salen de saborunidonewark.com. La feijoada del sábado está descrita en saborunido.com sin precio. Confirme antes de cobrar.",
+      "pt": "Cardápio parcial. Os pratos com preço saem de saborunidonewark.com. A feijoada de sábado está descrita em saborunido.com sem preço. Confirme antes de cobrar."
+    },
+    "source": {
+      "label": "saborunidonewark.com",
+      "url": "http://www.saborunidonewark.com/",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": { "en": "Saturday", "es": "Sábado", "pt": "Sábado" },
+        "items": [
+          {
+            "id": "feijoada",
+            "name": "Feijoada",
+            "lang": "pt",
+            "description": {
+              "en": "Pork stew in black beans, with white rice, collard greens, vinagrete, and farofa. Saturday, 12 p.m. to 9 p.m. Price not on saborunido.com.",
+              "es": "Guiso de cerdo en frijol negro, con arroz, couve, vinagrete y farofa. Sábado, de 12 p.m. a 9 p.m. Sin precio en saborunido.com.",
+              "pt": "Feijoada, com arroz branco, couve, vinagrete e farofa. Sábado, das 12h às 21h. Sem preço em saborunido.com."
+            },
+            "price": null
+          }
+        ]
+      },
+      {
+        "name": { "en": "Plates on saborunidonewark.com", "es": "Platos en saborunidonewark.com", "pt": "Pratos em saborunidonewark.com" },
+        "items": [
+          {
+            "id": "frango-assado",
+            "name": "Frango assado",
+            "lang": "pt",
+            "gloss": { "en": "Roasted chicken, roasted potatoes, rice, and beans", "es": "Pollo asado, papas, arroz y frijoles", "pt": "Frango assado, batata, arroz e feijão" },
+            "price": 25
+          },
+          {
+            "id": "picanha",
+            "name": "Picanha grelhada",
+            "lang": "pt",
+            "gloss": { "en": "Charbroiled top sirloin, 12 oz, pick two sides", "es": "Picanha a la parrilla, 12 oz, dos acompañamientos", "pt": "Picanha grelhada, 12 oz, dois acompanhamentos" },
+            "price": 31
+          },
+          {
+            "id": "shrimp-bobo",
+            "name": "Shrimp bobó",
+            "lang": "en",
+            "gloss": { "en": "The page says grilled shrimp in yuca sauce", "es": "La página dice camarones a la parrilla en salsa de yuca", "pt": "A página diz camarão grelhado ao molho de mandioca" },
+            "price": 25
+          },
+          {
+            "id": "strogonoff",
+            "name": "Strogonoff de carne",
+            "lang": "pt",
+            "gloss": { "en": "Beef in mustard, cream, mushrooms, and tomato", "es": "Res con mostaza, crema, champiñones y tomate", "pt": "Carne com mostarda, creme, cogumelos e tomate" },
+            "price": 25
+          },
+          {
+            "id": "bacalhau",
+            "name": "Bacalhau com natas",
+            "lang": "pt",
+            "gloss": { "en": "Oven-roasted shredded cod casserole", "es": "Bacalao desmenuzado al horno con nata", "pt": "Bacalhau desfiado no forno com natas" },
+            "price": 25
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Their site links out to order online. This preview does not send the order. Call (973) 368-8553 or use the email on their about page, osccampos@hotmail.com. DoorDash, Grubhub, and Seamless also list the restaurant.",
+    "es": "Su sitio enlaza un pedido en línea. Esta vista no envía el pedido. Llame al (973) 368-8553 o use el correo de su página, osccampos@hotmail.com. DoorDash, Grubhub y Seamless también listan el restaurante.",
+    "pt": "O site deles aponta um pedido online. Esta prévia não envia o pedido. Ligue para (973) 368-8553 ou use o e-mail da página, osccampos@hotmail.com. DoorDash, Grubhub e Seamless também listam a casa."
+  },
+  "questions": [
+    {
+      "q": { "en": "Can we bring wine?", "es": "¿Se puede llevar vino?", "pt": "Dá para levar vinho?" },
+      "a": {
+        "en": "Their press page quotes NBC New York describing the restaurant as BYOB.",
+        "es": "Su página de prensa cita a NBC New York, que describe el restaurante como BYOB.",
+        "pt": "A página de imprensa cita a NBC New York, que descreve a casa como BYOB."
+      },
+      "source": "Sabor Unido press page",
+      "url": "https://saborunido.com/newark-ironbound-sabor-unido-press"
+    }
+  ],
+  "reviews": {
+    "summary": {
+      "en": "Tripadvisor lists 4.5 out of 5 from 49 reviews. The Facebook page shows 1,548 likes and 2,464 check-ins.",
+      "es": "Tripadvisor publica 4.5 de 5, a partir de 49 reseñas. Facebook muestra 1,548 me gusta y 2,464 check-ins.",
+      "pt": "O Tripadvisor lista 4,5 de 5, em 49 avaliações. O Facebook mostra 1.548 curtidas e 2.464 check-ins."
+    },
+    "links": [
+      {
+        "label": "Tripadvisor, 4.5 from 49 reviews",
+        "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d5077187-Reviews-Sabor_Unido-Newark_New_Jersey.html"
+      },
+      {
+        "label": "Facebook page",
+        "url": "https://www.facebook.com/saborunido/"
+      }
+    ],
+    "quote": {
+      "text": "Newark's Ironbound District promises hearty meals, and Sabor Unido delivers.",
+      "name": "KT Harrison",
+      "source": "Quoted on Sabor Unido's press page",
+      "url": "https://saborunido.com/newark-ironbound-sabor-unido-press"
+    }
+  },
+  "about": [
+    {
+      "en": "Their about page says: \"We are a family-run business that has been successfully serving homemade Brazilian and Portuguese food in the heart of the Ironbound for the past 6 years.\" The page is not dated, so the \"6 years\" may be old.",
+      "es": "Su página dice que son un negocio familiar y que llevan años sirviendo comida brasileña y portuguesa casera en el Ironbound. La página no tiene fecha, así que el número de años puede estar viejo.",
+      "pt": "A página deles diz que são uma família e que servem comida brasileira e portuguesa caseira no Ironbound. A página não tem data, então a conta de anos pode estar velha."
+    },
+    {
+      "en": "The same page says the Jefferson Street room had been home to Portuguese restaurants for 30 years before the family, from São Paulo, took over, kept Portuguese dishes, and added Brazilian ones. Their press page names Luiz Campos as manager, Orlando on the business side, and Silvana as the chef, and says the family emigrated from Brazil in 2001.",
+      "es": "La misma página dice que el local de Jefferson Street tuvo restaurantes portugueses por 30 años antes de que la familia, de São Paulo, se quedara con platos portugueses y sumara brasileños. La página de prensa nombra a Luiz Campos como gerente, a Orlando en el negocio y a Silvana como chef, y dice que la familia emigró de Brasil en 2001.",
+      "pt": "A mesma página diz que a sala da Jefferson Street teve restaurantes portugueses por 30 anos antes da família, de São Paulo, manter pratos portugueses e somar os brasileiros. A página de imprensa cita Luiz Campos como gerente, Orlando no negócio e Silvana na cozinha, e diz que a família emigrou do Brasil em 2001."
+    }
+  ],
+  "catering": {
+    "details": [
+      {
+        "en": "The homepage says to book a party. It does not list a package price. The email on the about page is osccampos@hotmail.com.",
+        "es": "La portada dice que se puede reservar una fiesta. No lista un precio de paquete. El correo de la página es osccampos@hotmail.com.",
+        "pt": "A capa diz para marcar uma festa. Não lista um preço de pacote. O e-mail da página é osccampos@hotmail.com."
+      }
+    ]
+  },
+  "apps": [
+    { "name": "DoorDash", "url": "https://www.doordash.com/en/store/sabor-unido-newark-832951/" },
+    { "name": "Grubhub", "url": "https://www.grubhub.com/restaurant/sabor-unido-77-jefferson-st-newark/317296" },
+    { "name": "Seamless", "url": "https://www.seamless.com/menu/sabor-unido-77-jefferson-st-newark/317296" }
+  ],
+  "social": [
+    { "label": "Instagram", "url": "https://www.instagram.com/saborunido/" },
+    { "label": "Facebook", "url": "https://www.facebook.com/saborunido/" }
+  ],
+  "sections": ["menu", "reviews", "order", "visit", "catering", "about"],
+  "seo": {
+    "title": "Sabor Unido, Jefferson Street, Ironbound",
+    "description": "Brazilian and Portuguese restaurant at 77 Jefferson Street, Newark. Demo preview. Hours and Saturday feijoada from saborunido.com."
+  }
+}

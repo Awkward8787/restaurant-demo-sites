@@ -1,0 +1,17 @@
+---
+const { text, block = false } = Astro.props;
+const source = typeof text === "string" ? { en: text } : text ?? { en: "" };
+const value = {
+  en: source.en ?? "",
+  es: source.es || source.en || "",
+  pt: source.pt || source.en || "",
+};
+---
+
+{
+  (["en", "es", "pt"] as const).map((lang) => (
+    <span class:list={["l", { block }]} data-lang={lang} lang={lang === "en" ? undefined : lang}>
+      {value[lang]}
+    </span>
+  ))
+}

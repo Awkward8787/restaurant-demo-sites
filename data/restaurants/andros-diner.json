@@ -1,0 +1,165 @@
+{
+  "order": 2,
+  "slug": "andros-diner",
+  "name": "Andros Diner",
+  "shortName": "Andros",
+  "cuisineLabel": { "en": "Diner", "es": "Diner", "pt": "Diner" },
+  "servesCuisine": "Diner",
+  "defaultLang": "en",
+  "languages": ["en", "es", "pt"],
+  "phone": "+19733442626",
+  "phoneDisplay": "(973) 344-2626",
+  "email": "",
+  "address": {
+    "street": "6 Wilson Avenue",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07105",
+    "country": "US"
+  },
+  "geo": { "lat": 40.7277986, "lon": -74.1558371 },
+  "osmUrl": "https://www.openstreetmap.org/way/437077891",
+  "rating": {
+    "value": 4.5,
+    "count": 23,
+    "source": "Tripadvisor",
+    "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d4621137-Reviews-Andros_Diner-Newark_New_Jersey.html"
+  },
+  "hours": {
+    "source": "OpenStreetMap",
+    "sourceUrl": "https://www.openstreetmap.org/way/437077891",
+    "note": {
+      "en": "OpenStreetMap tags Andros as 24 hours, and a MenuPix listing also says 24 hours. An older SinglePlatform page listed shorter hours and a different phone. This page uses (973) 344-2626 from the prospect file. Confirm both before you rely on them.",
+      "es": "OpenStreetMap marca Andros como 24 horas, y MenuPix también dice 24 horas. Una página vieja de SinglePlatform mostraba otro horario y otro teléfono. Esta página usa (973) 344-2626 del archivo. Confirme los dos.",
+      "pt": "O OpenStreetMap marca o Andros como 24 horas, e o MenuPix também diz 24 horas. Uma página antiga do SinglePlatform mostrava outro horário e outro telefone. Esta página usa (973) 344-2626 do arquivo. Confirme os dois."
+    },
+    "weekly": {
+      "mon": [["00:00", "24:00"]],
+      "tue": [["00:00", "24:00"]],
+      "wed": [["00:00", "24:00"]],
+      "thu": [["00:00", "24:00"]],
+      "fri": [["00:00", "24:00"]],
+      "sat": [["00:00", "24:00"]],
+      "sun": [["00:00", "24:00"]]
+    }
+  },
+  "hero": {
+    "variant": "marquee",
+    "dek": {
+      "en": "Wilson Avenue diner. A 2018 printed menu is the only priced list we could read.",
+      "es": "Diner en Wilson Avenue. El único menú con precios que pudimos leer es uno impreso de 2018.",
+      "pt": "Diner na Wilson Avenue. O único cardápio com preços que lemos é um impresso de 2018."
+    }
+  },
+  "theme": {
+    "paper": "#F4EFE4",
+    "ink": "#1A1814",
+    "band": "#7C1E28",
+    "onBand": "#F4EFE4",
+    "accent": "#6E5010",
+    "onAccent": "#F4EFE4",
+    "displayStack": "'Bowlby One', 'Arial Black', sans-serif",
+    "bodyStack": "'Libre Franklin', 'Segoe UI', sans-serif",
+    "radius": "0px",
+    "menuStyle": "leaders",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Bowlby+One&family=Libre+Franklin:wght@400;650;700&display=swap"
+  },
+  "menu": {
+    "status": "partial",
+    "note": {
+      "en": "Breakfast prices are from a 2018 menu PDF posted at atandros.com for 6 Wilson Avenue. They may be out of date. Lunch and pizza on that PDF were not copied in full, so they are not shown. This is not the current full menu.",
+      "es": "Los precios del desayuno salen de un PDF de 2018 en atandros.com para 6 Wilson Avenue. Pueden haber cambiado. El almuerzo y la pizza de ese PDF no se copiaron completos, así que no aparecen. No es el menú actual.",
+      "pt": "Os preços do café da manhã vêm de um PDF de 2018 em atandros.com para 6 Wilson Avenue. Podem ter mudado. O almoço e a pizza desse PDF não foram copiados por inteiro, então não aparecem. Não é o cardápio atual."
+    },
+    "source": {
+      "label": "2018 Andros menu PDF",
+      "url": "https://atandros.com/wp-content/uploads/2018/03/Andros_Newark_LAYOUT1.pdf",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": { "en": "Eggs", "es": "Huevos", "pt": "Ovos" },
+        "items": [
+          { "id": "two-eggs", "name": "Two eggs, any style", "lang": "en", "description": { "en": "With home fries and toast.", "es": "Con papas y tostada.", "pt": "Com batata e torrada." }, "price": 6.95 },
+          { "id": "two-eggs-meat", "name": "Two eggs with ham, bacon, or sausage", "lang": "en", "description": { "en": "With home fries and toast.", "es": "Con papas y tostada.", "pt": "Com batata e torrada." }, "price": 8.95 },
+          { "id": "two-eggs-hash", "name": "Two eggs with corned beef hash, Taylor ham, or Canadian bacon", "lang": "en", "description": { "en": "With home fries and toast.", "es": "Con papas y tostada.", "pt": "Com batata e torrada." }, "price": 9.95 },
+          { "id": "steak-eggs", "name": "Steak and eggs", "lang": "en", "description": { "en": "10 oz New York sirloin, home fries, and toast.", "es": "Sirloin de Nueva York de 10 oz, papas y tostada.", "pt": "Sirloin de Nova York de 10 oz, batata e torrada." }, "price": 17.95 },
+          { "id": "buffet-platter", "name": "Buffet platter", "lang": "en", "description": { "en": "Two eggs with ham, bacon, and sausage, home fries, and toast.", "es": "Dos huevos con jamón, tocineta y salchicha, papas y tostada.", "pt": "Dois ovos com presunto, bacon e linguiça, batata e torrada." }, "price": 10.25 },
+          { "id": "breakfast-burrito", "name": "Breakfast burrito", "lang": "en", "description": { "en": "Scrambled eggs, cheese, onions, peppers, and chopped sausage in a tortilla, with sour cream, salsa, and home fries.", "es": "Huevos, queso, cebolla, pimientos y salchicha en tortilla, con crema, salsa y papas.", "pt": "Ovos, queijo, cebola, pimentão e linguiça na tortilla, com creme, salsa e batata." }, "price": 8.95 },
+          { "id": "taylor", "name": "Taylor ham, egg, and cheese", "lang": "en", "description": { "en": "Taylor ham, bacon, or sausage, fried egg, and American cheese on a roll, with fries or home fries.", "es": "Taylor ham, tocineta o salchicha, huevo y queso en pan, con papas.", "pt": "Taylor ham, bacon ou linguiça, ovo e queijo no pão, com batata." }, "price": 8.95 }
+        ]
+      },
+      {
+        "name": { "en": "Omelettes", "es": "Omelettes", "pt": "Omeletes" },
+        "items": [
+          { "id": "ham-cheese-om", "name": "Ham and cheese omelette", "lang": "en", "price": 8.95 },
+          { "id": "western", "name": "Western omelette", "lang": "en", "price": 9.25 },
+          { "id": "spanish", "name": "Spanish omelette", "lang": "en", "price": 8.95 },
+          { "id": "steak-cheese-om", "name": "Steak and cheese omelette", "lang": "en", "price": 8.5 },
+          { "id": "tomato-feta", "name": "Tomato and feta omelette", "lang": "en", "price": 9.25 },
+          { "id": "protein", "name": "Protein omelette", "lang": "en", "description": { "en": "Egg whites with grilled chicken and a choice of cheese.", "es": "Claras con pollo a la plancha y queso a elegir.", "pt": "Claras com frango grelhado e queijo à escolha." }, "price": 10.95 },
+          { "id": "skillet", "name": "Skillet omelette", "lang": "en", "description": { "en": "Onions, peppers, potatoes, and sausage.", "es": "Cebolla, pimientos, papas y salchicha.", "pt": "Cebola, pimentão, batata e linguiça." }, "price": 10.95 },
+          { "id": "three-way", "name": "Three way omelette", "lang": "en", "description": { "en": "Any vegetable, any cheese, and any breakfast meat.", "es": "Cualquier vegetal, cualquier queso y cualquier carne de desayuno.", "pt": "Qualquer vegetal, qualquer queijo e qualquer carne de café." }, "price": 9.95 }
+        ]
+      },
+      {
+        "name": { "en": "Griddle", "es": "Plancha", "pt": "Chapa" },
+        "items": [
+          { "id": "pancakes", "name": "Pancakes", "lang": "en", "price": 7 },
+          { "id": "pancakes-meat", "name": "Pancakes with ham, bacon, or sausage", "lang": "en", "price": 8.95 },
+          { "id": "pancakes-combo", "name": "Pancakes with meat and eggs", "lang": "en", "price": 10.95 },
+          { "id": "french", "name": "French toast", "lang": "en", "price": 7 },
+          { "id": "french-meat", "name": "French toast with ham, bacon, or sausage", "lang": "en", "price": 8.95 },
+          { "id": "french-combo", "name": "French toast with meat and eggs", "lang": "en", "price": 10.95 },
+          { "id": "waffle", "name": "Waffle", "lang": "en", "price": 8 },
+          { "id": "waffle-meat", "name": "Waffle with ham, bacon, or sausage", "lang": "en", "price": 9.95 },
+          { "id": "waffle-combo", "name": "Waffle with meat and eggs", "lang": "en", "price": 11.95 }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "The breakfast list is from 2018. Call the diner and read it back before anyone cooks it. This preview does not place the order. DoorDash, Grubhub, Seamless, and Uber Eats also list Andros.",
+    "es": "El desayuno es de 2018. Llame al diner y léalo antes de que lo cocinen. Esta vista no hace el pedido. DoorDash, Grubhub, Seamless y Uber Eats también listan a Andros.",
+    "pt": "O café da manhã é de 2018. Ligue para o diner e leia a lista antes de cozinharem. Esta prévia não faz o pedido. DoorDash, Grubhub, Seamless e Uber Eats também listam o Andros."
+  },
+  "reviews": {
+    "summary": {
+      "en": "Tripadvisor lists 4.5 out of 5 from 23 reviews. The Facebook page shows 1,037 likes and 5,944 check-ins.",
+      "es": "Tripadvisor publica 4.5 de 5, a partir de 23 reseñas. La página de Facebook muestra 1,037 me gusta y 5,944 check-ins.",
+      "pt": "O Tripadvisor lista 4,5 de 5, em 23 avaliações. A página do Facebook mostra 1.037 curtidas e 5.944 check-ins."
+    },
+    "links": [
+      {
+        "label": "Tripadvisor, 4.5 from 23 reviews",
+        "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d4621137-Reviews-Andros_Diner-Newark_New_Jersey.html"
+      },
+      {
+        "label": "Facebook page",
+        "url": "https://www.facebook.com/atandros/"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Andros Diner is at 6 Wilson Avenue, Newark. OpenStreetMap lists the cuisine as diner and the hours as 24/7. A site at orderandrosrestaurant.com did not load when it was checked on 17 October 2026.",
+      "es": "Andros Diner está en 6 Wilson Avenue, Newark. OpenStreetMap lo marca como diner y 24 horas. El sitio orderandrosrestaurant.com no cargó el 17 de octubre de 2026.",
+      "pt": "O Andros Diner fica na 6 Wilson Avenue, Newark. O OpenStreetMap marca a cozinha como diner e o horário como 24 horas. O site orderandrosrestaurant.com não abriu em 17 de outubro de 2026."
+    }
+  ],
+  "apps": [
+    { "name": "Grubhub", "url": "https://www.grubhub.com/restaurant/andros-restaurant-6-wilson-ave-newark/10744992" },
+    { "name": "Uber Eats", "url": "https://www.ubereats.com/store/andros-diners/LLFTmg1tUjeoEoMr3NF4EQ" },
+    { "name": "DoorDash", "url": "https://www.doordash.com/en-CA/en/store/andros-restaurant-28041537/" },
+    { "name": "Seamless", "url": "https://www.seamless.com/menu/andros-diner-6-wilson-ave-newark/260153" }
+  ],
+  "social": [
+    { "label": "Instagram", "url": "https://www.instagram.com/androsdiner/" },
+    { "label": "Facebook", "url": "https://www.facebook.com/atandros/" }
+  ],
+  "sections": ["menu", "order", "reviews", "visit", "about", "catering"],
+  "seo": {
+    "title": "Andros Diner, 6 Wilson Avenue",
+    "description": "Andros Diner on Wilson Avenue in Newark. Demo preview. Breakfast prices from a 2018 menu PDF. Hours from OpenStreetMap."
+  }
+}

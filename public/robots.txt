@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awkward8787.github.io/restaurant-demo-sites/sitemap.xml

@@ -1,0 +1,151 @@
+{
+  "order": 7,
+  "slug": "cantinho-mineiro",
+  "name": "Cantinho Mineiro 2",
+  "shortName": "Cantinho Mineiro",
+  "cuisineLabel": { "en": "Mineiro cooking", "es": "Cocina mineira", "pt": "Comida mineira" },
+  "servesCuisine": "Brazilian",
+  "defaultLang": "pt",
+  "languages": ["pt", "en", "es"],
+  "phone": "+19732300913",
+  "phoneDisplay": "(973) 230-0913",
+  "address": {
+    "street": "51 Hensler Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07105",
+    "country": "US"
+  },
+  "geo": { "lat": 40.7268041, "lon": -74.1512047 },
+  "osmUrl": "https://www.openstreetmap.org/node/12194965411",
+  "rating": {
+    "value": 4.2,
+    "source": "DoorDash",
+    "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/"
+  },
+  "hours": {
+    "source": "OpenStreetMap",
+    "sourceUrl": "https://www.openstreetmap.org/node/12194965411",
+    "note": {
+      "en": "OpenStreetMap says 11 a.m. to 8 p.m. every day. The DoorDash listing shows a later close. Confirm before you go.",
+      "es": "OpenStreetMap dice de 11 a.m. a 8 p.m. todos los días. La ficha de DoorDash muestra un cierre más tarde. Confirme antes de ir.",
+      "pt": "O OpenStreetMap diz 11h às 20h todos os dias. A ficha do DoorDash mostra um fechamento mais tarde. Confirme antes de ir."
+    },
+    "weekly": {
+      "mon": [["11:00", "20:00"]],
+      "tue": [["11:00", "20:00"]],
+      "wed": [["11:00", "20:00"]],
+      "thu": [["11:00", "20:00"]],
+      "fri": [["11:00", "20:00"]],
+      "sat": [["11:00", "20:00"]],
+      "sun": [["11:00", "20:00"]]
+    }
+  },
+  "hero": {
+    "variant": "letterpress",
+    "dek": {
+      "en": "Mineiro cooking. OpenStreetMap says 51 Hensler Street. DoorDash and Postmates say 51 Niagara Street.",
+      "es": "Cocina mineira. OpenStreetMap dice 51 Hensler Street. DoorDash y Postmates dicen 51 Niagara Street.",
+      "pt": "Comida mineira. O OpenStreetMap diz 51 Hensler Street. DoorDash e Postmates dizem 51 Niagara Street."
+    }
+  },
+  "theme": {
+    "paper": "#F6F0E6",
+    "ink": "#2A1812",
+    "band": "#2A1812",
+    "onBand": "#F6F0E6",
+    "accent": "#8A382C",
+    "onAccent": "#F6F0E6",
+    "displayStack": "'Libre Baskerville', Georgia, serif",
+    "bodyStack": "'Source Sans 3', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "hanging",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;650&display=swap"
+  },
+  "menu": {
+    "status": "partial",
+    "note": {
+      "en": "Partial menu. Feijoada à brasileira at $24 and bife à cavalo at $24 are from the DoorDash listing. Picadinho de carne at $24 and caldo de feijão at $10 are from the Postmates listing. Both apps give the address as 51 Niagara Street. This page keeps 51 Hensler Street from OpenStreetMap and the prospect file. Confirm the door and the prices.",
+      "es": "Menú parcial. Feijoada à brasileira a $24 y bife à cavalo a $24 salen de DoorDash. Picadinho de carne a $24 y caldo de feijão a $10 salen de Postmates. Las dos apps ponen la dirección en 51 Niagara Street. Esta página deja 51 Hensler Street, de OpenStreetMap y del archivo. Confirme la puerta y los precios.",
+      "pt": "Cardápio parcial. Feijoada à brasileira a $24 e bife à cavalo a $24 vêm do DoorDash. Picadinho de carne a $24 e caldo de feijão a $10 vêm do Postmates. Os dois apps dão o endereço como 51 Niagara Street. Esta página mantém 51 Hensler Street, do OpenStreetMap e do arquivo. Confirme a porta e os preços."
+    },
+    "source": {
+      "label": "DoorDash listing",
+      "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": { "en": "From the pot", "es": "De la olla", "pt": "Da panela" },
+        "items": [
+          {
+            "id": "feijoada",
+            "name": "Feijoada à brasileira",
+            "lang": "pt",
+            "gloss": { "en": "Brazilian black bean and pork stew", "es": "Guiso brasileño de frijol negro y cerdo", "pt": "Feijoada à brasileira" },
+            "price": 24
+          },
+          {
+            "id": "bife-cavalo",
+            "name": "Bife à cavalo",
+            "lang": "pt",
+            "gloss": { "en": "Beef steak with an egg on top", "es": "Bistec con un huevo encima", "pt": "Bife com ovo a cavalo" },
+            "price": 24
+          },
+          {
+            "id": "picadinho",
+            "name": "Picadinho de carne",
+            "lang": "pt",
+            "gloss": { "en": "Minced beef, Postmates price", "es": "Carne picada, precio de Postmates", "pt": "Picadinho de carne, preço do Postmates" },
+            "price": 24
+          },
+          {
+            "id": "caldo-feijao",
+            "name": "Caldo de feijão",
+            "lang": "pt",
+            "gloss": { "en": "Black bean soup, Postmates price", "es": "Caldo de frijol negro, precio de Postmates", "pt": "Caldo de feijão, preço do Postmates" },
+            "price": 10
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "DoorDash, Postmates, and Uber Eats list Cantinho Mineiro 2. This preview does not send the order. Call (973) 230-0913 and read the list.",
+    "es": "DoorDash, Postmates y Uber Eats listan Cantinho Mineiro 2. Esta vista no envía el pedido. Llame al (973) 230-0913 y lea la lista.",
+    "pt": "DoorDash, Postmates e Uber Eats listam o Cantinho Mineiro 2. Esta prévia não envia o pedido. Ligue para (973) 230-0913 e leia a lista."
+  },
+  "reviews": {
+    "summary": {
+      "en": "DoorDash shows 4.2 from 50+ ratings on the Hensler / Niagara listing. An exact count was not stored in the prospect file.",
+      "es": "DoorDash muestra 4.2 a partir de más de 50 calificaciones en la ficha de Hensler / Niagara. El archivo no guardó un conteo exacto.",
+      "pt": "O DoorDash mostra 4,2 a partir de mais de 50 avaliações na ficha de Hensler / Niagara. O arquivo não guardou uma contagem exata."
+    },
+    "links": [
+      {
+        "label": "DoorDash, 4.2 from 50+ ratings",
+        "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Cantinho Mineiro 2 is a Brazilian restaurant. The prospect file and OpenStreetMap put it at 51 Hensler Street, Newark, phone (973) 230-0913. DoorDash, Postmates, and a Zmenu page put the same phone at 51 Niagara Street. Instagram is the public social page we found.",
+      "es": "Cantinho Mineiro 2 es un restaurante brasileño. El archivo y OpenStreetMap lo ponen en 51 Hensler Street, Newark, teléfono (973) 230-0913. DoorDash, Postmates y una página de Zmenu ponen el mismo teléfono en 51 Niagara Street. Instagram es la página social que encontramos.",
+      "pt": "O Cantinho Mineiro 2 é um restaurante brasileiro. O arquivo e o OpenStreetMap colocam a casa na 51 Hensler Street, Newark, telefone (973) 230-0913. DoorDash, Postmates e uma página do Zmenu colocam o mesmo telefone na 51 Niagara Street. O Instagram é a página social que achamos."
+    }
+  ],
+  "apps": [
+    { "name": "DoorDash", "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/" },
+    { "name": "Postmates", "url": "https://postmates.com/store/cantinho-mineiro-2s/558Qyp-UUUGH3vIsMMwvgQ" },
+    { "name": "Uber Eats", "url": "https://www.ubereats.com/store/cantinho-mineiro-2s/558Qyp-UUUGH3vIsMMwvgQ" }
+  ],
+  "social": [
+    { "label": "Instagram", "url": "https://www.instagram.com/cantinhomineiro_2/" }
+  ],
+  "sections": ["menu", "visit", "order", "about", "reviews", "catering"],
+  "seo": {
+    "title": "Cantinho Mineiro 2, Hensler Street",
+    "description": "Brazilian restaurant in Newark. Demo preview. A few prices from DoorDash and Postmates. Address differs by source."
+  }
+}

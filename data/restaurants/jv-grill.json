@@ -1,0 +1,134 @@
+{
+  "order": 1,
+  "slug": "jv-grill",
+  "name": "J&V Grill Restaurant Cafeteria",
+  "shortName": "J&V",
+  "cuisineLabel": { "en": "Ecuadorian cafeteria", "es": "Cafetería ecuatoriana", "pt": "Cafeteria equatoriana" },
+  "servesCuisine": "Ecuadorian",
+  "defaultLang": "es",
+  "languages": ["es", "en", "pt"],
+  "phone": "+19737329777",
+  "phoneDisplay": "(973) 732-9777",
+  "address": {
+    "street": "423 Bloomfield Avenue",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07107",
+    "country": "US"
+  },
+  "geo": { "lat": 40.7700708, "lon": -74.1826831 },
+  "osmUrl": "https://www.openstreetmap.org/way/446061322",
+  "rating": {
+    "value": 4.2,
+    "count": 718,
+    "source": "Restaurant Guru",
+    "url": "https://restaurantguru.com/Jandb-Restaurant-Newark"
+  },
+  "hours": null,
+  "hero": {
+    "variant": "cafeteria",
+    "dek": {
+      "en": "Ecuadorian plates on Bloomfield Avenue.",
+      "es": "Platos ecuatorianos en Bloomfield Avenue.",
+      "pt": "Pratos equatorianos na Bloomfield Avenue."
+    }
+  },
+  "theme": {
+    "paper": "#F3E6D0",
+    "ink": "#1C2416",
+    "band": "#1E4630",
+    "onBand": "#FBF6EC",
+    "accent": "#8C3418",
+    "onAccent": "#FBF6EC",
+    "displayStack": "'Fraunces', Georgia, serif",
+    "bodyStack": "'Source Serif 4', Georgia, serif",
+    "radius": "2px",
+    "menuStyle": "rows",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap"
+  },
+  "menu": {
+    "status": "names-only",
+    "note": {
+      "en": "Dish names come from a MenuTuff listing for 423 Bloomfield Avenue. That page did not publish prices. The groups below are only for scanning. MenuTuff did not print categories.",
+      "es": "Los nombres salen de una lista de MenuTuff para 423 Bloomfield Avenue. Esa página no publicó precios. Los grupos son para leer más fácil. MenuTuff no imprimió categorías.",
+      "pt": "Os nomes vêm de uma lista da MenuTuff para 423 Bloomfield Avenue. Essa página não publicou preços. Os grupos são só para leitura. A MenuTuff não imprimiu categorias."
+    },
+    "source": {
+      "label": "MenuTuff listing",
+      "url": "https://menutuff.com/ecuadorian-restaurants/jv-grill-restaurant-cafeteria-6657/menu",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": { "en": "Rice plates", "es": "Arroces", "pt": "Arrozes" },
+        "items": [
+          { "id": "chaulafan", "name": "Chaulafan", "lang": "es", "gloss": { "en": "Ecuadorian fried rice", "es": "Arroz frito ecuatoriano", "pt": "Arroz frito equatoriano" }, "price": null },
+          { "id": "chaufa-mixto", "name": "Chaufa mixto", "lang": "es", "gloss": { "en": "Mixed fried rice", "es": "Arroz frito mixto", "pt": "Arroz frito misto" }, "price": null }
+        ]
+      },
+      {
+        "name": { "en": "Grill", "es": "Parrilla", "pt": "Grelhados" },
+        "items": [
+          { "id": "churrasco", "name": "Churrasco", "lang": "es", "gloss": { "en": "Grilled steak", "es": "Carne a la parrilla", "pt": "Carne grelhada" }, "price": null },
+          { "id": "churrasco-al-jugo", "name": "Churrasco al jugo", "lang": "es", "gloss": { "en": "Steak in its juices", "es": "Churrasco en su jugo", "pt": "Churrasco no próprio molho" }, "price": null },
+          { "id": "bistec", "name": "Bistec de carne", "lang": "es", "gloss": { "en": "Beef steak", "es": "Bistec de res", "pt": "Bife de carne" }, "price": null },
+          { "id": "carne-asada", "name": "Carne asada", "lang": "es", "gloss": { "en": "Grilled beef", "es": "Carne asada", "pt": "Carne assada" }, "price": null },
+          { "id": "costilla", "name": "Costilla asada", "lang": "es", "gloss": { "en": "Grilled rib", "es": "Costilla asada", "pt": "Costela assada" }, "price": null },
+          { "id": "lomo-plancha", "name": "Lomo apanado a la plancha", "lang": "es", "gloss": { "en": "Breaded loin on the griddle", "es": "Lomo apanado a la plancha", "pt": "Lombo empanado na chapa" }, "price": null },
+          { "id": "lomo-saltado", "name": "Lomo saltado", "lang": "es", "gloss": { "en": "Stir-fried beef with onion and tomato", "es": "Lomo saltado", "pt": "Lombo saltado" }, "price": null },
+          { "id": "lomo-mixto", "name": "Lomo mixto", "lang": "es", "gloss": { "en": "Mixed loin", "es": "Lomo mixto", "pt": "Lombo misto" }, "price": null }
+        ]
+      },
+      {
+        "name": { "en": "Plates", "es": "Platos", "pt": "Pratos" },
+        "items": [
+          { "id": "bandeja", "name": "Bandeja paisa", "lang": "es", "gloss": { "en": "Paisa platter", "es": "Bandeja paisa", "pt": "Bandeja paisa" }, "price": null },
+          { "id": "guatita", "name": "Guatita", "lang": "es", "gloss": { "en": "Tripe in peanut sauce", "es": "Guatita", "pt": "Dobradinha ao molho de amendoim" }, "price": null },
+          { "id": "picadillo", "name": "Picadillo mixto", "lang": "es", "gloss": { "en": "Mixed minced meat", "es": "Picadillo mixto", "pt": "Picadinho misto" }, "price": null },
+          { "id": "carne-apanada", "name": "Carne apanada", "lang": "es", "gloss": { "en": "Breaded beef", "es": "Carne apanada", "pt": "Carne empanada" }, "price": null },
+          { "id": "seco-chivo", "name": "Seco de chivo", "lang": "es", "gloss": { "en": "Goat stew", "es": "Seco de chivo", "pt": "Ensopado de bode" }, "price": null },
+          { "id": "seco-carne", "name": "Seco de carne", "lang": "es", "gloss": { "en": "Beef stew", "es": "Seco de carne", "pt": "Ensopado de carne" }, "price": null },
+          { "id": "filete-jugo", "name": "Filete al jugo", "lang": "es", "gloss": { "en": "Fish fillet in its juices", "es": "Filete al jugo", "pt": "Filé no próprio molho" }, "price": null },
+          { "id": "filete-francesa", "name": "Filete a la francesa", "lang": "es", "gloss": { "en": "Fish fillet, French style", "es": "Filete a la francesa", "pt": "Filé à francesa" }, "price": null },
+          { "id": "chuleta", "name": "Chuleta frita", "lang": "es", "gloss": { "en": "Fried pork chop", "es": "Chuleta frita", "pt": "Bisteca frita" }, "price": null },
+          { "id": "chuck", "name": "Chuck steak", "lang": "en", "gloss": { "en": "Chuck steak", "es": "Chuck steak", "pt": "Chuck steak" }, "price": null }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Add the plates you want, then call the cafeteria. This preview does not send the list, and it does not show prices because none were published.",
+    "es": "Añada los platos y llame a la cafetería. Esta vista no envía la lista y no muestra precios porque no estaban publicados.",
+    "pt": "Adicione os pratos e ligue para a cafeteria. Esta prévia não envia a lista e não mostra preços porque nenhum foi publicado."
+  },
+  "reviews": {
+    "summary": {
+      "en": "Restaurant Guru lists 4.2 out of 5 from 718 reviews.",
+      "es": "Restaurant Guru publica 4.2 de 5, a partir de 718 reseñas.",
+      "pt": "O Restaurant Guru lista 4,2 de 5, em 718 avaliações."
+    },
+    "links": [
+      {
+        "label": "Restaurant Guru, 4.2 from 718 reviews",
+        "url": "https://restaurantguru.com/Jandb-Restaurant-Newark"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "OpenStreetMap tags J&V Grill Restaurant Cafeteria as Ecuadorian. The address is 423 Bloomfield Avenue, Newark, and the phone in our prospect file is (973) 732-9777.",
+      "es": "OpenStreetMap marca J&V Grill Restaurant Cafeteria como ecuatoriano. La dirección es 423 Bloomfield Avenue, Newark, y el teléfono del archivo es (973) 732-9777.",
+      "pt": "O OpenStreetMap marca o J&V Grill Restaurant Cafeteria como equatoriano. O endereço é 423 Bloomfield Avenue, Newark, e o telefone do arquivo é (973) 732-9777."
+    },
+    {
+      "en": "We did not find a website the restaurant controls, and we did not find published hours. Call before you go.",
+      "es": "No encontramos un sitio controlado por el restaurante, ni un horario publicado. Llame antes de ir.",
+      "pt": "Não achamos um site controlado pelo restaurante, nem um horário publicado. Ligue antes de ir."
+    }
+  ],
+  "sections": ["menu", "order", "visit", "reviews", "about", "catering"],
+  "seo": {
+    "title": "J&V Grill Restaurant Cafeteria, Bloomfield Avenue",
+    "description": "Ecuadorian cafeteria at 423 Bloomfield Avenue, Newark. Demo preview. Dish names from a public listing. Prices were not published."
+  }
+}

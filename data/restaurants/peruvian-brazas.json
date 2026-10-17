@@ -1,0 +1,132 @@
+{
+  "order": 6,
+  "slug": "peruvian-brazas",
+  "name": "Peruvian Brazas",
+  "shortName": "Brazas",
+  "cuisineLabel": { "en": "Peruvian rotisserie", "es": "Pollería peruana", "pt": "Rotisseria peruana" },
+  "servesCuisine": "Peruvian",
+  "defaultLang": "es",
+  "languages": ["es", "en", "pt"],
+  "phone": "+19738656626",
+  "phoneDisplay": "(973) 865-6626",
+  "address": {
+    "street": "267 Orange Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07103",
+    "country": "US"
+  },
+  "geo": { "lat": 40.74867, "lon": -74.1801023 },
+  "osmUrl": "https://www.openstreetmap.org/node/14178795475",
+  "rating": {
+    "value": 4.6,
+    "source": "DoorDash",
+    "url": "https://www.doordash.com/store/peruvian-brazas-newark-32601095/"
+  },
+  "hours": {
+    "source": "OpenStreetMap",
+    "sourceUrl": "https://www.openstreetmap.org/node/14178795475",
+    "note": {
+      "en": "Hours are the OpenStreetMap tag. A delivery app listing showed a different clock. Confirm before you go.",
+      "es": "El horario es la etiqueta de OpenStreetMap. Una app de delivery mostraba otro reloj. Confirme antes de ir.",
+      "pt": "O horário é a etiqueta do OpenStreetMap. Um app de entrega mostrava outro relógio. Confirme antes de ir."
+    },
+    "weekly": {
+      "mon": [["11:00", "21:00"]],
+      "tue": [["11:00", "21:00"]],
+      "wed": [["11:00", "21:00"]],
+      "thu": [["11:00", "21:00"]],
+      "fri": [["11:00", "22:00"]],
+      "sat": [["11:00", "22:00"]],
+      "sun": [["11:00", "22:00"]]
+    }
+  },
+  "hero": {
+    "variant": "counter",
+    "dek": {
+      "en": "Peruvian rotisserie at 267 Orange Street. One priced plate from Postmates.",
+      "es": "Pollería peruana en 267 Orange Street. Un plato con precio, de Postmates.",
+      "pt": "Rotisseria peruana na 267 Orange Street. Um prato com preço, do Postmates."
+    }
+  },
+  "theme": {
+    "paper": "#F7F0E4",
+    "ink": "#3B2416",
+    "band": "#3B2416",
+    "onBand": "#F7F0E4",
+    "accent": "#8A2E1C",
+    "onAccent": "#F7F0E4",
+    "displayStack": "'Bricolage Grotesque', 'Arial Narrow', sans-serif",
+    "bodyStack": "'Source Sans 3', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "rows",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Source+Sans+3:wght@400;650&display=swap"
+  },
+  "menu": {
+    "status": "partial",
+    "note": {
+      "en": "Partial menu. Postmates lists lomo saltado at $25 and describes it as sautéed beef with onions, tomatoes, and french fries. Grubhub showed $22.60 and up for the same dish, so this page uses the Postmates number. The rest of the menu did not come through as a clean list, and it is not filled in.",
+      "es": "Menú parcial. Postmates lista el lomo saltado a $25: res salteada con cebolla, tomate y papas fritas. Grubhub mostraba $22.60 o más por el mismo plato, así que esta página usa el número de Postmates. El resto del menú no salió en una lista clara, y no se rellena.",
+      "pt": "Cardápio parcial. O Postmates lista o lomo saltado a $25: carne salteada com cebola, tomate e batata frita. O Grubhub mostrava $22,60 ou mais pelo mesmo prato, então esta página usa o número do Postmates. O resto do cardápio não veio numa lista limpa, e não foi completado."
+    },
+    "source": {
+      "label": "Postmates listing",
+      "url": "https://postmates.com/store/peruvian-brazas/T_aOxJqfWwCP4GyOCEQP4g",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": { "en": "Lomos saltados", "es": "Lomos saltados", "pt": "Lomos saltados" },
+        "items": [
+          {
+            "id": "lomo-saltado",
+            "name": "Lomo saltado",
+            "lang": "es",
+            "gloss": { "en": "Sautéed beef with onions, tomatoes, and french fries", "es": "Res salteada con cebolla, tomate y papas fritas", "pt": "Carne salteada com cebola, tomate e batata frita" },
+            "price": 25
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Call (973) 865-6626 for pollo a la brasa and the rest of the saltados. This preview does not send the order. DoorDash, Grubhub, Postmates, and Uber Eats list the restaurant. Their Wix page is peruvianbrazas.wixsite.com/newark.",
+    "es": "Llame al (973) 865-6626 para el pollo a la brasa y el resto de los saltados. Esta vista no envía el pedido. DoorDash, Grubhub, Postmates y Uber Eats listan el restaurante. Su página de Wix es peruvianbrazas.wixsite.com/newark.",
+    "pt": "Ligue para (973) 865-6626 para o pollo a la brasa e o resto dos saltados. Esta prévia não envia o pedido. DoorDash, Grubhub, Postmates e Uber Eats listam o restaurante. A página Wix é peruvianbrazas.wixsite.com/newark."
+  },
+  "reviews": {
+    "summary": {
+      "en": "DoorDash shows 4.6. That listing did not include a review count in our prospect file. Yelp shows 2 reviews, without a star rating in the same file. The two numbers are not combined.",
+      "es": "DoorDash muestra 4.6. Esa ficha no traía un conteo de reseñas en nuestro archivo. Yelp muestra 2 reseñas, sin estrellas en el mismo archivo. Los dos números no se mezclan.",
+      "pt": "O DoorDash mostra 4,6. Essa ficha não trazia uma contagem de avaliações no nosso arquivo. O Yelp mostra 2 avaliações, sem estrelas no mesmo arquivo. Os dois números não se misturam."
+    },
+    "links": [
+      {
+        "label": "DoorDash, 4.6",
+        "url": "https://www.doordash.com/store/peruvian-brazas-newark-32601095/"
+      },
+      {
+        "label": "Yelp, 2 reviews",
+        "url": "https://www.yelp.com/biz/peruvian-brazas-newark"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Peruvian Brazas is at 267 Orange Street, Newark. The phone in the prospect file is (973) 865-6626. OpenStreetMap tags the cuisine as Spanish. The restaurant's own name, and the delivery listings, say Peruvian.",
+      "es": "Peruvian Brazas está en 267 Orange Street, Newark. El teléfono del archivo es (973) 865-6626. OpenStreetMap marca la cocina como española. El nombre del restaurante, y las apps, dicen peruano.",
+      "pt": "O Peruvian Brazas fica na 267 Orange Street, Newark. O telefone do arquivo é (973) 865-6626. O OpenStreetMap marca a cozinha como espanhola. O nome da casa, e os apps, dizem peruana."
+    }
+  ],
+  "apps": [
+    { "name": "DoorDash", "url": "https://www.doordash.com/store/peruvian-brazas-newark-32601095/" },
+    { "name": "Grubhub", "url": "https://www.grubhub.com/restaurant/peruvian-brazas-267-orange-st-newark/11885048" },
+    { "name": "Uber Eats", "url": "https://www.ubereats.com/store/peruvian-brazas/T_aOxJqfWwCP4GyOCEQP4g" },
+    { "name": "Postmates", "url": "https://postmates.com/store/peruvian-brazas/T_aOxJqfWwCP4GyOCEQP4g" }
+  ],
+  "sections": ["menu", "order", "visit", "reviews", "about", "catering"],
+  "seo": {
+    "title": "Peruvian Brazas, 267 Orange Street",
+    "description": "Peruvian restaurant at 267 Orange Street, Newark. Demo preview. Lomo saltado price from Postmates."
+  }
+}

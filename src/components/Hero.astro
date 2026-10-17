@@ -1,0 +1,102 @@
+---
+import Lang from "./Lang.astro";
+import { t } from "../i18n.mjs";
+
+const { restaurant: r, lang, tel, directions } = Astro.props;
+const variant = r.hero.variant;
+---
+
+<header class={`hero hero-${variant}`} id="top">
+  {
+    variant === "marquee" && (
+      <div class="marquee-band">
+        <h1>{r.name}</h1>
+      </div>
+    )
+  }
+  {
+    variant === "butcher" && (
+      <div class="slab">
+        <h1>{r.shortName}</h1>
+        <p class="dek">
+          <Lang text={r.hero.dek} />
+        </p>
+      </div>
+    )
+  }
+  {variant === "butcher" && <hr class="ember-line" />}
+
+  <div class={variant === "marquee" ? "marquee-rest" : variant === "butcher" ? "butcher-rest" : variant === "counter" ? "window" : "hero-inner"}>
+    {variant === "poster" && <hr class="poster-rule" />}
+    {variant !== "marquee" && variant !== "butcher" && <h1>{r.name}</h1>}
+    {variant === "tide" && <hr class="lime-rule" />}
+    {variant === "letterpress" && <hr class="press-rule" />}
+    {variant === "chapel" && <hr class="chapel-rule" />}
+
+    {
+      variant === "column" ? (
+        <div class="split">
+          <div>
+            <p class="dek">
+              <Lang text={r.hero.dek} />
+            </p>
+            <p class="hours-now" data-hours-status>
+              {t(lang, "today")}
+            </p>
+            <div class="cta-row">
+              <a class="button" href="#order">
+                <span data-i18n="orderPickup">{t(lang, "orderPickup")}</span>
+              </a>
+              <a class="button secondary" href={tel}>
+                <span data-i18n="call">{t(lang, "call")}</span> {r.phoneDisplay}
+              </a>
+            </div>
+          </div>
+          {
+            r.hero.aside && (
+              <aside class="special">
+                <h2>
+                  <Lang text={r.hero.aside.title} />
+                </h2>
+                <p>
+                  <Lang text={r.hero.aside.body} block />
+                </p>
+              </aside>
+            )
+          }
+        </div>
+      ) : (
+        <>
+          {variant !== "butcher" && (
+            <p class="dek">
+              <Lang text={r.hero.dek} />
+            </p>
+          )}
+          <p class="hours-now" data-hours-status>
+            {t(lang, "today")}
+          </p>
+          <div class={variant === "cafeteria" ? "ticket" : "cta-row"}>
+            {variant === "cafeteria" && (
+              <p class="fine">
+                {r.address.street}
+                <br />
+                {r.address.city}, {r.address.region} {r.address.postalCode}
+              </p>
+            )}
+            <div class="cta-row">
+              <a class="button" href="#menu">
+                <span data-i18n="seeMenu">{t(lang, "seeMenu")}</span>
+              </a>
+              <a class="button secondary" href={tel}>
+                <span data-i18n="call">{t(lang, "call")}</span> {r.phoneDisplay}
+              </a>
+              <a class="button secondary" href={directions}>
+                <span data-i18n="directions">{t(lang, "directions")}</span>
+              </a>
+            </div>
+          </div>
+        </>
+      )
+    }
+  </div>
+</header>

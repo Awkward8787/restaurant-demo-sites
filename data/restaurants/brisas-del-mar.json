@@ -1,0 +1,144 @@
+{
+  "order": 4,
+  "slug": "brisas-del-mar",
+  "name": "Brisas del Mar Cevicheria",
+  "shortName": "Brisas del Mar",
+  "cuisineLabel": { "en": "Cevicheria", "es": "Cevichería", "pt": "Cevicheria" },
+  "servesCuisine": "Seafood",
+  "defaultLang": "es",
+  "languages": ["es", "en", "pt"],
+  "phone": "+19734815836",
+  "phoneDisplay": "(973) 481-5836",
+  "address": {
+    "street": "350 Bloomfield Avenue",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07107",
+    "country": "US"
+  },
+  "geo": { "lat": 40.7670624, "lon": -74.1811648 },
+  "osmUrl": "https://www.openstreetmap.org/node/14187900196",
+  "rating": {
+    "value": 4.0,
+    "count": 505,
+    "source": "Restaurant Guru",
+    "url": "https://restaurantguru.com/Brisas-Del-Mar-Newark-2"
+  },
+  "hours": {
+    "source": "Brisas del Mar ordering pages",
+    "sourceUrl": "https://brisasdelmarcevicherianj.com/brisas-del-mar-cevicheria/",
+    "note": {
+      "en": "Hours are printed on the restaurant's own ordering pages. The homepage failed to open in an earlier check. The location page still listed this clock.",
+      "es": "El horario está en las páginas de pedido del restaurante. La portada no abrió en una revisión anterior. La página del local seguía con este reloj.",
+      "pt": "O horário está nas páginas de pedido do restaurante. A capa não abriu numa checagem anterior. A página do endereço ainda mostrava este relógio."
+    },
+    "weekly": {
+      "mon": [["06:00", "21:00"]],
+      "tue": [["06:00", "21:00"]],
+      "wed": [["06:00", "21:00"]],
+      "thu": [["06:00", "21:00"]],
+      "fri": [["06:00", "21:00"]],
+      "sat": [["07:30", "21:00"]],
+      "sun": [["07:30", "21:00"]]
+    }
+  },
+  "hero": {
+    "variant": "tide",
+    "dek": {
+      "en": "Ceviche at 350 Bloomfield Avenue. Four priced dishes from their ordering page.",
+      "es": "Ceviche en 350 Bloomfield Avenue. Cuatro platos con precio, de su página de pedidos.",
+      "pt": "Ceviche na 350 Bloomfield Avenue. Quatro pratos com preço, da página de pedidos deles."
+    }
+  },
+  "theme": {
+    "paper": "#F2F5F1",
+    "ink": "#0E3E4A",
+    "band": "#0E3E4A",
+    "onBand": "#F2F5F1",
+    "accent": "#4E6B0E",
+    "onAccent": "#F2F5F1",
+    "displayStack": "'Young Serif', Georgia, serif",
+    "bodyStack": "'Atkinson Hyperlegible', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "leaders",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Young+Serif&display=swap"
+  },
+  "menu": {
+    "status": "partial",
+    "note": {
+      "en": "Partial menu. These four prices are printed on the restaurant's ordering pages for 350 Bloomfield Avenue. The page said the ceviche list has six items. The other two names did not come through, so they are not invented here.",
+      "es": "Menú parcial. Estos cuatro precios están en las páginas de pedido del restaurante para 350 Bloomfield Avenue. La página decía que hay seis ceviches. Los otros dos nombres no salieron, así que no se inventan aquí.",
+      "pt": "Cardápio parcial. Estes quatro preços estão nas páginas de pedido do restaurante para 350 Bloomfield Avenue. A página dizia que há seis ceviches. Os outros dois nomes não vieram, então não foram inventados."
+    },
+    "source": {
+      "label": "Brisas del Mar ordering page",
+      "url": "https://brisasdelmarcevicherianj.com/brisas-del-mar-cevicheria/",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": { "en": "From the counter", "es": "Del mostrador", "pt": "Do balcão" },
+        "items": [
+          {
+            "id": "bolones",
+            "name": "Bolones (queso y chicharrón)",
+            "lang": "es",
+            "gloss": { "en": "Green plantain dumplings with cheese and pork", "es": "Bolones de verde con queso y chicharrón", "pt": "Bolinhos de banana verde com queijo e torresmo" },
+            "price": 3
+          },
+          {
+            "id": "ceviche-mixto",
+            "name": "Ceviche mixto de pescado y camarones",
+            "lang": "es",
+            "gloss": { "en": "Fish and shrimp cocktail", "es": "Cóctel de pescado y camarón", "pt": "Coquetel de peixe e camarão" },
+            "price": 16
+          },
+          {
+            "id": "sopa-gallina",
+            "name": "Sopa de gallina",
+            "lang": "es",
+            "gloss": { "en": "Chicken soup", "es": "Sopa de gallina", "pt": "Canja de galinha" },
+            "price": 13
+          },
+          {
+            "id": "camarones-ajillo",
+            "name": "Camarones al ajillo",
+            "lang": "es",
+            "gloss": { "en": "Shrimp in garlic sauce", "es": "Camarones al ajillo", "pt": "Camarão ao alho" },
+            "price": 16
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Call (973) 481-5836 for the rest of the ceviches. This preview only lists the four prices we could read, and it does not send the order.",
+    "es": "Llame al (973) 481-5836 para el resto de los ceviches. Esta vista solo lista los cuatro precios que pudimos leer, y no envía el pedido.",
+    "pt": "Ligue para (973) 481-5836 para o resto dos ceviches. Esta prévia só lista os quatro preços que lemos, e não envia o pedido."
+  },
+  "reviews": {
+    "summary": {
+      "en": "Restaurant Guru lists 4.0 out of 5 from 505 reviews.",
+      "es": "Restaurant Guru publica 4.0 de 5, a partir de 505 reseñas.",
+      "pt": "O Restaurant Guru lista 4,0 de 5, em 505 avaliações."
+    },
+    "links": [
+      {
+        "label": "Restaurant Guru, 4.0 from 505 reviews",
+        "url": "https://restaurantguru.com/Brisas-Del-Mar-Newark-2"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Brisas del Mar Cevicheria is at 350 Bloomfield Avenue, Newark. The phone on the ordering page is (973) 481-5836. OpenStreetMap tags the cuisine as seafood.",
+      "es": "Brisas del Mar Cevicheria está en 350 Bloomfield Avenue, Newark. El teléfono de la página de pedidos es (973) 481-5836. OpenStreetMap marca la cocina como mariscos.",
+      "pt": "A Brisas del Mar Cevicheria fica na 350 Bloomfield Avenue, Newark. O telefone da página de pedidos é (973) 481-5836. O OpenStreetMap marca a cozinha como frutos do mar."
+    }
+  ],
+  "sections": ["menu", "order", "visit", "about", "reviews", "catering"],
+  "seo": {
+    "title": "Brisas del Mar Cevicheria, Bloomfield Avenue",
+    "description": "Cevicheria at 350 Bloomfield Avenue, Newark. Demo preview. Four prices from the restaurant's ordering page."
+  }
+}

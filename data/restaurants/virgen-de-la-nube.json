@@ -1,0 +1,100 @@
+{
+  "order": 9,
+  "slug": "virgen-de-la-nube",
+  "name": "Restaurante Ecuatoriano Virgen de la Nube",
+  "shortName": "Virgen de la Nube",
+  "cuisineLabel": { "en": "Ecuadorian restaurant", "es": "Restaurante ecuatoriano", "pt": "Restaurante equatoriano" },
+  "servesCuisine": "Ecuadorian",
+  "defaultLang": "es",
+  "languages": ["es", "en", "pt"],
+  "phone": "+19737329255",
+  "phoneDisplay": "(973) 732-9255",
+  "address": {
+    "street": "100 Bloomfield Avenue",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07104",
+    "country": "US"
+  },
+  "geo": { "lat": 40.7567477, "lon": -74.1740196 },
+  "osmUrl": "https://www.openstreetmap.org/node/14222262898",
+  "rating": {
+    "value": 4.5,
+    "count": 42,
+    "source": "Restaurant Guru",
+    "url": "https://restaurantguru.com/Restaurante-Ecuatoriano-Virgen-de-la-Nube-Newark"
+  },
+  "hours": null,
+  "hero": {
+    "variant": "chapel",
+    "dek": {
+      "en": "Ecuadorian restaurant at 100 Bloomfield Avenue. No priced menu turned up.",
+      "es": "Restaurante ecuatoriano en 100 Bloomfield Avenue. No apareció un menú con precios.",
+      "pt": "Restaurante equatoriano na 100 Bloomfield Avenue. Não apareceu um cardápio com preços."
+    }
+  },
+  "theme": {
+    "paper": "#F6F3EA",
+    "ink": "#1A382B",
+    "band": "#1A382B",
+    "onBand": "#F6F3EA",
+    "accent": "#6E5010",
+    "onAccent": "#F6F3EA",
+    "displayStack": "'Cormorant Garamond', Georgia, serif",
+    "bodyStack": "'Source Serif 4', Georgia, serif",
+    "radius": "0px",
+    "menuStyle": "hanging",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+  },
+  "menu": {
+    "status": "sample",
+    "note": {
+      "en": "Sample menu, demo only. We did not find a priced menu for this restaurant. The dishes below are typical Ecuadorian plates, not a copy of their menu, and the prices are made up so the cart can add them. Call (973) 732-9255 for what they are actually cooking.",
+      "es": "Menú de muestra, solo demo. No encontramos un menú con precios de este restaurante. Los platos de abajo son platos ecuatorianos típicos, no una copia de su menú, y los precios están inventados para que el carrito pueda sumar. Llame al (973) 732-9255 para saber qué están cocinando.",
+      "pt": "Cardápio de amostra, só demo. Não achamos um cardápio com preços deste restaurante. Os pratos abaixo são pratos equatorianos típicos, não uma cópia do cardápio deles, e os preços foram inventados para o carrinho somar. Ligue para (973) 732-9255 para saber o que estão cozinhando."
+    },
+    "categories": [
+      {
+        "name": { "en": "Sample plates", "es": "Platos de muestra", "pt": "Pratos de amostra" },
+        "items": [
+          { "id": "sample-encebollado", "name": "Encebollado", "lang": "es", "gloss": { "en": "Fish soup with yuca and onion. Sample price.", "es": "Sopa de pescado con yuca y cebolla. Precio de muestra.", "pt": "Sopa de peixe com mandioca e cebola. Preço de amostra." }, "price": 14, "sample": true },
+          { "id": "sample-hornado", "name": "Hornado", "lang": "es", "gloss": { "en": "Roast pork. Sample price.", "es": "Hornado. Precio de muestra.", "pt": "Porco assado. Preço de amostra." }, "price": 16, "sample": true },
+          { "id": "sample-humitas", "name": "Humitas", "lang": "es", "gloss": { "en": "Fresh corn tamales. Sample price.", "es": "Humitas de choclo. Precio de muestra.", "pt": "Pamonhas de milho. Preço de amostra." }, "price": 8, "sample": true },
+          { "id": "sample-llapingachos", "name": "Llapingachos", "lang": "es", "gloss": { "en": "Potato patties. Sample price.", "es": "Tortillas de papa. Precio de muestra.", "pt": "Bolinhos de batata. Preço de amostra." }, "price": 13, "sample": true },
+          { "id": "sample-seco", "name": "Seco de pollo", "lang": "es", "gloss": { "en": "Chicken stew. Sample price.", "es": "Seco de pollo. Precio de muestra.", "pt": "Ensopado de frango. Preço de amostra." }, "price": 15, "sample": true },
+          { "id": "sample-empanada", "name": "Empanada de viento", "lang": "es", "gloss": { "en": "Fried cheese empanada. Sample price.", "es": "Empanada de viento. Precio de muestra.", "pt": "Empanada de queijo. Preço de amostra." }, "price": 3, "sample": true }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Do not read these sample prices to the restaurant as if they were theirs. Call and ask what is on the stove. This preview does not send the order.",
+    "es": "No lea estos precios de muestra al restaurante como si fueran suyos. Llame y pregunte qué hay en la olla. Esta vista no envía el pedido.",
+    "pt": "Não leia estes preços de amostra para o restaurante como se fossem deles. Ligue e pergunte o que está na panela. Esta prévia não envia o pedido."
+  },
+  "reviews": {
+    "summary": {
+      "en": "Restaurant Guru lists 4.5 out of 5 from 42 reviews.",
+      "es": "Restaurant Guru publica 4.5 de 5, a partir de 42 reseñas.",
+      "pt": "O Restaurant Guru lista 4,5 de 5, em 42 avaliações."
+    },
+    "links": [
+      {
+        "label": "Restaurant Guru, 4.5 from 42 reviews",
+        "url": "https://restaurantguru.com/Restaurante-Ecuatoriano-Virgen-de-la-Nube-Newark"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Restaurante Ecuatoriano Virgen de la Nube is at 100 Bloomfield Avenue, Newark. The phone in the prospect file is (973) 732-9255. We did not find a website or published hours.",
+      "es": "Restaurante Ecuatoriano Virgen de la Nube está en 100 Bloomfield Avenue, Newark. El teléfono del archivo es (973) 732-9255. No encontramos un sitio ni un horario publicado.",
+      "pt": "O Restaurante Ecuatoriano Virgen de la Nube fica na 100 Bloomfield Avenue, Newark. O telefone do arquivo é (973) 732-9255. Não achamos um site nem um horário publicado."
+    }
+  ],
+  "sections": ["about", "menu", "order", "visit", "reviews", "catering"],
+  "seo": {
+    "title": "Virgen de la Nube, 100 Bloomfield Avenue",
+    "description": "Ecuadorian restaurant at 100 Bloomfield Avenue, Newark. Demo preview. The menu on this page is a labeled sample."
+  }
+}

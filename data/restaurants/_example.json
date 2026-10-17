@@ -1,0 +1,92 @@
+{
+  "order": 100,
+  "slug": "example",
+  "name": "TODO Restaurant Name",
+  "shortName": "TODO",
+  "cuisineLabel": { "en": "TODO cuisine", "es": "TODO", "pt": "TODO" },
+  "servesCuisine": "TODO",
+  "defaultLang": "en",
+  "languages": ["en", "es", "pt"],
+  "phone": "+10000000000",
+  "phoneDisplay": "(000) 000-0000",
+  "address": {
+    "street": "TODO Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07100",
+    "country": "US"
+  },
+  "geo": { "lat": 40.735, "lon": -74.172 },
+  "osmUrl": "https://www.openstreetmap.org/",
+  "rating": null,
+  "hours": null,
+  "hero": {
+    "variant": "letterpress",
+    "dek": {
+      "en": "TODO: one specific line. Neighborhood, signature dish, or years open, and only if you can cite it.",
+      "es": "TODO",
+      "pt": "TODO"
+    }
+  },
+  "theme": {
+    "paper": "#F6F0E6",
+    "ink": "#2A1812",
+    "band": "#2A1812",
+    "onBand": "#F6F0E6",
+    "accent": "#8A382C",
+    "onAccent": "#F6F0E6",
+    "displayStack": "'Libre Baskerville', Georgia, serif",
+    "bodyStack": "'Source Sans 3', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "rows",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+  },
+  "menu": {
+    "status": "sample",
+    "note": {
+      "en": "Sample menu, demo only. Replace this note with the source, or keep the sample label until the owner sends a menu.",
+      "es": "Menú de muestra, solo demo.",
+      "pt": "Cardápio de amostra, só demo."
+    },
+    "categories": [
+      {
+        "name": { "en": "TODO group", "es": "TODO", "pt": "TODO" },
+        "items": [
+          {
+            "id": "todo-dish",
+            "name": "TODO dish name",
+            "lang": "en",
+            "gloss": { "en": "Short English gloss if the name is not English.", "es": "TODO", "pt": "TODO" },
+            "price": null
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "This preview does not place an order. Call the restaurant.",
+    "es": "Esta vista no hace el pedido. Llame al restaurante.",
+    "pt": "Esta prévia não faz o pedido. Ligue para o restaurante."
+  },
+  "questions": [],
+  "reviews": {
+    "summary": {
+      "en": "TODO: rating and count from one named source, with a link. No invented quotes.",
+      "es": "TODO",
+      "pt": "TODO"
+    },
+    "links": []
+  },
+  "about": [
+    {
+      "en": "TODO: only facts you can point at.",
+      "es": "TODO",
+      "pt": "TODO"
+    }
+  ],
+  "sections": ["menu", "order", "visit", "reviews", "about", "catering"],
+  "seo": {
+    "title": "TODO Restaurant, Newark",
+    "description": "Demo preview. Replace this description with the street and what the page actually shows."
+  }
+}

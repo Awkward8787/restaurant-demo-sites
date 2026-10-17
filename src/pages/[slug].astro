@@ -481,7 +481,7 @@ const offersDelivery = r.delivery === true;
           {offersDelivery && (
             <label id="delivery-address-label" hidden>
               <span data-i18n="deliveryAddress">{t(lang, "deliveryAddress")}</span>
-              <input id="delivery-address" name="delivery-address" autocomplete="street-address" />
+              <input id="delivery-address" name="delivery-address" autocomplete="address-line1" maxlength="240" />
             </label>
           )}
           <p id="delivery-note" class="fine" hidden>

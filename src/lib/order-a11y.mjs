@@ -38,3 +38,9 @@ export function queueLiveText(node, text, requestAnimationFrame) {
     node.textContent = text;
   });
 }
+
+export function setAddressRequired(field, shown) {
+  if (!field) return;
+  if (shown) field.setAttribute("aria-required", "true");
+  else field.removeAttribute("aria-required");
+}

@@ -2,7 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
-import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, totalLabelKey } from "../lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -159,7 +159,10 @@ if (!root) {
     unpricedEl.hidden = !hasUnpriced;
     deliveryNote.hidden = state.fulfillment !== "delivery";
     const addressLabel = document.getElementById("delivery-address-label");
-    if (addressLabel) addressLabel.hidden = state.fulfillment !== "delivery";
+    const addressField = document.getElementById("delivery-address");
+    const showAddress = state.fulfillment === "delivery";
+    if (addressLabel) addressLabel.hidden = !showAddress;
+    setAddressRequired(addressField, showAddress);
     const count = itemCount(state.lines);
     if (barLabel) {
       barLabel.textContent =

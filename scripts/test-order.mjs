@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { applyAddressError, addLiveText, clearAddressError, deliveryFeeLabel, queueLiveText, totalLabelKey } from "../src/lib/order-a11y.mjs";
+import { addLiveText, applyAddressError, clearAddressError, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../src/lib/order-a11y.mjs";
 import { t } from "../src/i18n.mjs";
 
 const page = readFileSync(new URL("../src/pages/[slug].astro", import.meta.url), "utf8");
@@ -72,5 +72,15 @@ assert.equal(live.textContent, "");
 queued();
 assert.equal(live.textContent, "Picanha, 2 in the order");
 assert.match(script, /queueLiveText/);
+
+assert.match(page, /id="delivery-address"[^>]*autocomplete="address-line1"/);
+assert.match(page, /id="delivery-address"[^>]*maxlength="240"/);
+assert.doesNotMatch(page, /autocomplete="street-address"/);
+const shown = field();
+setAddressRequired(shown, true);
+assert.equal(shown.attrs.get("aria-required"), "true");
+setAddressRequired(shown, false);
+assert.equal(shown.attrs.has("aria-required"), false);
+assert.match(script, /setAddressRequired\(/);
 
 console.log("order ok");

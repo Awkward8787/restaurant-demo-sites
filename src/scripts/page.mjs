@@ -2,6 +2,7 @@ import { clampQty, cleanTip, focusAfterChange, itemCount, pricedSubtotalCents, s
 import { bindHoursRefresh, formatPickup, isOpen, pickupIssue, statusPhrase } from "../lib/hours.mjs";
 import { cleanLang, t } from "../i18n.mjs";
 import { wantsFieldScroll } from "../lib/ui.mjs";
+import { addLiveText, applyAddressError, applyAriaLabels, clearAddressError, closedMessageKey, deliveryFeeLabel, queueLiveText, setAddressRequired, totalLabelKey } from "../lib/order-a11y.mjs";
 
 const root = document.querySelector("[data-restaurant]");
 if (!root) {
@@ -12,6 +13,7 @@ if (!root) {
   const offersDelivery = root.dataset.delivery === "true";
   const deliveryFee = Number(root.dataset.deliveryFee);
   const deliveryFeeCents = offersDelivery && Number.isFinite(deliveryFee) && deliveryFee > 0 ? Math.round(deliveryFee * 100) : 0;
+  const deliveryFeeYear = root.dataset.deliveryFeeYear || "";
   const storageKey = `demo-order:${slug}`;
   const hours = JSON.parse(document.getElementById("hours-data")?.textContent || "null");
   let lang = storedLang() || cleanLang(document.documentElement.lang) || "en";
@@ -89,6 +91,7 @@ if (!root) {
       const key = node.dataset.i18n;
       node.textContent = t(clean, key);
     });
+    applyAriaLabels(document, clean);
     document.querySelectorAll(".lang-switch button").forEach((button) => {
       button.setAttribute("aria-pressed", button.dataset.langSwitch === clean ? "true" : "false");
     });
@@ -151,13 +154,16 @@ if (!root) {
     const beforeTax = sub + tipCents + fee;
     const hasUnpriced = state.lines.some((line) => line.price == null);
     const parts = [`${t(lang, "subtotal")}: ${money(sub)}`, `${t(lang, "tip")}: ${money(tipCents)}`];
-    if (fee) parts.push(`${t(lang, "delivery")}: ${money(fee)}`);
-    parts.push(`${t(lang, "beforeTax")}: ${money(beforeTax)}`);
+    if (fee) parts.push(`${deliveryFeeLabel(lang, deliveryFeeYear)}: ${money(fee)}`);
+    parts.push(`${t(lang, totalLabelKey(hasUnpriced))}: ${money(beforeTax)}`);
     totalEl.textContent = parts.join(" · ");
     unpricedEl.hidden = !hasUnpriced;
     deliveryNote.hidden = state.fulfillment !== "delivery";
     const addressLabel = document.getElementById("delivery-address-label");
-    if (addressLabel) addressLabel.hidden = state.fulfillment !== "delivery";
+    const addressField = document.getElementById("delivery-address");
+    const showAddress = state.fulfillment === "delivery";
+    if (addressLabel) addressLabel.hidden = !showAddress;
+    setAddressRequired(addressField, showAddress);
     const count = itemCount(state.lines);
     if (barLabel) {
       barLabel.textContent =
@@ -235,8 +241,11 @@ if (!root) {
       const item = menuFromPage()[id];
       if (!item) return;
       const existing = state.lines.find((line) => line.id === id);
-      if (existing) existing.qty = clampQty(existing.qty + 1);
-      else {
+      let count = 1;
+      if (existing) {
+        existing.qty = clampQty(existing.qty + 1);
+        count = existing.qty;
+      } else {
         state.lines.push({
           id,
           name: item.name,
@@ -250,7 +259,7 @@ if (!root) {
         if (button.dataset.i18n === "add") button.textContent = t(lang, "add");
       }, 700);
       const live = document.getElementById("add-live");
-      if (live) live.textContent = `${item.name}. ${t(lang, "added")}`;
+      if (live) queueLiveText(live, addLiveText(lang, item.name, count), window.requestAnimationFrame);
       render();
     });
   });
@@ -308,6 +317,7 @@ if (!root) {
 
   document.getElementById("delivery-address")?.addEventListener("input", (event) => {
     state.address = event.target.value;
+    if (String(event.target.value).trim()) clearAddressError(event.target);
     save();
   });
 
@@ -319,6 +329,8 @@ if (!root) {
     }
     if (state.fulfillment === "delivery" && !String(state.address || "").trim()) {
       showError(t(lang, "deliveryNeedAddress"));
+      const addressField = document.getElementById("delivery-address");
+      if (addressField) applyAddressError(addressField);
       return;
     }
     if (state.when) {
@@ -332,7 +344,7 @@ if (!root) {
         return;
       }
       if (issue === "closed") {
-        showError(t(lang, "errorClosed"));
+        showError(t(lang, closedMessageKey(state.fulfillment)));
         return;
       }
     }
@@ -381,6 +393,7 @@ if (!root) {
       const price = line.price == null ? t(lang, "askPrice") : money(Math.round(line.price * 100) * line.qty);
       return `${line.qty} x ${line.name} (${price})`;
     });
+    const hasUnpriced = state.lines.some((line) => line.price == null);
     return [
       name,
       state.fulfillment === "delivery" ? t(lang, "delivery") : t(lang, "pickup"),
@@ -389,8 +402,9 @@ if (!root) {
       ...lines,
       `${t(lang, "subtotal")}: ${money(sub)}`,
       `${t(lang, "tip")}: ${money(tipCents)}`,
-      fee ? `${t(lang, "delivery")}: ${money(fee)}` : "",
-      `${t(lang, "beforeTax")}: ${money(sub + tipCents + fee)}`,
+      fee ? `${deliveryFeeLabel(lang, deliveryFeeYear)}: ${money(fee)}` : "",
+      `${t(lang, totalLabelKey(hasUnpriced))}: ${money(sub + tipCents + fee)}`,
+      hasUnpriced ? t(lang, "unpriced") : "",
       state.notes ? state.notes : "",
       t(lang, "demoFoot"),
     ]

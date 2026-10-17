@@ -33,12 +33,15 @@ export const chrome = {
     publishedEyebrow: "Menu prices from a public listing",
     add: "Add",
     added: "Added",
+    addedCount: "{name}, {count} in the order",
+    addedMax: "{name}, {count} in the order. That's the most you can add.",
     askPrice: "Call for price",
     yourOrder: "Your order",
     empty: "The order list is empty. Add a dish from the menu.",
     fulfillment: "Pickup or delivery",
     pickup: "Pickup",
     delivery: "Delivery",
+    deliveryFromMenu: "Delivery ({year} menu)",
     deliveryNote: "No delivery zone, fee, or minimum was published. This demo does not invent one, and it does not add a fee.",
     tip: "Tip, your choice",
     tipNone: "No tip",
@@ -58,7 +61,7 @@ export const chrome = {
     close: "Close",
     subtotal: "Priced items",
     beforeTax: "Total before tax",
-    total: "Total before tax",
+    pricedBeforeTax: "Priced items, before tax",
     unpriced: "Other items have no published price. Ask when you call.",
     qty: "Quantity",
     remove: "Remove",
@@ -68,6 +71,7 @@ export const chrome = {
     errorTime: "That time is already past in Newark. Pick a later time or leave it blank.",
     errorTimeGap: "That time does not exist in Newark. Pick another time or leave it blank.",
     errorClosed: "The restaurant is closed then in Newark. Pick an open time or leave it blank.",
+    errorDeliveryClosed: "Delivery is closed then in Newark. Pick a time when delivery is open, or leave it blank.",
     errorGeneric: "The order list could not be read. Add the dishes again.",
     cateringIntro: "This demo does not send the form. Write the note, then call the restaurant and read it.",
     cateringName: "Your name",
@@ -123,12 +127,15 @@ export const chrome = {
     publishedEyebrow: "Precios de una lista pública",
     add: "Añadir",
     added: "Añadido",
+    addedCount: "{name}, {count} en el pedido",
+    addedMax: "{name}, {count} en el pedido. No se puede añadir más.",
     askPrice: "Pregunte el precio",
     yourOrder: "Su pedido",
     empty: "La lista está vacía. Añada un plato del menú.",
     fulfillment: "Para llevar o a domicilio",
     pickup: "Para llevar",
     delivery: "A domicilio",
+    deliveryFromMenu: "A domicilio (menú de {year})",
     deliveryNote: "No hay zona, tarifa ni mínimo publicados. Esta demo no inventa una tarifa.",
     tip: "Propina, usted elige",
     tipNone: "Sin propina",
@@ -148,7 +155,7 @@ export const chrome = {
     close: "Cerrar",
     subtotal: "Platos con precio",
     beforeTax: "Total antes de impuestos",
-    total: "Total antes de impuestos",
+    pricedBeforeTax: "Platos con precio, antes de impuestos",
     unpriced: "Los otros platos no tienen precio publicado. Pregunte al llamar.",
     qty: "Cantidad",
     remove: "Quitar",
@@ -158,6 +165,7 @@ export const chrome = {
     errorTime: "Esa hora ya pasó en Newark. Elija otra o déjela en blanco.",
     errorTimeGap: "Esa hora no existe en Newark. Elija otra o déjela en blanco.",
     errorClosed: "El restaurante está cerrado a esa hora en Newark. Elija un horario abierto o déjelo en blanco.",
+    errorDeliveryClosed: "El domicilio está cerrado a esa hora en Newark. Elija un horario de entrega o déjelo en blanco.",
     errorGeneric: "No se pudo leer la lista. Añada los platos otra vez.",
     cateringIntro: "Esta demo no envía el formulario. Escriba la nota y llame al restaurante.",
     cateringName: "Su nombre",
@@ -213,12 +221,15 @@ export const chrome = {
     publishedEyebrow: "Preços de uma lista pública",
     add: "Adicionar",
     added: "Adicionado",
+    addedCount: "{name}, {count} no pedido",
+    addedMax: "{name}, {count} no pedido. Não dá para acrescentar mais.",
     askPrice: "Pergunte o preço",
     yourOrder: "Seu pedido",
     empty: "A lista está vazia. Adicione um prato do cardápio.",
     fulfillment: "Retirada ou entrega",
     pickup: "Retirada",
     delivery: "Entrega",
+    deliveryFromMenu: "Entrega (cardápio de {year})",
     deliveryNote: "Não há zona, taxa nem mínimo publicados. Esta demo não inventa uma taxa.",
     tip: "Gorjeta, você escolhe",
     tipNone: "Sem gorjeta",
@@ -238,7 +249,7 @@ export const chrome = {
     close: "Fechar",
     subtotal: "Pratos com preço",
     beforeTax: "Total antes dos impostos",
-    total: "Total antes dos impostos",
+    pricedBeforeTax: "Pratos com preço, antes dos impostos",
     unpriced: "Os outros pratos não têm preço publicado. Pergunte quando ligar.",
     qty: "Quantidade",
     remove: "Tirar",
@@ -248,6 +259,7 @@ export const chrome = {
     errorTime: "Esse horário já passou em Newark. Escolha outro ou deixe em branco.",
     errorTimeGap: "Esse horário não existe em Newark. Escolha outro ou deixe em branco.",
     errorClosed: "O restaurante está fechado nesse horário em Newark. Escolha um horário aberto ou deixe em branco.",
+    errorDeliveryClosed: "A entrega está fechada nesse horário em Newark. Escolha um horário de entrega ou deixe em branco.",
     errorGeneric: "Não foi possível ler a lista. Adicione os pratos de novo.",
     cateringIntro: "Esta demo não envia o formulário. Escreva o recado e ligue para o restaurante.",
     cateringName: "Seu nome",
@@ -275,11 +287,16 @@ export const chrome = {
   },
 };
 
+const RATING_LOCALE = { en: "en-US", es: "es", pt: "pt-BR" };
+
 export function ratingSentence(lang, rating) {
+  const locale = RATING_LOCALE[lang] ?? "en-US";
+  const value = new Intl.NumberFormat(locale, { maximumFractionDigits: 1, useGrouping: true }).format(rating.value);
+  const count = new Intl.NumberFormat(locale, { maximumFractionDigits: 0, useGrouping: true }).format(rating.count);
   return t(lang, "ratingLine")
     .replace("{platform}", rating.platform)
-    .replace("{value}", String(rating.value))
-    .replace("{count}", String(rating.count))
+    .replace("{value}", value)
+    .replace("{count}", count)
     .replace("{source}", rating.source);
 }
 

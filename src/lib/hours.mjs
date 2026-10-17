@@ -173,13 +173,20 @@ export function formatClock(hhmm, lang = "en") {
   }).format(date);
 }
 
+function isFullDay(ranges) {
+  return (ranges ?? []).some(([start, end]) => start === "00:00" && end === "24:00");
+}
+
 function rangesForDisplay(weekly, day) {
   const ranges = weekly[day] ?? [];
-  const prevEndsAtMidnight = (weekly[PREV_DAY[day]] ?? []).some(([, end]) => end === "24:00");
+  const prev = weekly[PREV_DAY[day]] ?? [];
+  // A full day is not an overnight service, so it must not swallow the next morning.
+  const prevEndsAtMidnight = !isFullDay(prev) && prev.some(([, end]) => end === "24:00");
   const own = ranges.filter(([start, end]) => !(prevEndsAtMidnight && start === "00:00" && end !== "24:00"));
-  const carry = own.some(([, end]) => end === "24:00")
-    ? (weekly[NEXT_DAY[day]] ?? []).find(([start, end]) => start === "00:00" && end !== "24:00")
-    : null;
+  const carry =
+    !isFullDay(own) && own.some(([, end]) => end === "24:00")
+      ? (weekly[NEXT_DAY[day]] ?? []).find(([start, end]) => start === "00:00" && end !== "24:00")
+      : null;
   return own.map(([start, end]) => (end === "24:00" && carry ? [start, carry[1]] : [start, end]));
 }
 

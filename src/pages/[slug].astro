@@ -432,31 +432,39 @@ const nav = [
         <div id="order-form">
           <p id="order-empty" tabindex="-1" data-i18n="empty">{t(lang, "empty")}</p>
           <ul class="lines" id="order-lines"></ul>
-          <fieldset class="fulfill">
-            <label>
-              <input type="radio" name="fulfillment" value="pickup" checked />
-              <span data-i18n="pickup">{t(lang, "pickup")}</span>
-            </label>
-            <label>
-              <input type="radio" name="fulfillment" value="delivery" />
-              <span data-i18n="delivery">{t(lang, "delivery")}</span>
-            </label>
+          <fieldset class="choice-set">
+            <legend data-i18n="fulfillment">{t(lang, "fulfillment")}</legend>
+            <div class="fulfill">
+              <label>
+                <input type="radio" name="fulfillment" value="pickup" checked />
+                <span data-i18n="pickup">{t(lang, "pickup")}</span>
+              </label>
+              <label>
+                <input type="radio" name="fulfillment" value="delivery" />
+                <span data-i18n="delivery">{t(lang, "delivery")}</span>
+              </label>
+            </div>
           </fieldset>
           <p id="delivery-note" class="fine" hidden data-i18n="deliveryNote">
             {t(lang, "deliveryNote")}
           </p>
-          <p data-i18n="tip">{t(lang, "tip")}</p>
-          <div class="tip-row">
-            <label><input type="radio" name="tip" value="0" checked /> <span data-i18n="tipNone">{t(lang, "tipNone")}</span></label>
-            <label><input type="radio" name="tip" value="10" /> 10%</label>
-            <label><input type="radio" name="tip" value="15" /> 15%</label>
-            <label><input type="radio" name="tip" value="20" /> 20%</label>
-            <label>
-              <input type="radio" name="tip" value="custom" />
-              <span data-i18n="customTip">{t(lang, "customTip")}</span>
-              <input id="tip-custom" type="number" min="0" max="100" step="1" inputmode="numeric" style="max-width:5rem" />
-            </label>
-          </div>
+          <fieldset class="choice-set">
+            <legend data-i18n="tip">{t(lang, "tip")}</legend>
+            <div class="tip-row">
+              <label><input type="radio" name="tip" value="0" checked /> <span data-i18n="tipNone">{t(lang, "tipNone")}</span></label>
+              <label><input type="radio" name="tip" value="10" /> 10%</label>
+              <label><input type="radio" name="tip" value="15" /> 15%</label>
+              <label><input type="radio" name="tip" value="20" /> 20%</label>
+              <label>
+                <input type="radio" name="tip" value="custom" />
+                <span data-i18n="customTip">{t(lang, "customTip")}</span>
+              </label>
+              <label for="tip-custom">
+                <span data-i18n="tipPercent">{t(lang, "tipPercent")}</span>
+                <input id="tip-custom" type="number" min="0" max="100" step="1" inputmode="numeric" />
+              </label>
+            </div>
+          </fieldset>
           <label>
             <span data-i18n="when">{t(lang, "when")}</span>
             <input id="order-when" type="datetime-local" />

@@ -1,4 +1,6 @@
 ---
+import { spokenLang } from "../lib/lang-span.mjs";
+
 const { text, block = false } = Astro.props;
 const source = typeof text === "string" ? { en: text } : text ?? { en: "" };
 const value = {
@@ -10,7 +12,7 @@ const value = {
 
 {
   (["en", "es", "pt"] as const).map((lang) => (
-    <span class:list={["l", { block }]} data-lang={lang} lang={lang === "en" ? undefined : lang}>
+    <span class:list={["l", { block }]} data-lang={lang} lang={spokenLang(lang, source)}>
       {value[lang]}
     </span>
   ))

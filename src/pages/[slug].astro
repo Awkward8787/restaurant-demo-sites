@@ -1,4 +1,5 @@
 ---
+import { jsonForScript } from "../lib/json-script.mjs";
 import { loadRestaurants, telHref, money } from "../lib/restaurants.mjs";
 import { restaurantJsonLd } from "../lib/schema.mjs";
 import { weekLines } from "../lib/hours.mjs";
@@ -72,7 +73,7 @@ const nav = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={r.theme.fontHref} rel="stylesheet" />
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={jsonForScript(jsonLd)} />
   </head>
   <body
     class={`menu-${r.theme.menuStyle}`}
@@ -501,7 +502,7 @@ const nav = [
       </div>
     </dialog>
 
-    <script id="hours-data" type="application/json" set:html={JSON.stringify(r.hours)} />
+    <script id="hours-data" type="application/json" set:html={jsonForScript(r.hours)} />
     <script>
       import "../scripts/page.mjs";
     </script>

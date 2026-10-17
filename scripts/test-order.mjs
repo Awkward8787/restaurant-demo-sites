@@ -117,4 +117,11 @@ assert.match(t("en", "errorDeliveryClosed"), /[Dd]elivery/);
 assert.doesNotMatch(t("en", "errorDeliveryClosed"), /restaurant is closed/);
 assert.match(script, /closedMessageKey\(state\.fulfillment\)/);
 
+assert.equal(t("en", "total"), "total");
+assert.equal(t("es", "total"), "total");
+assert.equal(t("pt", "total"), "total");
+assert.equal(t("en", "beforeTax"), "Total before tax");
+assert.equal(t("es", "beforeTax"), "Total antes de impuestos");
+assert.equal(t("pt", "beforeTax"), "Total antes dos impostos");
+
 console.log("order ok");

@@ -1,3 +1,4 @@
+import { cleanTip } from "../lib/cart.mjs";
 import { isOpen, statusPhrase } from "../lib/hours.mjs";
 import { t } from "../i18n.mjs";
 
@@ -31,7 +32,7 @@ if (!root) {
   function load() {
     try {
       const saved = JSON.parse(sessionStorage.getItem(storageKey) || "null");
-      if (saved?.lines) return saved;
+      if (saved?.lines) return { ...saved, tip: cleanTip(saved.tip) };
     } catch {
       /* ignore broken storage */
     }
@@ -109,7 +110,7 @@ if (!root) {
     }
 
     const sub = pricedSubtotal();
-    const tipCents = Math.round(sub * (Number(state.tip) || 0) / 100);
+    const tipCents = Math.round(sub * cleanTip(state.tip) / 100);
     const hasUnpriced = state.lines.some((line) => line.price == null);
     totalEl.textContent = `${t(lang, "total")}: ${money(sub)} · ${t(lang, "tip")}: ${money(tipCents)}`;
     unpricedEl.hidden = !hasUnpriced;
@@ -211,19 +212,18 @@ if (!root) {
     input.addEventListener("change", () => {
       if (!input.checked) return;
       if (input.value === "custom") {
-        const custom = document.getElementById("tip-custom");
-        state.tip = Number(custom.value) || 0;
+        state.tip = readCustomTip();
       } else {
-        state.tip = Number(input.value) || 0;
+        state.tip = cleanTip(input.value);
       }
       render();
     });
   });
 
-  document.getElementById("tip-custom")?.addEventListener("input", (event) => {
+  document.getElementById("tip-custom")?.addEventListener("input", () => {
     const customRadio = document.querySelector("[name='tip'][value='custom']");
     customRadio.checked = true;
-    state.tip = Number(event.target.value) || 0;
+    state.tip = readCustomTip();
     render();
   });
 
@@ -275,6 +275,16 @@ if (!root) {
     }
   });
 
+  function readCustomTip() {
+    const field = document.getElementById("tip-custom");
+    if (!field) return 0;
+    const raw = field.value;
+    if (raw.trim() === "") return 0;
+    const tip = cleanTip(raw);
+    if (String(tip) !== raw) field.value = String(tip);
+    return tip;
+  }
+
   function showError(message) {
     errorEl.hidden = false;
     errorEl.textContent = message;
@@ -282,7 +292,7 @@ if (!root) {
 
   function orderText() {
     const sub = pricedSubtotal();
-    const tipCents = Math.round(sub * (Number(state.tip) || 0) / 100);
+    const tipCents = Math.round(sub * cleanTip(state.tip) / 100);
     const lines = state.lines.map((line) => {
       const price = line.price == null ? t(lang, "askPrice") : money(Math.round(line.price * 100) * line.qty);
       return `${line.qty} x ${line.name} (${price})`;

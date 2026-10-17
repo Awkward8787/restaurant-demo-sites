@@ -453,7 +453,7 @@ const nav = [
             <label>
               <input type="radio" name="tip" value="custom" />
               <span data-i18n="customTip">{t(lang, "customTip")}</span>
-              <input id="tip-custom" inputmode="numeric" style="max-width:5rem" />
+              <input id="tip-custom" type="number" min="0" max="100" step="1" inputmode="numeric" style="max-width:5rem" />
             </label>
           </div>
           <label>

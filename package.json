@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0",
-    "test": "node scripts/test-hours.mjs && node scripts/test-adapters.mjs && node scripts/validate.mjs"
+    "test": "node scripts/test-hours.mjs && node scripts/test-adapters.mjs && node scripts/test-cart.mjs && node scripts/validate.mjs"
   },
   "dependencies": {
     "astro": "^5.14.1"

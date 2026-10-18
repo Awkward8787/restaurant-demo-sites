@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#F4E6D2"/>
-  <rect width="28" height="630" fill="#1B4D32"/>
-  <text x="72" y="210" fill="#1C2416" font-size="84" font-family="DejaVu Serif">J&amp;V Grill</text><text x="72" y="302" fill="#1C2416" font-size="84" font-family="DejaVu Serif">Restaurant</text><text x="72" y="394" fill="#1C2416" font-size="84" font-family="DejaVu Serif">Cafeteria</text>
-  <text x="72" y="560" fill="#1C2416" font-size="32" font-family="DejaVu Serif">423 Bloomfield Avenue, Newark</text>
+  <rect width="28" height="630" fill="#4A460C"/>
+  <text x="72" y="210" fill="#142018" font-size="84" font-family="DejaVu Serif">J&amp;V Grill</text><text x="72" y="302" fill="#142018" font-size="84" font-family="DejaVu Serif">Restaurant</text><text x="72" y="394" fill="#142018" font-size="84" font-family="DejaVu Serif">Cafeteria</text>
+  <text x="72" y="560" fill="#142018" font-size="32" font-family="DejaVu Serif">423 Bloomfield Avenue, Newark</text>
 </svg>

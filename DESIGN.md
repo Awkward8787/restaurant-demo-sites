@@ -14,16 +14,16 @@ Open and closed use `America/New_York`. Unknown hours stay unknown.
 
 | Restaurant | Paper / ink / accent | Display | Hero | Menu |
 | --- | --- | --- | --- | --- |
-| J&V Grill | Beige #F4E6D2, forest #1B4D32 | Fraunces | Cafeteria ticket | Rows, names only |
+| J&V Grill | Beige #F4E6D2, forest #1B4D32, gold #4A460C | Fraunces | Cafeteria ticket | Rows, names only |
 | Andros Diner | Ivory #F4EFE4, maroon #7C1E28, mustard #6E5010 | Bowlby One | Marquee | Leaders, 2018 menu |
-| Boi Na Brasa | Cream #F7F0E4, wood band #4A2A16, crimson #7C1E3A | Anton | Poster, street rail | Rows. Named dishes, then a labeled sample |
-| Brisas del Mar | Foam #F2F5F1, sea #0E3E4A, lime #4E6B0E | Young Serif | Tide, kicker chip | Leaders, four published prices |
+| Boi Na Brasa | Cream #F7F0E4, gold wood #6E4E14, crimson #7C1E3A | Anton | Poster, left accent bar | Rows. Named dishes, then a labeled sample |
+| Brisas del Mar | Foam #F2F5F1, sea #0E3E4A, lime #4E6B0E | Young Serif | Tide panel | Leaders, four published prices |
 | Cityrub | Butcher paper #F6EFE6, soot #16110E, ember #8C3C0C | Oswald | Butcher slab | Rows, SinglePlatform prices |
-| Peruvian Brazas | Warm paper #FFF8EE, ink #1A120E, red #B42318 | Bricolage Grotesque | Counter window | Rows, names only |
-| Cantinho Mineiro | Paper #F7F3E8, ink #1C2410, leaf #3E6B1A | Libre Baskerville | Letterpress card | Hanging names |
-| Sabor Unido | Paper #F3EEE6, navy #152E40 | Petrona | Two columns, Saturday feijoada | Rows, published menu |
-| Virgen de la Nube | Paper #F7F4EE, ink #14233F, blue #1A3278 | Cormorant Garamond | Chapel stack | Hanging names, labeled sample |
+| Peruvian Brazas | Warm paper #FFF8EE, teal ink #12302E, pale band #EDEEEC, teal #0E6B62 | Bricolage Grotesque | Counter window | Rows, names only |
+| Cantinho Mineiro | Paper #F7F3E8, ink #1C2410, green #1F6B4A | Libre Baskerville | Letterpress card | Hanging names |
+| Sabor Unido | Paper #F3EEE6, navy #12324E, terracotta #B42E1C | Petrona | Two columns, Saturday feijoada | Rows, published menu |
+| Virgen de la Nube | Paper #F7F4EE, plum ink #2A1848, blue #1A3278, plum #7A3A68 | Cormorant Garamond | Chapel stack | Hanging names, labeled sample |
 
-Palette cues that come from a real surface: J&V beige is sampled from a photo of the room and the forest green is the cafeteria awning. Andros keeps diner maroon and mustard. Brisas keeps sea blue and lime. Cityrub's soot and ember follow the dark wood of the room and the black site. Boi's wood band is sampled from a photo of the room. Sabor's navy matches the restaurant site. Boi's crimson, Brazas red, Cantinho leaf green, and Virgen blue are separation choices where no awning color was available. These are not national-flag palettes. Accent hues are checked in pairs, and the hero variant is not part of that check.
+Palette cues that come from a real surface: J&V beige is sampled from a photo of the room and the forest green is the cafeteria awning. Andros keeps diner maroon and mustard. Brisas keeps sea blue and lime. Cityrub's soot and ember follow the dark wood of the room and the black site. Boi's wood band is sampled from a photo of the room and shifted toward gold. Sabor's navy follows the restaurant site, with a terracotta accent. Accent, band, and ink hues are checked in pairs, and each accent is also checked against that restaurant's own band. The hero variant is not part of that check.
 
 Checkout on every page ends on the sentence "Demo site: no order was placed. Call to order."

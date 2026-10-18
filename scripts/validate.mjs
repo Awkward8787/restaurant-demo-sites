@@ -160,7 +160,20 @@ export function validateRestaurants(restaurants) {
       assert.equal(restaurant.delivery, true, `${label} delivery fee without delivery`);
       assertPrice(restaurant.deliveryFee, `${label} delivery fee`);
     }
-    accents.push({ slug: restaurant.slug, accent: theme.accent });
+    if (restaurant.deliveryFeeYear != null) {
+      assert.equal(restaurant.deliveryFee != null, true, `${label} delivery fee year without a delivery fee`);
+      assert.equal(
+        Number.isInteger(restaurant.deliveryFeeYear),
+        true,
+        `${label} delivery fee year must be an integer`,
+      );
+    }
+    assert.equal(
+      huesCollide(theme.accent, theme.band),
+      false,
+      `${label} accent and band are too close (${theme.accent} / ${theme.band})`,
+    );
+    accents.push({ slug: restaurant.slug, accent: theme.accent, band: theme.band, ink: theme.ink });
     const dashes = [];
     walkStrings(restaurant, label, dashes);
     assert.deepEqual(dashes, [], `dash characters in ${dashes.join(", ")}`);
@@ -190,13 +203,15 @@ export function validateRestaurants(restaurants) {
       assert.ok(quote.text && quote.name && quote.source && quote.url, `${label} quote needs name, source, url`);
     }
   }
-  for (let i = 0; i < accents.length; i += 1) {
-    for (let j = i + 1; j < accents.length; j += 1) {
-      assert.equal(
-        huesCollide(accents[i].accent, accents[j].accent),
-        false,
-        `${accents[i].slug} and ${accents[j].slug} accents are too close (${accents[i].accent} / ${accents[j].accent})`,
-      );
+  for (const key of ["accent", "band", "ink"]) {
+    for (let i = 0; i < accents.length; i += 1) {
+      for (let j = i + 1; j < accents.length; j += 1) {
+        assert.equal(
+          huesCollide(accents[i][key], accents[j][key]),
+          false,
+          `${accents[i].slug} and ${accents[j].slug} ${key} colors are too close (${accents[i][key]} / ${accents[j][key]})`,
+        );
+      }
     }
   }
 }

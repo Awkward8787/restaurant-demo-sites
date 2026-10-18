@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#F7F4EE"/>
-  <rect width="28" height="630" fill="#1A3278"/>
-  <text x="72" y="210" fill="#14233F" font-size="84" font-family="DejaVu Serif">Restaurante</text><text x="72" y="302" fill="#14233F" font-size="84" font-family="DejaVu Serif">Ecuatoriano Virgen</text><text x="72" y="394" fill="#14233F" font-size="84" font-family="DejaVu Serif">de la Nube</text>
-  <text x="72" y="560" fill="#14233F" font-size="32" font-family="DejaVu Serif">100 Bloomfield Avenue, Newark</text>
+  <rect width="28" height="630" fill="#7A3A68"/>
+  <text x="72" y="210" fill="#2A1848" font-size="84" font-family="DejaVu Serif">Restaurante</text><text x="72" y="302" fill="#2A1848" font-size="84" font-family="DejaVu Serif">Ecuatoriano Virgen</text><text x="72" y="394" fill="#2A1848" font-size="84" font-family="DejaVu Serif">de la Nube</text>
+  <text x="72" y="560" fill="#2A1848" font-size="32" font-family="DejaVu Serif">100 Bloomfield Avenue, Newark</text>
 </svg>

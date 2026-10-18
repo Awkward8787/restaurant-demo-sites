@@ -100,10 +100,10 @@
   },
   "theme": {
     "paper": "#F7F4EE",
-    "ink": "#14233F",
+    "ink": "#2A1848",
     "band": "#1A3278",
     "onBand": "#F7F4EE",
-    "accent": "#1A3278",
+    "accent": "#7A3A68",
     "onAccent": "#F7F4EE",
     "displayStack": "'Cormorant Garamond', Georgia, serif",
     "bodyStack": "'Source Serif 4', Georgia, serif",

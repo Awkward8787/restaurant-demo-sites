@@ -342,10 +342,7 @@ const offersDelivery = r.delivery === true;
                     <p>
                       <span data-i18n="listedOn">{t(lang, "listedOn")}</span>{" "}
                       {r.apps.map((app, index) => (
-                        <span>
-                          {index > 0 ? ", " : ""}
-                          <a href={app.url}>{app.name}</a>
-                        </span>
+                        <span>{index > 0 ? ", " : ""}<a href={app.url}>{app.name}</a></span>
                       ))}
                     </p>
                   )}

@@ -106,10 +106,10 @@
   },
   "theme": {
     "paper": "#F3EEE6",
-    "ink": "#152E40",
-    "band": "#152E40",
+    "ink": "#12324E",
+    "band": "#12324E",
     "onBand": "#F3EEE6",
-    "accent": "#152E40",
+    "accent": "#B42E1C",
     "onAccent": "#F3EEE6",
     "displayStack": "'Petrona', Georgia, serif",
     "bodyStack": "'Libre Franklin', 'Segoe UI', sans-serif",

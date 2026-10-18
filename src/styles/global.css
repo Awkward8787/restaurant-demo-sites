@@ -53,9 +53,8 @@ main a:not(.button),
   display: inline-block;
   box-sizing: border-box;
   min-height: 44px;
-  min-width: 44px;
   max-width: 100%;
-  padding: 0.55rem 0.2rem;
+  padding: 0.55rem 0;
   overflow-wrap: anywhere;
 }
 
@@ -238,7 +237,8 @@ h2,
 h1 {
   font-size: clamp(2.7rem, 12vw, 7rem);
   letter-spacing: 0;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  hyphens: manual;
 }
 
 h2 {
@@ -737,20 +737,8 @@ pre.list-text {
 }
 
 .poster-sheet {
-  display: grid;
-  grid-template-columns: 4.2rem minmax(0, 1fr);
-  column-gap: 0.9rem;
   padding: 1.1rem 1rem 1.4rem;
-}
-
-.poster-index {
-  grid-row: 1 / span 4;
-  margin: 0;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 700;
-  border-right: 3px solid var(--accent);
-  padding-right: 0.45rem;
+  border-left: 10px solid var(--accent);
 }
 
 .hero-poster h1 {
@@ -769,15 +757,6 @@ pre.list-text {
   background: transparent;
   color: var(--on-band);
   border-color: var(--on-band);
-}
-
-.tide-kicker {
-  margin: 0 0 0.45rem;
-  display: inline-block;
-  background: var(--accent);
-  color: var(--on-accent);
-  padding: 0.35rem 0.7rem;
-  font-weight: 700;
 }
 
 .tide-panel {
@@ -806,27 +785,15 @@ pre.list-text {
   font-size: clamp(3rem, 14vw, 7.5rem);
 }
 
-.slab-street {
-  margin: 0 0 0.2rem;
-  font-weight: 650;
-}
-
 .hero-butcher .butcher-rest {
   padding: 1rem;
 }
 
 .hero-counter .window {
-  border: 3px solid var(--ink);
+  border: 3px solid var(--accent);
+  background: var(--band);
   padding: 0.9rem 0.9rem 1.1rem;
   max-width: 36rem;
-}
-
-.counter-tab {
-  margin: -0.9rem -0.9rem 0.75rem;
-  padding: 0.4rem 0.75rem;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-weight: 700;
 }
 
 .press-card {
@@ -840,11 +807,9 @@ pre.list-text {
 .press-card h1 {
   font-weight: 700;
   max-width: none;
-}
-
-.press-street {
-  margin: 0.35rem 0 0;
-  font-size: 0.95rem;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  overflow-wrap: normal;
+  hyphens: manual;
 }
 
 .press-card .cta-row,
@@ -871,12 +836,6 @@ pre.list-text {
   max-width: 34rem;
   margin-inline: auto;
   padding-top: 0.6rem;
-}
-
-.chapel-street {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
 }
 
 .hero-chapel h1 {

@@ -51,6 +51,8 @@ assert.equal(deliveryFeeLabel("pt", 2018), "Entrega (cardápio de 2018)");
 assert.equal(deliveryFeeLabel("en", ""), t("en", "delivery"));
 assert.equal(deliveryFeeLabel("en", null), t("en", "delivery"));
 assert.match(script, /deliveryFeeLabel\(lang, deliveryFeeYear\)/);
+assert.match(script, /if \(addressField && !showAddress\) clearAddressError\(addressField\)/);
+assert.equal(t("es", "navHours"), "Horario");
 assert.doesNotMatch(script, /2018 menu/);
 const andros = JSON.parse(readFileSync(new URL("../data/restaurants/andros-diner.json", import.meta.url), "utf8"));
 assert.equal(andros.deliveryFeeYear, 2018);

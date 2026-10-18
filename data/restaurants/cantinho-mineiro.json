@@ -86,9 +86,9 @@
   "hero": {
     "variant": "letterpress",
     "dek": {
-      "en": "Mineiro cooking. Feijoada and bife à cavalo.",
-      "es": "Cocina mineira. Feijoada y bife à cavalo.",
-      "pt": "Comida mineira. Feijoada e bife à cavalo."
+      "en": "Mineiro cooking at 51 Hensler Street. Feijoada and bife à cavalo.",
+      "es": "Cocina mineira en 51 Hensler Street. Feijoada y bife à cavalo.",
+      "pt": "Comida mineira na 51 Hensler Street. Feijoada e bife à cavalo."
     }
   },
   "theme": {
@@ -96,7 +96,7 @@
     "ink": "#1C2410",
     "band": "#1C2410",
     "onBand": "#F7F3E8",
-    "accent": "#3E6B1A",
+    "accent": "#1F6B4A",
     "onAccent": "#F7F3E8",
     "displayStack": "'Libre Baskerville', Georgia, serif",
     "bodyStack": "'Source Sans 3', 'Segoe UI', sans-serif",
@@ -170,9 +170,9 @@
   },
   "about": [
     {
-      "en": "Cantinho Mineiro 2 is a Brazilian restaurant at the phone (973) 230-0913. This page uses 51 Hensler Street.",
-      "es": "Cantinho Mineiro 2 es un restaurante brasileño con el teléfono (973) 230-0913. Esta página usa 51 Hensler Street.",
-      "pt": "O Cantinho Mineiro 2 é um restaurante brasileiro com o telefone (973) 230-0913. Esta página usa 51 Hensler Street."
+      "en": "Cantinho Mineiro 2 is a Brazilian restaurant at 51 Hensler Street, Newark. Call (973) 230-0913.",
+      "es": "Cantinho Mineiro 2 es un restaurante brasileño en 51 Hensler Street, Newark. Llame al (973) 230-0913.",
+      "pt": "O Cantinho Mineiro 2 é um restaurante brasileiro na 51 Hensler Street, Newark. Ligue para (973) 230-0913."
     }
   ],
   "apps": [

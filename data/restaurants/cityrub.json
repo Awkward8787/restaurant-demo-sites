@@ -727,9 +727,9 @@
   },
   "about": [
     {
-      "en": "City Rub's site says the room is at 118 Stockton Street in the Ironbound, in the old Tio Pepe, with Southern food, a sports bar, a parking lot, and takeout. Phone (862) 237-7528. Email info@cityrub.com.",
-      "es": "El sitio de City Rub dice que el local está en 118 Stockton Street, en el Ironbound, en el antiguo Tio Pepe, con comida del sur, bar de deportes, estacionamiento y comida para llevar. Teléfono (862) 237-7528. Correo info@cityrub.com.",
-      "pt": "O site do City Rub diz que a casa fica na 118 Stockton Street, no Ironbound, no antigo Tio Pepe, com comida do sul, sports bar, estacionamento e retirada. Telefone (862) 237-7528. E-mail info@cityrub.com."
+      "en": "Cityrub is at 118 Stockton Street in the Ironbound, in the old Tio Pepe. The room serves Southern food, with a sports bar, a parking lot, and takeout. Call (862) 237-7528 or email info@cityrub.com.",
+      "es": "Cityrub está en 118 Stockton Street, en el Ironbound, en el antiguo Tio Pepe. El local sirve comida del sur, con bar de deportes, estacionamiento y comida para llevar. Llame al (862) 237-7528 o escriba a info@cityrub.com.",
+      "pt": "O Cityrub fica na 118 Stockton Street, no Ironbound, no antigo Tio Pepe. A casa serve comida do sul, com sports bar, estacionamento e retirada. Ligue para (862) 237-7528 ou escreva para info@cityrub.com."
     }
   ],
   "catering": {
@@ -766,8 +766,8 @@
     "pt": "O site diz que podem entregar, com restrições. Não imprimem zona nem taxa, e esta demo não inventa uma."
   },
   "sourcesNote": {
-    "en": "Menu prices are from SinglePlatform. Hours are from OpenStreetMap, and Restaurant Guru prints the same 11 a.m. to 11 p.m. clock. The Google score is from Restaurant Guru.",
-    "es": "Los precios salen de SinglePlatform. El horario sale de OpenStreetMap, y Restaurant Guru imprime el mismo reloj de 11 a.m. a 11 p.m. La nota de Google sale de Restaurant Guru.",
-    "pt": "Os preços saem da SinglePlatform. O horário sai do OpenStreetMap, e o Restaurant Guru imprime o mesmo relógio das 11h às 23h. A nota do Google sai do Restaurant Guru."
+    "en": "The room description is from cityrub.com. Menu prices are from SinglePlatform. Hours are from OpenStreetMap, and Restaurant Guru prints the same 11 a.m. to 11 p.m. clock. The Google score is from Restaurant Guru.",
+    "es": "La descripción del local sale de cityrub.com. Los precios salen de SinglePlatform. El horario sale de OpenStreetMap, y Restaurant Guru imprime el mismo reloj de 11 a.m. a 11 p.m. La nota de Google sale de Restaurant Guru.",
+    "pt": "A descrição da casa sai do cityrub.com. Os preços saem da SinglePlatform. O horário sai do OpenStreetMap, e o Restaurant Guru imprime o mesmo relógio das 11h às 23h. A nota do Google sai do Restaurant Guru."
   }
 }

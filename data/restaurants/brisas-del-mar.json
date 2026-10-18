@@ -40,9 +40,9 @@
   "hours": {
     "source": "Brisas del Mar ordering page, earlier reading",
     "note": {
-      "en": "These hours were printed on the restaurant's ordering page. On 17 October 2026 that page returned 404, and https failed. Restaurant Guru now prints 5 a.m. to 9 p.m. every day. That clock is not used here, because the restaurant's own page could not be reopened.",
-      "es": "Este horario estaba en la página de pedidos del restaurante. El 17 de octubre de 2026 esa página devolvió 404, y https falló. Restaurant Guru ahora imprime de 5 a.m. a 9 p.m. todos los días. Ese reloj no se usa aquí, porque la página del restaurante no volvió a abrir.",
-      "pt": "Este horário estava na página de pedidos do restaurante. Em 17 de outubro de 2026 essa página devolveu 404, e o https falhou. O Restaurant Guru agora imprime 5h às 21h todos os dias. Esse relógio não é usado aqui, porque a página do restaurante não voltou a abrir."
+      "en": "Saturday and Sunday open at 7:30 a.m. on an earlier reading of the restaurant's ordering page. Monday through Friday open at 6:00 a.m. on that same reading, and every day closes at 9:00 p.m. On 17 October 2026 that page returned 404, and https failed. Restaurant Guru now prints 5 a.m. to 9 p.m. every day. That clock is not used here.",
+      "es": "Sábado y domingo abren a las 7:30 a.m. en una lectura anterior de la página de pedidos del restaurante. De lunes a viernes abren a las 6:00 a.m. en esa misma lectura, y todos los días cierran a las 9:00 p.m. El 17 de octubre de 2026 esa página devolvió 404, y https falló. Restaurant Guru ahora imprime de 5 a.m. a 9 p.m. todos los días. Ese reloj no se usa aquí.",
+      "pt": "Sábado e domingo abrem às 7h30 numa leitura anterior da página de pedidos do restaurante. De segunda a sexta abrem às 6h nessa mesma leitura, e todos os dias fecham às 21h. Em 17 de outubro de 2026 essa página devolveu 404, e o https falhou. O Restaurant Guru agora imprime 5h às 21h todos os dias. Esse relógio não é usado aqui."
     },
     "weekly": {
       "mon": [
@@ -174,9 +174,9 @@
     ]
   },
   "orderNote": {
-    "en": "Call (973) 481-5836 for the rest of the ceviches. This preview only lists the four prices we could read, and it does not send the order.",
-    "es": "Llame al (973) 481-5836 para el resto de los ceviches. Esta vista solo lista los cuatro precios que pudimos leer, y no envía el pedido.",
-    "pt": "Ligue para (973) 481-5836 para o resto dos ceviches. Esta prévia só lista os quatro preços que lemos, e não envia o pedido."
+    "en": "Call (973) 481-5836 for the rest of the ceviches. This preview lists four prices, and it does not send the order.",
+    "es": "Llame al (973) 481-5836 para el resto de los ceviches. Esta vista lista cuatro precios, y no envía el pedido.",
+    "pt": "Ligue para (973) 481-5836 para o resto dos ceviches. Esta prévia lista quatro preços, e não envia o pedido."
   },
   "reviews": {
     "summary": {
@@ -193,9 +193,9 @@
   },
   "about": [
     {
-      "en": "Brisas del Mar Cevicheria is at 350 Bloomfield Avenue, Newark. The phone on the ordering page is (973) 481-5836. OpenStreetMap tags the cuisine as seafood.",
-      "es": "Brisas del Mar Cevicheria está en 350 Bloomfield Avenue, Newark. El teléfono de la página de pedidos es (973) 481-5836. OpenStreetMap marca la cocina como mariscos.",
-      "pt": "A Brisas del Mar Cevicheria fica na 350 Bloomfield Avenue, Newark. O telefone da página de pedidos é (973) 481-5836. O OpenStreetMap marca a cozinha como frutos do mar."
+      "en": "Brisas del Mar Cevicheria is a seafood restaurant at 350 Bloomfield Avenue, Newark. Call (973) 481-5836.",
+      "es": "Brisas del Mar Cevicheria es un restaurante de mariscos en 350 Bloomfield Avenue, Newark. Llame al (973) 481-5836.",
+      "pt": "A Brisas del Mar Cevicheria é um restaurante de frutos do mar na 350 Bloomfield Avenue, Newark. Ligue para (973) 481-5836."
     }
   ],
   "sections": [
@@ -212,8 +212,8 @@
   },
   "delivery": "unknown",
   "sourcesNote": {
-    "en": "The four prices and the weekly clock are from an earlier reading of the restaurant's ordering page. That page returned 404 on 17 October 2026. The Google score is from Restaurant Guru.",
-    "es": "Los cuatro precios y el horario semanal salen de una lectura anterior de la página de pedidos del restaurante. Esa página devolvió 404 el 17 de octubre de 2026. La nota de Google sale de Restaurant Guru.",
-    "pt": "Os quatro preços e o horário semanal saem de uma leitura anterior da página de pedidos do restaurante. Essa página devolveu 404 em 17 de outubro de 2026. A nota do Google sai do Restaurant Guru."
+    "en": "The four prices and the weekly clock are from an earlier reading of the restaurant's ordering page. That page returned 404 on 17 October 2026. OpenStreetMap tags the cuisine as seafood. The Google score is from Restaurant Guru.",
+    "es": "Los cuatro precios y el horario semanal salen de una lectura anterior de la página de pedidos del restaurante. Esa página devolvió 404 el 17 de octubre de 2026. OpenStreetMap marca la cocina como mariscos. La nota de Google sale de Restaurant Guru.",
+    "pt": "Os quatro preços e o horário semanal saem de uma leitura anterior da página de pedidos do restaurante. Essa página devolveu 404 em 17 de outubro de 2026. O OpenStreetMap marca a cozinha como frutos do mar. A nota do Google sai do Restaurant Guru."
   }
 }

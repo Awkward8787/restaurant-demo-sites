@@ -100,10 +100,10 @@
   },
   "theme": {
     "paper": "#F4E6D2",
-    "ink": "#1C2416",
+    "ink": "#142018",
     "band": "#1B4D32",
     "onBand": "#F6F1E6",
-    "accent": "#1B4D32",
+    "accent": "#4A460C",
     "onAccent": "#F6F1E6",
     "displayStack": "'Fraunces', Georgia, serif",
     "bodyStack": "'Source Serif 4', Georgia, serif",

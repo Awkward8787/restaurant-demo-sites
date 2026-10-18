@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#F7F3E8"/>
-  <rect width="28" height="630" fill="#3E6B1A"/>
+  <rect width="28" height="630" fill="#1F6B4A"/>
   <text x="72" y="210" fill="#1C2410" font-size="84" font-family="DejaVu Serif">Cantinho Mineiro 2</text>
   <text x="72" y="560" fill="#1C2410" font-size="32" font-family="DejaVu Serif">51 Hensler Street, Newark</text>
 </svg>

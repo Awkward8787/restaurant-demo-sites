@@ -164,6 +164,7 @@ if (!root) {
     const showAddress = state.fulfillment === "delivery";
     if (addressLabel) addressLabel.hidden = !showAddress;
     setAddressRequired(addressField, showAddress);
+    if (addressField && !showAddress) clearAddressError(addressField);
     const count = itemCount(state.lines);
     if (barLabel) {
       barLabel.textContent =

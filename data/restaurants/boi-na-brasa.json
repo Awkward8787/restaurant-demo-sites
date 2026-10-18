@@ -121,8 +121,8 @@
   },
   "theme": {
     "paper": "#F7F0E4",
-    "ink": "#2A160E",
-    "band": "#4A2A16",
+    "ink": "#343212",
+    "band": "#6E4E14",
     "onBand": "#F7F0E4",
     "accent": "#7C1E3A",
     "onAccent": "#F7F0E4",
@@ -297,9 +297,9 @@
   },
   "about": [
     {
-      "en": "The Yelp listing for 1 Merchant Street, written as the business, says Boi Na Brasa is a Brazilian steakhouse in the Ironbound and that in 2005 it began sharing rodizio, the southern Brazilian way of serving meat. It names rodizio, churrasco, feijoada, a salad bar, and a wine list.",
-      "es": "La ficha de Yelp de 1 Merchant Street, escrita como el negocio, dice que Boi Na Brasa es una churrasquería brasileña en el Ironbound y que en 2005 empezó a servir rodizio. Nombra rodizio, churrasco, feijoada, una barra de ensaladas y una carta de vinos.",
-      "pt": "A ficha do Yelp de 1 Merchant Street, escrita como o negócio, diz que o Boi Na Brasa é uma churrascaria no Ironbound e que em 2005 começou a servir rodízio. Cita rodízio, churrasco, feijoada, saladas e carta de vinhos."
+      "en": "Boi Na Brasa is a Brazilian steakhouse in the Ironbound, at 1 Merchant Street. In 2005 it began serving rodizio, the southern Brazilian way of serving meat, with churrasco, feijoada, a salad bar, and a wine list.",
+      "es": "Boi Na Brasa es una churrasquería brasileña en el Ironbound, en 1 Merchant Street. En 2005 empezó a servir rodizio, la forma del sur de Brasil de servir carne, con churrasco, feijoada, una barra de ensaladas y una carta de vinos.",
+      "pt": "O Boi Na Brasa é uma churrascaria no Ironbound, na 1 Merchant Street. Em 2005 começou a servir rodízio, o modo do sul do Brasil de servir carne, com churrasco, feijoada, saladas e carta de vinhos."
     },
     {
       "en": "The same group runs Churrascaria Boi na Brasa at 70 Adams Street, phone (973) 589-6069. That room has its own menu. This page is the Merchant Street bar and grill.",
@@ -345,8 +345,8 @@
   },
   "delivery": "unknown",
   "sourcesNote": {
-    "en": "Hours are from the Yelp listing for 1 Merchant Street. The priced cuts on this page are a labeled sample, not that listing.",
-    "es": "El horario sale de la ficha de Yelp de 1 Merchant Street. Los cortes con precio de esta página son una muestra, no esa ficha.",
-    "pt": "O horário sai da ficha do Yelp de 1 Merchant Street. Os cortes com preço desta página são uma amostra, não essa ficha."
+    "en": "The description and the 2005 line are from the Yelp listing for 1 Merchant Street, written as the business. Hours are from that listing. The priced cuts on this page are a labeled sample, not that listing.",
+    "es": "La descripción y la línea de 2005 salen de la ficha de Yelp de 1 Merchant Street, escrita como el negocio. El horario sale de esa ficha. Los cortes con precio de esta página son una muestra, no esa ficha.",
+    "pt": "A descrição e a linha de 2005 saem da ficha do Yelp de 1 Merchant Street, escrita como o negócio. O horário sai dessa ficha. Os cortes com preço desta página são uma amostra, não essa ficha."
   }
 }

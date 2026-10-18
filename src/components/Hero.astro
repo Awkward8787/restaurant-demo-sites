@@ -17,7 +17,6 @@ const variant = r.hero.variant;
   {
     variant === "butcher" && (
       <div class="slab">
-        <p class="slab-street">{r.address.street}</p>
         <h1>{r.shortName}</h1>
       </div>
     )
@@ -25,7 +24,6 @@ const variant = r.hero.variant;
   {
     variant === "poster" && (
       <div class="poster-sheet">
-        <p class="poster-index">{r.address.street}</p>
         <h1>{r.shortName}</h1>
         <p class="dek">
           <Lang text={r.hero.dek} />
@@ -47,9 +45,6 @@ const variant = r.hero.variant;
   {
     variant === "tide" && (
       <div class="tide-wrap">
-        <p class="tide-kicker">
-          <Lang text={r.cuisineLabel} />
-        </p>
         <h1>{r.name}</h1>
         <div class="tide-panel">
           <p class="dek">
@@ -74,7 +69,6 @@ const variant = r.hero.variant;
     variant === "letterpress" && (
       <div class="press-card">
         <h1>{r.name}</h1>
-        <p class="press-street">{r.address.city}</p>
         <p class="dek">
           <Lang text={r.hero.dek} />
         </p>
@@ -95,7 +89,6 @@ const variant = r.hero.variant;
   {
     variant === "chapel" && (
       <div class="chapel-stack">
-        <p class="chapel-street">{r.address.street}</p>
         <h1>{r.name}</h1>
         <p class="dek">
           <Lang text={r.hero.dek} />
@@ -118,7 +111,6 @@ const variant = r.hero.variant;
   {
     variant !== "poster" && variant !== "tide" && variant !== "letterpress" && variant !== "chapel" && (
       <div class={variant === "marquee" ? "marquee-rest" : variant === "butcher" ? "butcher-rest" : variant === "counter" ? "window" : "hero-inner"}>
-        {variant === "counter" && <p class="counter-tab">{r.address.street}</p>}
         {variant !== "marquee" && variant !== "butcher" && <h1>{r.name}</h1>}
         {
           variant === "column" ? (

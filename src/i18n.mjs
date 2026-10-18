@@ -104,7 +104,7 @@ export const chrome = {
     menuBtn: "Menú",
     navMenu: "Menú",
     navOrder: "Pedido",
-    navHours: "Horas",
+    navHours: "Horario",
     navReviews: "Reseñas",
     navAbout: "Historia",
     navCatering: "Eventos",

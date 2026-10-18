@@ -53,4 +53,15 @@ clone.name = "Clone Room";
 clone.hero.variant = clone.hero.variant === "cafeteria" ? "poster" : "cafeteria";
 assert.throws(() => validateRestaurants([all[0], clone]), /too close/);
 
+const andros = all.find((restaurant) => restaurant.slug === "andros-diner");
+const yearOnly = structuredClone(andros);
+yearOnly.deliveryFee = null;
+assert.throws(() => validateRestaurants([yearOnly]), /delivery fee year without a delivery fee/);
+const fraction = structuredClone(andros);
+fraction.deliveryFeeYear = 2018.5;
+assert.throws(() => validateRestaurants([fraction]), /delivery fee year must be an integer/);
+const feeOnly = structuredClone(andros);
+delete feeOnly.deliveryFeeYear;
+assert.doesNotThrow(() => validateRestaurants([feeOnly]));
+
 console.log("validate cases ok");

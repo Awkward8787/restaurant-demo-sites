@@ -51,13 +51,26 @@ main a:not(.button),
 .site-footer a,
 .demo-banner a {
   display: inline-block;
+  position: relative;
   box-sizing: border-box;
   min-height: 44px;
-  min-width: 44px;
   max-width: 100%;
-  padding: 0.55rem 0.25rem;
-  text-align: center;
+  padding-block: 0.55rem;
+  padding-inline: 0;
+  text-align: start;
   overflow-wrap: anywhere;
+}
+
+main a:not(.button)::before,
+.site-footer a::before,
+.demo-banner a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .l {

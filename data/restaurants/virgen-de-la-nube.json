@@ -1,0 +1,253 @@
+{
+  "order": 9,
+  "slug": "virgen-de-la-nube",
+  "name": "Restaurante Ecuatoriano Virgen de la Nube",
+  "shortName": "Virgen de la Nube",
+  "cuisineLabel": {
+    "en": "Ecuadorian restaurant",
+    "es": "Restaurante ecuatoriano",
+    "pt": "Restaurante equatoriano"
+  },
+  "servesCuisine": "Ecuadorian",
+  "defaultLang": "es",
+  "languages": [
+    "es",
+    "en",
+    "pt"
+  ],
+  "phone": "+19737329255",
+  "phoneDisplay": "(973) 732-9255",
+  "address": {
+    "street": "100 Bloomfield Avenue",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07104",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 40.7567477,
+    "lon": -74.1740196
+  },
+  "osmUrl": "https://www.openstreetmap.org/node/14222262898",
+  "rating": {
+    "value": 3.9,
+    "count": 42,
+    "platform": "Google",
+    "source": "Restaurant Guru",
+    "url": "https://restaurantguru.com/Restaurante-Ecuatoriano-Virgen-de-la-Nube-Newark",
+    "checked": "2026-10-17"
+  },
+  "hours": {
+    "source": "Restaurant Guru",
+    "sourceUrl": "https://restaurantguru.com/Restaurante-Ecuatoriano-Virgen-de-la-Nube-Newark",
+    "note": {
+      "en": "Monday through Saturday 6 a.m. to 8:30 p.m., Sunday 8:30 a.m. to 4:30 p.m., from Restaurant Guru. That page also lists delivery, with no fee.",
+      "es": "De lunes a sábado de 6 a.m. a 8:30 p.m., domingo de 8:30 a.m. a 4:30 p.m., según Restaurant Guru. Esa página también lista delivery, sin tarifa.",
+      "pt": "De segunda a sábado das 6h às 20h30, domingo das 8h30 às 16h30, segundo o Restaurant Guru. Essa página também lista entrega, sem taxa."
+    },
+    "weekly": {
+      "mon": [
+        [
+          "06:00",
+          "20:30"
+        ]
+      ],
+      "tue": [
+        [
+          "06:00",
+          "20:30"
+        ]
+      ],
+      "wed": [
+        [
+          "06:00",
+          "20:30"
+        ]
+      ],
+      "thu": [
+        [
+          "06:00",
+          "20:30"
+        ]
+      ],
+      "fri": [
+        [
+          "06:00",
+          "20:30"
+        ]
+      ],
+      "sat": [
+        [
+          "06:00",
+          "20:30"
+        ]
+      ],
+      "sun": [
+        [
+          "08:30",
+          "16:30"
+        ]
+      ]
+    }
+  },
+  "hero": {
+    "variant": "chapel",
+    "dek": {
+      "en": "Ecuadorian restaurant at 100 Bloomfield Avenue.",
+      "es": "Restaurante ecuatoriano en 100 Bloomfield Avenue.",
+      "pt": "Restaurante equatoriano na 100 Bloomfield Avenue."
+    }
+  },
+  "theme": {
+    "paper": "#F7F4EE",
+    "ink": "#1A1917",
+    "band": "#1A3278",
+    "onBand": "#F7F4EE",
+    "accent": "#7A3A68",
+    "onAccent": "#F7F4EE",
+    "displayStack": "'Cormorant Garamond', Georgia, serif",
+    "bodyStack": "'Source Serif 4', Georgia, serif",
+    "radius": "0px",
+    "menuStyle": "hanging",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+  },
+  "menu": {
+    "status": "sample",
+    "note": {
+      "en": "Sample menu, demo only. We did not find a priced menu for this restaurant. The dishes below are typical Ecuadorian plates, not a copy of their menu, and the prices are made up so the cart can add them. Call (973) 732-9255 for what they are actually cooking.",
+      "es": "Menú de muestra, solo demo. No encontramos un menú con precios de este restaurante. Los platos de abajo son platos ecuatorianos típicos, no una copia de su menú, y los precios están inventados para que el carrito pueda sumar. Llame al (973) 732-9255 para saber qué están cocinando.",
+      "pt": "Cardápio de amostra, só demo. Não achamos um cardápio com preços deste restaurante. Os pratos abaixo são pratos equatorianos típicos, não uma cópia do cardápio deles, e os preços foram inventados para o carrinho somar. Ligue para (973) 732-9255 para saber o que estão cozinhando."
+    },
+    "categories": [
+      {
+        "name": {
+          "en": "Sample plates",
+          "es": "Platos de muestra",
+          "pt": "Pratos de amostra"
+        },
+        "items": [
+          {
+            "id": "sample-encebollado",
+            "name": "Encebollado",
+            "lang": "es",
+            "gloss": {
+              "en": "Fish soup with yuca and onion. Sample price.",
+              "es": "Sopa de pescado con yuca y cebolla. Precio de muestra.",
+              "pt": "Sopa de peixe com mandioca e cebola. Preço de amostra."
+            },
+            "price": 14,
+            "sample": true
+          },
+          {
+            "id": "sample-hornado",
+            "name": "Hornado",
+            "lang": "es",
+            "gloss": {
+              "en": "Roast pork. Sample price.",
+              "es": "Hornado. Precio de muestra.",
+              "pt": "Porco assado. Preço de amostra."
+            },
+            "price": 16,
+            "sample": true
+          },
+          {
+            "id": "sample-humitas",
+            "name": "Humitas",
+            "lang": "es",
+            "gloss": {
+              "en": "Fresh corn tamales. Sample price.",
+              "es": "Humitas de choclo. Precio de muestra.",
+              "pt": "Pamonhas de milho. Preço de amostra."
+            },
+            "price": 8,
+            "sample": true
+          },
+          {
+            "id": "sample-llapingachos",
+            "name": "Llapingachos",
+            "lang": "es",
+            "gloss": {
+              "en": "Potato patties. Sample price.",
+              "es": "Tortillas de papa. Precio de muestra.",
+              "pt": "Bolinhos de batata. Preço de amostra."
+            },
+            "price": 13,
+            "sample": true
+          },
+          {
+            "id": "sample-seco",
+            "name": "Seco de pollo",
+            "lang": "es",
+            "gloss": {
+              "en": "Chicken stew. Sample price.",
+              "es": "Seco de pollo. Precio de muestra.",
+              "pt": "Ensopado de frango. Preço de amostra."
+            },
+            "price": 15,
+            "sample": true
+          },
+          {
+            "id": "sample-empanada",
+            "name": "Empanada de viento",
+            "lang": "es",
+            "gloss": {
+              "en": "Fried cheese empanada. Sample price.",
+              "es": "Empanada de viento. Precio de muestra.",
+              "pt": "Empanada de queijo. Preço de amostra."
+            },
+            "price": 3,
+            "sample": true
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "The prices on the sample menu are not theirs. Call (973) 732-9255 and ask what is cooking. This preview does not send the order.",
+    "es": "Los precios del menú de muestra no son de ellos. Llame al (973) 732-9255 y pregunte qué hay. Esta vista no envía el pedido.",
+    "pt": "Os preços do cardápio de amostra não são deles. Ligue para (973) 732-9255 e pergunte o que tem. Esta prévia não envia o pedido."
+  },
+  "reviews": {
+    "summary": {
+      "en": "The Google score is the one printed on Restaurant Guru.",
+      "es": "La nota de Google es la que imprime Restaurant Guru.",
+      "pt": "A nota do Google é a que o Restaurant Guru imprime."
+    },
+    "links": [
+      {
+        "label": "Restaurant Guru",
+        "url": "https://restaurantguru.com/Restaurante-Ecuatoriano-Virgen-de-la-Nube-Newark"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Restaurante Ecuatoriano Virgen de la Nube is at 100 Bloomfield Avenue, Newark. Call (973) 732-9255.",
+      "es": "Restaurante Ecuatoriano Virgen de la Nube está en 100 Bloomfield Avenue, Newark. Llame al (973) 732-9255.",
+      "pt": "O Restaurante Ecuatoriano Virgen de la Nube fica na 100 Bloomfield Avenue, Newark. Ligue para (973) 732-9255."
+    }
+  ],
+  "sections": [
+    "about",
+    "menu",
+    "order",
+    "visit",
+    "reviews",
+    "catering"
+  ],
+  "seo": {
+    "title": "Virgen de la Nube, 100 Bloomfield Avenue",
+    "description": "Ecuadorian restaurant at 100 Bloomfield Avenue, Newark. Demo preview. The menu on this page is a labeled sample."
+  },
+  "delivery": true,
+  "deliveryNote": {
+    "en": "Restaurant Guru lists delivery. It does not print a zone or a fee, and this demo does not invent one.",
+    "es": "Restaurant Guru lista delivery. No imprime zona ni tarifa, y esta demo no inventa una.",
+    "pt": "O Restaurant Guru lista entrega. Não imprime zona nem taxa, e esta demo não inventa uma."
+  },
+  "sourcesNote": {
+    "en": "Hours, delivery, and the Google score are from Restaurant Guru. The menu on this page is a labeled sample.",
+    "es": "El horario, el delivery y la nota de Google salen de Restaurant Guru. El menú de esta página es una muestra.",
+    "pt": "O horário, a entrega e a nota do Google saem do Restaurant Guru. O cardápio desta página é uma amostra."
+  }
+}

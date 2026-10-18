@@ -1,0 +1,212 @@
+{
+  "order": 7,
+  "slug": "cantinho-mineiro",
+  "name": "Cantinho Mineiro 2",
+  "shortName": "Cantinho Mineiro",
+  "cuisineLabel": {
+    "en": "Mineiro cooking",
+    "es": "Cocina mineira",
+    "pt": "Comida mineira"
+  },
+  "servesCuisine": "Brazilian",
+  "defaultLang": "pt",
+  "languages": [
+    "pt",
+    "en",
+    "es"
+  ],
+  "phone": "+19732300913",
+  "phoneDisplay": "(973) 230-0913",
+  "address": {
+    "street": "51 Hensler Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07105",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 40.7268041,
+    "lon": -74.1512047
+  },
+  "osmUrl": "https://www.openstreetmap.org/node/12194965411",
+  "rating": null,
+  "hours": {
+    "source": "OpenStreetMap",
+    "sourceUrl": "https://www.openstreetmap.org/node/12194965411",
+    "note": {
+      "en": "OpenStreetMap says 11 a.m. to 8 p.m. every day. The DoorDash listing shows a later close. Confirm before you go.",
+      "es": "OpenStreetMap dice de 11 a.m. a 8 p.m. todos los días. La ficha de DoorDash muestra un cierre más tarde. Confirme antes de ir.",
+      "pt": "O OpenStreetMap diz 11h às 20h todos os dias. A ficha do DoorDash mostra um fechamento mais tarde. Confirme antes de ir."
+    },
+    "weekly": {
+      "mon": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "tue": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "wed": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "thu": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "fri": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "sat": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ]
+    }
+  },
+  "hero": {
+    "variant": "letterpress",
+    "dek": {
+      "en": "Mineiro cooking. Feijoada and bife à cavalo. Sources list Hensler Street and Niagara Street. Confirm the address.",
+      "es": "Cocina mineira. Feijoada y bife à cavalo. Las fuentes listan Hensler Street y Niagara Street. Confirme la dirección.",
+      "pt": "Comida mineira. Feijoada e bife à cavalo. As fontes listam Hensler Street e Niagara Street. Confirme o endereço."
+    }
+  },
+  "theme": {
+    "paper": "#F7F3E8",
+    "ink": "#1C2410",
+    "band": "#1C2410",
+    "onBand": "#F7F3E8",
+    "accent": "#1F6B4A",
+    "onAccent": "#F7F3E8",
+    "displayStack": "'Libre Baskerville', Georgia, serif",
+    "bodyStack": "'Source Sans 3', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "hanging",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;650&display=swap"
+  },
+  "menu": {
+    "status": "partial",
+    "note": {
+      "en": "Feijoada à brasileira at $24 and bife à cavalo at $24 are from the DoorDash listing. DoorDash and Uber Eats list 51 Niagara Street. OpenStreetMap lists 51 Hensler Street. Confirm the address.",
+      "es": "Feijoada à brasileira a $24 y bife à cavalo a $24 salen de DoorDash. DoorDash y Uber Eats listan 51 Niagara Street. OpenStreetMap lista 51 Hensler Street. Confirme la dirección.",
+      "pt": "Feijoada à brasileira a $24 e bife à cavalo a $24 vêm do DoorDash. DoorDash e Uber Eats listam 51 Niagara Street. O OpenStreetMap lista 51 Hensler Street. Confirme o endereço."
+    },
+    "source": {
+      "label": "DoorDash listing",
+      "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": {
+          "en": "From the pot",
+          "es": "De la olla",
+          "pt": "Da panela"
+        },
+        "items": [
+          {
+            "id": "feijoada",
+            "name": "Feijoada à brasileira",
+            "lang": "pt",
+            "gloss": {
+              "en": "Brazilian black bean and pork stew",
+              "es": "Guiso brasileño de frijol negro y cerdo",
+              "pt": "Feijoada à brasileira"
+            },
+            "price": 24
+          },
+          {
+            "id": "bife-cavalo",
+            "name": "Bife à cavalo",
+            "lang": "pt",
+            "gloss": {
+              "en": "Beef steak with an egg on top",
+              "es": "Bistec con un huevo encima",
+              "pt": "Bife com ovo a cavalo"
+            },
+            "price": 24
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Call (973) 230-0913 and read the list. This preview does not send the order.",
+    "es": "Llame al (973) 230-0913 y lea la lista. Esta vista no envía el pedido.",
+    "pt": "Ligue para (973) 230-0913 e leia a lista. Esta prévia não envia o pedido."
+  },
+  "reviews": {
+    "summary": {
+      "en": "DoorDash lists the restaurant. That page does not give an exact review count, so none is printed here.",
+      "es": "DoorDash lista el restaurante. Esa página no da un conteo exacto de reseñas, así que aquí no se imprime.",
+      "pt": "O DoorDash lista o restaurante. Essa página não dá uma contagem exata de avaliações, então nenhuma é impressa aqui."
+    },
+    "links": [
+      {
+        "label": "DoorDash",
+        "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Cantinho Mineiro 2 is a Brazilian restaurant in Newark. Call (973) 230-0913. Confirm the address before a visit.",
+      "es": "Cantinho Mineiro 2 es un restaurante brasileño en Newark. Llame al (973) 230-0913. Confirme la dirección antes de ir.",
+      "pt": "O Cantinho Mineiro 2 é um restaurante brasileiro em Newark. Ligue para (973) 230-0913. Confirme o endereço antes de ir."
+    }
+  ],
+  "apps": [
+    {
+      "name": "DoorDash",
+      "url": "https://www.doordash.com/store/cantinho-mineiro-2-newark-27909059/"
+    },
+    {
+      "name": "Uber Eats",
+      "url": "https://www.ubereats.com/store/cantinho-mineiro-2s/558Qyp-UUUGH3vIsMMwvgQ"
+    }
+  ],
+  "social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/cantinhomineiro_2/"
+    }
+  ],
+  "sections": [
+    "menu",
+    "visit",
+    "order",
+    "about",
+    "reviews",
+    "catering"
+  ],
+  "seo": {
+    "title": "Cantinho Mineiro 2, Newark",
+    "description": "Brazilian restaurant in Newark. Demo preview. Two prices from DoorDash. Address differs by source."
+  },
+  "delivery": "unknown",
+  "sourcesNote": {
+    "en": "The two prices are from DoorDash. OpenStreetMap lists 51 Hensler Street. DoorDash and Uber Eats list 51 Niagara Street for the same phone. Confirm the address.",
+    "es": "Los dos precios salen de DoorDash. OpenStreetMap lista 51 Hensler Street. DoorDash y Uber Eats listan 51 Niagara Street para el mismo teléfono. Confirme la dirección.",
+    "pt": "Os dois preços saem do DoorDash. O OpenStreetMap lista 51 Hensler Street. DoorDash e Uber Eats listam 51 Niagara Street para o mesmo telefone. Confirme o endereço."
+  }
+}

@@ -1,0 +1,549 @@
+---
+import { jsonForScript } from "../lib/json-script.mjs";
+import { loadRestaurants, telHref, money } from "../lib/restaurants.mjs";
+import { isProspect, restaurantJsonLd } from "../lib/schema.mjs";
+import { weekLines } from "../lib/hours.mjs";
+import { dinerDate } from "../lib/dates.mjs";
+import { glossView } from "../lib/gloss.mjs";
+import { ratingSentence, t } from "../i18n.mjs";
+import Lang from "../components/Lang.astro";
+import Hero from "../components/Hero.astro";
+import "../styles/global.css";
+
+export function getStaticPaths() {
+  return loadRestaurants().map((restaurant) => ({
+    params: { slug: restaurant.slug },
+    props: { restaurant },
+  }));
+}
+
+const { restaurant: r } = Astro.props;
+const lang = r.defaultLang || "en";
+const base = import.meta.env.BASE_URL;
+const pageUrl = new URL(`${base}${r.slug}/`, Astro.site).toString();
+const jsonLd = restaurantJsonLd(r, pageUrl);
+const tel = telHref(r.phone);
+const pad = 0.012;
+const bbox = [r.geo.lon - pad, r.geo.lat - pad, r.geo.lon + pad, r.geo.lat + pad]
+  .map((n) => n.toFixed(6))
+  .join("%2C");
+const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${r.geo.lat}%2C${r.geo.lon}`;
+const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${r.address.street}, ${r.address.city}, ${r.address.region} ${r.address.postalCode}`,
+)}`;
+const eyebrowKey = {
+  sample: "sampleEyebrow",
+  partial: "partialEyebrow",
+  "names-only": "namesEyebrow",
+  published: "publishedEyebrow",
+}[r.menu.status];
+const style = [
+  `--paper:${r.theme.paper}`,
+  `--ink:${r.theme.ink}`,
+  `--band:${r.theme.band}`,
+  `--on-band:${r.theme.onBand}`,
+  `--accent:${r.theme.accent}`,
+  `--on-accent:${r.theme.onAccent}`,
+  `--focus:${r.theme.ink}`,
+  `--font-display:${r.theme.displayStack}`,
+  `--font-body:${r.theme.bodyStack}`,
+  `--radius:${r.theme.radius}`,
+].join(";");
+const sectionNav = {
+  menu: ["menu", "navMenu"],
+  order: ["order", "navOrder"],
+  visit: ["hours", "navHours"],
+  reviews: ["reviews", "navReviews"],
+  about: ["about", "navAbout"],
+  catering: ["catering", "navCatering"],
+};
+const nav = r.sections.map((section) => sectionNav[section]).filter(Boolean);
+const offersDelivery = r.delivery === true;
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{r.seo.title}</title>
+    <meta name="description" content={r.seo.description} />
+    {isProspect(r) && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:title" content={r.seo.title} />
+    <meta property="og:description" content={r.seo.description} />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={new URL(`${base}og/${r.slug}.png`, Astro.site).toString()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="theme-color" content={r.theme.band} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={r.theme.fontHref} rel="stylesheet" />
+    <script type="application/ld+json" set:html={jsonForScript(jsonLd)} />
+  </head>
+  <body
+    class={`menu-${r.theme.menuStyle}`}
+    style={style}
+    data-restaurant={r.slug}
+    data-name={r.name}
+    data-phone={r.phone}
+    data-phone-display={r.phoneDisplay}
+    data-email={r.email || ""}
+    data-delivery={offersDelivery ? "true" : "false"}
+    data-delivery-fee={offersDelivery && r.deliveryFee != null ? String(r.deliveryFee) : ""}
+    data-delivery-fee-year={r.deliveryFeeYear != null ? String(r.deliveryFeeYear) : ""}
+  >
+    <a class="skip" href="#content" data-i18n="skip">{t(lang, "skip")}</a>
+    <div class="demo-banner">
+      <span><span data-i18n="banner">{t(lang, "banner")}</span> {r.name}</span>
+      <a href={base} data-i18n="demos">{t(lang, "demos")}</a>
+    </div>
+    <header class="site-header">
+      <a class="lockup" href="#top">{r.shortName}</a>
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-panel"
+        data-i18n="menuBtn"
+      >
+        {t(lang, "menuBtn")}
+      </button>
+      <nav id="nav-panel" class="nav-panel" data-i18n-aria="sectionsLabel" aria-label={t(lang, "sectionsLabel")}>
+        {
+          nav.map(([id, key]) => (
+            <a href={`#${id}`} data-i18n={key}>
+              {t(lang, key)}
+            </a>
+          ))
+        }
+      </nav>
+      <div class="lang-switch" role="group" data-i18n-aria="langLabel" aria-label={t(lang, "langLabel")}>
+        {
+          r.languages.map((code) => (
+            <button type="button" data-lang-switch={code} aria-pressed={code === lang ? "true" : "false"}>
+              {code.toUpperCase()}
+            </button>
+          ))
+        }
+      </div>
+      <button class="button header-order" type="button" data-open-order data-i18n="navOrder">
+        {t(lang, "navOrder")}
+      </button>
+    </header>
+
+    <main id="content">
+      <Hero restaurant={r} lang={lang} tel={tel} directions={directions} />
+
+      {
+        r.sections.map((section) => {
+          if (section === "menu") {
+            return (
+              <section id="menu">
+                <h2 data-i18n="navMenu">{t(lang, "navMenu")}</h2>
+                <div class="menu-flag">
+                  <strong data-i18n={eyebrowKey}>{t(lang, eyebrowKey)}</strong>
+                  <Lang text={r.menu.note} />
+                </div>
+                {r.menu.source && (
+                  <p class="menu-note">
+                    <a href={r.menu.source.url}>{r.menu.source.label}</a>{r.menu.source.checked ? (
+                      ["en", "es", "pt"].map((code) => (
+                        <span class="l" data-lang={code} lang={code}>{`. ${t(code, "checked")} ${dinerDate(r.menu.source.checked, code)}.`}</span>
+                      ))
+                    ) : "."}
+                  </p>
+                )}
+                <div class="menu-board">
+                  {r.menu.categories.map((category) => (
+                    <div class="cat">
+                      <h3 class="cat-name">
+                        <Lang text={category.name} />
+                      </h3>
+                      {category.items.map((item) => (
+                        <article class="dish">
+                          <div class="dish-copy">
+                            <div class="dish-name" id={`dish-${item.id}`} lang={item.lang}>
+                              {item.name}
+                            </div>
+                            {item.gloss &&
+                              (["en", "es", "pt"] as const).map((code) => {
+                                const shown = glossView(item, code);
+                                return shown ? (
+                                  <p class="gloss l" data-lang={code} lang={shown.lang}>{shown.line}</p>
+                                ) : null;
+                              })}
+                            {item.description && (
+                              <p class="dish-desc">
+                                <Lang text={item.description} />
+                              </p>
+                            )}
+                            {item.tags?.length > 0 && <p class="fine">{item.tags.join(", ")}</p>}
+                          </div>
+                          <div class={item.price == null ? "ask" : "price"}>
+                            {item.price == null ? t(lang, "askPrice") : money(item.price)}
+                          </div>
+                          <button
+                            class="add-button"
+                            type="button"
+                            data-add
+                            data-i18n="add"
+                            aria-describedby={`dish-${item.id}`}
+                            data-id={item.id}
+                            data-name={item.name}
+                            data-item-lang={item.lang}
+                            data-price={item.price ?? ""}
+                          >
+                            {t(lang, "add")}
+                          </button>
+                        </article>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          }
+          if (section === "order") {
+            return (
+              <section id="order">
+                <h2 data-i18n="orderHeading">{t(lang, "orderHeading")}</h2>
+                <p class="measure">
+                  <Lang text={r.orderNote} block />
+                </p>
+                <div class="cta-row">
+                  <button class="button" type="button" data-open-order data-i18n="openOrder">
+                    {t(lang, "openOrder")}
+                  </button>
+                  <a class="button secondary" href={tel}>
+                    <span data-i18n="call">{t(lang, "call")}</span> {r.phoneDisplay}
+                  </a>
+                </div>
+              </section>
+            );
+          }
+          if (section === "visit") {
+            return (
+              <section id="hours">
+                <h2 data-i18n="hoursHeading">{t(lang, "hoursHeading")}</h2>
+                <div class="visit-grid">
+                  <div>
+                    <p class="hours-now" data-hours-status>
+                      {t(lang, "today")}
+                    </p>
+                    {r.hours?.weekly ? (
+                      ["en", "es", "pt"].map((code) => (
+                        <ul class="hours-list l block" data-lang={code}>
+                          {weekLines(r.hours.weekly, code).map((line) => (
+                            <li>
+                              <span>{line.label}</span>
+                              <span>{line.text}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ))
+                    ) : (
+                      <p data-i18n="hoursMissing">{t(lang, "hoursMissing")}</p>
+                    )}
+                    {r.hours?.note && (
+                      <p class="fine">
+                        <Lang text={r.hours.note} block />
+                      </p>
+                    )}
+                    {r.hours?.sourceUrl && (
+                      <p class="fine">
+                        <a href={r.hours.sourceUrl}>{r.hours.source}</a>
+                      </p>
+                    )}
+                    <p>
+                      <a href={tel}>{r.phoneDisplay}</a>
+                    </p>
+                    <p>
+                      {r.address.street}
+                      <br />
+                      {r.address.city}, {r.address.region} {r.address.postalCode}
+                    </p>
+                    <p>
+                      <a href={directions} data-i18n="directions">
+                        {t(lang, "directions")}
+                      </a>
+                    </p>
+                    {r.questions?.length > 0 && (
+                      <dl class="questions">
+                        {r.questions.map((item) => (
+                          <>
+                            <dt>
+                              <Lang text={item.q} />
+                            </dt>
+                            <dd>
+                              <Lang text={item.a} />{" "}
+                              <a href={item.url}>{item.source}</a>
+                            </dd>
+                          </>
+                        ))}
+                      </dl>
+                    )}
+                  </div>
+                  <div class="map-frame">
+                    <iframe title={`${r.name} map`} loading="lazy" src={mapSrc} />
+                    <p class="fine">
+                      <a href={r.osmUrl} data-i18n="osm">
+                        {t(lang, "osm")}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+          if (section === "reviews") {
+            return (
+              <section id="reviews">
+                <h2 data-i18n="reviewsHeading">{t(lang, "reviewsHeading")}</h2>
+                <p class="measure">
+                  <Lang text={r.reviews.summary} block />
+                </p>
+                {r.rating?.value != null && r.rating?.count != null && (
+                  <p class="measure">
+                    {(["en", "es", "pt"] as const).map((code) => (
+                      <span class="l" data-lang={code} lang={code}>{`${ratingSentence(code, r.rating)} ${t(code, "checked")} ${dinerDate(r.rating.checked, code)}.`}</span>
+                    ))}
+                  </p>
+                )}
+                {r.reviews.links?.map((link) => (
+                  <p>
+                    <a href={link.url}>{link.label}</a>
+                  </p>
+                ))}
+                {r.reviews.quote && (
+                  <blockquote class="quote">
+                    <p lang="en">“{r.reviews.quote.text}”</p>
+                    <p class="fine">
+                      {r.reviews.quote.name}. <a href={r.reviews.quote.url}>{r.reviews.quote.source}</a>
+                    </p>
+                  </blockquote>
+                )}
+              </section>
+            );
+          }
+          if (section === "about") {
+            return (
+              <section id="about">
+                <h2 data-i18n="aboutHeading">{t(lang, "aboutHeading")}</h2>
+                <div class="measure">
+                  {r.about.map((paragraph) => (
+                    <p>
+                      <Lang text={paragraph} />
+                    </p>
+                  ))}
+                  {r.apps?.length > 0 && (
+                    <p>
+                      <span data-i18n="listedOn">{t(lang, "listedOn")}</span>{" "}
+                      {r.apps.map((app, index) => (
+                        <span>{index > 0 ? ", " : ""}<a href={app.url}>{app.name}</a></span>
+                      ))}
+                    </p>
+                  )}
+                  {r.social?.map((link) => (
+                    <p>
+                      <a href={link.url}>{link.label}</a>
+                    </p>
+                  ))}
+                </div>
+              </section>
+            );
+          }
+          if (section === "catering") {
+            return (
+              <section id="catering" class="catering-panel">
+                <h2 data-i18n="cateringHeading">{t(lang, "cateringHeading")}</h2>
+                {r.catering?.details?.map((paragraph) => (
+                  <p class="measure">
+                    <Lang text={paragraph} />
+                  </p>
+                ))}
+                <p class="measure" data-i18n="cateringIntro">
+                  {t(lang, "cateringIntro")}
+                </p>
+                <form id="catering-form">
+                  <label>
+                    <span data-i18n="cateringName">{t(lang, "cateringName")}</span>
+                    <input name="name" autocomplete="name" required />
+                  </label>
+                  <label>
+                    <span data-i18n="cateringPhone">{t(lang, "cateringPhone")}</span>
+                    <input name="phone" type="tel" autocomplete="tel" required />
+                  </label>
+                  <label>
+                    <span data-i18n="cateringDate">{t(lang, "cateringDate")}</span>
+                    <input name="date" type="date" />
+                  </label>
+                  <label>
+                    <span data-i18n="cateringGuests">{t(lang, "cateringGuests")}</span>
+                    <input name="guests" inputmode="numeric" />
+                  </label>
+                  <label>
+                    <span data-i18n="cateringNote">{t(lang, "cateringNote")}</span>
+                    <textarea name="note" required />
+                  </label>
+                  <p id="catering-error" class="form-error" hidden></p>
+                  <button class="button secondary" id="catering-submit" type="submit" data-i18n="cateringSend">
+                    {t(lang, "cateringSend")}
+                  </button>
+                  <p id="catering-ok" class="form-ok" hidden data-i18n="cateringDone">
+                    {t(lang, "cateringDone")}
+                  </p>
+                  <pre id="catering-preview" class="list-text"></pre>
+                </form>
+              </section>
+            );
+          }
+          return null;
+        })
+      }
+    </main>
+
+    {r.sourcesNote && (
+      <p class="fine sources-note">
+        <Lang text={r.sourcesNote} />
+      </p>
+    )}
+
+    <footer class="site-footer">
+      <p>
+        {r.address.street}
+        <br />
+        {r.address.city}, {r.address.region} {r.address.postalCode}
+      </p>
+      {
+        r.hours?.weekly ? (
+          ["en", "es", "pt"].map((code) => (
+            <ul class="hours-list l block" data-lang={code}>
+              {weekLines(r.hours.weekly, code).map((line) => (
+                <li>
+                  <span>{line.label}</span>
+                  <span>{line.text}</span>
+                </li>
+              ))}
+            </ul>
+          ))
+        ) : (
+          <p data-i18n="hoursMissing">{t(lang, "hoursMissing")}</p>
+        )
+      }
+      <p>
+        <a href={tel}>{r.phoneDisplay}</a>
+      </p>
+      <p>
+        <a href={directions} data-i18n="directions">{t(lang, "directions")}</a>
+      </p>
+    </footer>
+
+    <p id="add-live" class="visually-hidden" aria-live="polite"></p>
+
+    <div class="order-bar">
+      <button type="button" data-open-order>
+        <span id="order-bar-label" data-i18n="orderBarEmpty">{t(lang, "orderBarEmpty")}</span>
+      </button>
+    </div>
+
+    <dialog id="order-dialog" aria-labelledby="order-title">
+      <div class="dialog-head">
+        <h2 id="order-title" data-i18n="yourOrder">{t(lang, "yourOrder")}</h2>
+        <button class="icon-button" id="order-close" type="button" data-i18n="close">
+          {t(lang, "close")}
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div id="order-form">
+          <p id="order-empty" tabindex="-1" data-i18n="empty">{t(lang, "empty")}</p>
+          <ul class="lines" id="order-lines"></ul>
+          <fieldset class="choice-set">
+            <legend data-i18n="fulfillment">{t(lang, "fulfillment")}</legend>
+            <div class="fulfill">
+              <label>
+                <input type="radio" name="fulfillment" value="pickup" checked />
+                <span data-i18n="pickup">{t(lang, "pickup")}</span>
+              </label>
+              {offersDelivery && (
+                <label>
+                  <input type="radio" name="fulfillment" value="delivery" />
+                  <span data-i18n="delivery">{t(lang, "delivery")}</span>
+                </label>
+              )}
+            </div>
+          </fieldset>
+          {offersDelivery && (
+            <label id="delivery-address-label" hidden>
+              <span data-i18n="deliveryAddress">{t(lang, "deliveryAddress")}</span>
+              <input id="delivery-address" name="delivery-address" autocomplete="address-line1" maxlength="240" />
+            </label>
+          )}
+          <p id="delivery-note" class="fine" hidden>
+            {r.deliveryNote ? (
+              <Lang text={r.deliveryNote} />
+            ) : (
+              <span data-i18n="deliveryNote">{t(lang, "deliveryNote")}</span>
+            )}
+          </p>
+          <fieldset class="choice-set">
+            <legend data-i18n="tip">{t(lang, "tip")}</legend>
+            <div class="tip-row">
+              <label><input type="radio" name="tip" value="0" checked /> <span data-i18n="tipNone">{t(lang, "tipNone")}</span></label>
+              <label><input type="radio" name="tip" value="10" /> 10%</label>
+              <label><input type="radio" name="tip" value="15" /> 15%</label>
+              <label><input type="radio" name="tip" value="20" /> 20%</label>
+              <label>
+                <input type="radio" name="tip" value="custom" />
+                <span data-i18n="customTip">{t(lang, "customTip")}</span>
+              </label>
+              <label for="tip-custom">
+                <span data-i18n="tipPercent">{t(lang, "tipPercent")}</span>
+                <input id="tip-custom" type="number" min="0" max="100" step="1" inputmode="numeric" />
+              </label>
+            </div>
+          </fieldset>
+          <label>
+            <span data-i18n="when">{t(lang, "when")}</span>
+            <input id="order-when" type="datetime-local" />
+          </label>
+          <label>
+            <span data-i18n="notes">{t(lang, "notes")}</span>
+            <textarea id="order-notes"></textarea>
+          </label>
+          <p class="totals" id="order-total" role="status"></p>
+          <p class="fine" id="order-unpriced" hidden data-i18n="unpriced">{t(lang, "unpriced")}</p>
+          <p id="order-error" class="form-error" role="alert" hidden></p>
+          <button class="button" id="order-submit" type="button" data-i18n="checkout">
+            {t(lang, "checkout")}
+          </button>
+        </div>
+        <div id="order-result" hidden tabindex="-1">
+          <div class="demo-result">
+            <h3 data-i18n="demoTitle">{t(lang, "demoTitle")}</h3>
+            <p data-i18n="demoBody">{t(lang, "demoBody")}</p>
+            <p>
+              <a class="button" id="call-order" href={tel}>
+                <span data-i18n="callToOrder">{t(lang, "callToOrder")}</span> {r.phoneDisplay}
+              </a>
+            </p>
+            <pre class="list-text" id="order-list-text"></pre>
+            <div class="handoff">
+              <button class="button secondary" id="copy-list" type="button" data-i18n="copyList">
+                {t(lang, "copyList")}
+              </button>
+            </div>
+            <p id="copy-status" class="fine" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script id="hours-data" type="application/json" set:html={jsonForScript(r.hours)} />
+    <script>
+      import "../scripts/page.mjs";
+    </script>
+  </body>
+</html>

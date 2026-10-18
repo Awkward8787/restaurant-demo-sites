@@ -1,0 +1,892 @@
+{
+  "order": 8,
+  "slug": "sabor-unido",
+  "name": "Sabor Unido",
+  "shortName": "Sabor Unido",
+  "cuisineLabel": {
+    "en": "Brazilian and Portuguese",
+    "es": "Brasileño y portugués",
+    "pt": "Brasileiro e português"
+  },
+  "servesCuisine": "Brazilian",
+  "defaultLang": "pt",
+  "languages": [
+    "pt",
+    "en",
+    "es"
+  ],
+  "phone": "+19733688553",
+  "phoneDisplay": "(973) 368-8553",
+  "email": "osccampos@hotmail.com",
+  "address": {
+    "street": "77 Jefferson Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07105",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 40.730463,
+    "lon": -74.1612456
+  },
+  "osmUrl": "https://www.openstreetmap.org/node/3743804456",
+  "rating": null,
+  "hours": {
+    "source": "saborunido.com",
+    "sourceUrl": "https://saborunido.com/",
+    "note": {
+      "en": "Hours are from the restaurant's own site, and they match the OpenStreetMap tag.",
+      "es": "El horario sale del sitio del restaurante, y coincide con OpenStreetMap.",
+      "pt": "O horário sai do site do restaurante, e bate com o OpenStreetMap."
+    },
+    "weekly": {
+      "mon": [
+        [
+          "12:00",
+          "21:00"
+        ]
+      ],
+      "tue": [
+        [
+          "12:00",
+          "21:00"
+        ]
+      ],
+      "wed": [
+        [
+          "12:00",
+          "21:00"
+        ]
+      ],
+      "thu": [
+        [
+          "12:00",
+          "21:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "21:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "21:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "18:00"
+        ]
+      ]
+    }
+  },
+  "hero": {
+    "variant": "column",
+    "dek": {
+      "en": "Brazilian and Portuguese cooking on Jefferson Street, in the Ironbound.",
+      "es": "Cocina brasileña y portuguesa en Jefferson Street, en el Ironbound.",
+      "pt": "Cozinha brasileira e portuguesa na Jefferson Street, no Ironbound."
+    },
+    "aside": {
+      "title": {
+        "en": "Saturday feijoada",
+        "es": "Feijoada del sábado",
+        "pt": "Feijoada de sábado"
+      },
+      "body": {
+        "en": "Their site describes it as pork stew in black beans, with white rice, collard greens, vinagrete, and farofa. Served Saturday, 12 p.m. to 9 p.m. No price on that page.",
+        "es": "Su sitio la describe como guiso de cerdo en frijol negro, con arroz blanco, couve, vinagrete y farofa. Sábados, de 12 p.m. a 9 p.m. Esa página no pone precio.",
+        "pt": "O site descreve como feijoada de porco, com arroz branco, couve, vinagrete e farofa. Sábado, das 12h às 21h. Essa página não põe preço."
+      }
+    }
+  },
+  "theme": {
+    "paper": "#F3EEE6",
+    "ink": "#12324E",
+    "band": "#12324E",
+    "onBand": "#F3EEE6",
+    "accent": "#B42E1C",
+    "onAccent": "#F3EEE6",
+    "displayStack": "'Petrona', Georgia, serif",
+    "bodyStack": "'Libre Franklin', 'Segoe UI', sans-serif",
+    "radius": "2px",
+    "menuStyle": "rows",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;650&family=Petrona:wght@500;650&display=swap"
+  },
+  "menu": {
+    "status": "published",
+    "note": {
+      "en": "Prices are from the restaurant's menu page. That page says prices can change. Saturday feijoada is described on the homepage, with no price, so it is not listed as a dish here.",
+      "es": "Los precios salen de la página de menú del restaurante. Esa página dice que los precios pueden cambiar. La feijoada del sábado está descrita en la portada, sin precio, así que no aparece como plato aquí.",
+      "pt": "Os preços saem da página de cardápio do restaurante. Essa página diz que os preços podem mudar. A feijoada de sábado está descrita na capa, sem preço, então não entra como prato aqui."
+    },
+    "source": {
+      "label": "Sabor Unido menu",
+      "url": "https://saborunido.com/newark-ironbound-sabor-unido-food-menu",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": {
+          "en": "Starters",
+          "es": "Entradas",
+          "pt": "Entradas"
+        },
+        "items": [
+          {
+            "id": "camarao-a-guilho",
+            "name": "Camarao a Guilho",
+            "lang": "pt",
+            "price": 18,
+            "gloss": {
+              "en": "Shrimp"
+            },
+            "description": {
+              "en": "Grilled shrimp, sauteed garlic, olive oil."
+            }
+          },
+          {
+            "id": "mandioca-com-linguica",
+            "name": "Mandioca com Linguica",
+            "lang": "pt",
+            "price": 18,
+            "gloss": {
+              "en": "Yucca & Pork Sausage"
+            },
+            "description": {
+              "en": "Fried yucca & pork cubes."
+            }
+          },
+          {
+            "id": "lulas-fritas",
+            "name": "Lulas Fritas",
+            "lang": "pt",
+            "price": 17,
+            "gloss": {
+              "en": "Calamari"
+            },
+            "description": {
+              "en": "Breaded squid rings, tomato puree."
+            }
+          },
+          {
+            "id": "frango-passarinho",
+            "name": "Frango Passarinho",
+            "lang": "pt",
+            "price": 17,
+            "gloss": {
+              "en": "Chicken Brazilian Style"
+            },
+            "description": {
+              "en": "Fried chicken drums, sauteed garlic, butter."
+            }
+          },
+          {
+            "id": "calabresa-acebolada",
+            "name": "Calabresa Acebolada",
+            "lang": "pt",
+            "price": 17,
+            "gloss": {
+              "en": "Calabrese Sausage with Onions"
+            },
+            "description": {
+              "en": "Grilled pork sausage, grilled onions."
+            }
+          },
+          {
+            "id": "polvo-grelhado",
+            "name": "Polvo Grelhado",
+            "lang": "pt",
+            "price": 29,
+            "gloss": {
+              "en": "Octopus"
+            },
+            "description": {
+              "en": "Grilled Portuguese octopus, peppers, onions."
+            }
+          },
+          {
+            "id": "coxinhas-de-frango",
+            "name": "Coxinhas de Frango",
+            "lang": "pt",
+            "price": 16,
+            "gloss": {
+              "en": "Brazilian Croquetes"
+            },
+            "description": {
+              "en": "Chicken & cream cheese stuffed."
+            }
+          },
+          {
+            "id": "coxinhas-de-queijo-e-espinafre",
+            "name": "Coxinhas de Queijo e Espinafre",
+            "lang": "pt",
+            "price": 16,
+            "gloss": {
+              "en": "Brazilian Croquetes"
+            },
+            "description": {
+              "en": "Cheese & spinach stuffed."
+            }
+          },
+          {
+            "id": "bolinho-de-bacalhau",
+            "name": "Bolinho de Bacalhau",
+            "lang": "pt",
+            "price": 18,
+            "gloss": {
+              "en": "Codfish Croquetes"
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Beef",
+          "es": "Res",
+          "pt": "Carne"
+        },
+        "items": [
+          {
+            "id": "bife-acebolado",
+            "name": "Bife Acebolado",
+            "lang": "pt",
+            "price": 26,
+            "gloss": {
+              "en": "Steak with Onions"
+            },
+            "description": {
+              "en": "Pan seared sirloin steak, grilled onions."
+            }
+          },
+          {
+            "id": "figado-acebolado",
+            "name": "Figado Acebolado",
+            "lang": "pt",
+            "price": 24,
+            "gloss": {
+              "en": "Liver Steak with Onions"
+            },
+            "description": {
+              "en": "Grilled liver, sautéed onions."
+            }
+          },
+          {
+            "id": "picanha-grelhada",
+            "name": "Picanha Grelhada",
+            "lang": "pt",
+            "price": 31,
+            "gloss": {
+              "en": "Top Sirloin Steak"
+            },
+            "description": {
+              "en": "Charbroiled sizzling top sirloin 12oz."
+            }
+          },
+          {
+            "id": "beef-parmigiana-with-fettucine",
+            "name": "Beef Parmigiana with Fettucine",
+            "lang": "en",
+            "price": 26,
+            "description": {
+              "en": "Breaded beef steak, tomato puree, parmesan, fettucine."
+            }
+          },
+          {
+            "id": "fraldinha-grelhada",
+            "name": "Fraldinha Grelhada",
+            "lang": "pt",
+            "price": 33,
+            "gloss": {
+              "en": "Skirt Steak"
+            },
+            "description": {
+              "en": "Grilled sizzling skirt 12oz, peppers, onions."
+            }
+          },
+          {
+            "id": "hanger-steak",
+            "name": "Hanger Steak",
+            "lang": "en",
+            "price": 33,
+            "description": {
+              "en": "Grilled pasture-raised New Zealand beef, peppers, onions."
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Poultry",
+          "es": "Aves",
+          "pt": "Aves"
+        },
+        "items": [
+          {
+            "id": "frango-assado",
+            "name": "Frango Assado",
+            "lang": "pt",
+            "price": 25,
+            "gloss": {
+              "en": "Roasted Chicken"
+            },
+            "description": {
+              "en": "Oven roasted thighs, roasted yukon potato, rice, beans."
+            }
+          },
+          {
+            "id": "frango-marsala",
+            "name": "Frango Marsala",
+            "lang": "pt",
+            "price": 27,
+            "gloss": {
+              "en": "Chicken Marsala"
+            },
+            "description": {
+              "en": "Grilled breast, cream, mushrooms."
+            }
+          },
+          {
+            "id": "frango-parmigiana-con-fettucine",
+            "name": "Frango Parmigiana con Fettucine",
+            "lang": "pt",
+            "price": 27,
+            "gloss": {
+              "en": "Chicken Parm with Fettucine"
+            },
+            "description": {
+              "en": "Breaded chicken breast, tomato puree, parmesan, fettucine."
+            }
+          },
+          {
+            "id": "frango-passarinho-poultry",
+            "name": "Frango Passarinho",
+            "lang": "pt",
+            "price": 25,
+            "gloss": {
+              "en": "Chicken Brazilian Style"
+            },
+            "description": {
+              "en": "Fried chicken drums, sauteed garlic, butter."
+            }
+          },
+          {
+            "id": "peito-frango-grelhado",
+            "name": "Peito Frango Grelhado",
+            "lang": "pt",
+            "price": 23,
+            "gloss": {
+              "en": "Chicken Breast"
+            },
+            "description": {
+              "en": "Grilled breast, peppers, onions."
+            }
+          },
+          {
+            "id": "chicken-fingers-w-french-fries",
+            "name": "Chicken Fingers w/ French Fries",
+            "lang": "en",
+            "price": 23
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Pork",
+          "es": "Cerdo",
+          "pt": "Porco"
+        },
+        "items": [
+          {
+            "id": "tutu-a-mineira",
+            "name": "Tutu a Mineira",
+            "lang": "pt",
+            "price": 31,
+            "gloss": {
+              "en": "Brazilian Porkchop"
+            },
+            "description": {
+              "en": "Grilled porkchop, fried egg, sautéed collard greens, white rice, puree beans, sausage."
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Vegetarian",
+          "es": "Vegetariano",
+          "pt": "Vegetariano"
+        },
+        "items": [
+          {
+            "id": "tortellini",
+            "name": "Tortellini",
+            "lang": "en",
+            "price": 21,
+            "description": {
+              "en": "Five cheese, romano, ricotta, parmesan, asiago, fontina, tomato sauce."
+            }
+          },
+          {
+            "id": "beringela-parmigiana-com-fettucine",
+            "name": "Beringela Parmigiana com Fettucine",
+            "lang": "pt",
+            "price": 23,
+            "gloss": {
+              "en": "Eggplant Parm with Fettucini"
+            },
+            "description": {
+              "en": "Breaded eggplant, tomato puree, parm cheese, fettucine."
+            }
+          },
+          {
+            "id": "ravioli",
+            "name": "Ravioli",
+            "lang": "en",
+            "price": 21,
+            "description": {
+              "en": "Spinach mozzarela, fresh tomato, tomato sauce."
+            }
+          },
+          {
+            "id": "quinoa-salad-vegan",
+            "name": "Quinoa Salad Vegan",
+            "lang": "en",
+            "price": 23,
+            "description": {
+              "en": "Fresh greens, onions, cucumber, cherry tomato, mango, quinoa."
+            }
+          },
+          {
+            "id": "vegetarian-pick-three",
+            "name": "Vegetarian Pick Three",
+            "lang": "en",
+            "price": 21,
+            "description": {
+              "en": "Pick three sides."
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Seafood",
+          "es": "Mariscos",
+          "pt": "Frutos do mar"
+        },
+        "items": [
+          {
+            "id": "file-de-peixe-a-francesa",
+            "name": "File de Peixe a Francesa",
+            "lang": "pt",
+            "price": 25,
+            "gloss": {
+              "en": "Fish Fillet"
+            },
+            "description": {
+              "en": "Corvina fillet, grilled or fried, lemon."
+            }
+          },
+          {
+            "id": "camarao-a-guilho-seafood",
+            "name": "Camarao a Guilho",
+            "lang": "pt",
+            "price": 28,
+            "gloss": {
+              "en": "Shrimp in Garlic Sauce"
+            },
+            "description": {
+              "en": "Grilled, sauteed garlic, olive oil."
+            }
+          },
+          {
+            "id": "lulas-grelhadas",
+            "name": "Lulas Grelhadas",
+            "lang": "pt",
+            "price": 27,
+            "gloss": {
+              "en": "Grilled Squid"
+            },
+            "description": {
+              "en": "Grilled whole squid, lemon, pepper, onions, peppers."
+            }
+          },
+          {
+            "id": "salmao-grelhado",
+            "name": "Salmao Grelhado",
+            "lang": "pt",
+            "price": 29,
+            "gloss": {
+              "en": "Salmon"
+            },
+            "description": {
+              "en": "Broiled salmon fillet, lemon, butter."
+            }
+          },
+          {
+            "id": "robalo",
+            "name": "Robalo",
+            "lang": "pt",
+            "price": 33,
+            "gloss": {
+              "en": "Seabass"
+            },
+            "description": {
+              "en": "Broiled head to tail seabass, grilled onions."
+            }
+          },
+          {
+            "id": "bacalhau-carlhado",
+            "name": "Bacalhau Carlhado",
+            "lang": "pt",
+            "price": 35,
+            "gloss": {
+              "en": "Codfish"
+            },
+            "description": {
+              "en": "Broiled cod steak, onions, peppers."
+            }
+          },
+          {
+            "id": "tilapia-grelhada",
+            "name": "Tilapia Grelhada",
+            "lang": "pt",
+            "price": 26,
+            "gloss": {
+              "en": "Grilled Tilapia"
+            },
+            "description": {
+              "en": "Tilapia Fillet, Sesame Seed"
+            }
+          },
+          {
+            "id": "sardinha-assada",
+            "name": "Sardinha Assada",
+            "lang": "pt",
+            "price": 25,
+            "gloss": {
+              "en": "Roasted Sardines"
+            },
+            "description": {
+              "en": "Roasted Sardines with onions and peppers"
+            }
+          },
+          {
+            "id": "polvo-grelhado-seafood",
+            "name": "Polvo Grelhado",
+            "lang": "pt",
+            "price": 53,
+            "gloss": {
+              "en": "Grilled Octopus"
+            }
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Sides",
+          "es": "Acompañamientos",
+          "pt": "Acompanhamentos"
+        },
+        "items": [
+          {
+            "id": "white-rice",
+            "name": "White Rice",
+            "lang": "en",
+            "price": 6
+          },
+          {
+            "id": "brown-rice",
+            "name": "Brown Rice",
+            "lang": "en",
+            "price": 6
+          },
+          {
+            "id": "quinoa",
+            "name": "Quinoa",
+            "lang": "en",
+            "price": 6
+          },
+          {
+            "id": "beans",
+            "name": "Beans",
+            "lang": "en",
+            "price": 5
+          },
+          {
+            "id": "plantain",
+            "name": "Plantain",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "french-fries",
+            "name": "French Fries",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "mashed-potato",
+            "name": "Mashed Potato",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "sauteed-spinach",
+            "name": "Sauteed Spinach",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "breaded-banana",
+            "name": "Breaded Banana",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "fried-yucca",
+            "name": "Fried Yucca",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "boiled-vegetables",
+            "name": "Boiled Vegetables",
+            "lang": "en",
+            "price": 9
+          },
+          {
+            "id": "collard-greens",
+            "name": "Collard Greens",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "mixed-salad",
+            "name": "Mixed Salad",
+            "lang": "en",
+            "price": 12
+          },
+          {
+            "id": "fried-sweet-potato",
+            "name": "Fried Sweet Potato",
+            "lang": "en",
+            "price": 8
+          },
+          {
+            "id": "sauteed-mushrooms",
+            "name": "Sautéed Mushrooms",
+            "lang": "en",
+            "price": 8
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Dessert",
+          "es": "Postre",
+          "pt": "Sobremesa"
+        },
+        "items": [
+          {
+            "id": "regular-flan",
+            "name": "Regular Flan",
+            "lang": "en",
+            "price": 9
+          },
+          {
+            "id": "churros-unit",
+            "name": "Churros (unit)",
+            "lang": "en",
+            "price": 3.5
+          },
+          {
+            "id": "bavaroise",
+            "name": "Bavaroise",
+            "lang": "en",
+            "price": 9
+          },
+          {
+            "id": "tres-leches",
+            "name": "Tres Leches",
+            "lang": "en",
+            "price": 9
+          },
+          {
+            "id": "manjar-de-coco",
+            "name": "Manjar de Côco",
+            "lang": "pt",
+            "price": 9,
+            "gloss": {
+              "en": "Coconut Flan"
+            }
+          },
+          {
+            "id": "chocolate-mousse-cake",
+            "name": "Chocolate Mousse Cake",
+            "lang": "en",
+            "price": 9
+          },
+          {
+            "id": "passion-fruit-mousse",
+            "name": "Passion Fruit Mousse",
+            "lang": "en",
+            "price": 9
+          },
+          {
+            "id": "tiramisu",
+            "name": "Tiramisu",
+            "lang": "en",
+            "price": 12
+          },
+          {
+            "id": "passion-fruit-chocolate-mousse",
+            "name": "Passion fruit chocolate mousse",
+            "lang": "en",
+            "price": 10
+          },
+          {
+            "id": "creamy-corn",
+            "name": "Creamy Corn",
+            "lang": "en",
+            "price": 11
+          },
+          {
+            "id": "coconut-tres-leches",
+            "name": "Coconut Tres Leches",
+            "lang": "en",
+            "price": 12
+          },
+          {
+            "id": "lime-white-chocolate-mousse",
+            "name": "Lime & White Chocolate Mousse",
+            "lang": "en",
+            "price": 10
+          },
+          {
+            "id": "chocolate-mousse",
+            "name": "Chocolate Mousse",
+            "lang": "en",
+            "price": 10
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "Their site says to call (973) 368-8553 for pickup or delivery. This preview does not send the order.",
+    "es": "Su sitio dice que se llame al (973) 368-8553 para llevar o a domicilio. Esta vista no envía el pedido.",
+    "pt": "O site diz para ligar para (973) 368-8553 para retirada ou entrega. Esta prévia não envia o pedido."
+  },
+  "questions": [
+    {
+      "q": {
+        "en": "Can we bring wine?",
+        "es": "¿Se puede llevar vino?",
+        "pt": "Dá para levar vinho?"
+      },
+      "a": {
+        "en": "Their press page quotes NBC New York describing the restaurant as BYOB.",
+        "es": "Su página de prensa cita a NBC New York, que describe el restaurante como BYOB.",
+        "pt": "A página de imprensa cita a NBC New York, que descreve a casa como BYOB."
+      },
+      "source": "Sabor Unido press page",
+      "url": "https://saborunido.com/newark-ironbound-sabor-unido-press"
+    }
+  ],
+  "reviews": {
+    "summary": {
+      "en": "Tripadvisor has a page for the restaurant. A star count is not printed here. The quotation is from the restaurant's press page.",
+      "es": "Tripadvisor tiene una página del restaurante. Aquí no se imprime un conteo de estrellas. La cita sale de su página de prensa.",
+      "pt": "O Tripadvisor tem uma página do restaurante. Uma contagem de estrelas não é impressa aqui. A citação sai da página de imprensa."
+    },
+    "links": [
+      {
+        "label": "Tripadvisor",
+        "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d5077187-Reviews-Sabor_Unido-Newark_New_Jersey.html"
+      },
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/saborunido/"
+      }
+    ],
+    "quote": {
+      "text": "Newark's Ironbound District promises hearty meals, and Sabor Unido delivers.",
+      "name": "KT Harrison",
+      "source": "Quoted on Sabor Unido's press page",
+      "url": "https://saborunido.com/newark-ironbound-sabor-unido-press"
+    }
+  },
+  "about": [
+    {
+      "en": "Sabor Unido is a family-run restaurant serving homemade Brazilian and Portuguese food in the Ironbound.",
+      "es": "Sabor Unido es un restaurante familiar de comida brasileña y portuguesa casera en el Ironbound.",
+      "pt": "O Sabor Unido é um restaurante familiar de comida brasileira e portuguesa caseira no Ironbound."
+    },
+    {
+      "en": "The Jefferson Street room had been home to Portuguese restaurants for 30 years before the family, from São Paulo, took over, kept Portuguese dishes, and added Brazilian ones. Luiz Campos is the manager, Orlando is on the business side, and Silvana is the chef. The family emigrated from Brazil in 2001.",
+      "es": "El local de Jefferson Street tuvo restaurantes portugueses por 30 años antes de que la familia, de São Paulo, se quedara con platos portugueses y sumara brasileños. Luiz Campos es el gerente, Orlando está en el negocio y Silvana es la chef. La familia emigró de Brasil en 2001.",
+      "pt": "A sala da Jefferson Street teve restaurantes portugueses por 30 anos antes da família, de São Paulo, manter pratos portugueses e somar os brasileiros. Luiz Campos é o gerente, Orlando cuida do negócio e Silvana é a chef. A família emigrou do Brasil em 2001."
+    }
+  ],
+  "catering": {
+    "details": [
+      {
+        "en": "The homepage says to book a party. It does not list a package price. The email on the about page is osccampos@hotmail.com.",
+        "es": "La portada dice que se puede reservar una fiesta. No lista un precio de paquete. El correo de la página es osccampos@hotmail.com.",
+        "pt": "A capa diz para marcar uma festa. Não lista um preço de pacote. O e-mail da página é osccampos@hotmail.com."
+      }
+    ]
+  },
+  "apps": [
+    {
+      "name": "DoorDash",
+      "url": "https://www.doordash.com/store/sabor-unido-newark-832951/"
+    },
+    {
+      "name": "Grubhub",
+      "url": "https://www.grubhub.com/restaurant/sabor-unido-77-jefferson-st-newark/317296"
+    },
+    {
+      "name": "Seamless",
+      "url": "https://www.seamless.com/menu/sabor-unido-77-jefferson-st-newark/317296"
+    }
+  ],
+  "social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/saborunido/"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/saborunido/"
+    }
+  ],
+  "sections": [
+    "menu",
+    "reviews",
+    "order",
+    "visit",
+    "catering",
+    "about"
+  ],
+  "seo": {
+    "title": "Sabor Unido, Jefferson Street, Ironbound",
+    "description": "Brazilian and Portuguese restaurant at 77 Jefferson Street, Newark. Demo preview. Menu prices from saborunido.com."
+  },
+  "delivery": true,
+  "deliveryNote": {
+    "en": "Their site says to call for pickup or delivery. No fee is printed, and this demo does not invent one.",
+    "es": "Su sitio dice que se llame para llevar o a domicilio. No imprimen tarifa, y esta demo no inventa una.",
+    "pt": "O site diz para ligar para retirada ou entrega. Não imprimem taxa, e esta demo não inventa uma."
+  },
+  "sourcesNote": {
+    "en": "The menu prices are from saborunido.com. Hours match that site and OpenStreetMap. The quotation is printed on the restaurant's press page. The about page says the family has been serving for 6 years. That page is not dated, so the 6 years may be old.",
+    "es": "Los precios salen de saborunido.com. El horario coincide con ese sitio y con OpenStreetMap. La cita está impresa en la página de prensa del restaurante. La página de presentación dice que llevan 6 años sirviendo. Esa página no tiene fecha, así que esos 6 años pueden estar viejos.",
+    "pt": "Os preços saem de saborunido.com. O horário bate com esse site e com o OpenStreetMap. A citação está impressa na página de imprensa do restaurante. A página sobre eles diz que servem há 6 anos. Essa página não tem data, então esses 6 anos podem estar velhos."
+  }
+}

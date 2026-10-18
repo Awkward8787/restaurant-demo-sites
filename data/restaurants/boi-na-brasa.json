@@ -1,0 +1,352 @@
+{
+  "order": 3,
+  "slug": "boi-na-brasa",
+  "name": "Boi Na Brasa Bar & Grill",
+  "shortName": "Boi Na Brasa",
+  "cuisineLabel": {
+    "en": "Brazilian steakhouse",
+    "es": "Churrasquería brasileña",
+    "pt": "Churrascaria"
+  },
+  "servesCuisine": "Brazilian",
+  "defaultLang": "pt",
+  "languages": [
+    "pt",
+    "en",
+    "es"
+  ],
+  "phone": "+19735221557",
+  "phoneDisplay": "(973) 522-1557",
+  "address": {
+    "street": "1 Merchant Street",
+    "city": "Newark",
+    "region": "NJ",
+    "postalCode": "07105",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 40.7296176,
+    "lon": -74.1544702
+  },
+  "osmUrl": "https://www.openstreetmap.org/way/437082341",
+  "rating": null,
+  "hours": {
+    "source": "Yelp listing for 1 Merchant Street",
+    "sourceUrl": "https://www.yelp.com/biz/boi-na-brasa-newark-2",
+    "note": {
+      "en": "Hours are from the Yelp listing for 1 Merchant Street, read on 17 October 2026. Uber Eats shows a shorter window for the same corner.",
+      "es": "El horario sale de la ficha de Yelp de 1 Merchant Street, leída el 17 de octubre de 2026. Uber Eats muestra otra franja para la misma esquina.",
+      "pt": "O horário sai da ficha do Yelp de 1 Merchant Street, lida em 17 de outubro de 2026. O Uber Eats mostra outra faixa para a mesma esquina."
+    },
+    "weekly": {
+      "mon": [
+        [
+          "00:00",
+          "02:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "02:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "02:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "02:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "03:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "03:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "03:00"
+        ],
+        [
+          "11:30",
+          "24:00"
+        ]
+      ]
+    }
+  },
+  "hero": {
+    "variant": "poster",
+    "dek": {
+      "en": "Brazilian rodizio at 1 Merchant Street. The room started serving that way in 2005.",
+      "es": "Rodizio brasileño en 1 Merchant Street. El salón empezó a servirlo así en 2005.",
+      "pt": "Rodízio brasileiro na 1 Merchant Street. A casa começou a servir assim em 2005."
+    }
+  },
+  "theme": {
+    "paper": "#F7F0E4",
+    "ink": "#1A1917",
+    "band": "#6E4E14",
+    "onBand": "#F7F0E4",
+    "accent": "#7C1E3A",
+    "onAccent": "#F7F0E4",
+    "displayStack": "'Anton', 'Arial Narrow', sans-serif",
+    "bodyStack": "'Source Sans 3', 'Segoe UI', sans-serif",
+    "radius": "0px",
+    "menuStyle": "rows",
+    "fontHref": "https://fonts.googleapis.com/css2?family=Anton&family=Source+Sans+3:wght@400;650;700&display=swap"
+  },
+  "menu": {
+    "status": "sample",
+    "note": {
+      "en": "Sample menu, demo only. We did not find a priced menu for 1 Merchant Street. The group's steakhouse at 70 Adams Street posts different prices, and those prices are not repeated here. The first group is what the restaurant names on Yelp, with no price. The second group is made-up cuts so the cart can do math. They are not Boi Na Brasa's prices.",
+      "es": "Menú de muestra, solo demo. No encontramos precios para 1 Merchant Street. La churrasquería del grupo en 70 Adams Street publica otros precios, y no se copian aquí. El primer grupo es lo que el restaurante nombra en Yelp, sin precio. El segundo son cortes inventados para que el carrito calcule. No son los precios de Boi Na Brasa.",
+      "pt": "Cardápio de amostra, só demo. Não achamos preços para 1 Merchant Street. A churrascaria do grupo na 70 Adams Street publica outros preços, e eles não entram aqui. O primeiro grupo é o que a casa nomeia no Yelp, sem preço. O segundo são cortes inventados para a conta do carrinho. Não são os preços do Boi Na Brasa."
+    },
+    "source": {
+      "label": "Yelp listing, About the business",
+      "url": "https://www.yelp.com/biz/boi-na-brasa-newark-2",
+      "checked": "2026-10-17"
+    },
+    "categories": [
+      {
+        "name": {
+          "en": "Named on their Yelp listing",
+          "es": "Nombrado en su ficha de Yelp",
+          "pt": "Citado na ficha do Yelp"
+        },
+        "items": [
+          {
+            "id": "rodizio",
+            "name": "Rodízio",
+            "lang": "pt",
+            "gloss": {
+              "en": "Meat carved at the table",
+              "es": "Carne cortada en la mesa",
+              "pt": "Carne passada na mesa"
+            },
+            "price": null
+          },
+          {
+            "id": "churrasco",
+            "name": "Churrasco",
+            "lang": "pt",
+            "gloss": {
+              "en": "Brazilian barbecue",
+              "es": "Barbacoa brasileña",
+              "pt": "Churrasco"
+            },
+            "price": null
+          },
+          {
+            "id": "feijoada",
+            "name": "Feijoada",
+            "lang": "pt",
+            "gloss": {
+              "en": "Black bean and pork stew",
+              "es": "Guiso de frijol negro y cerdo",
+              "pt": "Feijoada"
+            },
+            "price": null
+          },
+          {
+            "id": "salad-bar",
+            "name": "Salad bar",
+            "lang": "en",
+            "gloss": {
+              "en": "Called a gourmet salad bar on the Yelp listing",
+              "es": "La ficha de Yelp lo llama barra de ensaladas",
+              "pt": "A ficha do Yelp chama de saladas"
+            },
+            "price": null
+          }
+        ]
+      },
+      {
+        "name": {
+          "en": "Sample cuts, demo only",
+          "es": "Cortes de muestra, solo demo",
+          "pt": "Cortes de amostra, só demo"
+        },
+        "items": [
+          {
+            "id": "sample-picanha",
+            "name": "Picanha",
+            "lang": "pt",
+            "gloss": {
+              "en": "Top sirloin cap. Sample price.",
+              "es": "Tapa de cuadril. Precio de muestra.",
+              "pt": "Picanha. Preço de amostra."
+            },
+            "price": 32,
+            "sample": true
+          },
+          {
+            "id": "sample-linguica",
+            "name": "Linguiça",
+            "lang": "pt",
+            "gloss": {
+              "en": "Pork sausage. Sample price.",
+              "es": "Chorizo. Precio de muestra.",
+              "pt": "Linguiça. Preço de amostra."
+            },
+            "price": 18,
+            "sample": true
+          },
+          {
+            "id": "sample-frango",
+            "name": "Frango",
+            "lang": "pt",
+            "gloss": {
+              "en": "Chicken. Sample price.",
+              "es": "Pollo. Precio de muestra.",
+              "pt": "Frango. Preço de amostra."
+            },
+            "price": 20,
+            "sample": true
+          },
+          {
+            "id": "sample-costela",
+            "name": "Costela",
+            "lang": "pt",
+            "gloss": {
+              "en": "Beef rib. Sample price.",
+              "es": "Costilla. Precio de muestra.",
+              "pt": "Costela. Preço de amostra."
+            },
+            "price": 28,
+            "sample": true
+          }
+        ]
+      }
+    ]
+  },
+  "orderNote": {
+    "en": "The priced cuts are samples. Call (973) 522-1557 and ask what is on the fire. This preview does not place an order. DoorDash, Grubhub, and Uber Eats list this address.",
+    "es": "Los cortes con precio son muestras. Llame al (973) 522-1557 y pregunte qué hay en el fuego. Esta vista no hace el pedido. DoorDash, Grubhub y Uber Eats listan esta dirección.",
+    "pt": "Os cortes com preço são amostra. Ligue para (973) 522-1557 e pergunte o que está no fogo. Esta prévia não faz o pedido. DoorDash, Grubhub e Uber Eats listam este endereço."
+  },
+  "questions": [
+    {
+      "q": {
+        "en": "Do they take reservations?",
+        "es": "¿Aceptan reservas?",
+        "pt": "Aceitam reserva?"
+      },
+      "a": {
+        "en": "Yelp lists reservations and takeout for 1 Merchant Street.",
+        "es": "Yelp marca reservas y comida para llevar en 1 Merchant Street.",
+        "pt": "O Yelp marca reserva e retirada em 1 Merchant Street."
+      },
+      "source": "Yelp",
+      "url": "https://www.yelp.com/biz/boi-na-brasa-newark-2"
+    }
+  ],
+  "reviews": {
+    "summary": {
+      "en": "Tripadvisor and Yelp both have pages for 1 Merchant Street. A star count is not printed here.",
+      "es": "Tripadvisor y Yelp tienen páginas de 1 Merchant Street. Aquí no se imprime un conteo de estrellas.",
+      "pt": "Tripadvisor e Yelp têm páginas de 1 Merchant Street. Uma contagem de estrelas não é impressa aqui."
+    },
+    "links": [
+      {
+        "label": "Tripadvisor",
+        "url": "https://www.tripadvisor.com/Restaurant_Review-g46671-d850560-Reviews-Boi_Na_Brasa-Newark_New_Jersey.html"
+      },
+      {
+        "label": "Yelp",
+        "url": "https://www.yelp.com/biz/boi-na-brasa-newark-2"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Boi Na Brasa is a Brazilian steakhouse in the Ironbound, at 1 Merchant Street. In 2005 it began serving rodizio, the southern Brazilian way of serving meat, with churrasco, feijoada, a salad bar, and a wine list.",
+      "es": "Boi Na Brasa es una churrasquería brasileña en el Ironbound, en 1 Merchant Street. En 2005 empezó a servir rodizio, la forma del sur de Brasil de servir carne, con churrasco, feijoada, una barra de ensaladas y una carta de vinos.",
+      "pt": "O Boi Na Brasa é uma churrascaria no Ironbound, na 1 Merchant Street. Em 2005 começou a servir rodízio, o modo do sul do Brasil de servir carne, com churrasco, feijoada, saladas e carta de vinhos."
+    },
+    {
+      "en": "The same group runs Churrascaria Boi na Brasa at 70 Adams Street, phone (973) 589-6069. That room has its own menu. This page is the Merchant Street bar and grill.",
+      "es": "El mismo grupo tiene Churrascaria Boi na Brasa en 70 Adams Street, teléfono (973) 589-6069. Ese salón tiene otro menú. Esta página es el bar de Merchant Street.",
+      "pt": "O mesmo grupo tem a Churrascaria Boi na Brasa na 70 Adams Street, telefone (973) 589-6069. Aquela casa tem outro cardápio. Esta página é o bar da Merchant Street."
+    }
+  ],
+  "apps": [
+    {
+      "name": "DoorDash",
+      "url": "https://www.doordash.com/store/boi-na-brasa-bar-%26-grill-newark-33069223/"
+    },
+    {
+      "name": "Grubhub",
+      "url": "https://www.grubhub.com/restaurant/boi-na-brasa-bar--grill-1-merchant-st-newark/14246480"
+    },
+    {
+      "name": "Uber Eats",
+      "url": "https://www.ubereats.com/store/boi-na-brasa-bar-&-grill-1-merchant-st/JtebxrmCSxyJjW9mz-s7jQ"
+    }
+  ],
+  "social": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/oficialboinabrasagrill/"
+    },
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/boinabrasagrill/"
+    }
+  ],
+  "sections": [
+    "about",
+    "menu",
+    "order",
+    "visit",
+    "reviews",
+    "catering"
+  ],
+  "seo": {
+    "title": "Boi Na Brasa Bar & Grill, Merchant Street",
+    "description": "Brazilian bar and grill at 1 Merchant Street, Newark. Demo preview. Rodizio named on the Yelp listing. Sample prices are labeled."
+  },
+  "delivery": "unknown",
+  "sourcesNote": {
+    "en": "The description and the 2005 line are from the Yelp listing for 1 Merchant Street. Hours are from that listing. The priced cuts on this page are a labeled sample, not that listing.",
+    "es": "La descripción y la línea de 2005 salen de la ficha de Yelp de 1 Merchant Street. El horario sale de esa ficha. Los cortes con precio de esta página son una muestra, no esa ficha.",
+    "pt": "A descrição e a linha de 2005 saem da ficha do Yelp de 1 Merchant Street. O horário sai dessa ficha. Os cortes com preço desta página são uma amostra, não essa ficha."
+  }
+}

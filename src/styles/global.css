@@ -53,8 +53,10 @@ main a:not(.button),
   display: inline-block;
   box-sizing: border-box;
   min-height: 44px;
+  min-width: 44px;
   max-width: 100%;
-  padding: 0.55rem 0;
+  padding: 0.55rem 0.25rem;
+  text-align: center;
   overflow-wrap: anywhere;
 }
 
@@ -182,6 +184,7 @@ html[lang="pt"] .l.block[data-lang="pt"] {
   display: flex;
   align-items: center;
   min-height: 44px;
+  min-width: 44px;
   padding: 0.35rem 0.6rem;
   text-decoration: none;
 }
@@ -535,6 +538,7 @@ body:has(dialog[open]) .order-bar {
   gap: 0.5rem;
   padding: 0.5rem 0.75rem calc(0.5rem + env(safe-area-inset-bottom));
   background: var(--band);
+  border-top: 2px solid var(--ink);
 }
 
 .order-bar button {
@@ -738,7 +742,7 @@ pre.list-text {
 
 .poster-sheet {
   padding: 1.1rem 1rem 1.4rem;
-  border-left: 10px solid var(--accent);
+  border-left: 10px solid color-mix(in srgb, var(--accent) 35%, var(--on-band));
 }
 
 .hero-poster h1 {

@@ -823,14 +823,14 @@
   },
   "about": [
     {
-      "en": "Their about page says: \"We are a family-run business that has been successfully serving homemade Brazilian and Portuguese food in the heart of the Ironbound for the past 6 years.\" The page is not dated, so the \"6 years\" may be old.",
-      "es": "Su página dice que son un negocio familiar y que llevan años sirviendo comida brasileña y portuguesa casera en el Ironbound. La página no tiene fecha, así que el número de años puede estar viejo.",
-      "pt": "A página deles diz que são uma família e que servem comida brasileira e portuguesa caseira no Ironbound. A página não tem data, então a conta de anos pode estar velha."
+      "en": "Sabor Unido is a family-run restaurant serving homemade Brazilian and Portuguese food in the Ironbound.",
+      "es": "Sabor Unido es un restaurante familiar de comida brasileña y portuguesa casera en el Ironbound.",
+      "pt": "O Sabor Unido é um restaurante familiar de comida brasileira e portuguesa caseira no Ironbound."
     },
     {
-      "en": "The same page says the Jefferson Street room had been home to Portuguese restaurants for 30 years before the family, from São Paulo, took over, kept Portuguese dishes, and added Brazilian ones. Their press page names Luiz Campos as manager, Orlando on the business side, and Silvana as the chef, and says the family emigrated from Brazil in 2001.",
-      "es": "La misma página dice que el local de Jefferson Street tuvo restaurantes portugueses por 30 años antes de que la familia, de São Paulo, se quedara con platos portugueses y sumara brasileños. La página de prensa nombra a Luiz Campos como gerente, a Orlando en el negocio y a Silvana como chef, y dice que la familia emigró de Brasil en 2001.",
-      "pt": "A mesma página diz que a sala da Jefferson Street teve restaurantes portugueses por 30 anos antes da família, de São Paulo, manter pratos portugueses e somar os brasileiros. A página de imprensa cita Luiz Campos como gerente, Orlando no negócio e Silvana na cozinha, e diz que a família emigrou do Brasil em 2001."
+      "en": "The Jefferson Street room had been home to Portuguese restaurants for 30 years before the family, from São Paulo, took over, kept Portuguese dishes, and added Brazilian ones. Luiz Campos is the manager, Orlando is on the business side, and Silvana is the chef. The family emigrated from Brazil in 2001.",
+      "es": "El local de Jefferson Street tuvo restaurantes portugueses por 30 años antes de que la familia, de São Paulo, se quedara con platos portugueses y sumara brasileños. Luiz Campos es el gerente, Orlando está en el negocio y Silvana es la chef. La familia emigró de Brasil en 2001.",
+      "pt": "A sala da Jefferson Street teve restaurantes portugueses por 30 anos antes da família, de São Paulo, manter pratos portugueses e somar os brasileiros. Luiz Campos é o gerente, Orlando cuida do negócio e Silvana é a chef. A família emigrou do Brasil em 2001."
     }
   ],
   "catering": {
@@ -885,8 +885,8 @@
     "pt": "O site diz para ligar para retirada ou entrega. Não imprimem taxa, e esta demo não inventa uma."
   },
   "sourcesNote": {
-    "en": "The menu prices are from saborunido.com. Hours match that site and OpenStreetMap. The quotation is printed on the restaurant's press page.",
-    "es": "Los precios salen de saborunido.com. El horario coincide con ese sitio y con OpenStreetMap. La cita está impresa en la página de prensa del restaurante.",
-    "pt": "Os preços saem de saborunido.com. O horário bate com esse site e com o OpenStreetMap. A citação está impressa na página de imprensa do restaurante."
+    "en": "The menu prices are from saborunido.com. Hours match that site and OpenStreetMap. The quotation is printed on the restaurant's press page. The about page says the family has been serving for 6 years. That page is not dated, so the 6 years may be old.",
+    "es": "Los precios salen de saborunido.com. El horario coincide con ese sitio y con OpenStreetMap. La cita está impresa en la página de prensa del restaurante. La página de presentación dice que llevan 6 años sirviendo. Esa página no tiene fecha, así que esos 6 años pueden estar viejos.",
+    "pt": "Os preços saem de saborunido.com. O horário bate com esse site e com o OpenStreetMap. A citação está impressa na página de imprensa do restaurante. A página sobre eles diz que servem há 6 anos. Essa página não tem data, então esses 6 anos podem estar velhos."
   }
 }

@@ -74,10 +74,15 @@ function hsl(hex) {
   return { hue, sat, light };
 }
 
-/** True when two accent colors would read as the same hue. Hero variant is not part of this. */
+function hueUnstable({ sat, light }) {
+  return sat < 0.2 || light < 0.15 || light > 0.85;
+}
+
+/** True when two colors would read as the same hue. Near-black, near-white, and low-chroma colors are skipped, because their hue is not a visible difference. Hero variant is not part of this. */
 export function huesCollide(a, b) {
   const left = hsl(a);
   const right = hsl(b);
+  if (hueUnstable(left) || hueUnstable(right)) return false;
   let distance = Math.abs(left.hue - right.hue);
   distance = Math.min(distance, 360 - distance);
   if (left.sat >= 0.25 && right.sat >= 0.25) return distance < 14;
@@ -166,6 +171,11 @@ export function validateRestaurants(restaurants) {
         Number.isInteger(restaurant.deliveryFeeYear),
         true,
         `${label} delivery fee year must be an integer`,
+      );
+      const currentYear = new Date().getFullYear();
+      assert.ok(
+        restaurant.deliveryFeeYear >= 1990 && restaurant.deliveryFeeYear <= currentYear,
+        `${label} delivery fee year must be from 1990 through ${currentYear}`,
       );
     }
     assert.equal(

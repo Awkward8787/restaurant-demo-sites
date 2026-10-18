@@ -22,8 +22,8 @@ Open and closed use `America/New_York`. Unknown hours stay unknown.
 | Peruvian Brazas | Warm paper #FFF8EE, teal ink #12302E, pale band #EDEEEC, teal #0E6B62 | Bricolage Grotesque | Counter window | Rows, names only |
 | Cantinho Mineiro | Paper #F7F3E8, ink #1C2410, green #1F6B4A | Libre Baskerville | Letterpress card | Hanging names |
 | Sabor Unido | Paper #F3EEE6, navy #12324E, terracotta #B42E1C | Petrona | Two columns, Saturday feijoada | Rows, published menu |
-| Virgen de la Nube | Paper #F7F4EE, plum ink #2A1848, blue #1A3278, plum #7A3A68 | Cormorant Garamond | Chapel stack | Hanging names, labeled sample |
+| Virgen de la Nube | Paper #F7F4EE, near-black #1A1917, blue #1A3278, plum #7A3A68 | Cormorant Garamond | Chapel stack | Hanging names, labeled sample |
 
-Palette cues that come from a real surface: J&V beige is sampled from a photo of the room and the forest green is the cafeteria awning. Andros keeps diner maroon and mustard. Brisas keeps sea blue and lime. Cityrub's soot and ember follow the dark wood of the room and the black site. Boi's wood band is sampled from a photo of the room and shifted toward gold. Sabor's navy follows the restaurant site, with a terracotta accent. Accent, band, and ink hues are checked in pairs, and each accent is also checked against that restaurant's own band. The hero variant is not part of that check.
+Palette cues that come from a real surface: J&V beige is sampled from a photo of the room and the forest green is the cafeteria awning. Andros keeps diner maroon and mustard. Brisas keeps sea blue and lime. Cityrub's soot and ember follow the dark wood of the room and the black site. Boi's wood band is sampled from a photo of the room and shifted toward gold. Sabor's navy follows the restaurant site, with a terracotta accent. Accent, band, and ink hues are checked in pairs, and each accent is also checked against that restaurant's own band. Very dark, very light, and low-chroma colors are left out of that hue check. The hero variant is not part of that check.
 
 Checkout on every page ends on the sentence "Demo site: no order was placed. Call to order."

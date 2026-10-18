@@ -41,6 +41,9 @@ assert.throws(() => assertRating({ ...goodRating, source: "  " }, "source"));
 
 assert.equal(huesCollide("#B42318", "#B42318"), true);
 assert.equal(huesCollide("#1B4D32", "#152E40"), false);
+assert.equal(huesCollide("#1A1917", "#171615"), false);
+assert.equal(huesCollide("#1A1917", "#2A1848"), false);
+assert.equal(huesCollide("#EDEEEC", "#F6EFE6"), false);
 
 const all = loadRestaurants();
 validateRestaurants(all);
@@ -63,5 +66,11 @@ assert.throws(() => validateRestaurants([fraction]), /delivery fee year must be 
 const feeOnly = structuredClone(andros);
 delete feeOnly.deliveryFeeYear;
 assert.doesNotThrow(() => validateRestaurants([feeOnly]));
+const early = structuredClone(andros);
+early.deliveryFeeYear = 1989;
+assert.throws(() => validateRestaurants([early]), /1990/);
+const future = structuredClone(andros);
+future.deliveryFeeYear = new Date().getFullYear() + 1;
+assert.throws(() => validateRestaurants([future]), /1990/);
 
 console.log("validate cases ok");

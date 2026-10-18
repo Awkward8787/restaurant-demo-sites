@@ -107,9 +107,9 @@
   "menu": {
     "status": "names-only",
     "note": {
-      "en": "Lomo saltado is named here without a price. The Postmates page that used to print one no longer opens, and the Uber Eats page we could read did not print a price.",
-      "es": "El lomo saltado está nombrado aquí sin precio. La página de Postmates que antes imprimía uno ya no abre, y la página de Uber Eats que pudimos leer no imprimió un precio.",
-      "pt": "O lomo saltado está nomeado aqui sem preço. A página do Postmates que antes imprimia um já não abre, e a página do Uber Eats que lemos não imprimiu um preço."
+      "en": "Lomo saltado is named here without a price. The Postmates page that used to print one no longer opens. The Uber Eats page did not print a price.",
+      "es": "El lomo saltado está nombrado aquí sin precio. La página de Postmates que antes imprimía uno ya no abre. La página de Uber Eats no imprimió un precio.",
+      "pt": "O lomo saltado está nomeado aqui sem preço. A página do Postmates que antes imprimia um já não abre. A página do Uber Eats não imprimiu um preço."
     },
     "source": {
       "label": "Uber Eats listing",

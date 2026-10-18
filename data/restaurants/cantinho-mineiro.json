@@ -86,9 +86,9 @@
   "hero": {
     "variant": "letterpress",
     "dek": {
-      "en": "Mineiro cooking at 51 Hensler Street. Feijoada and bife à cavalo.",
-      "es": "Cocina mineira en 51 Hensler Street. Feijoada y bife à cavalo.",
-      "pt": "Comida mineira na 51 Hensler Street. Feijoada e bife à cavalo."
+      "en": "Mineiro cooking. Feijoada and bife à cavalo. Sources list Hensler Street and Niagara Street. Confirm the address.",
+      "es": "Cocina mineira. Feijoada y bife à cavalo. Las fuentes listan Hensler Street y Niagara Street. Confirme la dirección.",
+      "pt": "Comida mineira. Feijoada e bife à cavalo. As fontes listam Hensler Street e Niagara Street. Confirme o endereço."
     }
   },
   "theme": {
@@ -107,9 +107,9 @@
   "menu": {
     "status": "partial",
     "note": {
-      "en": "Feijoada à brasileira at $24 and bife à cavalo at $24 are from the DoorDash listing. DoorDash and Uber Eats give the address as 51 Niagara Street. This page keeps 51 Hensler Street from OpenStreetMap.",
-      "es": "Feijoada à brasileira a $24 y bife à cavalo a $24 salen de DoorDash. DoorDash y Uber Eats ponen la dirección en 51 Niagara Street. Esta página deja 51 Hensler Street, de OpenStreetMap.",
-      "pt": "Feijoada à brasileira a $24 e bife à cavalo a $24 vêm do DoorDash. DoorDash e Uber Eats dão o endereço como 51 Niagara Street. Esta página mantém 51 Hensler Street, do OpenStreetMap."
+      "en": "Feijoada à brasileira at $24 and bife à cavalo at $24 are from the DoorDash listing. DoorDash and Uber Eats list 51 Niagara Street. OpenStreetMap lists 51 Hensler Street. Confirm the address.",
+      "es": "Feijoada à brasileira a $24 y bife à cavalo a $24 salen de DoorDash. DoorDash y Uber Eats listan 51 Niagara Street. OpenStreetMap lista 51 Hensler Street. Confirme la dirección.",
+      "pt": "Feijoada à brasileira a $24 e bife à cavalo a $24 vêm do DoorDash. DoorDash e Uber Eats listam 51 Niagara Street. O OpenStreetMap lista 51 Hensler Street. Confirme o endereço."
     },
     "source": {
       "label": "DoorDash listing",
@@ -170,9 +170,9 @@
   },
   "about": [
     {
-      "en": "Cantinho Mineiro 2 is a Brazilian restaurant at 51 Hensler Street, Newark. Call (973) 230-0913.",
-      "es": "Cantinho Mineiro 2 es un restaurante brasileño en 51 Hensler Street, Newark. Llame al (973) 230-0913.",
-      "pt": "O Cantinho Mineiro 2 é um restaurante brasileiro na 51 Hensler Street, Newark. Ligue para (973) 230-0913."
+      "en": "Cantinho Mineiro 2 is a Brazilian restaurant in Newark. Call (973) 230-0913. Confirm the address before a visit.",
+      "es": "Cantinho Mineiro 2 es un restaurante brasileño en Newark. Llame al (973) 230-0913. Confirme la dirección antes de ir.",
+      "pt": "O Cantinho Mineiro 2 é um restaurante brasileiro em Newark. Ligue para (973) 230-0913. Confirme o endereço antes de ir."
     }
   ],
   "apps": [
@@ -200,13 +200,13 @@
     "catering"
   ],
   "seo": {
-    "title": "Cantinho Mineiro 2, Hensler Street",
+    "title": "Cantinho Mineiro 2, Newark",
     "description": "Brazilian restaurant in Newark. Demo preview. Two prices from DoorDash. Address differs by source."
   },
   "delivery": "unknown",
   "sourcesNote": {
-    "en": "The two prices are from DoorDash. OpenStreetMap lists 51 Hensler Street. DoorDash and Uber Eats list 51 Niagara Street for the same phone.",
-    "es": "Los dos precios salen de DoorDash. OpenStreetMap lista 51 Hensler Street. DoorDash y Uber Eats listan 51 Niagara Street para el mismo teléfono.",
-    "pt": "Os dois preços saem do DoorDash. O OpenStreetMap lista 51 Hensler Street. DoorDash e Uber Eats listam 51 Niagara Street para o mesmo telefone."
+    "en": "The two prices are from DoorDash. OpenStreetMap lists 51 Hensler Street. DoorDash and Uber Eats list 51 Niagara Street for the same phone. Confirm the address.",
+    "es": "Los dos precios salen de DoorDash. OpenStreetMap lista 51 Hensler Street. DoorDash y Uber Eats listan 51 Niagara Street para el mismo teléfono. Confirme la dirección.",
+    "pt": "Os dois preços saem do DoorDash. O OpenStreetMap lista 51 Hensler Street. DoorDash e Uber Eats listam 51 Niagara Street para o mesmo telefone. Confirme o endereço."
   }
 }

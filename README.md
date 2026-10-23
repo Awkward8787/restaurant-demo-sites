@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Restaurant demo sites" width="100%">
+  <img src="assets/banner.png" alt="Restaurant demo sites" width="100%">
 </p>
 
 # Restaurant demo sites
@@ -12,6 +12,19 @@
 ![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=white)
 
 Static demo sites for nine Newark restaurants. One JSON file in `data/restaurants/` generates one page. There is no server to view them. The cart works in the browser. Checkout does not place an order.
+
+
+## How it works
+
+```mermaid
+flowchart LR
+  J[data/restaurants/*.json] --> Astro[Astro build]
+  Astro --> P[Static restaurant pages]
+  P --> Cart[In-browser cart]
+  Cart -.->|no server order| X[Checkout demo only]
+```
+
+One JSON file generates one page. Cart works client-side; checkout does not place an order. CI + Pages workflows.
 
 ## Pages URLs
 

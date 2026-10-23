@@ -1,4 +1,15 @@
+<p align="center">
+  <img src="docs/banner.png" alt="Restaurant demo sites" width="100%">
+</p>
+
 # Restaurant demo sites
+
+**Static demo sites for nine Newark restaurants. One JSON file generates one page. Cart works in the browser; checkout does not place an order.**
+
+[![CI](https://github.com/Awkward8787/restaurant-demo-sites/actions/workflows/ci.yml/badge.svg)](https://github.com/Awkward8787/restaurant-demo-sites/actions/workflows/ci.yml)
+[![Pages](https://github.com/Awkward8787/restaurant-demo-sites/actions/workflows/pages.yml/badge.svg)](https://github.com/Awkward8787/restaurant-demo-sites/actions/workflows/pages.yml)
+[![License: All Rights Reserved](https://img.shields.io/badge/license-all%20rights%20reserved-lightgrey)](#license)
+![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=white)
 
 Static demo sites for nine Newark restaurants. One JSON file in `data/restaurants/` generates one page. There is no server to view them. The cart works in the browser. Checkout does not place an order.
 
@@ -75,3 +86,7 @@ See [docs/ordering.md](docs/ordering.md). Square payment links, Stripe Payment L
 ## What you do by hand
 
 The workflow file is in the repo. Pages will not go live until someone opens the repository **Settings → Pages** and chooses **GitHub Actions** as the source. The first deploy happens on the next push to `main` after that, or by running the `pages` workflow by hand.
+
+## License
+
+All rights reserved.
